@@ -1,0 +1,863 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Docker Private Registry - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>Docker Private Registry</h1>
+
+<ul>
+<li>
+<a href="#toc_0">Docker Registry</a>
+</li>
+<li>
+<a href="#toc_1">Docker Private Registry</a>
+<ul>
+<li>
+<a href="#toc_2">使用docker-distribution自建Registry</a>
+</li>
+<li>
+<a href="#toc_3">使用官方镜像自建Registry</a>
+</li>
+<li>
+<a href="#toc_4">Harbor</a>
+<ul>
+<li>
+<a href="#toc_5">Harbor简介</a>
+</li>
+<li>
+<a href="#toc_6">Harbor的功能</a>
+</li>
+<li>
+<a href="#toc_7">Docker compose</a>
+</li>
+<li>
+<a href="#toc_8">Harbor部署</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">Docker Registry</h2>
+
+<p>网上有很多的<code>Registry</code>服务器都支持第三方用户注册，而后基于用户名去做自己的仓库，但是使用互联网上的<code>Registry</code>有一个缺陷，那就是我们去推送和下载镜像时都不会很快，而在生产环境中很可能并行启动的容器将达到几十、上百个，而且很有可能每个服务器本地是没有镜像的，此时如果通过互联网去下载镜像会有很多问题，比如下载速度会很慢、带宽会用很多等等，如果带宽不够的话，下载至启动这个过程可能要持续个几十分钟，这已然违背了使用容器会更加轻量、快速的初衷和目的。因此，很多时候我们很有可能需要去做自己的私有<code>Registry</code>。</p>
+
+<p><code>Registry</code>用于保存docker镜像，包括镜像的层次结构和元数据。用户可以自建<code>Registry</code>，也可以使用官方的<code>Docker Hub</code>。</p>
+
+<p>Docker Registry分类：</p>
+
+<ul>
+<li>Sponsor Registry：第三方的Registry，供客户和Docker社区使用</li>
+<li>Mirror Registry：第三方的Registry，只让客户使用</li>
+<li>Vendor Registry：由发布docker镜像的供应商提供的registry</li>
+<li>Private Registry：通过设有防火墙和额外的安全层的私有实体提供的registry</li>
+</ul>
+
+<p>事实上，如果运维的系统环境托管在云计算服务上，比如阿里云，那么用阿里云的<code>Registry</code>则是最好的选择。很多时候我们的生产环境不会在本地，而是托管在数据中心机房里，如果我们在数据中心机房里的某台主机上部署<code>Registry</code>，因为都在同一机房，所以属于同一局域网，此时数据传输走内网，效率会极大的提升。</p>
+
+<p>所有的<code>Registry</code>默认情况下都是基于https工作的，这是Docker的基本要求，而我自建<code>Registry</code>时很可能是基于http工作的，但是Docker默认是拒绝使用http提供<code>Registry</code>服务的，除非明确的告诉它，我们就是要用http协议的<code>Registry</code>。</p>
+
+<h2 id="toc_1">Docker Private Registry</h2>
+
+<p>为了帮助我们快速创建私有<code>Registry</code>，Docker专门提供了一个名为Docker Distribution的软件包，我们可以通过安装这个软件包快速构建私有仓库。</p>
+
+<p><strong>问：既然Docker是为了运行程序的，Docker Distribution能否运行在容器中？</strong></p>
+
+<p>容器时代，任何程序都应该运行在容器中，除了Kernel和init。而为了能够做Docker Private Registry，Docker Hub官方直接把<code>Registry</code>做成了镜像，我们可以直接将其pull到本地并启动为容器即可快速实现私有<code>Registry</code>。</p>
+
+<p><code>Registry</code>的主要作用是托管镜像，<code>Registry</code>运行在容器中，而容器自己的文件系统是随着容器的生命周期终止和删除而被删除的，所以当我们把<code>Registry</code>运行在容器中时，客户端上传了很多镜像，随着<code>Registry</code>容器的终止并删除，所有镜像都将化为乌有，因此这些镜像应该放在存储卷上，而且这个存储卷最好不要放在Docker主机本地，而应该放在一个网络共享存储上，比如NFS。不过，镜像文件自己定义的存储卷，还是一个放在Docker本地、Docker管理的卷，我们可以手动的将其改成使用其它文件系统的存储卷。</p>
+
+<p>这就是使用容器来运行<code>Registry</code>的一种简单方式。自建<code>Registry</code>的另一种方式，就是直接安装<code>docker-distribution</code>软件。</p>
+
+<h3 id="toc_2">使用docker-distribution自建Registry</h3>
+
+<p>在node02上自建Registry</p>
+
+<pre><code class="language-text">[root@node02 ~]# yum -y install docker-distribution
+[root@node02 ~]# vim /etc/docker-distribution/registry/config.yml
+version: 0.1
+log:
+  fields:
+    service: registry
+storage:
+    cache:
+        layerinfo: inmemory
+    filesystem:
+        rootdirectory: /var/lib/registry  # 修改此处为一个容量大的磁盘分区目录
+http:
+    addr: :5000
+    
+[root@node02 ~]# systemctl start docker-distribution
+[root@node02 ~]# ss -antl
+State       Recv-Q Send-Q                   Local Address:Port                                  Peer Address:Port              
+LISTEN      0      100                          127.0.0.1:25                                               *:*                  
+LISTEN      0      128                                  *:22                                               *:*                  
+LISTEN      0      100                              [::1]:25                                            [::]:*                  
+LISTEN      0      128                               [::]:5000                                          [::]:*                  
+LISTEN      0      128                               [::]:22                                            [::]:*
+</code></pre>
+
+<p>在node01上使用自建的Registry去上传镜像</p>
+
+<pre><code class="language-text"># 使用insecure-registries参数添加http支持
+[root@node01 ~]# vim /etc/docker/daemon.json
+{
+    &quot;registry-mirrors&quot;: [&quot;https://j3m2itm3.mirror.aliyuncs.com&quot;,&quot;https://registry.docker-cn.com&quot;],
+    &quot;insecure-registries&quot;: [&quot;node02-linux.example.com:5000&quot;]
+}
+
+[root@node01 ~]# systemctl restart docker
+
+[root@node01 ~]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+seancheng1002/b1    v0.2                42a777e26541        2 weeks ago         1.22MB
+seancheng1002/b1    v0.1                bb54705dfd51        2 weeks ago         1.22MB
+nginx               latest              2073e0bcb60e        2 weeks ago         127MB
+centos              latest              470671670cac        5 weeks ago         237MB
+busybox             latest              6d5fcfe5ff17        8 weeks ago         1.22MB
+[root@node01 ~]# docker tag nginx:latest node02-linux.example.com:5000/nginx:latest
+[root@node01 ~]# docker images
+REPOSITORY                            TAG                 IMAGE ID            CREATED             SIZE
+seancheng1002/b1                      v0.2                42a777e26541        2 weeks ago         1.22MB
+seancheng1002/b1                      v0.1                bb54705dfd51        2 weeks ago         1.22MB
+nginx                                 latest              2073e0bcb60e        2 weeks ago         127MB
+node02-linux.example.com:5000/nginx   latest              2073e0bcb60e        2 weeks ago         127MB
+centos                                latest              470671670cac        5 weeks ago         237MB
+busybox                               latest              6d5fcfe5ff17        8 weeks ago         1.22MB
+[root@node01 ~]# docker push node02-linux.example.com:5000/nginx
+The push refers to repository [node02-linux.example.com:5000/nginx]
+22439467ad99: Pushed 
+b4a29beac87c: Pushed 
+488dfecc21b1: Pushed 
+latest: digest: sha256:62f787b94e5faddb79f96c84ac0877aaf28fb325bfc3601b9c0934d4c107ba94 size: 948
+</code></pre>
+
+<h3 id="toc_3">使用官方镜像自建Registry</h3>
+
+<pre><code class="language-text">[root@node02 ~]# docker run -d -p 5000:5000 -v /opt/data/registry:/tmp/registry registry
+
+[root@node02 ~]# ss -antl
+State       Recv-Q Send-Q Local Address:Port               Peer Address:Port              
+LISTEN      0      100    127.0.0.1:25                  *:*                  
+LISTEN      0      128     *:22                  *:*                  
+LISTEN      0      100     [::1]:25                   [::]:*                  
+LISTEN      0      128      [::]:5000                 [::]:*                  
+LISTEN      0      128      [::]:22                   [::]:*
+</code></pre>
+
+<h3 id="toc_4">Harbor</h3>
+
+<p>无论是使用Docker-distribution去自建仓库，还是通过官方镜像跑容器的方式去自建仓库，通过前面的演示我们可以发现其是非常的简陋的，还不如直接使用官方的Docker Hub去管理镜像来得方便，至少官方的Docker Hub能够通过web界面来管理镜像，还能在web界面执行搜索，还能基于Dockerfile利用Webhooks和Automated Builds实现自动构建镜像的功能，用户不需要在本地执行docker build，而是把所有build上下文的文件作为一个仓库推送到github上，让Docker Hub可以从github上去pull这些文件来完成自动构建。</p>
+
+<p>但无论官方的Docker Hub有多强大，它毕竟是在国外，所以速度是最大的瓶颈，我们很多时候是不可能去考虑使用官方的仓库的，但是上面说的两种自建仓库方式又十分简陋，不便管理，所以后来就出现了一个被 CNCF 组织青睐的项目，其名为Harbor。</p>
+
+<h4 id="toc_5">Harbor简介</h4>
+
+<p>Harbor是由VMWare在Docker Registry的基础之上进行了二次封装，加进去了很多额外程序，而且提供了一个非常漂亮的web界面。</p>
+
+<blockquote>
+<p>Project Harbor is an open source trusted cloud native registry project that stores, signs, and scans context.</p>
+
+<p>Harbor extends the open source Docker Distribution by adding the functionalities usually required by users such as security, identity and management.</p>
+
+<p>Harbor supports advanced features such as user management, access control, activity monitoring, and replication between instances.</p>
+</blockquote>
+
+<h4 id="toc_6">Harbor的功能</h4>
+
+<p>Feathers：</p>
+
+<ul>
+<li>Multi-tenant content signing and validation</li>
+<li>Security and vulnerability analysis</li>
+<li>Audit logging</li>
+<li>Identity integration and role-based access control</li>
+<li>Image replication between instances</li>
+<li>Extensible API and graphical UI</li>
+<li>Internationalization（currently English and Chinese）</li>
+</ul>
+
+<h4 id="toc_7">Docker compose</h4>
+
+<p>Harbor在物理机上部署是非常难的，而为了简化Harbor的应用，Harbor官方直接把Harbor做成了在容器中运行的应用，而且这个容器在Harbor中依赖类似redis、mysql、pgsql等很多存储系统，所以它需要编排很多容器协同起来工作，因此VMWare Harbor在部署和使用时，需要借助于Docker的单机编排工具(Docker compose)来实现。</p>
+
+<blockquote>
+<p>Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p>
+</blockquote>
+
+<p><a href="javascript:if(confirm('https://docs.docker.com/compose/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://docs.docker.com/compose/'" tppabs="https://docs.docker.com/compose/">Docker Compose官方文档</a></p>
+
+<h4 id="toc_8">Harbor部署</h4>
+
+<p><a href="javascript:if(confirm('https://github.com/goharbor/harbor  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/goharbor/harbor'" tppabs="https://github.com/goharbor/harbor">Harbor官方文档</a></p>
+
+<pre><code class="language-text">[root@node02 ~]# yum -y install docker-compose
+[root@node02 ~]# cd /usr/src/
+[root@node02 src]# wget https://github.com/goharbor/harbor/releases/download/v1.10.2/harbor-offline-installer-v1.10.2.tgz
+
+[root@node02 src]# ls
+debug  harbor-offline-installer-v1.10.1.tgz  kernels
+[root@node02 src]# tar xf harbor-offline-installer-v1.10.1.tgz -C /usr/local/
+[root@node02 src]# ls /usr/local/
+bin  etc  games  harbor  include  lib  lib64  libexec  sbin  share  src
+[root@node02 src]# cd /usr/local/harbor/
+[root@node02 harbor]# ls
+common.sh  harbor.v1.10.1.tar.gz  harbor.yml  install.sh  LICENSE  prepare
+
+[root@node02 harbor]# vim harbor.yml
+...
+hostname: node02-linux.example.com
+...
+
+
+[root@node02 harbor]# ./install.sh
+[root@node02 harbor]# ss -antl
+State       Recv-Q Send-Q                   Local Address:Port                                  Peer Address:Port              
+LISTEN      0      128                          127.0.0.1:1514                                             *:*                  
+LISTEN      0      128                                  *:22                                               *:*                  
+LISTEN      0      128                               [::]:80                                            [::]:*                  
+LISTEN      0      128                               [::]:22                                            [::]:* 
+</code></pre>
+
+<p><strong>使用IP登录管理Harbor：</strong><br/>
+<img src="15823749080746.jpg" tppabs="http://itwangqing.net.cn/mweb/15823749080746.jpg" alt="" style="width:1440px;"/></p>
+
+<p>登录成功后界面：<br/>
+<img src="15823750154816.jpg" tppabs="http://itwangqing.net.cn/mweb/15823750154816.jpg" alt="" style="width:1440px;"/></p>
+
+<p><strong>使用Harbor的注意事项：</strong></p>
+
+<ol>
+<li>在客户端上传镜像时一定要记得执行docker login进行用户认证，否则无法直接push</li>
+<li>在客户端使用的时候如果不是用的https则必须要在客户端的/etc/docker/daemon.json配置文件中配置insecure-registries参数</li>
+<li>数据存放路径应在配置文件中配置到一个容量比较充足的共享存储中</li>
+<li>Harbor是使用docker-compose命令来管理的，如果需要停止Harbor也应用docker-compose stop来停止，其他参数请--help</li>
+</ol>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html"  title="Previous Post: 数据可视化分析">&laquo; 数据可视化分析</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html" 
+	        title="Next Post: haproxy">haproxy &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15823545783647.html'/*tpa=http://www.itwangqing.net.cn/15823545783647.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

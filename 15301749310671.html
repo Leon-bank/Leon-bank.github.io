@@ -1,0 +1,1451 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  网络基础管理 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>网络基础管理</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. 网卡命名</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 传统网卡命名机制</a>
+</li>
+<li>
+<a href="#toc_2">1.2 redhat7网卡命名机制</a>
+</li>
+<li>
+<a href="#toc_3">1.3 网络接口名称组成格式</a>
+</li>
+<li>
+<a href="#toc_4">1.4 回归传统命名</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_5">2. 网络管理常用命令</a>
+<ul>
+<li>
+<a href="#toc_6">2.1 ifconfig</a>
+</li>
+<li>
+<a href="#toc_7">2.2 ip</a>
+</li>
+<li>
+<a href="#toc_8">2.3 route</a>
+</li>
+<li>
+<a href="#toc_9">2.4 hostname与hostnamectl</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_10">3. 网络相关配置文件</a>
+<ul>
+<li>
+<a href="#toc_11">3.1 网络配置文件</a>
+</li>
+<li>
+<a href="#toc_12">3.2 网络接口配置文件</a>
+</li>
+<li>
+<a href="#toc_13">3.3 路由配置文件</a>
+</li>
+<li>
+<a href="#toc_14">3.4 DNS配置文件</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_15">4. NetworkManager管理网络</a>
+</li>
+<li>
+<a href="#toc_16">5. 使用原生network管理网络</a>
+</li>
+<li>
+<a href="#toc_17">6. 网络检测工具与故障排查</a>
+<ul>
+<li>
+<a href="#toc_18">6.1 ping</a>
+</li>
+<li>
+<a href="#toc_19">6.2 host与nslookup</a>
+</li>
+<li>
+<a href="#toc_20">6.3 netstat</a>
+</li>
+<li>
+<a href="#toc_21">6.4 ss</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_22">作业</a>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. 网卡命名</h2>
+
+<h3 id="toc_1">1.1 传统网卡命名机制</h3>
+
+<blockquote>
+<p>传统命名：<br/>
+以太网eth[0,1,2,...]<br/>
+wlan[0,1,2,...]</p>
+</blockquote>
+
+<h3 id="toc_2">1.2 redhat7网卡命名机制</h3>
+
+<blockquote>
+<p>systemd对网络设备的命名方式：</p>
+
+<ol>
+<li>如果Firmware或BIOS为主板上集成的设备提供的索引信息可用，且可预测，则根据此索引进行命名，例如eno1</li>
+<li>如果Firmware或BIOS为PCI-E扩展槽所提供的索引信息可用，且可预测，则根据此索引进行命名，例如ens1</li>
+<li>如果硬件接口的物理位置信息可用，则根据此信息进行命名，例如enp2s0</li>
+<li>如果用户显式启动，也可根据MAC地址进行命名，例如enx2387a1dc56</li>
+<li>上述均不可用时，则使用传统命名机制</li>
+</ol>
+</blockquote>
+
+<p>上述命名机制中，有的需要biosdevname程序的参与。所以必须安装biosdevname程序且启用它。</p>
+
+<h3 id="toc_3">1.3 网络接口名称组成格式</h3>
+
+<blockquote>
+<p>基于固件、设备结构、设备类型</p>
+</blockquote>
+
+<ul>
+<li>由两个字母开头标示固件
+<ul>
+<li>以太网网卡以 en 开头</li>
+<li>无线网卡以 wl 开头</li>
+</ul></li>
+<li>设备结构
+<ul>
+<li>o<index>：主板上集成的设备的设备索引号</li>
+<li>s<slot>：扩展槽的索引号</li>
+<li>x<MAC>：基于MAC地址的命名</li>
+<li>p&lt;bus&gt;s&lt;slot&gt;：基于物理位置拓扑的命名。如enp2s1，表示PCI总线上第2个总线的第1个插槽的设备索引号</li>
+</ul></li>
+</ul>
+
+<!--### 1.4 网卡设备的命名过程
+>1. udev，辅助工具程序/lib/udev/rename_device会根据/usr/lib/udev/rules.d/60-net.rules中的信息设定网卡名称
+>2. biosdevname会根据/usr/lib/udev/rules.d/71-biosdevname.rules中的信息设定网卡名称
+>3. 通过udev检测网络接口设备，根据/usr/lib/udev/rules.d/75-net-description中的变量信息设定网卡名称-->
+
+<h3 id="toc_4">1.4 回归传统命名</h3>
+
+<pre><code class="language-text">//修改网卡配置文件
+[root@localhost ~]# cd /etc/sysconfig/network-scripts/
+[root@localhost network-scripts]# mv ifcfg-ens33 ifcfg-eth0
+[root@localhost network-scripts]# vim ifcfg-eth0
+TYPE=Ethernet
+BOOTPROTO=dhcp
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+NAME=eth0   //此处要把ens33改成eht0
+UUID=03be31f5-a3c1-4f8d-88b3-aea6e85c869f
+DEVICE=eth0 //此处要把ens33改成eth0
+ONBOOT=yes
+
+//编辑/etc/default/grub配置文件，在以GRUB_CMDLINE_LINUX开头的行内rhgb的前面加上net.ifnames=0 biosdevname=0 
+
+[root@localhost ~]# vim /etc/default/grub
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR=&quot;$(sed &#39;s, release .*$,,g&#39; /etc/system-release)&quot;
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT=&quot;console&quot;
+GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=rhel/root rd.lvm.lv=rhel/swap net.ifnames=0 biosdevname=0 rhgb quiet&quot;
+GRUB_DISABLE_RECOVERY=&quot;true&quot;
+
+//为grub2生成其配置文件
+[root@localhost ~]# grub2-mkconfig -o /etc/grub2.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.10.0-693.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-693.el7.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-fd0bcf5782d24ba5b903b175c35f328e
+Found initrd image: /boot/initramfs-0-rescue-fd0bcf5782d24ba5b903b175c35f328e.img
+done
+
+//重启系统
+[root@localhost ~]# reboot
+</code></pre>
+
+<h2 id="toc_5">2. 网络管理常用命令</h2>
+
+<h3 id="toc_6">2.1 ifconfig</h3>
+
+<pre><code class="language-text">//查看当前处于活动状态的所有网络接口
+[root@localhost ~]# ifconfig
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.16.12.128  netmask 255.255.255.0  broadcast 172.16.12.255
+        inet6 fe80::20c:29ff:fe73:110  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:0c:29:73:01:10  txqueuelen 1000  (Ethernet)
+        RX packets 5121  bytes 424364 (414.4 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3813  bytes 3257482 (3.1 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 4  bytes 344 (344.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4  bytes 344 (344.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+  
+//仅查看eth0网卡状态      
+[root@localhost ~]# ifconfig eth0
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.16.12.128  netmask 255.255.255.0  broadcast 172.16.12.255
+        inet6 fe80::20c:29ff:fe73:110  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:0c:29:73:01:10  txqueuelen 1000  (Ethernet)
+        RX packets 5148  bytes 426572 (416.5 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3828  bytes 3259946 (3.1 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        
+//查看所有网卡状态信息, 包括禁用和启用
+[root@localhost ~]# ifconfig -a
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.16.12.128  netmask 255.255.255.0  broadcast 172.16.12.255
+        inet6 fe80::20c:29ff:fe73:110  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:0c:29:73:01:10  txqueuelen 1000  (Ethernet)
+        RX packets 5177  bytes 428948 (418.8 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3844  bytes 3262104 (3.1 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 4  bytes 344 (344.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4  bytes 344 (344.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    
+        
+//网卡配置信息含义如下:
+
+UP: 网卡处于活动状态
+BROADCAST: 支持广播
+RUNNING: 网线已接入
+MULTICAST: 支持组播
+MTU: 最大传输单元(字节),即此接口一次所能传输的最大封包
+
+inet: 显示IPv4地址行
+inet6: 显示IPv6地址行
+link/enther: 指设备硬件(MAC)地址
+txqueuelen: 传输缓存区长度大小
+RX packets: 接收的数据包
+TX packets: 发送的数据包
+errors: 总的收包的错误数量
+dropped: 由于各种原因, 导致拷贝在内存过程中被丢弃
+collisions: 网络信号冲突情况, 值不为0则可能存在网络故障
+</code></pre>
+
+<h3 id="toc_7">2.2 ip</h3>
+
+<pre><code class="language-text">//语法：ip [ OPTIONS ] OBJECT { COMMAND | help }
+OBJECT：
+    link：网络接口属性
+    addr：协议地址
+    route：路由 
+
+//查看网络接口所有地址  
+[root@localhost ~]# ip link show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP mode DEFAULT qlen 1000
+    link/ether 00:0c:29:73:01:10 brd ff:ff:ff:ff:ff:ff
+    
+//显示报文统计信息
+[root@localhost ~]# ip -s link show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX: bytes  packets  errors  dropped overrun mcast
+    0          0        0       0       0       0
+    TX: bytes  packets  errors  dropped carrier collsns
+    0          0        0       0       0       0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP mode DEFAULT qlen 1000
+    link/ether 00:0c:29:73:01:10 brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped overrun mcast
+    23826      255      0       0       0       0
+    TX: bytes  packets  errors  dropped carrier collsns
+    21275      157      0       0       0       0 
+    
+//启用或禁用网络接口ip link set DEV {up|down}
+[root@localhost ~]# ip link set lo down
+[root@localhost ~]# ip link set lo up
+
+//ip addr add ADDRESS dev DEV：添加IP地址
+[root@localhost ~]# ip addr show eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state
+UP qlen 1000
+    link/ether 00:0c:29:73:01:10 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.12.128/24 brd 172.16.12.255 scope global dynamic eth0
+       valid_lft 1683sec preferred_lft 1683sec
+    inet6 fe80::20c:29ff:fe73:110/64 scope link
+       valid_lft forever preferred_lft forever
+[root@localhost ~]# ip addr add 192.168.1.1/24 dev eth0
+[root@localhost ~]# ip addr show eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:0c:29:73:01:10 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.12.128/24 brd 172.16.12.255 scope global dynamic eth0
+       valid_lft 1657sec preferred_lft 1657sec
+    inet 192.168.1.1/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20c:29ff:fe73:110/64 scope link
+       valid_lft forever preferred_lft forever
+
+//ip addr del ADDRESS dev DEV：删除IP地址
+[root@localhost ~]# ip addr show eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state
+UP qlen 1000
+    link/ether 00:0c:29:73:01:10 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.12.128/24 brd 172.16.12.255 scope global dynamic eth0
+       valid_lft 1603sec preferred_lft 1603sec
+    inet 192.168.1.1/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20c:29ff:fe73:110/64 scope link
+       valid_lft forever preferred_lft forever
+[root@localhost ~]# ip addr del 192.168.1.1/24 dev eth0
+[root@localhost ~]# ip addr show eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:0c:29:73:01:10 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.12.128/24 brd 172.16.12.255 scope global dynamic eth0
+       valid_lft 1580sec preferred_lft 1580sec
+    inet6 fe80::20c:29ff:fe73:110/64 scope link
+       valid_lft forever preferred_lft forever
+
+//ip addr show DEV：查看网络接口的地址
+[root@localhost ~]# ip addr show eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:0c:29:73:01:10 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.12.128/24 brd 172.16.12.255 scope global dynamic eth0
+       valid_lft 1580sec preferred_lft 1580sec
+    inet6 fe80::20c:29ff:fe73:110/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre>
+
+<h3 id="toc_8">2.3 route</h3>
+
+<p>Linux主机之间是使用IP进行通信, 假设A主机和B主机同在一个网段内且网卡都处于激活状态, 则A具备和B直接通信的能力, 但如果A主机和B主机处于两个不同的网段, 则A必须通过路由器才能和B通信, 路由器属于IT设备的基础设施, 每一个网段都应该至少有一个网关</p>
+
+<pre><code class="language-text">//查看当前路由表
+[root@localhost ~]# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         gateway         0.0.0.0         UG    100    0        0 ens33
+172.16.12.0     0.0.0.0         255.255.255.0   U     100    0        0 ens33
+
+//以数字方式显示各主机或端口等相关信息
+[root@localhost ~]# route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.16.12.2     0.0.0.0         UG    100    0        0 ens33
+172.16.12.0     0.0.0.0         255.255.255.0   U     100    0        0 ens33
+
+//增加路由
+//语法：route add [-net|-host] target [netmask Nm] [gw Gw]  [[dev] If]
+
+//增加网段路由
+[root@localhost ~]# route add -net 172.16.12.0/24 gw 172.16.12.2 dev eth1
+[root@localhost ~]# route add -net 0.0.0.0/0 gw 172.16.12.2 dev eth1
+
+//增加主机路由
+[root@localhost ~]# route add -host 172.16.12.128 gw 172.16.12.2
+
+
+//删除路由
+[root@localhost ~]# route del -net 172.16.12.0/24
+[root@localhost ~]# route del -net 0.0.0.0/0 gw 172.16.12.2
+</code></pre>
+
+<h3 id="toc_9">2.4 hostname与hostnamectl</h3>
+
+<p>生产环境中必须配置主机名,同时主机名也需要遵循一定的规范, 比如:</p>
+
+<pre><code class="language-text">公有云: 地区-项目-业务-服务-节点-地址
+wh-shop-register-nginx-node1-192.168.56.13
+wh-med-pay-mysql-master01-192.168.56.11
+wh-med-pay-mysql-slave01-192.168.56.12
+
+
+//hostname查看主机名
+[root@localhost ~]# hostname
+localhost.localdomain
+
+//hostname临时修改主机名
+[root@localhost ~]# hostname wangqing
+[root@localhost ~]# cat /etc/hostname
+localhost.localdomain
+//注意：修改主机名后需要重新登录用户才会显示效果
+
+
+//rhel7系统建议使用hostnamectl修改和查看主机名
+//设定永久名称
+[root@localhost ~]# hostnamectl set-hostname seancheng
+[root@localhost ~]# cat /etc/hostname
+seancheng
+
+//查看主机信息
+[root@localhost ~]# hostnamectl
+   Static hostname: seancheng
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: fd0bcf5782d24ba5b903b175c35f328e
+           Boot ID: a060e3a2882f4d2c92884eee9db702bc
+    Virtualization: vmware
+  Operating System: Red Hat Enterprise Linux Server 7.4 (Maipo)
+       CPE OS Name: cpe:/o:redhat:enterprise_linux:7.4:GA:server
+            Kernel: Linux 3.10.0-693.el7.x86_64
+      Architecture: x86-64
+</code></pre>
+
+<blockquote>
+<p><strong>注意：</strong><br/>
+在Linux中以命令方式修改网络配置只在当前状态有效，重启后将失效。故若想使修改的配置重启后依然有效，则必须编辑配置文件进行配置的修改。</p>
+</blockquote>
+
+<h2 id="toc_10">3. 网络相关配置文件</h2>
+
+<h3 id="toc_11">3.1 网络配置文件</h3>
+
+<pre><code class="language-text">//网络配置文件：/etc/sysconfig/network
+    NETWORKING={yes|no}：设定整个系统是否启用网络功能，若设为no，则不论网卡如何设置都不能使用网络功能。
+    HOSTNAME：设置主机名
+</code></pre>
+
+<h3 id="toc_12">3.2 网络接口配置文件</h3>
+
+<p>网络接口即网卡，其配置文件的路径是<code>/etc/sysconfig/network-scripts/ifcfg-INTERFACE_NAME</code></p>
+
+<pre><code class="language-text">[root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-eth1
+TYPE=Ethernet
+BOOTPROTO=static
+NAME=eth1
+UUID=03be31f5-a3c1-4f8d-88b3-aea6e85c869f
+DEVICE=eth1
+ONBOOT=yes
+IPADDR=172.16.12.130
+NETMASK=255.255.255.0
+GATEWAY=172.16.12.2
+DNS1=172.16.12.2
+
+//网卡配置说明
+//参数                    说明
+BOOTPROTO=none          //引导协议，可选值有｛static｜none｜dhcp｜bootp｝。如果要使用静态地址，使用static或none都可以
+NM_CONTROLLED           //NM是NetworkManager的简写，NM是由RHEL研发的在RHEL6中取代network脚本来实现网络管理、配置的服务脚本
+    //可选值有{ yes ｜ no }
+    //此项是设定此网卡是否接受NM控制。CentOS6建议设为“no”
+TYPE                    //接口类型。常见的接口类型有：Ethernet，Bridge
+UUID                    //设备的惟一标识
+HWADDR                  //硬件地址，要与硬件中的地址保持一致，可省
+IPADDR=172.16.12.130    //固定IP地址
+PREFIX=24               //子网掩码
+NETMASK=255.255.255.0   //子网掩码
+GATEWAY=172.16.12.2     //默认网关
+DNS1=172.16.12.2        //第一个DNS服务器指向
+DNS2                    //第二个DNS服务器指向
+DNS3                    //第三个DNS服务器指向
+DEVICE=eth1             //关联的设备名称，要与文件名的后半部&quot;INTERFACE_NAME&quot;保持一致  
+NAME=&quot;eth1&quot;             //连接名称
+ONBOOT=yes              //在系统引导时是否自动激活此网络接口，可选值有{ yes ｜ no }
+DEFROUTE=yes            //将接口设定为默认路由[yes|no]
+USERCTL={yes|no}        //是否允许普通用户控制此接口的启用与禁用
+PEERDNS={yes|no}        //是否在BOOTPROTO为dhcp时接受由dhcp服务器指定的DNS地址，此项设为yes时获得的DNS地址将直接覆盖至/etc/resolv.conf文件中
+</code></pre>
+
+<h3 id="toc_13">3.3 路由配置文件</h3>
+
+<p>路由配置文件的路径是<code>/etc/sysconfig/network-scripts/route-INTERFACE_NAME</code></p>
+
+<pre><code class="language-text">//添加格式一：DEST via NEXTHOP
+[root@localhost ~]# vi /etc/sysconfig/network-scripts/route-ens33
+172.16.12.0/24 via 172.16.12.2
+                
+//添加格式二：
+[root@localhost ~]# vi /etc/sysconfig/network-scripts/route-ens33
+ADDRESS0=172.16.12.0
+NETMASK0=255.255.255.0
+GATEWAY0=172.16.12.2
+</code></pre>
+
+<h3 id="toc_14">3.4 DNS配置文件</h3>
+
+<p>DNS配置文件的路径是<code>/etc/resolv.conf</code></p>
+
+<pre><code class="language-text">[root@localhost ~]# vi /etc/resolv.conf
+nameserver DNS_IP_1
+nameserver DNS_IP_2
+nameserver DNS_IP_3
+</code></pre>
+
+<h2 id="toc_15">4. NetworkManager管理网络</h2>
+
+<p><code>RHEL/CentOS7</code>系统默认使用<code>NetworkManager</code>来提供网络服务，这是一种动态管理网络配置的守护进程，能够让网络设备保持连接状态。<br/>
+<code>NetworkManager</code>提供的命令行和图形配置工具对网络进行设定, 设定保存的配置文件在<code>/etc/sysconfig/network-scripts</code>目录下, 工具有 <code>nmcli, nmtui, nm-connection-editor</code></p>
+
+<p><code>device</code>物理设备, 例如 <code>ens33,enp2s0,virbr0,team0</code><br/>
+<code>connection</code>连接设置, 具体网络配置方案</p>
+
+<blockquote>
+<p>1.不同的网络连接配置可以应用到相同的物理设备，但物理设备同一时间只能应用其中某个网络连接<br/>
+2.针对物理网络接口, 设定不同的网络连接, 在不同的使用环境中激活相应的网络连接，就可以实现网络配置信息的自动切换了</p>
+</blockquote>
+
+<p>使用<code>nmcli</code>命令查看设备以及连接情况</p>
+
+<pre><code class="language-text">//查看设备状态
+[root@localhost ~]# nmcli device
+DEVICE  TYPE      STATE      CONNECTION
+ens33   ethernet  connected  ens33
+lo      loopback  unmanaged  --
+
+//查看指定设备的详细状态
+[root@localhost ~]# nmcli device show ens33
+GENERAL.DEVICE:                         ens33
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         00:0C:29:73:01:10
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.CONNECTION:                     ens33
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/1
+WIRED-PROPERTIES.CARRIER:               on
+IP4.ADDRESS[1]:                         172.16.12.128/24
+IP4.GATEWAY:                            172.16.12.2
+IP4.DNS[1]:                             172.16.12.2
+IP4.DOMAIN[1]:                          localdomain
+IP6.ADDRESS[1]:                         fe80::20c:29ff:fe73:110/64
+IP6.GATEWAY:                            --
+
+
+//查看连接状态
+[root@localhost ~]# nmcli connection
+NAME   UUID                                  TYPE            DEVICE
+ens33  03be31f5-a3c1-4f8d-88b3-aea6e85c869f  802-3-ethernet  ens33 
+
+//查看所有活动的连接
+NAME   UUID                                  TYPE            DEVICE
+ens33  03be31f5-a3c1-4f8d-88b3-aea6e85c869f  802-3-ethernet  ens33
+
+//查看指定设备连接的详细情况
+[root@localhost ~]# nmcli connection show ens33
+connection.id:                          ens33
+connection.uuid:                        03be31f5-a3c1-4f8d-88b3-aea6e85c869f
+connection.stable-id:                   --
+connection.interface-name:              ens33
+connection.type:                        802-3-ethernet
+connection.autoconnect:                 yes
+connection.autoconnect-priority:        0
+connection.autoconnect-retries:         -1 (default)
+connection.timestamp:                   1530455962
+connection.read-only:                   no
+connection.permissions:                 --
+connection.zone:                        --
+connection.master:                      --
+connection.slave-type:                  --
+connection.autoconnect-slaves:          -1 (default)
+connection.secondaries:                 --
+connection.gateway-ping-timeout:        0
+......
+</code></pre>
+
+<h2 id="toc_16">5. 使用原生network管理网络</h2>
+
+<p><code>CentOS/RHEL</code>的网络配置文件默认目录为<code>/etc/sysconfig/network-scripts</code><br/>
+默认第一块物理网卡配置文件为<code>ifcfg-eth0</code>, 如果有第二块物理网卡, 配置文件则为<code>ifcfg-eth1</code>以此类推。 注意: 如果新增物理网卡没有配置文件，可选择复制系统默认的进行修改。</p>
+
+<pre><code class="language-text">//设置NetworkManger开机不启动, 同时停止NetworkManger服务
+[root@localhost ~]# systemctl disable NetworkManager
+[root@localhost ~]# systemctl stop NetworkManager
+
+//添加一块物理网卡, 然后新增网络连接配置文件
+//复制配置eth0配置文件为eth1
+[root@localhost ~]# cp /etc/sysconfig/network-scripts/{ifcfg-eth0,ifcfg-eth1}
+
+//编辑网卡配置文件
+[root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-eth1
+TYPE=Ethernet
+BOOTPROTO=static
+NAME=eth1
+UUID=03be31f5-a3c1-4f8d-88b3-aea6e85c869f
+DEVICE=eth1
+NM_CONTROLLED=no
+ONBOOT=yes
+IPADDR=172.16.12.130
+NETMASK=255.255.255.0
+GATEWAY=172.16.12.2
+DNS1=172.16.12.2
+
+//重启network网络服务加载网络并设置开机启动
+[root@localhost ~]# systemctl restart network
+[root@localhost ~]# systemctl enable network
+</code></pre>
+
+<h2 id="toc_17">6. 网络检测工具与故障排查</h2>
+
+<h3 id="toc_18">6.1 ping</h3>
+
+<p><code>ping</code>命令的目的在于测试另一台主机是否可达, 如果ping不到某台主机,就说明对方主机已经出现了问题, 但是不排除由于链路中的防火墙、ping被丢弃等原因造成ping不通的情况</p>
+
+<pre><code class="language-text">//ping命令常用选项：
+    -c 指定ping的次数
+    -i 指定ping包的发送间隔
+    -w 如果ping没有回应, 则在指定超时时间后退出
+</code></pre>
+
+<h3 id="toc_19">6.2 host与nslookup</h3>
+
+<p><code>host/nslookup</code>命令用于查询DNS记录</p>
+
+<pre><code class="language-text">[root@localhost ~]# host www.baidu.com
+www.baidu.com is an alias for www.a.shifen.com.
+www.a.shifen.com has address 119.75.216.20
+www.a.shifen.com has address 119.75.213.61
+
+[root@localhost ~]# nslookup www.baidu.com
+Server:         172.16.12.2
+Address:        172.16.12.2#53
+
+Non-authoritative answer:
+www.baidu.com   canonical name = www.a.shifen.com.
+Name:   www.a.shifen.com
+Address: 119.75.213.61
+Name:   www.a.shifen.com
+Address: 119.75.216.20
+</code></pre>
+
+<!--### 6.3 traceroute
+`traceroute`命令用于路由跟踪, 检测网络故障出现在ISP运营商或是对端服务无法响应
+
+```
+[root@seancheng ~]# traceroute www.baidu.com
+traceroute to www.baidu.com (119.75.213.61), 30 hops max, 60 byte packets
+ 1  gateway (192.168.1.1)  1.838 ms  1.749 ms  1.654 ms
+ 2  49.222.80.1 (49.222.80.1)  2.506 ms  7.196 ms  7.133 ms
+ 3  * * *
+ 4  * * *
+ 5  * * *
+```
+-->
+
+<h3 id="toc_20">6.3 netstat</h3>
+
+<p><code>netstat</code>用于查看网络状态</p>
+
+<pre><code class="language-text">//显示路由表
+[root@seancheng ~]# netstat -r
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         gateway         0.0.0.0         UG        0 0          0 ens33
+172.16.12.0     0.0.0.0         255.255.255.0   U         0 0          0 ens33
+
+//以数字方式显示路由表
+[root@seancheng ~]# netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         172.16.12.2     0.0.0.0         UG        0 0          0 ens33
+172.16.12.0     0.0.0.0         255.255.255.0   U         0 0          0 ens33
+
+//显示建立的tcp连接
+[root@seancheng ~]# netstat -t
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 seancheng:ssh           172.16.12.1:56187       ESTABLISHED
+tcp        0      0 seancheng:ssh           172.16.12.1:53808       ESTABLISHED
+
+//显示udp连接
+[root@seancheng ~]# netstat -u
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+[root@seancheng ~]# 
+
+//显示监听状态的连接
+[root@seancheng ~]# netstat -l
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 0.0.0.0:ssh             0.0.0.0:*               LISTEN
+tcp        0      0 localhost:smtp          0.0.0.0:*               LISTEN
+tcp6       0      0 [::]:ssh                [::]:*                  LISTEN
+tcp6       0      0 localhost:smtp          [::]:*                  LISTEN
+
+//显示监听指定的套接字的进程的进程号及进程名
+[root@seancheng ~]# netstat -p
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 seancheng:ssh           172.16.12.1:56187       ESTABLISHED 2094/sshd: root@pts
+tcp        0      0 seancheng:ssh           172.16.12.1:53808       ESTABLISHED 1077/sshd: root@pts
+
+//显示所有状态的连接
+[root@seancheng ~]# netstat -a
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 0.0.0.0:ssh             0.0.0.0:*               LISTEN
+tcp        0      0 localhost:smtp          0.0.0.0:*               LISTEN
+tcp        0      0 seancheng:ssh           172.16.12.1:56187       ESTABLISHED
+tcp        0      0 seancheng:ssh           172.16.12.1:53808       ESTABLISHED
+tcp6       0      0 [::]:ssh                [::]:*                  LISTEN
+tcp6       0      0 localhost:smtp          [::]:*                  LISTEN
+udp        0      0 0.0.0.0:23511           0.0.0.0:*
+udp        0      0 0.0.0.0:bootpc          0.0.0.0:*
+udp6       0      0 [::]:35299              [::]:* 
+
+
+//常用选项
+    -antlp
+
+[root@seancheng ~]# netstat -antlp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      889/sshd
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1007/master
+tcp        0      0 172.16.12.128:22        172.16.12.1:56187       ESTABLISHED 2094/sshd: root@pts
+tcp        0      0 172.16.12.128:22        172.16.12.1:53808       ESTABLISHED 1077/sshd: root@pts
+tcp6       0      0 :::22                   :::*                    LISTEN      889/sshd
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1007/master
+</code></pre>
+
+<h3 id="toc_21">6.4 ss</h3>
+
+<p><code>ss</code>是一种网络状态查看工具，取代netstat</p>
+
+<pre><code class="language-text">//语法：ss [options] [ FILTER ]
+//常用的options：
+    -t：tcp协议相关
+    -u：udp协议相关
+    -w：裸套接字相关
+    -x：unix套接字相关
+    -l：listen状态的连接
+    -a：所有
+    -n：数字格式
+    -p：相关的程序及pid
+    -e：扩展的信息
+    -m：内存用量
+    -o：显示计时器信息
+                
+//常见的FILTER：
+    FILTER := [ state TCP-STATE ] [ EXPRESSION ]
+    如：ss -tan state ESTABLISHED
+                        
+//常见的state：
+    //tcp finite state machine：有限状态机
+        LISTENING：监听
+        ESTABLISHED：已建立的连接
+        
+    //EXPRESSION：
+        dport =
+        sport =
+        示例：&#39;( dport = :ssh or sport = :ssh)&#39;，此处的ssh也即服务名可以使用其对应的端口号代替，等号两边必须有空格
+        
+
+//常用组合：
+[root@seancheng ~]# ss -tan
+State      Recv-Q Send-Q                Local Address:Port                               Peer Address:Port
+LISTEN     0      128                               *:22                                            *:*
+LISTEN     0      100                       127.0.0.1:25                                            *:*
+ESTAB      0      0                     172.16.12.128:22                                  172.16.12.1:56187
+ESTAB      0      0                     172.16.12.128:22                                  172.16.12.1:53808
+LISTEN     0      128                              :::22                                           :::*
+LISTEN     0      100                             ::1:25                                           :::* 
+
+[root@seancheng ~]# ss -tanl
+State      Recv-Q Send-Q                Local Address:Port                               Peer Address:Port
+LISTEN     0      128                               *:22                                            *:*
+LISTEN     0      100                       127.0.0.1:25                                            *:*
+LISTEN     0      128                              :::22                                           :::*
+LISTEN     0      100                             ::1:25                                           :::* 
+
+[root@seancheng ~]# ss -antlp
+State      Recv-Q Send-Q                Local Address:Port                               Peer Address:Port
+LISTEN     0      128                               *:22                                            *:*                   users:((&quot;sshd&quot;,pid=889,fd=3))
+LISTEN     0      100                       127.0.0.1:25                                            *:*                   users:((&quot;master&quot;,pid=1007,fd=13))
+LISTEN     0      128                              :::22                                           :::*                   users:((&quot;sshd&quot;,pid=889,fd=4))
+LISTEN     0      100                             ::1:25                                           :::*                   users:((&quot;master&quot;,pid=1007,fd=14))
+
+[root@seancheng ~]# ss -anu
+State      Recv-Q Send-Q                Local Address:Port                               Peer Address:Port
+UNCONN     0      0                                 *:23511                                         *:*
+UNCONN     0      0                                 *:68                                            *:*
+UNCONN     0      0                                :::35299                                        :::* 
+
+
+
+//常见端口
+http    80/tcp 
+https   443/tcp 
+ssh     22/tcp 
+ftp     20,21/tcp
+mysql   3306/tcp
+rsync   873/rsync
+redis   6379/tcp
+</code></pre>
+
+<!--### 6.5 网络故障排查
+* 网络故障分为硬件/软件故障
+    * 网卡损坏
+    * 链路故障
+    * 网卡驱动不兼容
+* 网络排查思路
+    * ping本地回环口, 确定本机TCP/IP协议栈是否正常
+    * ping本机IP地址, 确定本地设备以及驱动是否正常
+    * ping同网段主机, 确定二层网络是否正常工作
+    * ping网关地址, 确定本地与网络是否正常
+    * ping公网地址, 确定本地路由是否正常
+    * ping公网域名, 确定DNS客户端是否正常
+* 服务故障排查思路
+    * 使用telnet检测端口是否开放
+    * 检查服务端防火墙以及SElinux
+    * 检查相应的权限是否配置正常
+    * 检查日志是否有异常
+    * 检查完毕后持续测试
+
+>**建议:** 
+所有的排查思路都从OSI七层模型由下往上逐一进行排查(学会看日志)-->
+<p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p>
+<h2 id="toc_22">作业</h2>
+
+<p>1.如何查看系统中每个ip的连接数<br/>
+2.请列出下列服务使用的端口,http,ftp,ssh,telnet,mysql,dns<br/>
+3.如何在虚拟机上新增加一块网卡，并配置IP为172.16.0.10，指定网关为172.16.0.1<br/>
+4.详细描述dns解析过程，以访问www.baidu.com为例<br/>
+5.如何查看系统中运行了多少个进程<br/>
+6.如何查看系统中启动了哪些端口<br/>
+7.如何查看是否开启80端口，及查看sshd进程是否存在<br/>
+8.列出所有处于监听状态的tcp端口<br/>
+9.查看所有的端口信息, 包括 PID 和进程名称</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html"  title="Previous Post: 控制服务和守护进程">&laquo; 控制服务和守护进程</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html" 
+	        title="Next Post: 网络进阶管理">网络进阶管理 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15301749310671.html'/*tpa=http://www.itwangqing.net.cn/15301749310671.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

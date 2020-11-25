@@ -1,0 +1,1358 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  kvm虚拟化 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>kvm虚拟化</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. 虚拟化介绍</a>
+</li>
+<li>
+<a href="#toc_1">2. kvm介绍</a>
+</li>
+<li>
+<a href="#toc_2">3. kvm部署</a>
+<ul>
+<li>
+<a href="#toc_3">3.1 kvm安装</a>
+</li>
+<li>
+<a href="#toc_4">3.2 kvm web管理界面安装</a>
+</li>
+<li>
+<a href="#toc_5">3.3 kvm web界面管理</a>
+<ul>
+<li>
+<a href="#toc_6">3.3.1 kvm连接管理</a>
+</li>
+<li>
+<a href="#toc_7">3.3.2 kvm存储管理</a>
+</li>
+<li>
+<a href="#toc_8">3.3.3 kvm网络管理</a>
+</li>
+<li>
+<a href="#toc_9">3.3.4 实例管理</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_10">4.故障案例</a>
+<ul>
+<li>
+<a href="#toc_11">4.1 案例1</a>
+</li>
+<li>
+<a href="#toc_12">4.2 案例2</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_13">作业</a>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. 虚拟化介绍</h2>
+
+<p>虚拟化是云计算的基础。简单的说，虚拟化使得在一台物理的服务器上可以跑多台虚拟机，虚拟机共享物理机的 CPU、内存、IO 硬件资源，但逻辑上虚拟机之间是相互隔离的。</p>
+
+<p>物理机我们一般称为宿主机（Host），宿主机上面的虚拟机称为客户机（Guest）。</p>
+
+<p>那么 Host 是如何将自己的硬件资源虚拟化，并提供给 Guest 使用的呢？<br/>
+这个主要是通过一个叫做 Hypervisor 的程序实现的。</p>
+
+<p>根据 Hypervisor 的实现方式和所处的位置，虚拟化又分为两种：</p>
+
+<ul>
+<li>全虚拟化</li>
+<li>半虚拟化</li>
+</ul>
+
+<p><strong>全虚拟化：</strong><br/>
+Hypervisor 直接安装在物理机上，多个虚拟机在 Hypervisor 上运行。Hypervisor 实现方式一般是一个特殊定制的 Linux 系统。Xen 和 VMWare 的 ESXi 都属于这个类型<br/>
+<img src="full_virtual.png" tppabs="http://itwangqing.net.cn/full_virtual.png" alt=""/></p>
+
+<p><strong>半虚拟化：</strong><br/>
+物理机上首先安装常规的操作系统，比如 Redhat、Ubuntu 和 Windows。Hypervisor 作为 OS 上的一个程序模块运行，并对管理虚拟机进行管理。KVM、VirtualBox 和 VMWare Workstation 都属于这个类型<br/>
+<img src="half_virtual.png" tppabs="http://itwangqing.net.cn/half_virtual.png" alt=""/></p>
+
+<p><strong>理论上讲：</strong><br/>
+全虚拟化一般对硬件虚拟化功能进行了特别优化，性能上比半虚拟化要高；<br/>
+半虚拟化因为基于普通的操作系统，会比较灵活，比如支持虚拟机嵌套。嵌套意味着可以在KVM虚拟机中再运行KVM。</p>
+
+<h2 id="toc_1">2. kvm介绍</h2>
+
+<p>kVM 全称是 Kernel-Based Virtual Machine。也就是说 KVM 是基于 Linux 内核实现的。<br/>
+KVM有一个内核模块叫 kvm.ko，只用于管理虚拟 CPU 和内存。</p>
+
+<p>那 IO 的虚拟化，比如存储和网络设备则是由 Linux 内核与Qemu来实现。</p>
+
+<p>作为一个 Hypervisor，KVM 本身只关注虚拟机调度和内存管理这两个方面。IO 外设的任务交给 Linux 内核和 Qemu。</p>
+
+<p>大家在网上看 KVM 相关文章的时候肯定经常会看到 Libvirt 这个东西。</p>
+
+<p>Libvirt 就是 KVM 的管理工具。</p>
+
+<p>其实，Libvirt 除了能管理 KVM 这种 Hypervisor，还能管理 Xen，VirtualBox 等。</p>
+
+<p>Libvirt 包含 3 个东西：后台 daemon 程序 libvirtd、API 库和命令行工具 virsh</p>
+
+<ul>
+<li>libvirtd是服务程序，接收和处理 API 请求；</li>
+<li>API 库使得其他人可以开发基于 Libvirt 的高级工具，比如 virt-manager，这是个图形化的 KVM 管理工具；</li>
+<li>virsh 是我们经常要用的 KVM 命令行工具</li>
+</ul>
+
+<h2 id="toc_2">3. kvm部署</h2>
+
+<p><strong>环境说明：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>系统类型</th>
+<th>IP</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>RHEL7</td>
+<td>172.16.12.128</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_3">3.1 kvm安装</h3>
+
+<p>部署前请确保你的CPU虚拟化功能已开启。分为两种情况：</p>
+
+<ul>
+<li>虚拟机要关机设置CPU虚拟化</li>
+<li>物理机要在BIOS里开启CPU虚拟化</li>
+</ul>
+
+<pre><code class="language-text">//关闭防火墙与SELINUX
+[root@kvm ~]# systemctl stop firewalld
+[root@kvm ~]# systemctl disable firewalld
+Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
+Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+[root@kvm ~]# setenforce 0
+[root@kvm ~]# sed -ri &#39;s/^(SELINUX=).*/\1disabled/g&#39; /etc/selinux/config
+[root@localhost ~]# reboot
+
+//配置网络源
+[root@kvm yum.repos.d]# curl -o /etc/yum.repos.d/CentOS7-Base-163.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
+[root@kvm ~]# sed -i &#39;s/\$releasever/7/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+[root@kvm ~]# sed -i &#39;s/^enabled=.*/enabled=1/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+[root@kvm ~]# yum -y install epel-release vim wget net-tools unzip zip gcc gcc-c++
+安装过程略.....
+
+//验证CPU是否支持KVM；如果结果中有vmx（Intel）或svm(AMD)字样，就说明CPU的支持的
+[root@kvm ~]# egrep -o &#39;vmx|svm&#39; /proc/cpuinfo
+vmx
+vmx
+vmx
+vmx
+
+//kvm安装
+[root@kvm ~]# yum -y install qemu-kvm qemu-kvm-tools qemu-img virt-manager libvirt libvirt-python libvirt-client virt-install virt-viewer bridge-utils libguestfs-tools
+安装过程略......
+
+
+//因为虚拟机中网络，我们一般都是和公司的其他服务器是同一个网段，所以我们需要把 \
+KVM服务器的网卡配置成桥接模式。这样的话KVM的虚拟机就可以通过该桥接网卡和公司内部 \
+其他服务器处于同一网段
+//此处我的网卡是ens33，所以用br0来桥接ens33网卡
+[root@kvm ~]# cd /etc/sysconfig/network-scripts/
+[root@kvm network-scripts]# ls
+ifcfg-ens33  ifdown-isdn      ifup          ifup-plip      ifup-tunnel
+ifcfg-lo     ifdown-post      ifup-aliases  ifup-plusb     
+.....此处内容省略
+[root@kvm network-scripts]# cp ifcfg-ens33 ifcfg-br0
+[root@kvm network-scripts]# cat ifcfg-br0
+TYPE=Bridge
+DEVICE=br0
+NM_CONTROLLED=no
+BOOTPROTO=static
+NAME=br0
+ONBOOT=yes
+IPADDR=192.168.160.109
+NETMASK=255.255.255.0
+GATEWAY=192.168.160.1
+DNS1=114.114.114.114
+DNS2=8.8.8.8
+[root@kvm network-scripts]# cat ifcfg-ens33
+TYPE=Ethernet
+BOOTPROTO=static
+NAME=ens33
+DEVICE=ens33
+ONBOOT=yes
+BRIDGE=br0
+NM_CONTROLLED=no
+
+//重启网络
+[root@kvm ~]# systemctl restart network
+[root@kvm ~]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master br0 state UP qlen 1000
+    link/ether 00:0c:29:4c:50:b4 brd ff:ff:ff:ff:ff:ff
+3: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN qlen 1000
+    link/ether 52:54:00:60:a8:ea brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+4: virbr0-nic: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc pfifo_fast master virbr0 state DOWN qlen 1000
+    link/ether 52:54:00:60:a8:ea brd ff:ff:ff:ff:ff:ff
+5: br0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP qlen 1000
+    link/ether 72:63:57:0a:ca:76 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.160.109/24 brd 192.168.160.255 scope global br0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::7063:57ff:fe0a:ca76/64 scope link
+       valid_lft forever preferred_lft forever
+       
+
+//启动服务
+[root@kvm ~]# systemctl start libvirtd
+[root@kvm ~]# systemctl enable libvirtd
+
+//验证安装结果
+[root@kvm ~]# lsmod|grep kvm
+kvm_intel             170086  0
+kvm                   566340  1 kvm_intel
+irqbypass              13503  1 kvm
+
+//测试并验证安装结果
+[root@kvm ~]# virsh -c qemu:///system list
+ Id    Name                           State
+----------------------------------------------------
+[root@kvm ~]# virsh --version
+3.9.0
+[root@kvm ~]# virt-install --version
+1.4.3
+[root@kvm ~]# ln -s /usr/libexec/qemu-kvm /usr/bin/qemu-kvm
+[root@kvm ~]# ll /usr/bin/qemu-kvm
+lrwxrwxrwx 1 root root 21 Oct 18 10:57 /usr/bin/qemu-kvm -&gt; /usr/libexec/qemu-kvm
+[root@kvm ~]# lsmod |grep kvm
+kvm_intel             170086  0
+kvm                   566340  1 kvm_intel
+irqbypass              13503  1 kvm
+
+//查看网桥信息
+[root@kvm ~]# brctl show
+bridge name     bridge id               STP enabled     interfaces
+br0             8000.000c294c50b4       no              ens33
+virbr0          8000.52540060a8ea       yes             virbr0-nic
+</code></pre>
+
+<h3 id="toc_4">3.2 kvm web管理界面安装</h3>
+
+<p>kvm 的 web 管理界面是由 webvirtmgr 程序提供的。</p>
+
+<pre><code class="language-text">//安装依赖包
+[root@kvm ~]# yum -y install git python-pip libvirt-python libxml2-python python-websockify supervisor nginx python-devel
+
+//升级pip
+[root@kvm ~]# pip install --upgrade pip
+
+
+//从github上下载webvirtmgr代码
+[root@kvm ~]# cd /usr/local/src/
+[root@kvm src]# git clone git://github.com/retspen/webvirtmgr.git
+Cloning into &#39;webvirtmgr&#39;...
+remote: Enumerating objects: 5730, done.
+remote: Total 5730 (delta 0), reused 0 (delta 0), pack-reused 5730
+Receiving objects: 100% (5730/5730), 3.01 MiB | 39.00 KiB/s, done.
+Resolving deltas: 100% (3688/3688), done.
+
+//安装webvirtmgr
+[root@kvm src]# cd webvirtmgr/
+[root@kvm webvirtmgr]# pip install -r requirements.txt
+Collecting django==1.5.5 (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/38/49/93511c5d3367b6b21fc2995a0e53399721afc15e4cd6eb57be879ae13ad4/Django-1.5.5.tar.gz (8.1MB)
+    57% |██████████████████▌             | 4.7MB 38kB/s eta 0:01:28 
+.....此处省略安装步骤
+
+//检查sqlite3是否安装
+[root@kvm webvirtmgr]# python
+Python 2.7.5 (default, May  3 2017, 07:55:04)
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-14)] on linux2
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import sqlite3
+&gt;&gt;&gt; exit()
+
+//初始化帐号信息
+[root@kvm webvirtmgr]# python manage.py syncdb
+WARNING:root:No local_settings file found.
+Creating tables ...
+Creating table auth_permission
+Creating table auth_group_permissions
+Creating table auth_group
+Creating table auth_user_groups
+Creating table auth_user_user_permissions
+Creating table auth_user
+Creating table django_content_type
+Creating table django_session
+Creating table django_site
+Creating table servers_compute
+Creating table instance_instance
+Creating table create_flavor
+
+You just installed Django&#39;s auth system, which means you don&#39;t have any superusers defined.
+Would you like to create one now? (yes/no): yes     //问你是否创建超级管理员帐号
+Username (leave blank to use &#39;root&#39;):   //指定超级管理员帐号用户名，默认留空为root
+Email address: sean1002@126.com     //设置超级管理员邮箱
+Password:       //设置超级管理员密码
+Password (again):       //再次输入超级管理员密码
+Superuser created successfully.
+Installing custom SQL ...
+Installing indexes ...
+Installed 6 object(s) from 1 fixture(s)
+
+
+//拷贝web网页至指定目录
+[root@kvm webvirtmgr]# mkdir /var/www
+[root@kvm webvirtmgr]# cp -r /usr/local/src/webvirtmgr /var/www/
+[root@kvm webvirtmgr]# chown -R nginx.nginx /var/www/webvirtmgr/
+
+//生成密钥
+[root@kvm ~]# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Created directory &#39;/root/.ssh&#39;.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:CQoZtso2M5Uo39lKvjZboncqakQ69iJt5wnjiJKZNhw root@kvm
+The key&#39;s randomart image is:
++---[RSA 2048]----+
+|  o              |
+| ..+.            |
+|..+o  .          |
+|o+.o + . .       |
+|+*. = . S        |
+|+E+o .           |
+|+*= + .          |
+|BO+===.          |
+|Oo=**=           |
++----[SHA256]-----+
+//由于这里webvirtmgr和kvm服务部署在同一台机器，所以这里本地信任。如果kvm部署在其他机器，那么这个是它的ip
+[root@kvm ~]# ssh-copy-id 192.168.160.109
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: &quot;/root/.ssh/id_rsa.pub&quot;
+The authenticity of host &#39;192.168.160.109 (192.168.160.109)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:UszC1ZeHM7xw/uefVkJoXW6XgRw+Jl51tAXLjFERclE.
+ECDSA key fingerprint is MD5:b3:f1:02:b8:01:8e:53:a7:87:09:c0:75:24:4c:ad:88.
+Are you sure you want to continue connecting (yes/no)? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@192.168.160.109&#39;s password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   &quot;ssh &#39;192.168.160.109&#39;&quot;
+and check to make sure that only the key(s) you wanted were added.
+//配置端口转发
+[root@kvm ~]# ssh 192.168.160.109 -L localhost:8000:localhost:8000 -L localhost:6080:localhost:60
+Last login: Thu Oct 18 08:26:40 2018 from 192.168.160.36
+[root@kvm ~]# ss -antl
+State       Recv-Q Send-Q Local Address:Port               Peer Address:Port
+LISTEN      0      128              *:111                          *:*
+LISTEN      0      5      192.168.122.1:53                           *:*
+LISTEN      0      128              *:22                           *:*
+LISTEN      0      100      127.0.0.1:25                           *:*
+LISTEN      0      128      127.0.0.1:6080                         *:*
+LISTEN      0      128      127.0.0.1:8000                         *:*
+LISTEN      0      128             :::111                         :::*
+LISTEN      0      128             :::22                          :::*
+LISTEN      0      100            ::1:25                          :::*
+LISTEN      0      128            ::1:6080                        :::*
+LISTEN      0      128            ::1:8000                        :::* 
+
+
+
+
+//配置nginx
+[root@kvm ~]# vim /etc/nginx/nginx.conf
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;
+                      &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;
+                      &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 2048;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+            root html;
+            index index.html index.htm;
+        }
+
+        error_page 404 /404.html;
+            location = /40x.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+            location = /50x.html {
+        }
+    }
+}
+
+
+[root@kvm ~]# vim /etc/nginx/conf.d/webvirtmgr.conf
+server {
+    listen 80 default_server;
+
+    server_name $hostname;
+    #access_log /var/log/nginx/webvirtmgr_access_log;
+
+    location /static/ {
+        root /var/www/webvirtmgr/webvirtmgr;
+        expires max;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-for $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host:$server_port;
+        proxy_set_header X-Forwarded-Proto $remote_addr;
+        proxy_connect_timeout 600;
+        proxy_read_timeout 600;
+        proxy_send_timeout 600;
+        client_max_body_size 1024M;
+    }
+}
+
+//确保bind绑定的是本机的8000端口
+[root@kvm ~]# vim /var/www/webvirtmgr/conf/gunicorn.conf.py
+.....此处省略N行
+bind = &#39;0.0.0.0:8000&#39;     //确保此处绑定的是本机的8000端口，这个在nginx配置中定义了，被代理的端口
+backlog = 2048
+.....此处省略N行
+
+//重启nginx
+[root@kvm ~]# systemctl restart nginx
+[root@kvm ~]# ss -antl
+State       Recv-Q Send-Q Local Address:Port               Peer Address:Port
+LISTEN      0      128              *:111                          *:*
+LISTEN      0      128              *:80                           *:*
+LISTEN      0      5      192.168.122.1:53                           *:*
+LISTEN      0      128              *:22                           *:*
+LISTEN      0      100      127.0.0.1:25                           *:*
+LISTEN      0      128      127.0.0.1:6080                         *:*
+LISTEN      0      128      127.0.0.1:8000                         *:*
+LISTEN      0      128             :::111                         :::*
+LISTEN      0      128             :::22                          :::*
+LISTEN      0      100            ::1:25                          :::*
+LISTEN      0      128            ::1:6080                        :::*
+LISTEN      0      128            ::1:8000                        :::*
+
+
+
+//设置supervisor
+[root@kvm ~]# vim /etc/supervisord.conf
+.....此处省略上面的内容，在文件最后加上以下内容
+[program:webvirtmgr]
+command=/usr/bin/python2 /var/www/webvirtmgr/manage.py run_gunicorn -c /var/www/webvirtmgr/conf/gunicorn.conf.py
+directory=/var/www/webvirtmgr
+autostart=true
+autorestart=true
+logfile=/var/log/supervisor/webvirtmgr.log
+log_stderr=true
+user=nginx
+
+[program:webvirtmgr-console]
+command=/usr/bin/python2 /var/www/webvirtmgr/console/webvirtmgr-console
+directory=/var/www/webvirtmgr
+autostart=true
+autorestart=true
+stdout_logfile=/var/log/supervisor/webvirtmgr-console.log
+redirect_stderr=true
+user=nginx
+
+
+
+//启动supervisor并设置开机自启
+[root@kvm ~]# systemctl start supervisord
+[root@kvm ~]# systemctl enable supervisord
+Created symlink from /etc/systemd/system/multi-user.target.wants/supervisord.service to /usr/lib/systemd/system/supervisord.service.
+[root@kvm ~]# systemctl status supervisord
+● supervisord.service - Process Monitoring and Control Daemon
+   Loaded: loaded (/usr/lib/systemd/system/supervisord.service; enabled; vendor preset: disabled)
+   Active: active (running) since Thu 2018-10-18 11:59:33 CST; 25s ago
+ Main PID: 17918 (supervisord)
+   CGroup: /system.slice/supervisord.service
+           └─17918 /usr/bin/python /usr/bin/supervisord -c /etc/supervisord.conf
+
+Oct 18 11:59:33 kvm systemd[1]: Starting Process Monitoring and Control Daemon...
+Oct 18 11:59:33 kvm systemd[1]: Started Process Monitoring and Control Daemon.
+
+[root@kvm webvirtmgr]# ss -antl
+State       Recv-Q Send-Q Local Address:Port               Peer Address:Port
+LISTEN      0      128              *:111                          *:*
+LISTEN      0      128              *:80                           *:*
+LISTEN      0      5      192.168.122.1:53                           *:*
+LISTEN      0      128              *:22                           *:*
+LISTEN      0      100      127.0.0.1:25                           *:*
+LISTEN      0      128              *:8000                         *:*
+LISTEN      0      100              *:6080                         *:*
+LISTEN      0      128             :::111                         :::*
+LISTEN      0      128             :::22                          :::*
+LISTEN      0      100            ::1:25                          :::*
+
+//配置nginx用户
+[root@kvm home]# su - nginx -s /bin/bash
+-bash-4.2$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/var/lib/nginx/.ssh/id_rsa):
+Created directory &#39;/var/lib/nginx/.ssh&#39;.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /var/lib/nginx/.ssh/id_rsa.
+Your public key has been saved in /var/lib/nginx/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:rdbmW/YIXxAJBzPsd9q9eKHPjWtSZ5EQC5li3tkczYI nginx@localhost.localdomain
+The key&#39;s randomart image is:
++---[RSA 2048]----+
+|         .=o=.+  |
+|         o.E.=.o |
+|        o.o *.+ .|
+|         o.o.+.o |
+|        S ...+ ..|
+|         o  ..o.+|
+|        o + o.+oo|
+|       . o =.*o+.|
+|          o.oo*+.|
++----[SHA256]-----+
+
+-bash-4.2$ touch ~/.ssh/config &amp;&amp; echo -e &quot;StrictHostKeyChecking=no\nUserKnownHostsFile=/dev/null&quot; &gt;&gt; ~/.ssh/config
+-bash-4.2$ chmod 0600 ~/.ssh/config
+
+-bash-4.2$ ssh-copy-id root@192.168.160.109
+/bin/ssh-copy-id: INFO: Source of key(s) to be installed: &quot;/var/lib/nginx/.ssh/id_rsa.pub&quot;
+/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+Warning: Permanently added &#39;192.168.160.109&#39; (ECDSA) to the list of known hosts.
+root@192.168.160.109&#39;s password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   &quot;ssh &#39;root@192.168.160.109&#39;&quot;
+and check to make sure that only the key(s) you wanted were added.
+
+-bash-4.2$ exit
+logout
+
+[root@kvm ~]# vim /etc/polkit-1/localauthority/50-local.d/50-libvirt-remote-access.pkla
+[Remote libvirt SSH access]
+Identity=unix-user:root
+Action=org.libvirt.unix.manage
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+
+[root@kvm ~]# chown -R root.root /etc/polkit-1/localauthority/50-local.d/50-libvirt-remote-access.pkla
+[root@kvm ~]# systemctl restart nginx
+[root@kvm ~]# systemctl restart libvirtd
+</code></pre>
+
+<h3 id="toc_5">3.3 kvm web界面管理</h3>
+
+<p>通过ip地址在浏览器上访问kvm，例如我这里就是：<code>http://192.168.160.109/login</code><br/>
+<img src="kvm_index1.png" tppabs="http://itwangqing.net.cn/kvm_index1.png" alt=""/></p>
+
+<h4 id="toc_6">3.3.1 kvm连接管理</h4>
+
+<p><strong>创建SSH连接：</strong><br/>
+<img src="kvm_connection.png" tppabs="http://itwangqing.net.cn/kvm_connection.png" alt=""/><br/>
+<img src="kvm_ssh_connect.png" tppabs="http://itwangqing.net.cn/kvm_ssh_connect.png" alt=""/><br/>
+<img src="kvm_ip.png" tppabs="http://itwangqing.net.cn/kvm_ip.png" alt=""/></p>
+
+<h4 id="toc_7">3.3.2 kvm存储管理</h4>
+
+<p><strong>创建存储：</strong><br/>
+<img src="kvm_storage.png" tppabs="http://itwangqing.net.cn/kvm_storage.png" alt=""/><br/>
+<img src="kvm_storage_create.png" tppabs="http://itwangqing.net.cn/kvm_storage_create.png" alt=""/></p>
+
+<p><strong>进入存储：</strong><br/>
+<img src="kvm_into_storage.png" tppabs="http://itwangqing.net.cn/kvm_into_storage.png" alt=""/><br/>
+<img src="kvm_storage_detail.png" tppabs="http://itwangqing.net.cn/kvm_storage_detail.png" alt=""/></p>
+
+<p><strong>通过远程连接软件上传ISO镜像文件至存储目录/var/lib/libvirt/images/</strong></p>
+
+<pre><code class="language-text">[root@kvm ~]# cd /var/lib/libvirt/images/
+[root@kvm images]# ls
+[root@kvm images]#
+
+Upload SCP
+CentOS-7-x86_64-DVD-1804.iso          (4263.00 MB, 8:45 min = 8.12 MB/sec)
+
+
+[root@kvm images]# ls
+CentOS-7-x86_64-DVD-1804.iso
+</code></pre>
+
+<p><strong>在 web 界面查看ISO镜像是否存在</strong><br/>
+<img src="kvm_show_storage.png" tppabs="http://itwangqing.net.cn/kvm_show_storage.png" alt=""/></p>
+
+<p><strong>创建系统安装镜像</strong><br/>
+<img src="kvm_img_add.png" tppabs="http://itwangqing.net.cn/kvm_img_add.png" alt=""/><br/>
+<img src="kvm_img_add1.png" tppabs="http://itwangqing.net.cn/kvm_img_add1.png" alt=""/></p>
+
+<p><strong>添加成功如下图所示</strong><br/>
+<img src="kvm_img_add2.png" tppabs="http://itwangqing.net.cn/kvm_img_add2.png" alt=""/></p>
+
+<h4 id="toc_8">3.3.3 kvm网络管理</h4>
+
+<p><strong>添加桥接网络</strong><br/>
+<img src="kvm_network_add.png" tppabs="http://itwangqing.net.cn/kvm_network_add.png" alt=""/><br/>
+<img src="kvm_network_create_bridge1.png" tppabs="http://itwangqing.net.cn/kvm_network_create_bridge1.png" alt=""/><br/>
+<img src="kvm_network_show.png" tppabs="http://itwangqing.net.cn/kvm_network_show.png" alt=""/></p>
+
+<h4 id="toc_9">3.3.4 实例管理</h4>
+
+<p><strong>实例(虚拟机)创建</strong><br/>
+<img src="kvm_instance_add.png" tppabs="http://itwangqing.net.cn/kvm_instance_add.png" alt=""/><br/>
+<img src="kvm_instance_custom.png" tppabs="http://itwangqing.net.cn/kvm_instance_custom.png" alt=""/><br/>
+<img src="kvm_instance_config.png" tppabs="http://itwangqing.net.cn/kvm_instance_config.png" alt=""/></p>
+
+<p><strong>虚拟机插入光盘</strong><br/>
+<img src="kvm_instance_cdrom.png" tppabs="http://itwangqing.net.cn/kvm_instance_cdrom.png" alt=""/></p>
+
+<p><strong>设置在 web 上访问虚拟机的密码</strong><br/>
+<img src="kvm_console_setpasswd.png" tppabs="http://itwangqing.net.cn/kvm_console_setpasswd.png" alt=""/></p>
+
+<p><strong>启动虚拟机</strong><br/>
+<img src="kvm_instance_start.png" tppabs="http://itwangqing.net.cn/kvm_instance_start.png" alt=""/><br/>
+<img src="kvm_virtualhost_start.png" tppabs="http://itwangqing.net.cn/kvm_virtualhost_start.png" alt=""/></p>
+
+<p><strong>虚拟机安装</strong><br/>
+<img src="kvm_virtualhost_install.png" tppabs="http://itwangqing.net.cn/kvm_virtualhost_install.png" alt=""/><br/>
+虚拟机安装步骤就是安装系统的步骤，此处就不再赘述</p>
+
+<h2 id="toc_10">4.故障案例</h2>
+
+<h3 id="toc_11">4.1 案例1</h3>
+
+<p>web界面配置完成后可能会出现以下错误界面<br/>
+<img src="15523585024461.jpg" tppabs="http://itwangqing.net.cn/15523585024461.jpg" alt="" style="width:1166px;"/><br/>
+解决方法是安装novnc并通过novnc_server启动一个vnc</p>
+
+<pre><code class="language-text">[root@localhost ~]# ll /etc/rc.local
+lrwxrwxrwx. 1 root root 13 Aug  6  2018 /etc/rc.local -&gt; rc.d/rc.local
+[root@localhost ~]# ll /etc/rc.d/rc.local
+-rw-r--r-- 1 root root 513 Mar 11 22:35 /etc/rc.d/rc.local
+[root@localhost ~]# chmod +x /etc/rc.d/rc.local
+[root@localhost ~]# ll /etc/rc.d/rc.local
+-rwxr-xr-x 1 root root 513 Mar 11 22:35 /etc/rc.d/rc.local
+
+[root@localhost ~]# vim /etc/rc.d/rc.local
+......此处省略N行
+# that this script will be executed during boot.
+
+touch /var/lock/subsys/local
+nohup novnc_server 172.16.12.128:5920 &amp;
+
+[root@localhost ~]# . /etc/rc.d/rc.local
+</code></pre>
+
+<p>做完以上操作后再次访问即可正常访问<br/>
+<img src="15523588093971.jpg" tppabs="http://itwangqing.net.cn/15523588093971.jpg" alt="" style="width:1062px;"/></p>
+
+<h3 id="toc_12">4.2 案例2</h3>
+
+<p>第一次通过web访问kvm时可能会一直访问不了，一直转圈，而命令行界面一直报错(too many open files)</p>
+
+<p>此时需要对nginx进行配置</p>
+
+<pre><code class="language-text">[root@localhost ~]# vim /etc/nginx/nginx.conf
+....此处省略N行
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+worker_rlimit_nofile 655350;    //添加此行配置
+
+# Load dynamic modules. See /usr/share/nginx/README.dynamic.
+....此处省略N行
+
+[root@localhost ~]# systemctl restart nginx
+</code></pre>
+
+<p>然后对系统参数进行设置</p>
+
+<pre><code class="language-text">[root@localhost ~]# vim /etc/security/limits.conf
+....此处省略N行
+# End of file
+* soft nofile 655350
+* hard nofile 655350
+</code></pre>
+
+<p>到此问题即可解决</p>
+
+<h2 id="toc_13">作业</h2>
+
+<p>写博客，将kvm的详细部署经过写成博客，部署过程中如遇到问题也要写进博客，并说明如何解决的</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html"  title="Previous Post: vim练习">&laquo; vim练习</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html" 
+	        title="Next Post: 03 SaltStack之数据系统">03 SaltStack之数据系统 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15397735724181.html'/*tpa=http://www.itwangqing.net.cn/15397735724181.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

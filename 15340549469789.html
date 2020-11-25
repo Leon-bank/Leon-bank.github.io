@@ -1,0 +1,1884 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  mysql基础 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>mysql基础</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. 关系型数据库介绍</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 数据结构模型</a>
+</li>
+<li>
+<a href="#toc_2">1.2 RDBMS专业名词</a>
+</li>
+<li>
+<a href="#toc_3">1.3 关系型数据库的常见组件</a>
+</li>
+<li>
+<a href="#toc_4">1.4 SQL语句</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_5">2. mysql安装与配置</a>
+<ul>
+<li>
+<a href="#toc_6">2.1 mysql安装</a>
+</li>
+<li>
+<a href="#toc_7">2.2 mysql配置</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_8">3. mysql的程序组成</a>
+<ul>
+<li>
+<a href="#toc_9">3.1 mysql工具使用</a>
+</li>
+<li>
+<a href="#toc_10">3.2 服务器监听的两种socket地址</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_11">4. mysql数据库操作</a>
+<ul>
+<li>
+<a href="#toc_12">4.1 DDL操作</a>
+<ul>
+<li>
+<a href="#toc_13">4.1.1 数据库操作</a>
+</li>
+<li>
+<a href="#toc_14">4.1.2 表操作</a>
+</li>
+<li>
+<a href="#toc_15">4.1.3 用户操作</a>
+</li>
+<li>
+<a href="#toc_16">4.1.4 查看命令SHOW</a>
+</li>
+<li>
+<a href="#toc_17">4.1.5 获取帮助</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_18">4.2 DML操作</a>
+<ul>
+<li>
+<a href="#toc_19">4.2.1 INSERT语句</a>
+</li>
+<li>
+<a href="#toc_20">4.2.2 SELECT语句</a>
+</li>
+<li>
+<a href="#toc_21">4.2.3 update语句</a>
+</li>
+<li>
+<a href="#toc_22">4.2.4 delete语句</a>
+</li>
+<li>
+<a href="#toc_23">4.2.5 truncate语句</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_24">4.3 DCL操作</a>
+<ul>
+<li>
+<a href="#toc_25">4.3.1 创建授权grant</a>
+</li>
+<li>
+<a href="#toc_26">4.3.2 查看授权</a>
+</li>
+<li>
+<a href="#toc_27">4.3.3 取消授权REVOKE</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_28">作业</a>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. 关系型数据库介绍</h2>
+
+<h3 id="toc_1">1.1 数据结构模型</h3>
+
+<p>数据结构模型主要有：</p>
+
+<ul>
+<li>层次模型</li>
+<li>网状结构</li>
+<li>关系模型</li>
+</ul>
+
+<p>关系模型：<br/>
+二维关系：row，column</p>
+
+<p>数据库管理系统：DBMS<br/>
+关系：Relational，RDBMS</p>
+
+<h3 id="toc_2">1.2 RDBMS专业名词</h3>
+
+<p><strong>常见的关系型数据库管理系统：</strong></p>
+
+<ul>
+<li>MySQL：MySQL，MariaDB，Percona-Server</li>
+<li>PostgreSQL：简称为pgsql</li>
+<li>Oracle</li>
+<li>MSSQL</li>
+</ul>
+
+<!--**事务**：多个操作被当作一个整体对待就称为一个事务
+要看一个关系型数据库是否支持事务，需要看其是否支持并满足ACID测试
+ACID：ACID是事务的一个基本标准
+
+* A：Automicity，原子性
+* C：Consistency，一致性
+* I：Isolation，隔离性
+* D：Durability，持久性
+
+如果你对ACID感兴趣，可以查看[这里](https://baike.baidu.com/item/acid/10738)了解详细说明，ACID将不作为我们讲解的重点。-->
+
+<p><strong>SQL：</strong>Structure Query Language，结构化查询语言</p>
+
+<p><strong>约束：</strong>constraint，向数据表提供的数据要遵守的限制</p>
+
+<ul>
+<li>主键约束：一个或多个字段的组合，填入的数据必须能在本表中唯一标识本行。且必须提供数据，不能为空（NOT NULL）。
+<ul>
+<li>一个表只能存在一个</li>
+</ul></li>
+<li>惟一键约束：一个或多个字段的组合，填入的数据必须能在本表中唯一标识本行。允许为空（NULL）
+<ul>
+<li>一个表可以存在多个</li>
+</ul></li>
+<li>外键约束：一个表中的某字段可填入数据取决于另一个表的主键已有的数据</li>
+<li>检查性约束</li>
+</ul>
+
+<p><strong>索引：</strong>将表中的一个或多个字段中的数据复制一份另存，并且这些数据需要按特定次序排序存储</p>
+
+<!--**关系运算：**
+
+* 选择：挑选出符合条件的行（部分行）
+* 投影：挑选出需要的字段
+* 连接
+
+**数据抽象方式：**
+
+* 物理层：决定数据的存储格式，即RDBMS在磁盘上如何组织文件
+* 逻辑层：描述DB存储什么数据，以及数据间存在什么样的关系
+* 视图层：描述DB中的部分数据-->
+
+<h3 id="toc_3">1.3 关系型数据库的常见组件</h3>
+
+<p>关系型数据库的常见组件有：</p>
+
+<ul>
+<li>数据库：database</li>
+<li>表：table，由行（row）和列（column）组成</li>
+<li>索引：index</li>
+<li>视图：view</li>
+<li>用户：user</li>
+<li>权限：privilege</li>
+<li>存储过程：procedure</li>
+<li>存储函数：function</li>
+<li>触发器：trigger</li>
+<li>事件调度器：event scheduler</li>
+</ul>
+
+<h3 id="toc_4">1.4 SQL语句</h3>
+
+<p>SQL语句有三种类型：</p>
+
+<ul>
+<li>DDL：Data Defination Language，数据定义语言</li>
+<li>DML：Data Manipulation Language，数据操纵语言</li>
+<li>DCL：Data Control Language，数据控制语言</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">SQL语句类型</th>
+<th>对应操作</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">DDL</td>
+<td>CREATE：创建<br>DROP：删除<br>ALTER：修改</td>
+</tr>
+<tr>
+<td style="text-align: center">DML</td>
+<td>INSERT：向表中插入数据<br>DELETE：删除表中数据<br>UPDATE：更新表中数据<br>SELECT：查询表中数据</td>
+</tr>
+<tr>
+<td style="text-align: center">DCL</td>
+<td>GRANT：授权<br>REVOKE：移除授权</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_5">2. mysql安装与配置</h2>
+
+<h3 id="toc_6">2.1 mysql安装</h3>
+
+<p>mysql安装方式有三种：</p>
+
+<ul>
+<li>源代码：编译安装</li>
+<li>二进制格式的程序包：展开至特定路径，并经过简单配置后即可使用</li>
+<li>程序包管理器管理的程序包：
+<ul>
+<li>rpm：有两种
+<ul>
+<li>OS Vendor：操作系统发行商提供的</li>
+<li>项目官方提供的</li>
+</ul></li>
+<li>deb</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-text">#配置mysql的yum源
+wget -O /usr/src/mysql57-community-release-el7-10.noarch.rpm \
+http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+rpm -Uvh /usr/src/mysql57-community-release-el7-10.noarch.rpm
+
+#安装mysql5.7
+yum -y install mysql-community-server mysql-community-client  \
+mysql-community-common mysql-community-devel
+</code></pre>
+
+<h3 id="toc_7">2.2 mysql配置</h3>
+
+<pre><code class="language-text">#启动mysql并设置开机自动启动
+systemctl enable --now mysqld
+systemctl status mysqld
+
+#确保3306端口已经监听起来
+ss -antl
+
+#在日志文件中找出临时密码
+grep &quot;password&quot; /var/log/mysqld.log
+
+#使用获取到的临时密码登录mysql
+[root@localhost ~]# mysql -uroot -p
+Enter password:     //此处输入密码，可以直接复制你的密码粘贴至此处，也可手动输入
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.23
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+mysql&gt;          //看到有这样的标识符则表示成功登录了
+
+
+
+
+
+//修改mysql登录密码
+mysql&gt; set global validate_password_policy=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; set global validate_password_length=1;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;wangqing123!&#39;;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; quit
+Bye
+
+
+
+//为避免mysql自动升级，这里需要卸载最开始安装的yum源
+rpm -e mysql57-community-release
+</code></pre>
+
+<h2 id="toc_8">3. mysql的程序组成</h2>
+
+<ul>
+<li>客户端
+<ul>
+<li>mysql：CLI交互式客户端程序</li>
+<li>mysql_secure_installation：安全初始化，强烈建议安装完以后执行此命令</li>
+<li>mysqldump：mysql备份工具</li>
+<li>mysqladmin</li>
+</ul></li>
+<li>服务器端
+<ul>
+<li>mysqld</li>
+</ul></li>
+</ul>
+
+<h3 id="toc_9">3.1 mysql工具使用</h3>
+
+<pre><code class="language-text">//语法：mysql [OPTIONS] [database]
+//常用的OPTIONS：
+    -uUSERNAME      //指定用户名，默认为root
+    -hHOST          //指定服务器主机，默认为localhost，推荐使用ip地址
+    -pPASSWORD      //指定用户的密码
+    -P#             //指定数据库监听的端口，这里的#需用实际的端口号代替，如-P3307
+    -V              //查看当前使用的mysql版本
+    -e          //不登录mysql执行sql语句后退出，常用于脚本
+    
+
+[root@localhost ~]# mysql -V
+mysql  Ver 14.14 Distrib 5.7.23, for Linux (x86_64) using  EditLine wrapper
+
+
+
+[root@localhost ~]# mysql -uroot -pwangqing123! -h127.0.0.1
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.23 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+mysql&gt; 
+
+//注意，不推荐直接在命令行里直接用-pPASSWORD的方式登录，而是使用-p选项，然后交互式输入密码
+[root@localhost ~]# mysql -uroot -p -h127.0.0.1
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 5
+Server version: 5.7.23 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+mysql&gt; 
+
+
+[root@localhost ~]# mysql -uroot -p -h 127.0.0.1 -e &#39;SHOW DATABASES;&#39;
+Enter password:
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wangqingge         |
++--------------------+
+</code></pre>
+
+<h3 id="toc_10">3.2 服务器监听的两种socket地址</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">socket类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">ip socket</td>
+<td>默认监听在tcp的3306端口，支持远程通信</td>
+</tr>
+<tr>
+<td style="text-align: center">unix sock</td>
+<td>监听在sock文件上（/tmp/mysql.sock，/var/lib/mysql/mysql.sock）<br>仅支持本地通信<br>server地址只能是：localhost，127.0.0.1</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_11">4. mysql数据库操作</h2>
+
+<h3 id="toc_12">4.1 DDL操作</h3>
+
+<h4 id="toc_13">4.1.1 数据库操作</h4>
+
+<pre><code class="language-text">//创建数据库
+//语法：CREATE DATABASE [IF NOT EXISTS] &#39;DB_NAME&#39;;
+//创建数据库wangqingge
+mysql&gt; CREATE DATABASE IF NOT EXISTS wangqingge;
+Query OK, 1 row affected (0.00 sec)
+
+//查看当前实例有哪些数据库
+mysql&gt; SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wangqingge         |
++--------------------+
+5 rows in set (0.00 sec)
+
+//删除数据库
+//语法：DROP DATABASE [IF EXISTS] &#39;DB_NAME&#39;;
+//删除数据库wangqingge
+mysql&gt; DROP DATABASE IF EXISTS wangqingge;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+
+<h4 id="toc_14">4.1.2 表操作</h4>
+
+<pre><code class="language-text">//创建表
+//语法：CREATE TABLE table_name (col1 datatype 修饰符,col2 datatype 修饰符) ENGINE=&#39;存储引擎类型&#39;;
+//在数据库wangqingge里创建表wangqing
+mysql&gt; CREATE DATABASE wangqingge;      //创建数据库wangqingge
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; use wangqingge;      //进入wangqingge数据库
+Database changed
+mysql&gt; CREATE TABLE wangqing (id int NOT NULL,name VARCHAR(100) NOT NULL,age tinyint);      //创建wangqing表
+Query OK, 0 rows affected (0.09 sec)
+
+
+//查看当前数据库有哪些表
+mysql&gt; SHOW TABLES;
++----------------------+
+| Tables_in_wangqingge |
++----------------------+
+| wangqing             |
++----------------------+
+1 row in set (0.00 sec)
+
+
+//删除表
+//语法：DROP TABLE [ IF EXISTS ] &#39;table_name&#39;;
+//删除表wangqing
+mysql&gt; DROP TABLE wangqing;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; SHOW TABLES;
+Empty set (0.00 sec)
+</code></pre>
+
+<h4 id="toc_15">4.1.3 用户操作</h4>
+
+<blockquote>
+<p>mysql用户帐号由两部分组成，如&#39;USERNAME&#39;@&#39;HOST&#39;，表示此USERNAME只能从此HOST上远程登录</p>
+</blockquote>
+
+<p>这里（&#39;USERNAME&#39;@&#39;HOST&#39;）的HOST用于限制此用户可通过哪些主机远程连接mysql程序，其值可为：</p>
+
+<ul>
+<li>IP地址，如：172.16.12.129</li>
+<li>通配符
+<ul>
+<li>%：匹配任意长度的任意字符，常用于设置允许从任何主机登录</li>
+<li>_：匹配任意单个字符</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-text">//数据库用户创建
+//语法：CREATE USER &#39;username&#39;@&#39;host&#39; [IDENTIFIED BY &#39;password&#39;];
+//创建数据库用户wangqing
+mysql&gt; CREATE USER &#39;wangqing&#39;@&#39;127.0.0.1&#39; IDENTIFIED BY &#39;wangqing123!&#39;;
+Query OK, 0 rows affected (0.00 sec)
+
+//使用新创建的用户和密码登录
+[root@localhost ~]# mysql -uwangqing -pwangqing123! -h127.0.0.1
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.7.23 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+mysql&gt; 
+
+//删除数据库用户
+//语法：DROP USER &#39;username&#39;@&#39;host&#39;; 
+mysql&gt; DROP USER &#39;wangqing&#39;@&#39;127.0.0.1&#39;;
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+
+<h4 id="toc_16">4.1.4 查看命令SHOW</h4>
+
+<pre><code class="language-text">mysql&gt; SHOW CHARACTER SET;      //查看支持的所有字符集
++----------+---------------------------------+---------------------+--------+
+| Charset  | Description                     | Default collation   | Maxlen |
++----------+---------------------------------+---------------------+--------+
+| big5     | Big5 Traditional Chinese        | big5_chinese_ci     |      2 |
+| dec8     | DEC West European               | dec8_swedish_ci     |      1 |
+| cp850    | DOS West European               | cp850_general_ci    |      1 |
+| hp8      | HP West European                | hp8_english_ci      |      1 |
+| koi8r    | KOI8-R Relcom Russian           | koi8r_general_ci    |      1 |
+| latin1   | cp1252 West European            | latin1_swedish_ci   |      1 | 
+......
+......
+
+
+
+mysql&gt; SHOW ENGINES;        //查看当前数据库支持的所有存储引擎
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| Engine             | Support | Comment
+                 | Transactions | XA   | Savepoints |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| InnoDB             | DEFAULT | Supports transactions, row-level locking, and
+foreign keys     | YES          | YES  | YES        |
+| MRG_MYISAM         | YES     | Collection of identical MyISAM tables
+                 | NO           | NO   | NO         |
+| MEMORY             | YES     | Hash based, stored in memory, useful for temporary tables      | NO           | NO   | NO         |
+| BLACKHOLE          | YES     | /dev/null storage engine (anything you write to it disappears) | NO           | NO   | NO         |
+| MyISAM             | YES     | MyISAM storage engine                                          | NO           | NO   | NO         |
+| CSV                | YES     | CSV storage engine                                            | NO           | NO   | NO         |
+| ARCHIVE            | YES     | Archive storage engine                                        | NO           | NO   | NO         |
+| PERFORMANCE_SCHEMA | YES     | Performance Schema                                            | NO           | NO   | NO         |
+| FEDERATED          | NO      | Federated MySQL storage engine                                | NULL         | NULL | NULL       |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+9 rows in set (0.00 sec)
+
+
+
+mysql&gt; SHOW DATABASES;          //查看数据库信息
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wangqingge         |
++--------------------+
+5 rows in set (0.00 sec)
+
+
+
+mysql&gt; SHOW TABLES FROM wangqingge;         //不进入某数据库而列出其包含的所有表
++----------------------+
+| Tables_in_wangqingge |
++----------------------+
+| wangqing             |
++----------------------+
+1 row in set (0.00 sec)
+
+
+
+//查看表结构
+//语法：DESC [db_name.]table_name;
+mysql&gt; DESC wangqingge.wangqing;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int(11)      | NO   |     | NULL    |       |
+| name  | varchar(100) | NO   |     | NULL    |       |
+| age   | tinyint(4)   | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.03 sec)
+
+
+
+
+
+//查看某表的创建命令
+//语法：SHOW CREATE TABLE table_name;
+mysql&gt; SHOW CREATE TABLE wangqingge.wangqing;
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                              |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| wangqing | CREATE TABLE `wangqing` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `age` tinyint(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+//查看某表的状态
+//语法：SHOW TABLE STATUS LIKE &#39;table_name&#39;\G
+mysql&gt; use wangqingge;      //进入数据库wangqingge
+Database changed
+mysql&gt; SHOW TABLE STATUS LIKE &#39;wangqing&#39;\G      //查看wangqing表的状态
+*************************** 1. row ***************************
+           Name: wangqing
+         Engine: InnoDB
+        Version: 10
+     Row_format: Dynamic
+           Rows: 0
+ Avg_row_length: 0
+    Data_length: 16384
+Max_data_length: 0
+   Index_length: 0
+      Data_free: 0
+ Auto_increment: NULL
+    Create_time: 2018-08-13 00:53:21
+    Update_time: NULL
+     Check_time: NULL
+      Collation: latin1_swedish_ci
+       Checksum: NULL
+ Create_options:
+        Comment:
+1 row in set (0.00 sec)
+</code></pre>
+
+<h4 id="toc_17">4.1.5 获取帮助</h4>
+
+<pre><code class="language-text">//获取命令使用帮助
+//语法：HELP keyword;
+mysql&gt; HELP CREATE TABLE;       //获取创建表的帮助
+Name: &#39;CREATE TABLE&#39;
+Description:
+Syntax:
+CREATE [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+    (create_definition,...)
+    [table_options]
+    [partition_options]
+
+CREATE [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+    [(create_definition,...)]
+    [table_options]
+    [partition_options]
+    [IGNORE | REPLACE]
+    [AS] query_expression
+ ......
+ ......
+</code></pre>
+
+<h3 id="toc_18">4.2 DML操作</h3>
+
+<p>DML操作包括增(INSERT)、删(DELETE)、改(UPDATE)、查(SELECT)，均属针对表的操作。</p>
+
+<h4 id="toc_19">4.2.1 INSERT语句</h4>
+
+<pre><code class="language-text">//DML操作之增操作insert
+//语法：INSERT [INTO] table_name [(column_name,...)] {VALUES | VALUE} (value1,...),(...),...
+
+mysql&gt; use wangqingge;
+Database changed
+mysql&gt; INSERT INTO wangqing (id,name,age) VALUE (1,&#39;tom&#39;,20);       //一次插入一条记录
+Query OK, 1 row affected (0.01 sec)
+
+
+mysql&gt; INSERT INTO wangqing (id,name,age) VALUES (2,&#39;jerry&#39;,23),(3,&#39;wangqing&#39;,25),(4,&#39;sean&#39;,28),(5,&#39;zhangshan&#39;,26),(6,&#39;zhangshan&#39;,20),(7,&#39;lisi&#39;,NULL);     //一次插入多条记录
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+</code></pre>
+
+<h4 id="toc_20">4.2.2 SELECT语句</h4>
+
+<p><strong>字段column表示法</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">表示符</th>
+<th>代表什么？</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">*</td>
+<td>所有字段</td>
+</tr>
+<tr>
+<td style="text-align: center">as</td>
+<td>字段别名，如col1 AS alias1<br>当表名很长时用别名代替</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>条件判断语句WHERE</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">操作类型</th>
+<th>常用操作符</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">操作符</td>
+<td>&gt;，&lt;，&gt;=，&lt;=，=，!=<br>BETWEEN column# AND column#<br>LIKE：模糊匹配<br>RLIKE：基于正则表达式进行模式匹配<br> IS NOT NULL：非空<br>IS NULL：空</td>
+</tr>
+<tr>
+<td style="text-align: center">条件逻辑操作</td>
+<td>AND<br>OR<br>NOT</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>ORDER BY：排序，默认为升序（ASC）</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">ORDER BY语句</th>
+<th>意义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">ORDER BY ‘column_name&#39;</td>
+<td>根据column_name进行升序排序</td>
+</tr>
+<tr>
+<td style="text-align: center">ORDER BY &#39;column_name&#39; DESC</td>
+<td>根据column_name进行降序排序</td>
+</tr>
+<tr>
+<td style="text-align: center">ORDER BY ’column_name&#39; LIMIT 2</td>
+<td>根据column_name进行升序排序<br>并只取前2个结果</td>
+</tr>
+<tr>
+<td style="text-align: center">ORDER BY ‘column_name&#39; LIMIT 1,2</td>
+<td>根据column_name进行升序排序<br>并且略过第1个结果取后面的2个结果</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-text">//DML操作之查操作select
+//语法：SELECT column1,column2,... FROM table_name [WHERE clause] [ORDER BY &#39;column_name&#39; [DESC]] [LIMIT [m,]n];
+
+mysql&gt; use wangqingge;
+Database changed
+mysql&gt; select * from wangqing;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  1 | tom       |   20 |
+|  2 | jerry     |   23 |
+|  3 | wangqing  |   25 |
+|  4 | sean      |   28 |
+|  5 | zhangshan |   26 |
+|  6 | zhangshan |   20 |
+|  7 | lisi      | NULL |
++----+-----------+------+
+7 rows in set (0.00 sec)
+
+mysql&gt; SELECT name FROM wangqing;
++-----------+
+| name      |
++-----------+
+| tom       |
+| jerry     |
+| wangqing  |
+| sean      |
+| zhangshan |
+| zhangshan |
+| lisi      |
++-----------+
+7 rows in set (0.01 sec)
+
+mysql&gt; SELECT * FROM wangqing ORDER BY age;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  7 | lisi      | NULL |
+|  1 | tom       |   20 |
+|  6 | zhangshan |   20 |
+|  2 | jerry     |   23 |
+|  3 | wangqing  |   25 |
+|  5 | zhangshan |   26 |
+|  4 | sean      |   28 |
++----+-----------+------+
+7 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM wangqing ORDER BY age DESC;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  4 | sean      |   28 |
+|  5 | zhangshan |   26 |
+|  3 | wangqing  |   25 |
+|  2 | jerry     |   23 |
+|  1 | tom       |   20 |
+|  6 | zhangshan |   20 |
+|  7 | lisi      | NULL |
++----+-----------+------+
+7 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM wangqing ORDER BY age limit 2;
++----+------+------+
+| id | name | age  |
++----+------+------+
+|  7 | lisi | NULL |
+|  1 | tom  |   20 |
++----+------+------+
+2 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM wangqing ORDER BY age limit 1,2;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  1 | tom       |   20 |
+|  6 | zhangshan |   20 |
++----+-----------+------+
+2 rows in set (0.00 sec)
+
+
+mysql&gt; SELECT * FROM wangqing WHERE age &gt;= 25;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  3 | wangqing  |   25 |
+|  4 | sean      |   28 |
+|  5 | zhangshan |   26 |
++----+-----------+------+
+3 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM wangqing WHERE age &gt;= 25 AND name = &#39;zhangshan&#39;;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  5 | zhangshan |   26 |
++----+-----------+------+
+1 row in set (0.00 sec)
+
+mysql&gt; SELECT * FROM wangqing WHERE age BETWEEN 23 and 28;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  2 | jerry     |   23 |
+|  3 | wangqing  |   25 |
+|  4 | sean      |   28 |
+|  5 | zhangshan |   26 |
++----+-----------+------+
+4 rows in set (0.00 sec)
+
+mysql&gt; select * from wangqing where age is not null;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  1 | tom       |   20 |
+|  2 | jerry     |   23 |
+|  3 | wangqing  |   25 |
+|  4 | sean      |   28 |
+|  5 | zhangshan |   26 |
+|  6 | zhangshan |   20 |
++----+-----------+------+
+6 rows in set (0.00 sec)
+
+mysql&gt; select * from wangqing where age is null;
++----+------+------+
+| id | name | age  |
++----+------+------+
+|  7 | lisi | NULL |
++----+------+------+
+1 row in set (0.00 sec)
+</code></pre>
+
+<h4 id="toc_21">4.2.3 update语句</h4>
+
+<pre><code class="language-text">//DML操作之改操作update
+//语法：UPDATE table_name SET column1 = new_value1[,column2 = new_value2,...] [WHERE clause] [ORDER BY &#39;column_name&#39; [DESC]] [LIMIT [m,]n];
+
+mysql&gt; select * from wangqing;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  1 | tom       |   20 |
+|  2 | jerry     |   23 |
+|  3 | wangqing  |   25 |
+|  4 | sean      |   28 |
+|  5 | zhangshan |   26 |
+|  6 | zhangshan |   20 |
+|  7 | lisi      | NULL |
++----+-----------+------+
+7 rows in set (0.00 sec)
+
+mysql&gt; update wangqing set age = 30 where name = &#39;lisi&#39;;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql&gt; select * from wangqing where name = &#39;lisi&#39;;
++----+------+------+
+| id | name | age  |
++----+------+------+
+|  7 | lisi |   30 |
++----+------+------+
+1 row in set (0.00 sec)
+</code></pre>
+
+<h4 id="toc_22">4.2.4 delete语句</h4>
+
+<pre><code class="language-text">//DML操作之删操作delete
+//语法：DELETE FROM table_name [WHERE clause] [ORDER BY &#39;column_name&#39; [DESC]] [LIMIT [m,]n];
+
+mysql&gt; select * from wangqing;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  1 | tom       |   20 |
+|  2 | jerry     |   23 |
+|  3 | wangqing  |   25 |
+|  4 | sean      |   28 |
+|  5 | zhangshan |   26 |
+|  6 | zhangshan |   20 |
+|  7 | lisi      |   30 |
++----+-----------+------+
+7 rows in set (0.00 sec)
+
+mysql&gt; delete from wangqing where id = 7;       //删除某条记录
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from wangqing;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  1 | tom       |   20 |
+|  2 | jerry     |   23 |
+|  3 | wangqing  |   25 |
+|  4 | sean      |   28 |
+|  5 | zhangshan |   26 |
+|  6 | zhangshan |   20 |
++----+-----------+------+
+6 rows in set (0.00 sec)
+
+
+mysql&gt; delete from wangqing;        //删除整张表的内容
+Query OK, 6 rows affected (0.00 sec)
+
+mysql&gt; select * from wangqing;
+Empty set (0.00 sec)
+
+mysql&gt; desc wangqing;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int(11)      | NO   |     | NULL    |       |
+| name  | varchar(100) | NO   |     | NULL    |       |
+| age   | tinyint(4)   | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+</code></pre>
+
+<h4 id="toc_23">4.2.5 truncate语句</h4>
+
+<p><strong>truncate与delete的区别：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">语句类型</th>
+<th>特点</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">delete</td>
+<td>DELETE删除表内容时仅删除内容，但会保留表结构<br>DELETE语句每次删除一行，并在事务日志中为所删除的每行记录一项<br>可以通过回滚事务日志恢复数据<br>非常占用空间</td>
+</tr>
+<tr>
+<td style="text-align: center">truncate</td>
+<td>删除表中所有数据，且无法恢复<br>表结构、约束和索引等保持不变，新添加的行计数值重置为初始值<br>执行速度比DELETE快，且使用的系统和事务日志资源少<br>通过释放存储表数据所用的数据页来删除数据，并且只在事务日志中记录页的释放<br>对于有外键约束引用的表，不能使用TRUNCATE TABLE删除数据<br>不能用于加入了索引视图的表</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-text">//语法：TRUNCATE table_name;
+
+mysql&gt; select * from wangqing;
++----+-----------+------+
+| id | name      | age  |
++----+-----------+------+
+|  1 | tom       |   20 |
+|  2 | jerry     |   23 |
+|  3 | wangqing  |   25 |
+|  4 | sean      |   28 |
+|  5 | zhangshan |   26 |
+|  6 | zhangshan |   20 |
+|  7 | lisi      | NULL |
++----+-----------+------+
+7 rows in set (0.00 sec)
+
+mysql&gt; truncate wangqing;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; select * from wangqing;
+Empty set (0.00 sec)
+
+mysql&gt; desc wangqing;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int(11)      | NO   |     | NULL    |       |
+| name  | varchar(100) | NO   |     | NULL    |       |
+| age   | tinyint(4)   | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+</code></pre>
+
+<h3 id="toc_24">4.3 DCL操作</h3>
+
+<h4 id="toc_25">4.3.1 创建授权grant</h4>
+
+<p><strong>权限类型(priv_type)</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">权限类型</th>
+<th>代表什么？</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">ALL</td>
+<td>所有权限</td>
+</tr>
+<tr>
+<td style="text-align: center">SELECT</td>
+<td>读取内容的权限</td>
+</tr>
+<tr>
+<td style="text-align: center">INSERT</td>
+<td>插入内容的权限</td>
+</tr>
+<tr>
+<td style="text-align: center">UPDATE</td>
+<td>更新内容的权限</td>
+</tr>
+<tr>
+<td style="text-align: center">DELETE</td>
+<td>删除内容的权限</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>指定要操作的对象db_name.table_name</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">表示方式</th>
+<th>意义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">*.*</td>
+<td>所有库的所有表</td>
+</tr>
+<tr>
+<td style="text-align: center">db_name</td>
+<td>指定库的所有表</td>
+</tr>
+<tr>
+<td style="text-align: center">db_name.table_name</td>
+<td>指定库的指定表</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>WITH GRANT OPTION：被授权的用户可将自己的权限副本转赠给其他用户，说白点就是将自己的权限完全复制给另一个用户。不建议使用。</p>
+</blockquote>
+
+<pre><code class="language-text">GRANT priv_type,... ON [object_type] db_name.table_name TO ‘username&#39;@&#39;host&#39; [IDENTIFIED BY &#39;password&#39;] [WITH GRANT OPTION];
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wangqingge         |
++--------------------+
+5 rows in set (0.00 sec)
+
+//授权wangqing用户在数据库本机上登录访问所有数据库
+mysql&gt; GRANT ALL ON *.* TO &#39;wangqing&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;wangqing123!&#39;;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql&gt; GRANT ALL ON *.* TO &#39;wangqing&#39;@&#39;127.0.0.1&#39; IDENTIFIED BY &#39;wangqing123!&#39;;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+//授权wangqing用户在172.16.12.129上远程登录访问wangqingge数据库
+mysql&gt; GRANT ALL ON wangqingge.* TO &#39;wangqing&#39;@&#39;172.16.12.129&#39; IDENTIFIED BY &#39;wangqing123!&#39;;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+//授权wangqing用户在所有位置上远程登录访问wangqingge数据库
+mysql&gt; GRANT ALL ON *.* TO &#39;wangqing&#39;@&#39;%&#39; IDENTIFIED BY &#39;wangqing123!&#39;;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+</code></pre>
+
+<h4 id="toc_26">4.3.2 查看授权</h4>
+
+<pre><code class="language-text">//查看当前登录用户的授权信息
+mysql&gt; SHOW GRANTS;
++---------------------------------------------------------------------+
+| Grants for root@localhost                                           |
++---------------------------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;localhost&#39; WITH GRANT OPTION |
+| GRANT PROXY ON &#39;&#39;@&#39;&#39; TO &#39;root&#39;@&#39;localhost&#39; WITH GRANT OPTION        |
++---------------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+//查看指定用户wangqing的授权信息
+mysql&gt; SHOW GRANTS FOR wangqing;
++-----------------------------------------------+
+| Grants for wangqing@%                         |
++-----------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO &#39;wangqing&#39;@&#39;%&#39; |
++-----------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql&gt; SHOW GRANTS FOR &#39;wangqing&#39;@&#39;localhost&#39;;
++-------------------------------------------------------+
+| Grants for wangqing@localhost                         |
++-------------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO &#39;wangqing&#39;@&#39;localhost&#39; |
++-------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql&gt; SHOW GRANTS FOR &#39;wangqing&#39;@&#39;127.0.0.1&#39;;
++-------------------------------------------------------+
+| Grants for wangqing@127.0.0.1                         |
++-------------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO &#39;wangqing&#39;@&#39;127.0.0.1&#39; |
++-------------------------------------------------------+
+1 row in set (0.00 sec)
+</code></pre>
+
+<h4 id="toc_27">4.3.3 取消授权REVOKE</h4>
+
+<pre><code class="language-text">//语法：REVOKE priv_type,... ON db_name.table_name FROM &#39;username&#39;@&#39;host&#39;;
+
+mysql&gt; REVOKE ALL ON *.* FROM &#39;wangqing&#39;@&#39;172.16.12.129&#39;;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+
+<p><strong>注意：mysql服务进程启动时会读取mysql库中的所有授权表至内存中：</strong></p>
+
+<ul>
+<li>GRANT或REVOKE等执行权限操作会保存于表中，mysql的服务进程会自动重读授权表，并更新至内存中</li>
+<li>对于不能够或不能及时重读授权表的命令，可手动让mysql的服务进程重读授权表</li>
+</ul>
+
+<pre><code class="language-text">mysql&gt; FLUSH PRIVILEGES;
+</code></pre>
+
+<h2 id="toc_28">作业</h2>
+
+<p>1.搭建mysql服务<br/>
+2.创建一个以你名字为名的数据库，并创建一张表student，该表包含三个字段（id，name，age），表结构如下：</p>
+
+<pre><code class="language-text">mysql&gt; desc student;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(100) | NO   |     | NULL    |                |
+| age   | tinyint(4)   | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+</code></pre>
+
+<p>3.查看下该新建的表有无内容（用select语句）<br/>
+4.往新建的student表中插入数据（用insert语句），结果应如下所示：</p>
+
+<pre><code class="language-text">+----+-------------+------+
+| id | name        | age  |
++----+-------------+------+
+|  1 | tom         |   20 |
+|  2 | jerry       |   23 |
+|  3 | wangqing    |   25 |
+|  4 | sean        |   28 |
+|  5 | zhangshan   |   26 |
+|  6 | zhangshan   |   20 |
+|  7 | lisi        | NULL |
+|  8 | chenshuo    |   10 |
+|  9 | wangwu      |    3 |
+| 10 | qiuyi       |   15 |
+| 11 | qiuxiaotian |   20 |
++----+-------------+------+
+</code></pre>
+
+<p>5.修改lisi的年龄为50<br/>
+6.以age字段降序排序<br/>
+7.查询student表中年龄最小的3位同学跳过前2位<br/>
+8.查询student表中年龄最大的4位同学<br/>
+9.查询student表中名字叫zhangshan的记录<br/>
+10.查询student表中名字叫zhangshan且年龄大于20岁的记录<br/>
+11.查询student表中年龄在23到30之间的记录<br/>
+12.修改wangwu的年龄为100<br/>
+13.删除student中名字叫zhangshan且年龄小于等于20的记录</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html"  title="Previous Post: python介绍">&laquo; python介绍</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html" 
+	        title="Next Post: Python入门">Python入门 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15340549469789.html'/*tpa=http://www.itwangqing.net.cn/15340549469789.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

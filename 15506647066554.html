@@ -1,0 +1,3206 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  04 SaltStack常用的模块 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>04 SaltStack常用的模块</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. SaltStack模块介绍</a>
+</li>
+<li>
+<a href="#toc_1">2. SaltStack常用模块</a>
+<ul>
+<li>
+<a href="#toc_2">2.1 SaltStack常用模块之network</a>
+<ul>
+<li>
+<a href="#toc_3">2.1.1 network.active_tcp</a>
+</li>
+<li>
+<a href="#toc_4">2.1.2 network.calc_net</a>
+</li>
+<li>
+<a href="#toc_5">2.1.3 network.connect</a>
+</li>
+<li>
+<a href="#toc_6">2.1.4 network.default_route</a>
+</li>
+<li>
+<a href="#toc_7">2.1.5 network.get_fqdn</a>
+</li>
+<li>
+<a href="#toc_8">2.1.6 network.get_hostname</a>
+</li>
+<li>
+<a href="#toc_9">2.1.7 network.get_route</a>
+</li>
+<li>
+<a href="#toc_10">2.1.8 network.hw_addr</a>
+</li>
+<li>
+<a href="#toc_11">2.1.9 network.ifacestartswith</a>
+</li>
+<li>
+<a href="#toc_12">2.1.10 network.in_subnet</a>
+</li>
+<li>
+<a href="#toc_13">2.1.11 network.interface</a>
+</li>
+<li>
+<a href="#toc_14">2.1.12 network.interface_ip</a>
+</li>
+<li>
+<a href="#toc_15">2.1.13 network.interfaces</a>
+</li>
+<li>
+<a href="#toc_16">2.1.14 network.ip_addrs</a>
+</li>
+<li>
+<a href="#toc_17">2.1.15 network.netstat</a>
+</li>
+<li>
+<a href="#toc_18">2.1.16 network.ping</a>
+</li>
+<li>
+<a href="#toc_19">2.1.17 network.reverse_ip</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_20">2.2 SaltStack常用模块之service</a>
+<ul>
+<li>
+<a href="#toc_21">2.2.1 service.available</a>
+</li>
+<li>
+<a href="#toc_22">2.2.2 service.get_all</a>
+</li>
+<li>
+<a href="#toc_23">2.2.3 service.disabled</a>
+</li>
+<li>
+<a href="#toc_24">2.2.4 service.enabled</a>
+</li>
+<li>
+<a href="#toc_25">2.2.5 service.disable</a>
+</li>
+<li>
+<a href="#toc_26">2.2.6 service.enable</a>
+</li>
+<li>
+<a href="#toc_27">2.2.7 service.reload</a>
+</li>
+<li>
+<a href="#toc_28">2.2.8 service.stop</a>
+</li>
+<li>
+<a href="#toc_29">2.2.9 service.start</a>
+</li>
+<li>
+<a href="#toc_30">2.2.10 service.restart</a>
+</li>
+<li>
+<a href="#toc_31">2.2.11 service.status</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_32">2.3 SaltStack常用模块之pkg</a>
+<ul>
+<li>
+<a href="#toc_33">2.3.1 pkg.download</a>
+</li>
+<li>
+<a href="#toc_34">2.3.2 pkg.file_list</a>
+</li>
+<li>
+<a href="#toc_35">2.3.3 pkg.group_info</a>
+</li>
+<li>
+<a href="#toc_36">2.3.4 pkg.group_list</a>
+</li>
+<li>
+<a href="#toc_37">2.3.5 pkg.install</a>
+</li>
+<li>
+<a href="#toc_38">2.3.6 pkg.list_downloaded</a>
+</li>
+<li>
+<a href="#toc_39">2.3.7 pkg.list_pkgs</a>
+</li>
+<li>
+<a href="#toc_40">2.3.8 pkg.owner</a>
+</li>
+<li>
+<a href="#toc_41">2.3.9 pkg.remove</a>
+</li>
+<li>
+<a href="#toc_42">2.3.10 pkg.upgrade</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_43">2.4 SaltStack常用模块之state</a>
+<ul>
+<li>
+<a href="#toc_44">2.4.1 state.show_highstate</a>
+</li>
+<li>
+<a href="#toc_45">2.4.2 state.highstate</a>
+</li>
+<li>
+<a href="#toc_46">2.4.3 state.show_state_usage</a>
+</li>
+<li>
+<a href="#toc_47">2.4.4 state.show_top</a>
+</li>
+<li>
+<a href="#toc_48">2.4.5 state.top</a>
+</li>
+<li>
+<a href="#toc_49">2.4.6 state.show_sls</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_50">2.5 SaltStack常用模块之salt-cp</a>
+</li>
+<li>
+<a href="#toc_51">2.6 SaltStack常用模块之file</a>
+<ul>
+<li>
+<a href="#toc_52">2.6.1 file.access</a>
+</li>
+<li>
+<a href="#toc_53">2.6.2 file.append</a>
+</li>
+<li>
+<a href="#toc_54">2.6.3 file.basename</a>
+</li>
+<li>
+<a href="#toc_55">2.6.4 file.dirname</a>
+</li>
+<li>
+<a href="#toc_56">2.6.5 file.check_hash</a>
+</li>
+<li>
+<a href="#toc_57">2.6.6 file.chattr</a>
+</li>
+<li>
+<a href="#toc_58">2.6.7 file.chown</a>
+</li>
+<li>
+<a href="#toc_59">2.6.8 file.copy</a>
+</li>
+<li>
+<a href="#toc_60">2.6.9 file.ditectory_exists</a>
+</li>
+<li>
+<a href="#toc_61">2.6.10 file.diskusage</a>
+</li>
+<li>
+<a href="#toc_62">2.6.11 file.file_exists</a>
+</li>
+<li>
+<a href="#toc_63">2.6.12 file.find</a>
+</li>
+<li>
+<a href="#toc_64">2.6.13 file.get_gid</a>
+</li>
+<li>
+<a href="#toc_65">2.6.14 file.get_group</a>
+</li>
+<li>
+<a href="#toc_66">2.6.15 file.get_hash</a>
+</li>
+<li>
+<a href="#toc_67">2.6.16 file.get_mode</a>
+</li>
+<li>
+<a href="#toc_68">2.6.17 file.get_selinux_context</a>
+</li>
+<li>
+<a href="#toc_69">2.6.18 file.get_sum</a>
+</li>
+<li>
+<a href="#toc_70">2.6.19 file.get_uid与file.get_user</a>
+</li>
+<li>
+<a href="#toc_71">2.6.20 file.gid_to_group</a>
+</li>
+<li>
+<a href="#toc_72">2.6.21 file.group_to_gid</a>
+</li>
+<li>
+<a href="#toc_73">2.6.22 file.grep</a>
+</li>
+<li>
+<a href="#toc_74">2.6.23 file.is_blkdev</a>
+</li>
+<li>
+<a href="#toc_75">2.6.24 file.lsattr</a>
+</li>
+<li>
+<a href="#toc_76">2.6.25 file.mkdir</a>
+</li>
+<li>
+<a href="#toc_77">2.6.26 file.move</a>
+</li>
+<li>
+<a href="#toc_78">2.6.27 file.prepend</a>
+</li>
+<li>
+<a href="#toc_79">2.6.28 file.sed</a>
+</li>
+<li>
+<a href="#toc_80">2.6.29 file.read</a>
+</li>
+<li>
+<a href="#toc_81">2.6.30 file.readdir</a>
+</li>
+<li>
+<a href="#toc_82">2.6.31 file.remove</a>
+</li>
+<li>
+<a href="#toc_83">2.6.32 file.rename</a>
+</li>
+<li>
+<a href="#toc_84">2.6.33 file.set_mode</a>
+</li>
+<li>
+<a href="#toc_85">2.6.34 file.symlink</a>
+</li>
+<li>
+<a href="#toc_86">2.6.35 file.touch</a>
+</li>
+<li>
+<a href="#toc_87">2.6.36 file.uid_to_user</a>
+</li>
+<li>
+<a href="#toc_88">2.6.37 file.user_to_uid</a>
+</li>
+<li>
+<a href="#toc_89">2.6.38 file.write</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. SaltStack模块介绍</h2>
+
+<p>Module是日常使用SaltStack接触最多的一个组件，其用于管理对象操作，这也是SaltStack通过Push的方式进行管理的入口，比如我们日常简单的执行命令、查看包安装情况、查看服务运行情况等工作都是通过SaltStack Module来实现的。</p>
+
+<p>当安装好Master和Minion包后，系统上会安装很多Module，大家可以通过以下命令查看支持的所有Module列表：</p>
+
+<pre><code class="language-text">//查看所有module列表
+[root@master ~]# salt &#39;192.168.69.202&#39; sys.list_modules
+192.168.69.202:
+    - acl
+    - aliases
+    - alternatives
+    - archive
+    - artifactory
+    - blockdev
+    - btrfs
+    - buildout
+    - cloud
+    - cmd
+    - composer
+    - config
+    - 此处省略N行
+
+//查看指定module的所有function
+[root@master ~]# salt &#39;192.168.69.202&#39; sys.list_functions cmd
+192.168.69.202:
+    - cmd.exec_code
+    - cmd.exec_code_all
+    - cmd.has_exec
+    - cmd.retcode
+    - cmd.run
+    - cmd.run_all
+    - cmd.run_chroot
+    - cmd.run_stderr
+    - cmd.run_stdout
+    - cmd.script
+    - cmd.script_retcode
+    - cmd.shell
+    - cmd.shells
+    - cmd.tty
+    - cmd.which
+    - cmd.which_bin
+
+//查看指定module的用法
+[root@master ~]# salt &#39;192.168.69.202&#39; sys.doc cmd
+&#39;cmd.exec_code:&#39;
+
+    Pass in two strings, the first naming the executable language, aka -
+    python2, python3, ruby, perl, lua, etc. the second string containing
+    the code you wish to execute. The stdout will be returned.
+
+    CLI Example:
+
+        salt &#39;*&#39; cmd.exec_code ruby &#39;puts &quot;cheese&quot;&#39; 
+...此处省略N行...
+
+
+//SaltStack默认也支持一次执行多个Module，Module之间通过逗号隔开，默认传参之间也是用逗号分隔，也支持指定传参分隔符号--args-separator=@即可
+[root@master ~]# salt &#39;192.168.69.202&#39; test.echo,cmd.run,service.status hello,hostname,salt-minion
+192.168.69.202:
+    ----------
+    cmd.run:
+        minion
+    service.status:
+        True
+    test.echo:
+        hello
+</code></pre>
+
+<h2 id="toc_1">2. SaltStack常用模块</h2>
+
+<h3 id="toc_2">2.1 SaltStack常用模块之network</h3>
+
+<h4 id="toc_3">2.1.1 network.active_tcp</h4>
+
+<p>返回所有活动的tcp连接</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.active_tcp
+192.168.69.202:
+    ----------
+    0:
+        ----------
+        local_addr:
+            ::
+        local_port:
+            80
+        remote_addr:
+            ::
+        remote_port:
+            0
+    1:
+        ----------
+        local_addr:
+            ::
+        local_port:
+            22
+        remote_addr:
+            ::
+        remote_port:
+            0
+    2:
+        ----------
+        local_addr:
+            ::1
+        local_port:
+            25
+        remote_addr:
+            ::
+        remote_port:
+            0
+    3:
+        ----------
+        local_addr:
+            ::
+        local_port:
+            873
+        remote_addr:
+            ::
+        remote_port:
+            0
+    4:
+        ----------
+        local_addr:
+            192.168.69.202
+        local_port:
+            43640
+        remote_addr:
+            192.168.69.201
+        remote_port:
+            4505
+</code></pre>
+
+<h4 id="toc_4">2.1.2 network.calc_net</h4>
+
+<p>通过IP和子网掩码计算出网段</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.calc_net 192.168.69.202 255.255.255.0
+192.168.69.202:
+    192.168.69.0/24
+    
+[root@master ~]# salt &#39;*&#39; network.calc_net 192.168.69.202 255.255.255.240
+192.168.69.202:
+    192.168.69.192/28
+</code></pre>
+
+<h4 id="toc_5">2.1.3 network.connect</h4>
+
+<p>测试minion至某一台服务器的网络是否连通</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.connect baidu.com 80
+192.168.69.202:
+    ----------
+    comment:
+        Successfully connected to baidu.com (123.125.115.110) on tcp port 80
+    result:
+        True
+</code></pre>
+
+<h4 id="toc_6">2.1.4 network.default_route</h4>
+
+<p>查看默认路由</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.default_route
+192.168.69.202:
+    |_
+      ----------
+      addr_family:
+          inet
+      destination:
+          0.0.0.0
+      flags:
+          UG
+      gateway:
+          192.168.69.1
+      interface:
+          ens32
+      netmask:
+          0.0.0.0
+    |_
+      ----------
+      addr_family:
+          inet6
+      destination:
+          ::/0
+      flags:
+          !n
+      gateway:
+          ::
+      interface:
+          lo
+      netmask:
+    |_
+      ----------
+      addr_family:
+          inet6
+      destination:
+          ::/0
+      flags:
+          !n
+      gateway:
+          ::
+      interface:
+          lo
+      netmask:
+</code></pre>
+
+<h4 id="toc_7">2.1.5 network.get_fqdn</h4>
+
+<p>查看主机的fqdn(完全限定域名)</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.get_fqdn
+192.168.69.202:
+    minion
+</code></pre>
+
+<h4 id="toc_8">2.1.6 network.get_hostname</h4>
+
+<p>获取主机名</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.get_hostname
+192.168.69.202:
+    minion
+</code></pre>
+
+<h4 id="toc_9">2.1.7 network.get_route</h4>
+
+<p>查询到一个目标网络的路由信息</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.get_route 192.168.70.200
+192.168.69.202:
+    ----------
+    destination:
+        192.168.70.200
+    gateway:
+        192.168.69.1
+    interface:
+        ens32
+    source:
+        192.168.69.202
+</code></pre>
+
+<h4 id="toc_10">2.1.8 network.hw_addr</h4>
+
+<p>返回指定网卡的MAC地址</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.hw_addr ens32
+192.168.69.202:
+    00:0c:29:d8:05:54
+</code></pre>
+
+<h4 id="toc_11">2.1.9 network.ifacestartswith</h4>
+
+<p>从特定CIDR检索接口名称</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.ifacestartswith 192.168
+192.168.69.202:
+    - ens32
+</code></pre>
+
+<h4 id="toc_12">2.1.10 network.in_subnet</h4>
+
+<p>判断当前主机是否在某一个网段内</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.in_subnet 192.168.69.0/24
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_13">2.1.11 network.interface</h4>
+
+<p>返回指定网卡的信息</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.interface ens32
+192.168.69.202:
+    |_
+      ----------
+      address:
+          192.168.69.202
+      broadcast:
+          192.168.69.255
+      label:
+          ens32
+      netmask:
+          255.255.255.0
+</code></pre>
+
+<h4 id="toc_14">2.1.12 network.interface_ip</h4>
+
+<p>返回指定网卡的IP地址</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.interface_ip ens32
+192.168.69.202:
+    192.168.69.202
+</code></pre>
+
+<h4 id="toc_15">2.1.13 network.interfaces</h4>
+
+<p>返回当前系统中所有的网卡信息</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.interfaces
+192.168.69.202:
+    ----------
+    ens32:
+        ----------
+        hwaddr:
+            00:0c:29:d8:05:54
+        inet:
+            |_
+              ----------
+              address:
+                  192.168.69.202
+              broadcast:
+                  192.168.69.255
+              label:
+                  ens32
+              netmask:
+                  255.255.255.0
+        inet6:
+            |_
+              ----------
+              address:
+                  fe80::6860:c429:1c06:1639
+              prefixlen:
+                  64
+              scope:
+                  link
+        up:
+            True
+    lo:
+        ----------
+        hwaddr:
+            00:00:00:00:00:00
+        inet:
+            |_
+              ----------
+              address:
+                  127.0.0.1
+              broadcast:
+                  None
+              label:
+                  lo
+              netmask:
+                  255.0.0.0
+        inet6:
+            |_
+              ----------
+              address:
+                  ::1
+              prefixlen:
+                  128
+              scope:
+                  host
+        up:
+            True
+</code></pre>
+
+<h4 id="toc_16">2.1.14 network.ip_addrs</h4>
+
+<p>返回一个IPv4的地址列表<br/>
+该函数将会忽略掉<code>127.0.0.1</code>的地址</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.ip_addrs
+192.168.69.202:
+    - 192.168.69.202
+</code></pre>
+
+<h4 id="toc_17">2.1.15 network.netstat</h4>
+
+<p>返回所有打开的端口和状态</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.netstat
+192.168.69.202:
+    |_
+      ----------
+      inode:
+          20245
+      local-address:
+          0.0.0.0:22
+      program:
+          1155/sshd
+      proto:
+          tcp
+      recv-q:
+          0
+      remote-address:
+          0.0.0.0:*
+      send-q:
+          0
+      state:
+          LISTEN
+      user:
+          0
+    |_
+      ----------
+      inode:
+          14152
+      local-address:
+          127.0.0.1:25
+      program:
+          1386/master
+      proto:
+          tcp
+      recv-q:
+          0
+      remote-address:
+          0.0.0.0:*
+      send-q:
+          0
+      state:
+          LISTEN
+      user:
+          0
+    |_
+      ----------
+      inode:
+          142715
+      local-address:
+          0.0.0.0:873
+      program:
+          54664/rsync
+      proto:
+          tcp
+      recv-q:
+          0
+      remote-address:
+          0.0.0.0:*
+      send-q:
+          0
+      state:
+          LISTEN
+      user:
+          0
+    |_
+      ----------
+      inode:
+          498916
+      local-address:
+          192.168.69.202:22
+      program:
+          9388/sshd:
+      proto:
+          tcp
+      recv-q:
+          0
+      remote-address:
+          192.168.160.25:57723
+      send-q:
+          0
+      state:
+          ESTABLISHED
+      user:
+          0
+    |_
+      ----------
+      inode:
+          339297
+      local-address:
+          192.168.69.202:43640
+      program:
+          9407/python
+      proto:
+          tcp
+      recv-q:
+          0
+      remote-address:
+          192.168.69.201:4505
+      send-q:
+          0
+      state:
+          ESTABLISHED
+      user:
+          0
+    |_
+      ----------
+      inode:
+          324060
+      local-address:
+          :::80
+      program:
+          24889/httpd
+      proto:
+          tcp6
+      recv-q:
+          0
+      remote-address:
+          :::*
+      send-q:
+          0
+      state:
+          LISTEN
+      user:
+          0
+    |_
+      ----------
+      inode:
+          20247
+      local-address:
+          :::22
+      program:
+          1155/sshd
+      proto:
+          tcp6
+      recv-q:
+          0
+      remote-address:
+          :::*
+      send-q:
+          0
+      state:
+          LISTEN
+      user:
+          0
+    |_
+      ----------
+      inode:
+          14153
+      local-address:
+          ::1:25
+      program:
+          1386/master
+      proto:
+          tcp6
+      recv-q:
+          0
+      remote-address:
+          :::*
+      send-q:
+          0
+      state:
+          LISTEN
+      user:
+          0
+    |_
+      ----------
+      inode:
+          142716
+      local-address:
+          :::873
+      program:
+          54664/rsync
+      proto:
+          tcp6
+      recv-q:
+          0
+      remote-address:
+          :::*
+      send-q:
+          0
+      state:
+          LISTEN
+      user:
+          0
+</code></pre>
+
+<h4 id="toc_18">2.1.16 network.ping</h4>
+
+<p>使用ping命令测试到某主机的连通性</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.ping baidu.com
+192.168.69.202:
+    PING baidu.com (220.181.57.216) 56(84) bytes of data.
+    64 bytes from 220.181.57.216 (220.181.57.216): icmp_seq=1 ttl=43 time=42.7 ms
+    64 bytes from 220.181.57.216 (220.181.57.216): icmp_seq=2 ttl=43 time=50.6 ms
+    64 bytes from 220.181.57.216 (220.181.57.216): icmp_seq=3 ttl=43 time=42.7 ms
+    64 bytes from 220.181.57.216 (220.181.57.216): icmp_seq=4 ttl=43 time=42.7 ms
+
+    --- baidu.com ping statistics ---
+    4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+    rtt min/avg/max/mdev = 42.720/44.709/50.652/3.437 ms
+</code></pre>
+
+<h4 id="toc_19">2.1.17 network.reverse_ip</h4>
+
+<p>返回一个指定的IP地址的反向地址</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; network.reverse_ip 192.168.69.30
+192.168.69.202:
+    30.69.168.192.in-addr.arpa
+</code></pre>
+
+<h3 id="toc_20">2.2 SaltStack常用模块之service</h3>
+
+<h4 id="toc_21">2.2.1 service.available</h4>
+
+<p>判断指定的服务是否可用</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.available sshd
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; service.available vsftpd
+192.168.69.202:
+    False
+</code></pre>
+
+<h4 id="toc_22">2.2.2 service.get_all</h4>
+
+<p>获取所有正在运行的服务</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.get_all
+192.168.69.202:
+    - NetworkManager
+    - NetworkManager-dispatcher
+    - NetworkManager-wait-online
+    - arp-ethers
+    - auditd
+    - autovt@
+    - basic.target
+    - blk-availability
+    - bluetooth.target
+    - brandbot
+    - brandbot.path
+    - console-getty
+    - console-shell
+    - container-getty@
+    - cpupower
+    - crond
+    - 此处省略N行
+</code></pre>
+
+<h4 id="toc_23">2.2.3 service.disabled</h4>
+
+<p>检查指定服务是否开机不自动启动</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.disabled httpd
+192.168.69.202:
+    False
+</code></pre>
+
+<h4 id="toc_24">2.2.4 service.enabled</h4>
+
+<p>检查指定服务是否开机自动启动</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.enabled httpd
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_25">2.2.5 service.disable</h4>
+
+<p>设置指定服务开机不自动启动</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.disable httpd
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; service.enabled httpd
+192.168.69.202:
+    False
+</code></pre>
+
+<h4 id="toc_26">2.2.6 service.enable</h4>
+
+<p>设置指定服务开机自动启动</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.enable httpd
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; service.enabled httpd
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_27">2.2.7 service.reload</h4>
+
+<p>重新加载指定服务</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.reload httpd
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_28">2.2.8 service.stop</h4>
+
+<p>停止指定服务</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.stop httpd
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_29">2.2.9 service.start</h4>
+
+<p>启动指定服务</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.start httpd
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_30">2.2.10 service.restart</h4>
+
+<p>重启指定服务</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.restart httpd
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_31">2.2.11 service.status</h4>
+
+<p>查看指定服务的状态</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; service.status httpd
+192.168.69.202:
+    True
+</code></pre>
+
+<h3 id="toc_32">2.3 SaltStack常用模块之pkg</h3>
+
+<h4 id="toc_33">2.3.1 pkg.download</h4>
+
+<p>只下载软件包但不安装<br/>
+此功能将会下载指定的软件包，但是需要在minion端安装<code>yum-utils</code>，可以使用 cmd.run 进行远程安装</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; pkg.download wget
+192.168.69.202:
+    ----------
+    wget:
+        /var/cache/yum/packages/wget-1.14-18.el7.x86_64.rpm     //下载好的软件放在这里
+</code></pre>
+
+<h4 id="toc_34">2.3.2 pkg.file_list</h4>
+
+<p>列出指定包或系统中已安装的所有包的文件</p>
+
+<pre><code class="language-text">//列出已安装的apache软件包提供的所有文件
+[root@master ~]# salt &#39;*&#39; pkg.file_list httpd
+192.168.69.202:
+    ----------
+    errors:
+    files:
+        - /etc/httpd
+        - /etc/httpd/conf
+        - /etc/httpd/conf.d
+        - /etc/httpd/conf.d/README
+        - /etc/httpd/conf.d/autoindex.conf
+        - /etc/httpd/conf.d/userdir.conf
+        - /etc/httpd/conf.d/welcome.conf
+        - /etc/httpd/conf.modules.d
+        - /etc/httpd/conf.modules.d/00-base.conf
+        - /etc/httpd/conf.modules.d/00-dav.conf
+        - /etc/httpd/conf.modules.d/00-lua.conf
+        - /etc/httpd/conf.modules.d/00-mpm.conf
+        - /etc/httpd/conf.modules.d/00-proxy.conf
+        - /etc/httpd/conf.modules.d/00-systemd.conf
+        - /etc/httpd/conf.modules.d/01-cgi.conf
+        - /etc/httpd/conf/httpd.conf
+
+//当不提供参数时，将会列出当前系统中所有已安装软件的文件列表
+[root@master ~]# salt &#39;*&#39; pkg.file_list
+192.168.69.202:
+    ----------
+    errors:
+    files:
+        - /lib/kbd/keymaps/legacy
+        - /lib/kbd/keymaps/legacy/amiga
+        - /lib/kbd/keymaps/legacy/amiga/amiga-de.map.gz
+        - /lib/kbd/keymaps/legacy/amiga/amiga-us.map.gz
+        - /lib/kbd/keymaps/legacy/atari
+        - /lib/kbd/keymaps/legacy/atari/atari-de.map.gz
+        - /lib/kbd/keymaps/legacy/atari/atari-se.map.gz
+        - /lib/kbd/keymaps/legacy/atari/atari-uk-falcon.map.gz
+        - /lib/kbd/keymaps/legacy/atari/atari-us.map.gz
+        - /lib/kbd/keymaps/legacy/i386
+        - /lib/kbd/keymaps/legacy/i386/azerty
+        - /lib/kbd/keymaps/legacy/i386/azerty/azerty.map.gz
+        - /lib/kbd/keymaps/legacy/i386/azerty/be-latin1.map.gz
+        - /lib/kbd/keymaps/legacy/i386/azerty/fr-latin0.map.gz
+        - /lib/kbd/keymaps/legacy/i386/azerty/fr-latin1.map.gz
+        - /lib/kbd/keymaps/legacy/i386/azerty/fr-latin9.map.gz
+</code></pre>
+
+<h4 id="toc_35">2.3.3 pkg.group_info</h4>
+
+<p>查看包组的信息</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; pkg.group_info &#39;Development Tools&#39;
+192.168.69.202:
+    ----------
+    conditional:
+    default:
+        - byacc
+        - cscope
+        - ctags
+        - diffstat
+        - doxygen
+        - elfutils
+        - gcc-gfortran
+        - git
+        - indent
+        - intltool
+        - patchutils
+        - rcs
+        - subversion
+        - swig
+        - systemtap
+    description:
+        A basic development environment.
+    group:
+        Development Tools
+    id:
+        development
+    mandatory:
+        - autoconf
+        - automake
+        - binutils
+        - bison
+        - flex
+        - gcc
+        - gcc-c++
+        - gettext
+        - libtool
+        - make
+        - patch
+        - pkgconfig
+        - redhat-rpm-config
+        - rpm-build
+        - rpm-sign
+    optional:
+        - ElectricFence
+        - ant
+        - babel
+        - bzr
+        - chrpath
+        - cmake
+        - compat-gcc-44
+        - compat-gcc-44-c++
+        - cvs
+        - dejagnu
+        - expect
+        - gcc-gnat
+        - gcc-objc
+        - gcc-objc++
+        - imake
+        - javapackages-tools
+        - ksc
+        - libstdc++-docs
+        - mercurial
+        - mod_dav_svn
+        - nasm
+        - perltidy
+        - python-docs
+        - rpmdevtools
+        - rpmlint
+        - systemtap-sdt-devel
+        - systemtap-server
+    type:
+        package group
+</code></pre>
+
+<h4 id="toc_36">2.3.4 pkg.group_list</h4>
+
+<p>列出系统中所有的包组</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; pkg.group_list
+192.168.69.202:
+    ----------
+    available:
+        - Additional Development
+        - Anaconda Tools
+        - Backup Client
+        - Backup Server
+        - Base
+        - CentOS Linux Client product core
+        - CentOS Linux ComputeNode product core
+        - CentOS Linux Server product core
+        - CentOS Linux Workstation product core
+        - Common NetworkManager submodules
+        - Compatibility Libraries
+        - Conflicts (Client)
+        - Conflicts (ComputeNode)
+        - Conflicts (Server)
+        - Conflicts (Workstation)
+        - Console Internet Tools
+        - Core
+        - DNS Name Server
+        - Debugging Tools
+        - Desktop Debugging and Performance Tools
+        - Development Tools
+        - Dial-up Networking Support
+        - Directory Client
+        - Directory Server
+        - E-mail Server
+        - Emacs
+        - FTP Server
+        - File and Storage Server
+        - Fonts
+        - GNOME
+        - GNOME Applications
+        - Graphical Administration Tools
+        - Graphics Creation Tools
+        - Guest Agents
+        - Guest Desktop Agents
+        - Hardware Monitoring Utilities
+        - High Availability
+        - Hyper-v platform specific packages
+        - Identity Management Server
+        - Infiniband Support
+        - Input Methods
+        - Internet Applications
+        - Internet Browser
+        - Java Platform
+        - KDE
+        - KDE Applications
+        - KDE Multimedia Support
+        - KVM platform specific packages
+        - Large Systems Performance
+        - Legacy UNIX Compatibility
+        - Legacy X Window System Compatibility
+        - Load Balancer
+        - Mainframe Access
+        - MariaDB Database Client
+        - MariaDB Database Server
+        - Multimedia
+        - Network File System Client
+        - Network Infrastructure Server
+        - Networking Tools
+        - Office Suite and Productivity
+        - PHP Support
+        - Performance Tools
+        - Perl Support
+        - Perl for Web
+        - Platform Development
+        - PostgreSQL Database Client
+        - PostgreSQL Database Server
+        - Print Server
+        - Printing Client
+        - Python
+        - Remote Desktop Clients
+        - Remote Management for Linux
+        - Resilient Storage
+        - Ruby Support
+        - Scientific Support
+        - Security Tools
+        - Smart Card Support
+        - System Administration Tools
+        - System Management
+        - Technical Writing
+        - VMware platform specific packages
+        - Virtualization Client
+        - Virtualization Hypervisor
+        - Virtualization Platform
+        - Virtualization Tools
+        - Web Server
+        - Web Servlet Engine
+        - X Window System
+    available environments:
+        - Minimal Install
+        - Compute Node
+        - Infrastructure Server
+        - File and Print Server
+        - Basic Web Server
+        - Virtualization Host
+        - Server with GUI
+        - GNOME Desktop
+        - KDE Plasma Workspaces
+        - Development and Creative Workstation
+    available languages:
+        ----------
+    installed:
+    installed environments:
+</code></pre>
+
+<h4 id="toc_37">2.3.5 pkg.install</h4>
+
+<p>安装软件</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; pkg.install wget
+192.168.69.202:
+    ----------
+    wget:
+        ----------
+        new:
+            1.14-18.el7
+        old:
+</code></pre>
+
+<h4 id="toc_38">2.3.6 pkg.list_downloaded</h4>
+
+<p>列出已下载到本地的软件包</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; pkg.list_downloaded
+192.168.69.202:
+    ----------
+    wget:
+        ----------
+        1.14-18.el7:
+            ----------
+            creation_date_time:
+                2019-02-22T17:11:52
+            creation_date_time_t:
+                1550826712
+            path:
+                /var/cache/yum/packages/wget-1.14-18.el7.x86_64.rpm
+            size:
+                560152
+</code></pre>
+
+<h4 id="toc_39">2.3.7 pkg.list_pkgs</h4>
+
+<p>以字典的方式列出当前已安装的软件包</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; pkg.list_pkgs
+192.168.69.202:
+    ----------
+    GeoIP:
+        1.5.0-11.el7
+    NetworkManager:
+        1:1.8.0-9.el7
+    NetworkManager-libnm:
+        1:1.8.0-9.el7
+    NetworkManager-team:
+        1:1.8.0-9.el7
+    NetworkManager-tui:
+        1:1.8.0-9.el7
+    NetworkManager-wifi:
+        1:1.8.0-9.el7
+    PyYAML:
+        3.11-1.el7
+    ...此处省略N行
+</code></pre>
+
+<h4 id="toc_40">2.3.8 pkg.owner</h4>
+
+<p>列出指定文件是由哪个包提供的</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; pkg.owner /usr/sbin/apachectl
+192.168.69.202:
+    httpd
+[root@master ~]# salt &#39;*&#39; pkg.owner /usr/sbin/apachectl /etc/httpd/conf/httpd.conf
+192.168.69.202:
+    ----------
+    /etc/httpd/conf/httpd.conf:
+        httpd
+    /usr/sbin/apachectl:
+        httpd
+</code></pre>
+
+<h4 id="toc_41">2.3.9 pkg.remove</h4>
+
+<p>卸载指定软件</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;rpm -qa|grep wget&#39;
+192.168.69.202:
+    wget-1.14-18.el7.x86_64
+[root@master ~]# salt &#39;*&#39; pkg.remove wget
+192.168.69.202:
+    ----------
+    wget:
+        ----------
+        new:
+        old:
+            1.14-18.el7
+//若要卸载多个文件，中间需要用逗号隔开
+</code></pre>
+
+<h4 id="toc_42">2.3.10 pkg.upgrade</h4>
+
+<p>升级系统中所有的软件包或升级指定的软件包</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; pkg.upgrade name=openssl
+192.168.69.202:
+    ----------
+    openssl:
+        ----------
+        new:
+            1:1.0.2k-16.el7
+        old:
+            1:1.0.2k-8.el7
+    openssl-libs:
+        ----------
+        new:
+            1:1.0.2k-16.el7
+        old:
+            1:1.0.2k-8.el7
+//若想升级系统中所有的软件包则把 name 参数去掉即可
+</code></pre>
+
+<h3 id="toc_43">2.4 SaltStack常用模块之state</h3>
+
+<h4 id="toc_44">2.4.1 state.show_highstate</h4>
+
+<p>显示当前系统中有哪些高级状态</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; state.show_highstate
+192.168.69.202:
+    ----------
+    apache-install:
+        ----------
+        __env__:
+            base
+        __sls__:
+            web.apache.apache
+        pkg:
+            |_
+              ----------
+              name:
+                  httpd
+            - installed
+            |_
+              ----------
+              order:
+                  10000
+    apache-service:
+        ----------
+        __env__:
+            base
+        __sls__:
+            web.apache.apache
+        service:
+            |_
+              ----------
+              name:
+                  httpd
+            |_
+              ----------
+              enable:
+                  True
+            - running
+            |_
+              ----------
+              order:
+                  10001
+</code></pre>
+
+<h4 id="toc_45">2.4.2 state.highstate</h4>
+
+<p>执行高级状态</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; state.highstate web.apache.apache
+192.168.69.202:
+----------
+          ID: apache-install
+    Function: pkg.installed
+        Name: httpd
+      Result: True
+     Comment: All specified packages are already installed
+     Started: 20:07:37.012733
+    Duration: 1050.73 ms
+     Changes:
+----------
+          ID: apache-service
+    Function: service.running
+        Name: httpd
+      Result: True
+     Comment: The service httpd is already running
+     Started: 20:07:38.065796
+    Duration: 94.747 ms
+     Changes:
+
+Summary for 192.168.69.202
+------------
+Succeeded: 2
+Failed:    0
+------------
+Total states run:     2
+Total run time:   1.145 s
+</code></pre>
+
+<h4 id="toc_46">2.4.3 state.show_state_usage</h4>
+
+<p>显示当前系统中的高级状态执行情况</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; state.show_state_usage
+192.168.69.202:
+    ----------
+    base:
+        ----------
+        count_all:
+            2
+        count_unused:
+            1
+        count_used:
+            1
+        unused:
+            - top
+        used:
+            - web.apache.apache
+    dev:
+        ----------
+        count_all:
+            0
+        count_unused:
+            0
+        count_used:
+            0
+        unused:
+        used:
+    prod:
+        ----------
+        count_all:
+            0
+        count_unused:
+            0
+        count_used:
+            0
+        unused:
+        used:
+    test:
+        ----------
+        count_all:
+            0
+        count_unused:
+            0
+        count_used:
+            0
+        unused:
+        used:
+</code></pre>
+
+<h4 id="toc_47">2.4.4 state.show_top</h4>
+
+<p>返回minion将用于highstate的顶级数据</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; state.show_top
+192.168.69.202:
+    ----------
+    base:
+        - web.apache.apache
+</code></pre>
+
+<h4 id="toc_48">2.4.5 state.top</h4>
+
+<p>执行指定的top file，而不是默认的</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; state.top runtime.sls
+192.168.69.202:
+----------
+          ID: apache-install
+    Function: pkg.installed
+        Name: httpd
+      Result: True
+     Comment: All specified packages are already installed
+     Started: 20:17:20.129390
+    Duration: 917.659 ms
+     Changes:
+----------
+          ID: apache-service
+    Function: service.running
+        Name: httpd
+      Result: True
+     Comment: The service httpd is already running
+     Started: 20:17:21.048144
+    Duration: 46.958 ms
+     Changes:
+
+Summary for 192.168.69.202
+------------
+Succeeded: 2
+Failed:    0
+------------
+Total states run:     2
+Total run time: 964.617 ms
+</code></pre>
+
+<h4 id="toc_49">2.4.6 state.show_sls</h4>
+
+<p>显示 master 上特定sls或sls文件列表中的状态数据</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; state.show_sls web.apache.apache
+192.168.69.202:
+    ----------
+    apache-install:
+        ----------
+        __env__:
+            base
+        __sls__:
+            web.apache.apache
+        pkg:
+            |_
+              ----------
+              name:
+                  httpd
+            - installed
+            |_
+              ----------
+              order:
+                  10000
+    apache-service:
+        ----------
+        __env__:
+            base
+        __sls__:
+            web.apache.apache
+        service:
+            |_
+              ----------
+              name:
+                  httpd
+            |_
+              ----------
+              enable:
+                  True
+            - running
+            |_
+              ----------
+              order:
+                  10001
+</code></pre>
+
+<h3 id="toc_50">2.5 SaltStack常用模块之salt-cp</h3>
+
+<p><code>salt-cp</code>能够很方便的把 master 上的文件批量传到 minion上</p>
+
+<pre><code class="language-text">//拷贝单个文件到目标主机的/usr/src目录下
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls /usr/src/&#39;
+192.168.69.202:
+    debug
+    kernels
+[root@master ~]# salt-cp &#39;*&#39; /etc/passwd /usr/src/
+192.168.69.202:
+    ----------
+    /usr/src/passwd:
+        True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls /usr/src&#39;
+192.168.69.202:
+    debug
+    kernels
+    passwd
+ 
+//拷贝多个文件到目标主机的/usr/src目录下   
+[root@master ~]# salt-cp &#39;*&#39; /etc/shadow /etc/group /usr/src
+192.168.69.202:
+    ----------
+    /usr/src/group:
+        True
+    /usr/src/shadow:
+        True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls /usr/src&#39;
+192.168.69.202:
+    debug
+    group
+    kernels
+    passwd
+    shadow
+</code></pre>
+
+<h3 id="toc_51">2.6 SaltStack常用模块之file</h3>
+
+<h4 id="toc_52">2.6.1 file.access</h4>
+
+<p>检查指定路径是否存在</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls /usr/src&#39;
+192.168.69.202:
+    debug
+    group
+    kernels
+    passwd
+    shadow
+    zabbix-4.0.3
+[root@master ~]# salt &#39;*&#39; file.access /usr/src/passwd f
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; file.access /usr/src/abc f
+192.168.69.202:
+    False
+</code></pre>
+
+<p>检查指定文件的权限信息</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /usr/src/&#39;
+192.168.69.202:
+    total 12
+    drwxr-xr-x.  2 root root    6 Nov  5  2016 debug
+    -rw-r--r--.  1 root root  504 Feb 23 16:06 group
+    drwxr-xr-x.  2 root root    6 Nov  5  2016 kernels
+    -rw-r--r--.  1 root root 1035 Feb 23 16:05 passwd
+    -rw-r--r--.  1 root root  679 Feb 23 16:06 shadow
+    drwxr-xr-x. 13 root root  208 Feb 23 16:13 zabbix-4.0.3
+    
+[root@master ~]# salt &#39;*&#39; file.access /usr/src/passwd r     //是否有读权限
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; file.access /usr/src/passwd w     //是否有写权限
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; file.access /usr/src/passwd x     //是否有执行权限
+192.168.69.202:
+    False
+</code></pre>
+
+<h4 id="toc_53">2.6.2 file.append</h4>
+
+<p>往一个文件里追加内容，若此文件不存在则会报异常</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/a&#39;
+192.168.69.202:
+    -rw-r--r--. 1 root root 0 Feb 23 16:46 /root/a
+[root@master ~]# salt &#39;*&#39; file.append /root/a &quot;hello world&quot; &quot;haha&quot; &quot;xixi&quot;
+192.168.69.202:
+    Wrote 3 lines to &quot;/root/a&quot;
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/a&#39;
+192.168.69.202:
+    -rw-r--r--. 1 root root 22 Feb 23 16:51 /root/a
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/a&#39;
+192.168.69.202:
+    hello world
+    haha
+    xixi
+</code></pre>
+
+<h4 id="toc_54">2.6.3 file.basename</h4>
+
+<p>获取指定路径的基名</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; file.basename &#39;/root/zabbix/abc&#39;
+192.168.69.202:
+    abc
+</code></pre>
+
+<h4 id="toc_55">2.6.4 file.dirname</h4>
+
+<p>获取指定路径的目录名</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; file.dirname &#39;/root/zabbix/abc&#39;
+192.168.69.202:
+    /root/zabbix
+</code></pre>
+
+<h4 id="toc_56">2.6.5 file.check_hash</h4>
+
+<p>检查指定的文件与hash字符串是否匹配，匹配则返回 True 否则返回 False</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;md5sum /etc/passwd&#39;
+192.168.69.202:
+    83c9a0ffa6c002fb45a0c37a767f55f8  /etc/passwd
+[root@master ~]# salt &#39;*&#39; file.check_hash /etc/passwd 83c9a0ffa6c002fb45a0c37a767f55f8
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_57">2.6.6 file.chattr</h4>
+
+<p>修改指定文件的属性</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">属性</th>
+<th>对文件的意义</th>
+<th>对目录的意义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">a</td>
+<td>只允许在这个文件之后追加数据，<br>不允许任何进程覆盖或截断这个文件</td>
+<td>只允许在这个目录下建立和修改文件，<br>而不允许删除任何文件</td>
+</tr>
+<tr>
+<td style="text-align: center">i</td>
+<td>不允许对这个文件进行任何的修改，<br>不能删除、更改、移动</td>
+<td>任何的进程只能修改目录之下的文件，<br>不允许建立和删除文件</td>
+</tr>
+</tbody>
+</table>
+
+<p>给指定文件添加属性</p>
+
+<pre><code class="language-text">//查看当前属性
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;lsattr /root&#39;
+192.168.69.202:
+    ---------------- /root/anaconda-ks.cfg
+    ---------------- /root/a
+    
+//添加属性
+[root@master ~]# salt &#39;*&#39; file.chattr /root/a operator=add attributes=ai
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;lsattr /root&#39;
+192.168.69.202:
+    ---------------- /root/anaconda-ks.cfg
+    ----ia---------- /root/a
+</code></pre>
+
+<p>给指定文件去除属性</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; file.chattr /root/a operator=remove attributes=i
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;lsattr /root&#39;
+192.168.69.202:
+    ---------------- /root/anaconda-ks.cfg
+    -----a---------- /root/a
+</code></pre>
+
+<h4 id="toc_58">2.6.7 file.chown</h4>
+
+<p>设置指定文件的属主、属组信息</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/&#39;
+192.168.69.202:
+    total 8
+    -r--------. 1 tom  tom    22 Feb 23 16:51 a
+    -rw-------. 1 root root 1259 Jan  8 15:06 anaconda-ks.cfg
+[root@master ~]# salt &#39;*&#39; file.chown /root/a root root
+192.168.69.202:
+    None
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/&#39;
+192.168.69.202:
+    total 8
+    -r--------. 1 root root   22 Feb 23 16:51 a
+    -rw-------. 1 root root 1259 Jan  8 15:06 anaconda-ks.cfg
+</code></pre>
+
+<h4 id="toc_59">2.6.8 file.copy</h4>
+
+<p>在远程主机上复制文件或目录</p>
+
+<p>拷贝文件</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 8
+    -rw-r--r--. 1 root root   22 Feb 23 16:51 a
+    -rw-------. 1 root root 1259 Jan  8 15:06 anaconda-ks.cfg
+[root@master ~]# salt &#39;*&#39; file.copy /root/a /root/cc
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 12
+    -rw-r--r--. 1 root root   22 Feb 23 16:51 a
+    -rw-------. 1 root root 1259 Jan  8 15:06 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   22 Feb 24 14:57 cc
+</code></pre>
+
+<p>覆盖并拷贝目录，将会覆盖同名文件或目录</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 12
+    -rw-r--r--. 1 root root   22 Feb 23 16:51 a
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   22 Feb 24 14:57 cc
+[root@master ~]# salt &#39;*&#39; file.copy /tmp/ /root/abc recurse=True
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 16
+    -rw-r--r--.  1 root root   22 Feb 23 16:51 a
+    drwxrwxrwt. 12 root root 4096 Feb 24 15:02 abc
+    -rw-------.  1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--.  1 root root   22 Feb 24 14:57 cc
+</code></pre>
+
+<p>删除目标目录中同名的文件或目录并拷贝新内容至其中</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/abc&#39;
+192.168.69.202:
+    total 336
+    drwxr-xr-x. 2 root root      6 Feb 24 15:02 abc
+    -rw-r--r--. 1 root root   1259 Feb 24 15:02 anaconda-ks.cfg
+    -rw-r--r--. 1 root root 219068 Feb 24 15:02 libevent-2.0.21-4.el7.x86_64.rpm
+    -rw-r--r--. 1 root root  86564 Feb 24 15:02 libevent-devel-2.0.21-4.el7.x86_64.rpm
+    drwxr-xr-x. 3 root root     17 Feb 24 15:02 systemd-private-07ec2f23d5a348e5b7cf1d1c0799ebd4-httpd.service-qGPJuL
+    drwxr-xr-x. 3 root root     17 Feb 24 15:02 systemd-private-07ec2f23d5a348e5b7cf1d1c0799ebd4-vgauthd.service-8p0jur
+    drwxr-xr-x. 3 root root     17 Feb 24 15:02 systemd-private-07ec2f23d5a348e5b7cf1d1c0799ebd4-vmtoolsd.service-ouRK2O
+    drwxr-xr-x. 2 root root      6 Feb 24 15:02 systemd-private-07ec2f23d5a348e5b7cf1d1c0799ebd4-vmtoolsd.service-ouRK2Ovmware-root
+    -rw-r--r--. 1 root root    493 Feb 24 15:02 yum_save_tx.2019-02-22.14-22.RXRzka.yumtx
+    -rw-r--r--. 1 root root  22692 Feb 24 15:02 zabbix_agentd.log
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /opt/abc&#39;
+192.168.69.202:
+    total 0
+    drwx------. 3 root root 17 Jan  7 16:41 systemd-private-fdaaf26c12984e209f544671b67c1951-vgauthd.service-kI2C1K
+    drwx------. 3 root root 17 Jan  7 16:41 systemd-private-fdaaf26c12984e209f544671b67c1951-vmtoolsd.service-ZzRiqC
+    
+    
+//拷贝目录
+[root@master ~]# salt &#39;*&#39; file.copy /opt/abc/ /root/abc/ recurse=True remove_existing=True
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/abc&#39;
+192.168.69.202:
+    total 0
+    drwx------. 3 root root 17 Jan  7 16:41 systemd-private-fdaaf26c12984e209f544671b67c1951-vgauthd.service-kI2C1K
+    drwx------. 3 root root 17 Jan  7 16:41 systemd-private-fdaaf26c12984e209f544671b67c1951-vmtoolsd.service-ZzRiqC
+</code></pre>
+
+<h4 id="toc_60">2.6.9 file.ditectory_exists</h4>
+
+<p>判断指定目录是否存在，存在则返回 True ，否则返回 False</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /opt&#39;
+192.168.69.202:
+    total 40
+    -rw-r--r--.  1 root root 1664 Aug 30  2017 CentOS-Base.repo
+    -rw-r--r--.  1 root root 1309 Aug 30  2017 CentOS-CR.repo
+    -rw-r--r--.  1 root root  649 Aug 30  2017 CentOS-Debuginfo.repo
+    -rw-r--r--.  1 root root  630 Aug 30  2017 CentOS-Media.repo
+    -rw-r--r--.  1 root root 1331 Aug 30  2017 CentOS-Sources.repo
+    -rw-r--r--.  1 root root 3830 Aug 30  2017 CentOS-Vault.repo
+    -rw-r--r--.  1 root root  314 Aug 30  2017 CentOS-fasttrack.repo
+    drwxr-xr-x.  4 root root  165 Feb 19 09:20 abc
+    drwxr-xr-x. 81 root root 8192 Feb 22 11:21 etc
+    drwxr-xr-x.  4 root root  165 Feb 19 09:20 test
+[root@master ~]# salt &#39;*&#39; file.directory_exists /opt/abc
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_61">2.6.10 file.diskusage</h4>
+
+<p>递归计算指定路径的磁盘使用情况并以字节为单位返回</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;du -sb /opt&#39;
+192.168.69.202:
+    27166275    /opt
+[root@master ~]# salt &#39;*&#39; file.diskusage /opt
+192.168.69.202:
+    27060683
+</code></pre>
+
+<h4 id="toc_62">2.6.11 file.file_exists</h4>
+
+<p>判断指定文件是否存在</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/&#39;
+192.168.69.202:
+    total 12
+    -rw-r--r--. 1 root root   22 Feb 23 16:51 a
+    drwxr-xr-x. 4 root root  165 Feb 19 09:20 abc
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   22 Feb 24 14:57 cc
+[root@master ~]# salt &#39;*&#39; file.file_exists /root/a
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; file.file_exists /root/abc
+192.168.69.202:
+    False   //返回False是因为abc是目录而非文件
+</code></pre>
+
+<h4 id="toc_63">2.6.12 file.find</h4>
+
+<p>类似 find 命令并返回符合指定条件的路径列表</p>
+
+<p><strong>The options include match criteria:</strong></p>
+
+<pre><code class="language-text">name    = path-glob                 # case sensitive
+iname   = path-glob                 # case insensitive
+regex   = path-regex                # case sensitive
+iregex  = path-regex                # case insensitive
+type    = file-types                # match any listed type
+user    = users                     # match any listed user
+group   = groups                    # match any listed group
+size    = [+-]number[size-unit]     # default unit = byte
+mtime   = interval                  # modified since date
+grep    = regex                     # search file contents
+</code></pre>
+
+<p><strong>and/or actions:</strong></p>
+
+<pre><code class="language-text">delete [= file-types]               # default type = &#39;f&#39;
+exec    = command [arg ...]         # where {} is replaced by pathname
+print  [= print-opts]
+</code></pre>
+
+<p><strong>and/or depth criteria:</strong></p>
+
+<pre><code class="language-text">maxdepth = maximum depth to transverse in path
+mindepth = minimum depth to transverse before checking files or directories
+</code></pre>
+
+<p><strong>The default action is print=path</strong></p>
+
+<p><strong>path-glob:</strong></p>
+
+<pre><code class="language-text">*                = match zero or more chars
+?                = match any char
+[abc]            = match a, b, or c
+[!abc] or [^abc] = match anything except a, b, and c
+[x-y]            = match chars x through y
+[!x-y] or [^x-y] = match anything except chars x through y
+{a,b,c}          = match a or b or c
+</code></pre>
+
+<p><code>path-regex</code>: a Python Regex (regular expression) pattern to match pathnames</p>
+
+<p><code>file-types</code>: a string of one or more of the following:</p>
+
+<pre><code class="language-text">a: all file types
+b: block device
+c: character device
+d: directory
+p: FIFO (named pipe)
+f: plain file
+l: symlink
+s: socket
+</code></pre>
+
+<p><code>users</code>: a space and/or comma separated list of user names and/or uids</p>
+
+<p><code>groups</code>: a space and/or comma separated list of group names and/or gids</p>
+
+<p><code>size-unit</code>:</p>
+
+<pre><code class="language-text">b: bytes
+k: kilobytes
+m: megabytes
+g: gigabytes
+t: terabytes
+</code></pre>
+
+<p><strong>interval:</strong></p>
+
+<pre><code class="language-text">[&lt;num&gt;w] [&lt;num&gt;d] [&lt;num&gt;h] [&lt;num&gt;m] [&lt;num&gt;s]
+
+where:
+    w: week
+    d: day
+    h: hour
+    m: minute
+    s: second
+</code></pre>
+
+<p><strong>print-opts: a comma and/or space separated list of one or more of the following:</strong></p>
+
+<pre><code class="language-text">group: group name
+md5:   MD5 digest of file contents
+mode:  file permissions (as integer)
+mtime: last modification time (as time_t)
+name:  file basename
+path:  file absolute path
+size:  file size in bytes
+type:  file type
+user:  user name
+</code></pre>
+
+<p><strong>示例：</strong></p>
+
+<pre><code class="language-text">salt &#39;*&#39; file.find / type=f name=\*.bak size=+10m
+salt &#39;*&#39; file.find /var mtime=+30d size=+10m print=path,size,mtime
+salt &#39;*&#39; file.find /var/log name=\*.[0-9] mtime=+30d size=+10m delete
+</code></pre>
+
+<h4 id="toc_64">2.6.13 file.get_gid</h4>
+
+<p>获取指定文件的gid</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/a&#39;
+192.168.69.202:
+    -rw-r--r--. 1 root root 22 Feb 23 16:51 /root/a
+[root@master ~]# salt &#39;*&#39; file.get_gid /root/a
+192.168.69.202:
+    0
+</code></pre>
+
+<h4 id="toc_65">2.6.14 file.get_group</h4>
+
+<p>获取指定文件的组名</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/a&#39;
+192.168.69.202:
+    -rw-r--r--. 1 root root 22 Feb 23 16:51 /root/a
+[root@master ~]# salt &#39;*&#39; file.get_group /root/a
+192.168.69.202:
+    root
+</code></pre>
+
+<h4 id="toc_66">2.6.15 file.get_hash</h4>
+
+<p>获取指定文件的hash值，该值通过 sha256 算法得来</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;sha256sum /root/a&#39;
+192.168.69.202:
+    11129dfb248c6bc5784c1d439877552aa34f3408f14dbb38572e802e4831b77a  /root/a
+[root@master ~]# salt &#39;*&#39; file.get_hash /root/a
+192.168.69.202:
+    11129dfb248c6bc5784c1d439877552aa34f3408f14dbb38572e802e4831b77a
+</code></pre>
+
+<h4 id="toc_67">2.6.16 file.get_mode</h4>
+
+<p>获取指定文件的权限，以数字方式显示</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/a&#39;
+192.168.69.202:
+    -rw-r--r--. 1 root root 22 Feb 23 16:51 /root/a
+[root@master ~]# salt &#39;*&#39; file.get_mode /root/a
+192.168.69.202:
+    0644
+</code></pre>
+
+<h4 id="toc_68">2.6.17 file.get_selinux_context</h4>
+
+<p>获取指定文件的 SELINUX 上下文信息</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -Z /root/a&#39;
+192.168.69.202:
+    -rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 /root/a
+[root@master ~]# salt &#39;*&#39; file.get_selinux_context /root/a
+192.168.69.202:
+    unconfined_u:object_r:admin_home_t:s0
+</code></pre>
+
+<h4 id="toc_69">2.6.18 file.get_sum</h4>
+
+<p>按照指定的算法计算指定文件的特征码并显示，默认使用的sha256算法。<br/>
+该函数可使用的算法参数有：</p>
+
+<ul>
+<li>md5</li>
+<li>sha1</li>
+<li>sha224</li>
+<li>sha256 (default)</li>
+<li>sha384</li>
+<li>sha512</li>
+</ul>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;sha256sum /root/a&#39;
+192.168.69.202:
+    11129dfb248c6bc5784c1d439877552aa34f3408f14dbb38572e802e4831b77a  /root/a
+[root@master ~]# salt &#39;*&#39; file.get_sum /root/a
+192.168.69.202:
+    11129dfb248c6bc5784c1d439877552aa34f3408f14dbb38572e802e4831b77a
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;md5sum /root/a&#39;
+192.168.69.202:
+    671ded4ec86c82a8779c8df17823f810  /root/a
+[root@master ~]# salt &#39;*&#39; file.get_sum /root/a md5
+192.168.69.202:
+    671ded4ec86c82a8779c8df17823f810
+</code></pre>
+
+<h4 id="toc_70">2.6.19 file.get_uid与file.get_user</h4>
+
+<p>获取指定文件的 uid 或 用户名</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/a&#39;
+192.168.69.202:
+    -rw-r--r--. 1 root root 22 Feb 23 16:51 /root/a
+[root@master ~]# salt &#39;*&#39; file.get_uid /root/a
+192.168.69.202:
+    0
+[root@master ~]# salt &#39;*&#39; file.get_user /root/a
+192.168.69.202:
+    root
+</code></pre>
+
+<h4 id="toc_71">2.6.20 file.gid_to_group</h4>
+
+<p>将指定的 gid 转换为组名并显示</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; file.gid_to_group 1000
+192.168.69.202:
+    tom
+[root@master ~]# salt &#39;*&#39; file.gid_to_group 0
+192.168.69.202:
+    root
+</code></pre>
+
+<h4 id="toc_72">2.6.21 file.group_to_gid</h4>
+
+<p>将指定的组名转换为 gid 并显示</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; file.group_to_gid root
+192.168.69.202:
+    0
+[root@master ~]# salt &#39;*&#39; file.group_to_gid tom
+192.168.69.202:
+    1000
+</code></pre>
+
+<h4 id="toc_73">2.6.22 file.grep</h4>
+
+<p>在指定文件中检索指定内容<br/>
+该函数支持通配符，若在指定的路径中用通配符则必须用双引号引起来</p>
+
+<pre><code class="language-text">salt &#39;*&#39; file.grep /etc/passwd nobody
+salt &#39;*&#39; file.grep /etc/sysconfig/network-scripts/ifcfg-eth0 ipaddr -- -i
+salt &#39;*&#39; file.grep /etc/sysconfig/network-scripts/ifcfg-eth0 ipaddr -- -i -B2
+salt &#39;*&#39; file.grep &quot;/etc/sysconfig/network-scripts/*&quot; ipaddr -- -i -l
+</code></pre>
+
+<h4 id="toc_74">2.6.23 file.is_blkdev</h4>
+
+<p>判断指定的文件是否是块设备文件</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /dev/sr0&#39;
+192.168.69.202:
+    brw-rw----. 1 root cdrom 11, 0 Feb 23 17:13 /dev/sr0
+[root@master ~]# salt &#39;*&#39; file.is_blkdev /dev/sr0
+192.168.69.202:
+    True
+</code></pre>
+
+<h4 id="toc_75">2.6.24 file.lsattr</h4>
+
+<p>检查并显示出指定文件的属性信息</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;lsattr /root/a&#39;
+192.168.69.202:
+    ---------------- /root/a
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;chattr +i /root/a&#39;
+192.168.69.202:
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;lsattr /root/a&#39;
+192.168.69.202:
+    ----i----------- /root/a
+[root@master ~]# salt &#39;*&#39; file.lsattr /root/a
+192.168.69.202:
+    ----------
+    /root/a:
+        - i
+</code></pre>
+
+<h4 id="toc_76">2.6.25 file.mkdir</h4>
+
+<p>创建目录并设置属主、属组及权限</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 16
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 a
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 cc
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+[root@master ~]# salt &#39;*&#39; file.mkdir /root/abc
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 16
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 a
+    drwxr-xr-x. 2 root root    6 Feb 24 17:05 abc
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 cc
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    
+[root@master ~]# salt &#39;*&#39; file.mkdir /root/haha tom tom 400
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/&#39;
+192.168.69.202:
+    total 16
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 a
+    drwxr-xr-x. 2 root root    6 Feb 24 17:05 abc
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 cc
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+</code></pre>
+
+<h4 id="toc_77">2.6.26 file.move</h4>
+
+<p>移动或重命名</p>
+
+<pre><code class="language-text">//重命名
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 20
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 a
+    drwxr-xr-x. 2 root root    6 Feb 24 17:05 abc
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 b
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 cc
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+[root@master ~]# salt &#39;*&#39; file.move /root/a /root/b
+192.168.69.202:
+    ----------
+    comment:
+        &#39;/root/a&#39; moved to &#39;/root/b&#39;
+    result:
+        True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 16
+    drwxr-xr-x. 2 root root    6 Feb 24 17:05 abc
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 b
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 cc
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+    
+    
+//移动
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 16
+    drwxr-xr-x. 2 root root    6 Feb 24 17:05 abc
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 b
+    -rw-r--r--. 1 root root   26 Feb 24 16:16 cc
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /opt&#39;
+192.168.69.202:
+    total 0
+[root@master ~]# salt &#39;*&#39; file.move /root/cc /opt/
+salt &#39;*&#39; file.move /root/cc /opt/
+192.168.69.202:
+    ----------
+    comment:
+        &#39;/root/cc&#39; moved to &#39;/opt/&#39;
+    result:
+        True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /opt&#39;
+192.168.69.202:
+    total 4
+    -rw-r--r--. 1 root root 26 Feb 24 16:16 cc
+</code></pre>
+
+<h4 id="toc_78">2.6.27 file.prepend</h4>
+
+<p>把文本插入指定文件的开头</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/b&#39;
+192.168.69.202:
+    hello world
+    hello runtime
+[root@master ~]# salt &#39;*&#39; file.prepend /root/b &quot;hehe&quot; &quot;xixi&quot; &quot;haha&quot;
+192.168.69.202:
+    Prepended 3 lines to &quot;/root/b&quot;
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/b&#39;
+192.168.69.202:
+    hehe
+    xixi
+    haha
+    hello world
+    hello runtime
+</code></pre>
+
+<h4 id="toc_79">2.6.28 file.sed</h4>
+
+<p>修改文本文件的内容</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/b&#39;
+192.168.69.202:
+    hehe
+    xixi
+    haha
+    hello hello hello hello  world
+    hello runtime
+[root@master ~]# salt &#39;*&#39; file.sed /root/b &#39;hello&#39; &#39;runtime&#39;
+192.168.69.202:
+    ----------
+    pid:
+        25170
+    retcode:
+        0
+    stderr:
+    stdout:
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/b&#39;
+192.168.69.202:
+    hehe
+    xixi
+    haha
+    runtime runtime runtime runtime  world
+    runtime runtime
+    
+    
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/b&#39;
+192.168.69.202:
+    hehe
+    xixi
+    haha
+    hello hello hello hello  world
+    hello hello
+[root@master ~]# salt &#39;*&#39; file.sed /root/b &#39;hello&#39; &#39;runtime&#39; flags=2
+192.168.69.202:
+    ----------
+    pid:
+        25590
+    retcode:
+        0
+    stderr:
+    stdout:
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/b&#39;
+192.168.69.202:
+    hehe
+    xixi
+    haha
+    hello runtime hello hello  world
+    hello runtime
+</code></pre>
+
+<h4 id="toc_80">2.6.29 file.read</h4>
+
+<p>读取文件内容</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/cca&#39;
+192.168.69.202:
+    hello world
+    hello runtime
+[root@master ~]# salt &#39;*&#39; file.read /root/cca
+192.168.69.202:
+    hello world
+    hello runtime
+</code></pre>
+
+<h4 id="toc_81">2.6.30 file.readdir</h4>
+
+<p>列出指定目录下的所有文件或目录，包括隐藏文件</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; file.readdir /root
+192.168.69.202:
+    - .
+    - ..
+    - .bash_logout
+    - .bash_profile
+    - .bashrc
+    - .cshrc
+    - .tcshrc
+    - .bash_history
+    - .local
+    - .config
+    - .pki
+    - .ICE-unix
+    - .X11-unix
+    - .XIM-unix
+    - .font-unix
+    - .Test-unix
+    - anaconda-ks.cfg
+    - cca
+    - abc
+    - haha
+    - b.bak
+    - b
+    - .viminfo
+</code></pre>
+
+<h4 id="toc_82">2.6.31 file.remove</h4>
+
+<p>删除指定的文件或目录，若给出的是目录，将递归删除</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/&#39;
+192.168.69.202:
+    total 16
+    drwxr-xr-x. 2 root root    6 Feb 24 17:05 abc
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   62 Feb 24 17:29 b
+    -rw-r--r--. 1 root root   58 Feb 24 17:29 b.bak
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+[root@master ~]# salt &#39;*&#39; file.remove /root/b
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; file.remove /root/abc
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/&#39;
+192.168.69.202:
+    total 12
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   58 Feb 24 17:29 b.bak
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+</code></pre>
+
+<h4 id="toc_83">2.6.32 file.rename</h4>
+
+<p>重命名文件或目录</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/&#39;
+192.168.69.202:
+    total 12
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   58 Feb 24 17:29 b.bak
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+[root@master ~]# salt &#39;*&#39; file.rename /root/b.bak /root/b
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/&#39;
+192.168.69.202:
+    total 12
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   58 Feb 24 17:29 b
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+</code></pre>
+
+<h4 id="toc_84">2.6.33 file.set_mode</h4>
+
+<p>给指定文件设置权限</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 12
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -rw-r--r--. 1 root root   58 Feb 24 17:29 b
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+[root@master ~]# salt &#39;*&#39; file.set_mode /root/b 0400
+192.168.69.202:
+    0400
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root&#39;
+192.168.69.202:
+    total 12
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -r--------. 1 root root   58 Feb 24 17:29 b
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+</code></pre>
+
+<h4 id="toc_85">2.6.34 file.symlink</h4>
+
+<p>给指定的文件创建软链接</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root/&#39;
+192.168.69.202:
+    total 12
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -r--------. 1 root root   58 Feb 24 17:29 b
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+[root@master ~]# salt &#39;*&#39; file.symlink /root/b /opt/a
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /root;ls -l /opt/&#39;
+192.168.69.202:
+    total 12
+    -rw-------. 1 root root 1259 Feb 24 15:00 anaconda-ks.cfg
+    -r--------. 1 root root   58 Feb 24 17:29 b
+    -rw-r--r--. 1 root root   26 Feb 24 16:18 cca
+    dr--------. 2 tom  tom     6 Feb 24 17:07 haha
+    total 4
+    lrwxrwxrwx. 1 root   root   7 Mar  1 18:18 a -&gt; /root/b
+    -rw-rw-r--. 1 zabbix zabbix 4 Feb 28 08:38 jjyy
+</code></pre>
+
+<h4 id="toc_86">2.6.35 file.touch</h4>
+
+<p>创建空文件或更新时间戳</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /opt&#39;
+192.168.69.202:
+    total 4
+    lrwxrwxrwx. 1 root   root   7 Mar  1 18:18 a -&gt; /root/b
+    -rw-r--r--. 1 root   root   0 Mar  1 18:21 aa
+    -rw-rw-r--. 1 zabbix zabbix 4 Feb 28 08:38 jjyy
+[root@master ~]# salt &#39;*&#39; file.touch /opt/cc
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; file.touch /opt/aa
+192.168.69.202:
+    True
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;ls -l /opt&#39;
+192.168.69.202:
+    total 4
+    lrwxrwxrwx. 1 root   root   7 Mar  1 18:18 a -&gt; /root/b
+    -rw-r--r--. 1 root   root   0 Mar  1 18:22 aa
+    -rw-r--r--. 1 root   root   0 Mar  1 18:22 cc
+    -rw-rw-r--. 1 zabbix zabbix 4 Feb 28 08:38 jjyy
+</code></pre>
+
+<h4 id="toc_87">2.6.36 file.uid_to_user</h4>
+
+<p>将指定的 uid 转换成用户名显示出来</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; file.uid_to_user 0
+192.168.69.202:
+    root
+[root@master ~]# salt &#39;*&#39; file.uid_to_user 1000
+192.168.69.202:
+    tom
+</code></pre>
+
+<h4 id="toc_88">2.6.37 file.user_to_uid</h4>
+
+<p>将指定的用户转换成 uid 并显示出来</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; file.user_to_uid tom
+192.168.69.202:
+    1000
+[root@master ~]# salt &#39;*&#39; file.user_to_uid root
+192.168.69.202:
+    0
+</code></pre>
+
+<h4 id="toc_89">2.6.38 file.write</h4>
+
+<p>往一个指定的文件里覆盖写入指定内容</p>
+
+<pre><code class="language-text">[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/b&#39;
+192.168.69.202:
+    I&#39;m sean
+[root@master ~]# salt &#39;*&#39; file.write /root/b &quot;I&#39;m tom&quot; &quot;haha&quot; &quot;xixi&quot;
+192.168.69.202:
+    Wrote 3 lines to &quot;/root/b&quot;
+[root@master ~]# salt &#39;*&#39; cmd.run &#39;cat /root/b&#39;
+192.168.69.202:
+    I&#39;m tom
+    haha
+    xixi
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html"  title="Previous Post: keepalived高可用">&laquo; keepalived高可用</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html" 
+	        title="Next Post: 正则表达式re模块">正则表达式re模块 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15506647066554.html'/*tpa=http://www.itwangqing.net.cn/15506647066554.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

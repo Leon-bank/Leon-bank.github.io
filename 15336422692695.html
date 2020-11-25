@@ -1,0 +1,1074 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  rsync - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>rsync</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. rsync简介</a>
+</li>
+<li>
+<a href="#toc_1">2. rsync特性</a>
+</li>
+<li>
+<a href="#toc_2">3. rsync的ssh认证协议</a>
+</li>
+<li>
+<a href="#toc_3">4. rsync命令</a>
+</li>
+<li>
+<a href="#toc_4">5. rsync+inotify</a>
+</li>
+<li>
+<a href="#toc_5">作业</a>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. rsync简介</h2>
+
+<p><code>rsync</code>是<code>linux</code>系统下的数据镜像备份工具。使用快速增量备份工具<code>Remote Sync</code>可以远程同步，支持本地复制，或者与其他<code>SSH</code>、<code>rsync</code>主机同步。</p>
+
+<h2 id="toc_1">2. rsync特性</h2>
+
+<p><code>rsync</code>支持很多特性：</p>
+
+<ul>
+<li>可以镜像保存整个目录树和文件系统</li>
+<li>可以很容易做到保持原来文件的权限、时间、软硬链接等等</li>
+<li>无须特殊权限即可安装</li>
+<li>快速：第一次同步时<code>rsync</code>会复制全部内容，但在下一次只传输修改过的文件。<code>rsync</code>在传输数据的过程中可以实行压缩及解压缩操作，因此可以使用更少的带宽</li>
+<li>安全：可以使用<code>scp</code>、<code>ssh</code>等方式来传输文件，当然也可以通过直接的<code>socket</code>连接</li>
+<li>支持匿名传输，以方便进行网站镜像</li>
+</ul>
+
+<h2 id="toc_2">3. rsync的ssh认证协议</h2>
+
+<p><code>rsync</code>命令来同步系统文件之前要先登录<code>remote</code>主机认证，认证过程中用到的协议有2种：</p>
+
+<ul>
+<li><code>ssh</code>协议</li>
+<li><code>rsync</code>协议</li>
+</ul>
+
+<blockquote>
+<p><code>rsync server</code>端不用启动<code>rsync</code>的<code>daemon</code>进程，只要获取<code>remote host</code>的用户名和密码就可以直接<code>rsync</code>同步文件<br/>
+<code>rsync server</code>端因为不用启动<code>daemon</code>进程，所以也不用配置文件<code>/etc/rsyncd.conf</code></p>
+</blockquote>
+
+<p><code>ssh</code>认证协议跟<code>scp</code>的原理是一样的，如果在同步过程中不想输入密码就用<code>ssh-keygen -t rsa</code>打通通道</p>
+
+<pre><code class="language-text">//这种方式默认是省略了 -e ssh 的，与下面等价：
+rsync -avz /SRC -e ssh root@172.16.12.129:/DEST 
+    -a  //文件宿主变化，时间戳不变
+    -z  //压缩数据传输
+ 
+//当遇到要修改端口的时候，我们可以：
+rsync -avz /SRC -e &quot;ssh -p2222&quot; root@172.16.12.129:/DEST  
+//修改了ssh 协议的端口，默认是22
+</code></pre>
+
+<h2 id="toc_3">4. rsync命令</h2>
+
+<pre><code class="language-text">//Rsync的命令格式常用的有以下三种：
+    rsync [OPTION]... SRC DEST
+    rsync [OPTION]... SRC [USER@]HOST:DEST
+    rsync [OPTION]... [USER@]HOST:SRC DEST
+　　
+//对应于以上三种命令格式，rsync有三种不同的工作模式：
+1）拷贝本地文件。当SRC和DES路径信息都不包含有单个冒号&quot;:&quot;分隔符时就启动这种工作模式。如：
+[root@localhost ~]# ls
+anaconda-ks.cfg  nfs.sh
+[root@localhost ~]# rsync -a nfs.sh a.sh
+[root@localhost ~]# ll
+total 12
+-rw-------. 1 root root 1453 Jun 13 19:27 anaconda-ks.cfg
+-rwxr-xr-x  1 root root 1041 Aug  8 18:14 a.sh
+-rwxr-xr-x  1 root root 1041 Aug  8 18:14 nfs.sh
+[root@localhost ~]# ll -i
+total 12
+33574978 -rw-------. 1 root root 1453 Jun 13 19:27 anaconda-ks.cfg
+33574979 -rwxr-xr-x  1 root root 1041 Aug  8 18:14 a.sh
+33574990 -rwxr-xr-x  1 root root 1041 Aug  8 18:14 nfs.sh
+
+2）使用一个远程shell程序(如rsh、ssh)来实现将本地机器的内容拷贝到远程机器。当DST路径地址包 \
+含单个冒号&quot;:&quot;分隔符时启动该模式。如：
+[root@localhost ~]# rsync -avz nfs.sh root@172.16.12.129:/root/b.sh
+sending incremental file list
+nfs.sh
+
+sent 643 bytes  received 35 bytes  1,356.00 bytes/sec
+total size is 1,041  speedup is 1.54
+[root@localhost ~]# ssh root@172.16.12.129 &#39;ls -l /root&#39;
+total 8
+-rw-------. 1 root root 1454 Aug  6 04:39 anaconda-ks.cfg
+-rwxr-xr-x  1 root root 1041 Aug  8  2018 b.sh
+
+3）使用一个远程shell程序(如rsh、ssh)来实现将远程机器的内容拷贝到本地机器。当SRC地址路径 \
+包含单个冒号&quot;:&quot;分隔符时启动该模式。如：
+[root@localhost ~]# ls
+anaconda-ks.cfg  a.sh  nfs.sh
+[root@localhost ~]# rsync -avz root@172.16.12.129:/etc/yum.repos.d /root/
+receiving incremental file list
+yum.repos.d/
+yum.repos.d/163.repo
+yum.repos.d/redhat.repo
+
+sent 66 bytes  received 918 bytes  1,968.00 bytes/sec
+total size is 1,820  speedup is 1.85
+[root@localhost ~]# ls
+anaconda-ks.cfg  a.sh  nfs.sh  yum.repos.d
+[root@localhost ~]# ls yum.repos.d/
+163.repo  redhat.repo
+
+
+
+//rsync常用选项：
+    -a, --archive       //归档
+    -v, --verbose       //啰嗦模式
+    -q, --quiet         //静默模式
+    -r, --recursive     //递归
+    -p, --perms         //保持原有的权限属性
+    -z, --compress      //在传输时压缩，节省带宽，加快传输速度
+    --delete            //在源服务器上做的删除操作也会在目标服务器上同步
+</code></pre>
+
+<h2 id="toc_4">5. rsync+inotify</h2>
+
+<p><code>rsync</code>与传统的<code>cp</code>、<code>tar</code>备份方式相比，<code>rsync</code>具有安全性高、备份迅速、支持增量备份等优点，通过<code>rsync</code>可以解决对实时性要求不高的数据备份需求，例如定期的备份文件服务器数据到远端服务器，对本地磁盘定期做数据镜像等。<br/>
+随着应用系统规模的不断扩大，对数据的安全性和可靠性也提出的更好的要求，<code>rsync</code>在高端业务系统中也逐渐暴露出了很多不足，首先，<code>rsync</code>同步数据时，需要扫描所有文件后进行比对，进行差量传输。如果文件数量达到了百万甚至千万量级，扫描所有文件将是非常耗时的。而且正在发生变化的往往是其中很少的一部分，这是非常低效的方式。其次，<code>rsync</code>不能实时的去监测、同步数据，虽然它可以通过<code>linux</code>守护进程的方式进行触发同步，但是两次触发动作一定会有时间差，这样就导致了服务端和客户端数据可能出现不一致，无法在应用故障时完全的恢复数据。基于以上原因，<code>rsync</code>+<code>inotify</code>组合出现了！</p>
+
+<p><code>Inotify</code>是一种强大的、细粒度的、异步的文件系统事件监控机制，<code>linux</code>内核从<code>2.6.13</code>起，加入了<code>Inotify</code>支持，通过<code>Inotify</code>可以监控文件系统中添加、删除，修改、移动等各种细微事件，利用这个内核接口，第三方软件就可以监控文件系统下文件的各种变化情况，而<code>inotify-tools</code>就是这样的一个第三方软件。<br/>
+在前面有讲到，rsync可以实现触发式的文件同步，但是通过<code>crontab</code>守护进程方式进行触发，同步的数据和实际数据会有差异，而<code>inotify</code>可以监控文件系统的各种变化，当文件有任何变动时，就触发<code>rsync</code>同步，这样刚好解决了同步数据的实时性问题。</p>
+
+<p><strong>环境说明：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">服务器类型</th>
+<th style="text-align: center">IP地址</th>
+<th>应用</th>
+<th>操作系统</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">源服务器</td>
+<td style="text-align: center">172.16.12.128</td>
+<td>rsync<br>inotify-tools<br>脚本</td>
+<td>centos7/redhat7</td>
+</tr>
+<tr>
+<td style="text-align: center">目标服务器</td>
+<td style="text-align: center">172.16.12.129</td>
+<td>rsync</td>
+<td>centos7/redhat7</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>需求：</strong></p>
+
+<ul>
+<li>把源服务器上/etc目录实时同步到目标服务器的/tmp/下</li>
+</ul>
+
+<p><strong>在目标服务器上做以下操作：</strong></p>
+
+<pre><code class="language-text">//关闭防火墙与SELINUX
+[root@localhost ~]# systemctl stop firewalld
+[root@localhost ~]# systemctl disable firewalld
+[root@localhost ~]# getenforce
+Enforcing
+[root@localhost ~]# setenforce 0
+[root@localhost ~]# sed -ri &#39;s/^(SELINUX=).*/\1disabled/g&#39; /etc/sysconfig/selinux
+
+
+//安装rsync服务端软件
+[root@localhost ~]# yum -y install rsync
+Loaded plugins: product-id, search-disabled-repos, subscription-manager
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+myrepo                                          | 4.1 kB     00:00
+(1/2): myrepo/group_gz                            | 137 kB   00:00
+(2/2): myrepo/primary_db                          | 4.0 MB   00:00
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package rsync.x86_64 0:3.0.9-18.el7 will be installed
+......
+myrepo/productid                                | 1.6 kB     00:00
+  Verifying  : rsync-3.0.9-18.el7.x86_64                           1/1
+
+Installed:
+  rsync.x86_64 0:3.0.9-18.el7
+
+Complete!
+
+
+//设置rsyncd.conf配置文件
+[root@localhost ~]# cat &gt;&gt; /etc/rsyncd.conf &lt;&lt;EOF
+log file = /var/log/rsyncd.log    # 日志文件位置，启动rsync后自动产生这个文件，无需提前创建
+pidfile = /var/run/rsyncd.pid     # pid文件的存放位置
+lock file = /var/run/rsync.lock   # 支持max connections参数的锁文件
+secrets file = /etc/rsync.pass    # 用户认证配置文件，里面保存用户名称和密码，必须手动创建这个文件
+
+[etc_from_client]     # 自定义同步名称
+path = /tmp/          # rsync服务端数据存放路径，客户端的数据将同步至此目录
+comment = sync etc from client
+uid = root        # 设置rsync运行权限为root
+gid = root        # 设置rsync运行权限为root
+port = 873        # 默认端口
+ignore errors     # 表示出现错误忽略错误
+use chroot = no       # 默认为true，修改为no，增加对目录文件软连接的备份
+read only = no    # 设置rsync服务端为读写权限
+list = no     # 不显示rsync服务端资源列表
+max connections = 200     # 最大连接数
+timeout = 600     # 设置超时时间
+auth users = admin        # 执行数据同步的用户名，可以设置多个，用英文状态下逗号隔开
+hosts allow = 172.16.12.128   # 允许进行数据同步的客户端IP地址，可以设置多个，用英文状态下逗号隔开
+hosts deny = 192.168.1.1      # 禁止数据同步的客户端IP地址，可以设置多个，用英文状态下逗号隔开
+EOF
+
+
+//创建用户认证文件
+[root@localhost ~]# echo &#39;admin:123456&#39; &gt; /etc/rsync.pass
+[root@localhost ~]# cat /etc/rsync.pass
+admin:123456
+
+//设置文件权限
+[root@localhost ~]# chmod 600 /etc/rsync*
+[root@localhost ~]# ll /etc/rsync*
+-rw-------. 1 root root 802 Aug  9 22:45 /etc/rsyncd.conf
+-rw-------. 1 root root  13 Aug  9 22:47 /etc/rsync.pass
+
+//启动rsync服务并设置开机自启动
+[root@localhost ~]# systemctl start rsyncd
+[root@localhost ~]# systemctl enable rsyncd
+Created symlink from /etc/systemd/system/multi-user.target.wants/rsyncd.service to /usr/lib/systemd/system/rsyncd.service.
+[root@localhost ~]# ss -antl
+State       Recv-Q Send-Q Local Address:Port               Peer Address:Port
+LISTEN      0      128     *:22                  *:*
+LISTEN      0      100    127.0.0.1:25                  *:*
+LISTEN      0      5       *:873                 *:*
+LISTEN      0      128    :::22                 :::*
+LISTEN      0      100       ::1:25                 :::*
+LISTEN      0      5      :::873                :::*
+</code></pre>
+
+<p><strong>在源服务器上做以下操作：</strong></p>
+
+<pre><code class="language-text">/关闭防火墙与SELINUX
+[root@localhost ~]# systemctl stop firewalld
+[root@localhost ~]# systemctl disable firewalld
+[root@localhost ~]# getenforce
+Enforcing
+[root@localhost ~]# setenforce 0
+[root@localhost ~]# sed -ri &#39;s/^(SELINUX=).*/\1disabled/g&#39; /etc/sysconfig/selinux
+
+//配置yum源
+[root@localhost ~]# cd /etc/yum.repos.d/
+[root@localhost yum.repos.d]# wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+--2018-08-10 12:07:17--  http://mirrors.163.com/.help/CentOS7-Base-163.repo
+Resolving mirrors.163.com (mirrors.163.com)... 59.111.0.251
+Connecting to mirrors.163.com (mirrors.163.com)|59.111.0.251|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1572 (1.5K) [application/octet-stream]
+Saving to: ‘CentOS7-Base-163.repo’
+
+100%[=================================&gt;] 1,572       --.-K/s   in 0s
+
+2018-08-10 12:07:17 (191 MB/s) - ‘CentOS7-Base-163.repo’ saved [1572/1572]
+[root@localhost ~]# sed -i &#39;s/\$releasever/7/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+[root@localhost ~]# sed -i &#39;s/^enabled=.*/enabled=1/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+[root@localhost ~]# yum -y install epel-release
+安装过程略。。。。
+
+
+//安装rsync服务端软件，只需要安装，不要启动，不需要配置
+[root@localhost ~]# yum -y install rsync
+Loaded plugins: product-id, search-disabled-repos, subscription-manager
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+myrepo                                          | 4.1 kB     00:00
+(1/2): myrepo/group_gz                            | 137 kB   00:00
+(2/2): myrepo/primary_db                          | 4.0 MB   00:00
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package rsync.x86_64 0:3.0.9-18.el7 will be installed
+......
+myrepo/productid                                | 1.6 kB     00:00
+  Verifying  : rsync-3.0.9-18.el7.x86_64                           1/1
+
+Installed:
+  rsync.x86_64 0:3.0.9-18.el7
+
+Complete!
+
+
+//创建认证密码文件
+[root@localhost ~]# echo &#39;123456&#39; &gt; /etc/rsync.pass
+[root@localhost ~]# cat /etc/rsync.pass
+123456
+
+//设置文件权限，只设置文件所有者具有读取、写入权限即可
+[root@localhost ~]# chmod 600 /etc/rsync.pass
+[root@localhost ~]# ll /etc/rsync.pass
+-rw------- 1 root root 7 Aug 10 11:40 /etc/rsync.pass
+
+//在源服务器上创建测试目录，然后在源服务器运行以下命令
+[root@localhost ~]# ls
+anaconda-ks.cfg
+[root@localhost ~]# mkdir -pv /root/etc/test
+mkdir: created directory ‘/root/etc’
+mkdir: created directory ‘/root/etc/test’
+[root@localhost ~]# rsync -avH --port 873 --progress --delete /root/etc/ admin@172.16.12.129::etc_from_client --password-file=/etc/rsync.pass
+sending incremental file list
+./
+deleting systemd-private-899c38a51df749efb3104e68d77739ff-vmtoolsd.service-28tQpq/tmp/vmware-root/
+deleting systemd-private-899c38a51df749efb3104e68d77739ff-vmtoolsd.service-28tQpq/tmp/
+deleting systemd-private-899c38a51df749efb3104e68d77739ff-vmtoolsd.service-28tQpq/
+deleting systemd-private-899c38a51df749efb3104e68d77739ff-vgauthd.service-0QH6Vs/tmp/
+deleting systemd-private-899c38a51df749efb3104e68d77739ff-vgauthd.service-0QH6Vs/
+deleting systemd-private-899c38a51df749efb3104e68d77739ff-chronyd.service-4Z4q8n/tmp/
+deleting systemd-private-899c38a51df749efb3104e68d77739ff-chronyd.service-4Z4q8n/
+deleting .font-unix/
+deleting .XIM-unix/
+deleting .X11-unix/
+deleting .Test-unix/
+deleting .ICE-unix/
+deleting yum.log
+deleting ks-script-G8Z8sn
+test/
+
+sent 49 bytes  received 15 bytes  128.00 bytes/sec
+total size is 0  speedup is 0.00
+//运行完成后，在目标服务器上查看，在/tmp目录下有test目录，说明数据同步成功
+
+
+
+
+
+
+//安装inotify-tools工具，实时触发rsync进行同步
+//查看服务器内核是否支持inotify
+[root@localhost ~]# ll /proc/sys/fs/inotify/
+total 0
+-rw-r--r-- 1 root root 0 Aug 10 11:19 max_queued_events
+-rw-r--r-- 1 root root 0 Aug 10 11:19 max_user_instances
+-rw-r--r-- 1 root root 0 Aug 10 11:19 max_user_watches
+//如果有这三个max开头的文件则表示服务器内核支持inotify
+
+//安装inotify-tools
+[root@localhost ~]# yum -y install make gcc gcc-c++
+安装过程略....
+[root@localhost ~]# yum -y install inotify-tools
+安装过程略....
+
+
+//写同步脚本，此步乃最最重要的一步，请慎之又慎。让脚本自动去检测我们制定的目录下 \
+//文件发生的变化，然后再执行rsync的命令把它同步到我们的服务器端去
+[root@localhost ~]# mkdir /scripts
+[root@localhost ~]# touch /scripts/inotify.sh
+[root@localhost ~]# chmod 755 /scripts/inotify.sh
+[root@localhost ~]# ll /scripts/inotify.sh
+-rwxr-xr-x 1 root root 0 Aug 10 13:02 /scripts/inotify.sh
+[root@localhost ~]# vim /scripts/inotify.sh
+host=172.16.12.129      # 目标服务器的ip(备份服务器)
+src=/etc        # 在源服务器上所要监控的备份目录（此处可以自定义，但是要保证存在）
+des=etc_from_client     # 自定义的模块名，需要与目标服务器上定义的同步名称一致
+password=/etc/rsync.pass        # 执行数据同步的密码文件
+user=admin          # 执行数据同步的用户名
+inotifywait=/usr/bin/inotifywait
+
+$inotifywait -mrq --timefmt &#39;%Y%m%d %H:%M&#39; --format &#39;%T %w%f%e&#39; -e modify,delete,create,attrib $src \
+| while read files;do
+    rsync -avzP --delete  --timeout=100 --password-file=${password} $src $user@$host::$des
+    echo &quot;${files} was rsynced&quot; &gt;&gt;/tmp/rsync.log 2&gt;&amp;1
+done
+
+//启动脚本
+[root@localhost ~]# nohup bash /scripts/inotify.sh &amp;
+[1] 86871
+[root@localhost ~]# nohup: ignoring input and appending output to ‘nohup.out’
+
+[root@localhost ~]# ps -ef|grep inotify
+root      86871   2143  0 14:52 pts/0    00:00:00 bash /scripts/inotify.sh
+root      86872  86871  0 14:52 pts/0    00:00:00 /usr/bin/inotifywait -mrq --timefmt %Y%m%d %H:%M --format %T %w%f%e -e modify,delete,create,attrib /etc
+root      86873  86871  0 14:52 pts/0    00:00:00 bash /scripts/inotify.sh
+root      86875   2143  0 14:52 pts/0    00:00:00 grep --color=auto inotify
+
+//在源服务器上生成一个新文件
+[root@localhost ~]# ls /etc/httpd24/
+extra  httpd.conf  magic  mime.types  original
+[root@localhost ~]# echo &#39;hello world&#39; &gt; /etc/httpd24/test
+
+//查看inotify生成的日志
+[root@localhost ~]# tail /tmp/rsync.log
+20180810 14:59 /etc/httpd24/testCREATE was rsynced
+20180810 14:59 /etc/httpd24/testMODIFY was rsynced
+//从日志上可以看到，我们生成了一个test文件，并且添加了内容到其里面
+</code></pre>
+
+<p><strong>设置脚本开机自动启动：</strong></p>
+
+<pre><code class="language-text">[root@localhost ~]# chmod +x /etc/rc.d/rc.local
+[root@localhost ~]# ll /etc/rc.d/rc.local
+-rwxr-xr-x 1 root root 473 Aug 10 23:23 /etc/rc.d/rc.local
+[root@localhost ~]# echo &#39;nohup /bin/bash /scripts/inotify.sh&#39; &gt;&gt; /etc/rc.d/rc.local
+[root@localhost ~]# tail /etc/rc.d/rc.local
+# to run scripts during boot instead of using this file.
+#
+# In contrast to previous versions due to parallel execution during boot
+# this script will NOT be run after all other services.
+#
+# Please note that you must run &#39;chmod +x /etc/rc.d/rc.local&#39; to ensure
+# that this script will be executed during boot.
+
+touch /var/lock/subsys/local
+nohup /bin/bash /scripts/inotify.sh
+</code></pre>
+
+<p><strong>到目标服务器上去查看是否把新生成的文件自动传上去了：</strong></p>
+
+<pre><code class="language-text">[root@localhost tmp]# pwd
+/tmp
+[root@localhost tmp]# ls
+etc  test
+[root@localhost tmp]# ls etc/httpd24/
+extra  httpd.conf  magic  mime.types  original  test
+
+//由此可见，已将源服务器的/etc目录整个同步到了目标服务器，且新增的test文件也自动同步了
+</code></pre>
+
+<h2 id="toc_5">作业</h2>
+
+<p>1.部署rsync+inotify同步/runtime目录至目标服务器的/NAME/下。这里的NAME是指你的名字，比如你叫tom，则要把/runtime目录同步至目标服务器的/tom/下。<br/>
+2.博客（3W1H）</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html"  title="Previous Post: httpd">&laquo; httpd</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html" 
+	        title="Next Post: python介绍">python介绍 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15336422692695.html'/*tpa=http://www.itwangqing.net.cn/15336422692695.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

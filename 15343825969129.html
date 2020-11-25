@@ -1,0 +1,1262 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  lamp - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>lamp</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. lamp简介</a>
+</li>
+<li>
+<a href="#toc_1">2. web服务器工作流程</a>
+<ul>
+<li>
+<a href="#toc_2">2.1 cgi与fastcgi</a>
+</li>
+<li>
+<a href="#toc_3">2.2 httpd与php结合的方式</a>
+</li>
+<li>
+<a href="#toc_4">2.3 web工作流程</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_5">3. lamp平台构建</a>
+<ul>
+<li>
+<a href="#toc_6">3.1 安装httpd</a>
+</li>
+<li>
+<a href="#toc_7">3.2 安装mysql</a>
+</li>
+<li>
+<a href="#toc_8">3.3 安装php</a>
+</li>
+<li>
+<a href="#toc_9">3.4 配置apache</a>
+<ul>
+<li>
+<a href="#toc_10">3.4.1 启用代理模块</a>
+</li>
+<li>
+<a href="#toc_11">3.4.2 配置虚拟主机</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_12">3.5 验证</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_13">作业</a>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. lamp简介</h2>
+
+<p>有了前面学习的知识的铺垫，今天可以来学习下第一个常用的web架构了。</p>
+
+<p>所谓lamp，其实就是由Linux+Apache+Mysql/MariaDB+Php/Perl/Python的一组动态网站或者服务器的开源软件，除Linux外其它各部件本身都是各自独立的程序，但是因为经常被放在一起使用，拥有了越来越高的兼容度，共同组成了一个强大的Web应用程序平台。</p>
+
+<p>LAMP指的是Linux（操作系统）、Apache（HTTP服务器）、MySQL（也指MariaDB，数据库软件）和PHP（有时也是指Perl或Python）的第一个字母，一般用来建立web应用平台。</p>
+
+<h2 id="toc_1">2. web服务器工作流程</h2>
+
+<p>在说lamp架构平台的搭建前，我们先来了解下什么是CGI，什么是FastCGI，什么是......</p>
+
+<p>web服务器的资源分为两种，静态资源和动态资源</p>
+
+<ul>
+<li>静态资源就是指静态内容，客户端从服务器获得的资源的表现形式与原文件相同。可以简单的理解为就是直接存储于文件系统中的资源</li>
+<li>动态资源则通常是程序文件，需要在服务器执行之后，将执行的结果返回给客户端</li>
+</ul>
+
+<p>那么web服务器如何执行程序并将结果返回给客户端呢？下面通过一张图来说明一下web服务器如何处理客户端的请求</p>
+
+<p><img src="web_process.png" tppabs="http://itwangqing.net.cn/web_process.png" alt=""/></p>
+
+<p>如上图所示</p>
+
+<p>阶段①显示的是<strong>httpd服务器（即apache）和php服务器通过FastCGI协议进行通信</strong>，且php作为独立的服务进程运行</p>
+
+<p>阶段②显示的是<strong>php程序和mysql数据库间通过mysql协议进行通信</strong>。php与mysql本没有什么联系，但是由Php语言写成的程序可以与mysql进行数据交互。同理perl和python写的程序也可以与mysql数据库进行交互</p>
+
+<h3 id="toc_2">2.1 cgi与fastcgi</h3>
+
+<p>上图阶段①中提到了FastCGI，下面我们来了解下CGI与FastCGI。</p>
+
+<blockquote>
+<p>CGI（Common Gateway Interface，通用网关接口），CGI是外部应用程序（CGI程序）与WEB服务器之间的接口标准，是在CGI程序和Web服务器之间传递信息的过程。CGI规范允许Web服务器执行外部程序，并将它们的输出发送给Web浏览器，CGI将web的一组简单的静态超媒体文档变成一个完整的新的交互式媒体。</p>
+
+<p>FastCGI（Fast Common Gateway Interface）是CGI的改良版，CGI是通过启用一个解释器进程来处理每个请求，耗时且耗资源，而FastCGI则是通过master-worker形式来处理每个请求，即启动一个master主进程，然后根据配置启动几个worker进程，当请求进来时，master会从worker进程中选择一个去处理请求，这样就避免了重复的生成和杀死进程带来的频繁cpu上下文切换而导致耗时</p>
+</blockquote>
+
+<h3 id="toc_3">2.2 httpd与php结合的方式</h3>
+
+<p>httpd与php结合的方式有以下三种：</p>
+
+<ul>
+<li>modules：php将以httpd的扩展模块形式存在，需要加载动态资源时，httpd可以直接通过php模块来加工资源并返回给客户端
+<ul>
+<li>httpd prefork：libphp5.so（多进程模型的php）</li>
+<li>httpd event or worker：libphp5-zts.so（线程模型的php）</li>
+</ul></li>
+<li>CGI：httpd需要加载动态资源时，通过CGI与php解释器联系，获得php执行的结果，此时httpd负责与php连接的建立和断开等</li>
+<li>FastCGI：利用php-fpm机制，启动为服务进程，php自行运行为一个服务，https通过socket与php通信</li>
+</ul>
+
+<p><strong>较于CGI方式，FastCGI更为常用，很少有人使用CGI方式来加载动态资源</strong></p>
+
+<h3 id="toc_4">2.3 web工作流程</h3>
+
+<p>通过上面的图说明一下web的工作流程：</p>
+
+<ul>
+<li>客户端通过http协议请求web服务器资源</li>
+<li>web服务器收到请求后判断客户端请求的资源是静态资源或是动态资源
+<ul>
+<li>若是静态资源则直接从本地文件系统取之返回给客户端。</li>
+<li>否则若为动态资源则通过FastCGI协议与php服务器联系，通过CGI程序的master进程调度worker进程来执行程序以获得客户端请求的动态资源，并将执行的结果通过FastCGI协议返回给httpd服务器，httpd服务器收到php的执行结果后将其封装为http响应报文响应给客户端。在执行程序获取动态资源时若需要获得数据库中的资源时，由Php服务器通过mysql协议与MySQL/MariaDB服务器交互，取之而后返回给httpd，httpd将从php服务器收到的执行结果封装成http响应报文响应给客户端。</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_5">3. lamp平台构建</h2>
+
+<p><strong>环境说明：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>系统平台</th>
+<th>IP</th>
+<th>需要安装的服务</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>centos7<br>redhat7</td>
+<td>172.16.12.128</td>
+<td>httpd-2.4<br>mysql-5.7<br>php<br>php-mysql</td>
+</tr>
+</tbody>
+</table>
+
+<p>lamp平台软件安装次序：</p>
+
+<pre><code class="language-text">    httpd --&gt; mysql --&gt; php
+</code></pre>
+
+<p><strong>注意：php要求httpd使用prefork MPM</strong></p>
+
+<h3 id="toc_6">3.1 安装httpd</h3>
+
+<pre><code class="language-text">//YUM源配置
+[root@localhost ~]# rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/wget-1.14-18.el7_6.1.x86_64.rpm
+
+[root@localhost ~]# cd /etc/yum.repos.d/
+[root@localhost yum.repos.d]# wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+[root@localhost ~]# cd
+[root@localhost ~]# sed -i &#39;s/\$releasever/7/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+[root@localhost ~]# sed -i &#39;s/^enabled=.*/enabled=1/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+
+[root@localhost ~]# yum -y install epel-release vim
+
+//安装开发工具包
+[root@localhost ~]# yum groups mark install &#39;Development Tools&#39;
+
+//创建apache服务的用户和组
+[root@localhost ~]# groupadd -r apache
+[root@localhost ~]# useradd -r -M -s /sbin/nologin -g apache apache 
+
+//安装依赖包
+[root@localhost ~]# yum -y install openssl-devel pcre-devel expat-devel libtool gcc gcc-c++
+
+//下载和安装apr以及apr-util
+[root@localhost ~]# cd /usr/src/
+[root@localhost src]# wget http://mirror.bit.edu.cn/apache/apr/apr-1.6.5.tar.gz
+
+[root@localhost src]# wget http://mirror.bit.edu.cn/apache/apr/apr-util-1.6.1.tar.gz
+
+[root@localhost src]# ls
+apr-1.6.5.tar.gz  apr-util-1.6.1.tar.gz  debug  kernels
+[root@localhost src]# tar xf apr-1.6.5.tar.gz
+[root@localhost src]# tar xf apr-util-1.6.1.tar.gz
+[root@localhost src]# ls
+apr-1.6.5  apr-1.6.5.tar.gz  apr-util-1.6.1  apr-util-1.6.1.tar.gz  debug  kernels
+[root@localhost src]# cd apr-1.6.5
+[root@localhost apr-1.6.5]# vim configure
+    cfgfile=&quot;${ofile}T&quot;
+    trap &quot;$RM \&quot;$cfgfile\&quot;; exit 1&quot; 1 2 15
+    # $RM &quot;$cfgfile&quot;        //将此行加上注释，或者删除此行
+
+[root@localhost apr-1.6.5]# ./configure --prefix=/usr/local/apr
+配置过程略...
+[root@localhost apr-1.6.5]# make &amp;&amp; make install
+编译安装过程略...
+
+[root@localhost apr-1.6.5]# cd /usr/src/apr-util-1.6.1
+[root@localhost apr-util-1.6.1]# ./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr
+配置过程略...
+[root@localhost apr-util-1.6.1]# make &amp;&amp; make install
+编译安装过程略...
+
+//编译安装httpd
+[root@localhost ~]# cd /usr/src
+[root@localhost ~]# wget http://mirror.bit.edu.cn/apache/httpd/httpd-2.4.38.tar.gz
+
+
+
+[root@localhost ~]# ls
+httpd-2.4.38.tar.gz
+[root@localhost ~]# tar xf httpd-2.4.38.tar.gz
+[root@localhost ~]# cd httpd-2.4.38
+[root@localhost httpd-2.4.38]# ./configure --prefix=/usr/local/apache \
+--sysconfdir=/etc/httpd24 \
+--enable-so \
+--enable-ssl \
+--enable-cgi \
+--enable-rewrite \
+--with-zlib \
+--with-pcre \
+--with-apr=/usr/local/apr \
+--with-apr-util=/usr/local/apr-util/ \
+--enable-modules=most \
+--enable-mpms-shared=all \
+--with-mpm=prefork
+
+[root@localhost httpd-2.4.38]# make &amp;&amp; make install
+编译安装过程略...
+
+//安装后配置
+[root@localhost ~]# echo &#39;export PATH=/usr/local/apache/bin:$PATH&#39; &gt; /etc/profile.d/httpd.sh
+[root@localhost ~]# source /etc/profile.d/httpd.sh
+[root@localhost ~]# ln -s /usr/local/apache/include/ /usr/include/httpd
+[root@localhost ~]# echo &#39;MANPATH /usr/local/apache/man&#39; &gt;&gt; /etc/man.config
+
+//取消ServerName前面的注释
+[root@localhost ~]# sed -i &#39;/#ServerName/s/#//g&#39; /etc/httpd24/httpd.conf 
+
+//启动apache
+[root@localhost ~]# apachectl start
+[root@localhost ~]# ss -antl
+State      Recv-Q Send-Q   Local Address:Port                  Peer Address:Port
+LISTEN     0      128                  *:22                               *:*
+LISTEN     0      100          127.0.0.1:25                               *:*
+LISTEN     0      128                 :::80                              :::*
+LISTEN     0      128                 :::22                              :::*
+LISTEN     0      100                ::1:25                              :::* 
+</code></pre>
+
+<h3 id="toc_7">3.2 安装mysql</h3>
+
+<pre><code class="language-text">//安装依赖包
+[root@localhost ~]# yum -y install ncurses-devel openssl-devel openssl cmake mariadb-devel
+
+//创建用户和组
+[root@localhost src]# groupadd -r -g 306 mysql
+[root@localhost src]# useradd -r -M -s /sbin/nologin -g 306 -u 306 mysql
+
+
+//下载二进制格式的mysql软件包
+[root@localhost ~]# cd /usr/src/
+[root@localhost src]# wget https://downloads.mysql.com/archives/get/file/mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz
+
+//解压软件至/usr/local/
+[root@localhost src]# ls
+debug  kernels  mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz
+[root@localhost src]# tar xf mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz -C /usr/local/
+[root@localhost ~]# ls /usr/local/
+bin  games    lib    libexec                              sbin   src
+etc  include  lib64  mysql-5.7.22-linux-glibc2.12-x86_64  share
+[root@localhost ~]# cd /usr/local/
+[root@localhost local]# ln -sv mysql-5.7.22-linux-glibc2.12-x86_64/ mysql
+‘mysql’ -&gt; ‘mysql-5.7.22-linux-glibc2.12-x86_64/’
+[root@localhost local]# ll
+total 0
+drwxr-xr-x. 2 root root   6 Mar 10  2016 bin
+drwxr-xr-x. 2 root root   6 Mar 10  2016 etc
+drwxr-xr-x. 2 root root   6 Mar 10  2016 games
+drwxr-xr-x. 2 root root   6 Mar 10  2016 include
+drwxr-xr-x. 2 root root   6 Mar 10  2016 lib
+drwxr-xr-x. 2 root root   6 Mar 10  2016 lib64
+drwxr-xr-x. 2 root root   6 Mar 10  2016 libexec
+lrwxrwxrwx  1 root root  36 Aug 14 16:00 mysql -&gt; mysql-5.7.22-linux-glibc2.12-x86_64/
+drwxr-xr-x  9 root root 129 Aug 14 00:16 mysql-5.7.22-linux-glibc2.12-x86_64
+drwxr-xr-x. 2 root root   6 Mar 10  2016 sbin
+drwxr-xr-x. 5 root root  49 Jun 13 19:03 share
+drwxr-xr-x. 2 root root   6 Mar 10  2016 src
+
+
+//修改目录/usr/local/mysql的属主属组
+[root@localhost ~]# chown -R mysql.mysql /usr/local/mysql
+[root@localhost ~]# ll /usr/local/mysql -d
+lrwxrwxrwx 1 mysql mysql 36 Aug 14 16:00 /usr/local/mysql -&gt; mysql-5.7.22-linux-glibc2.12-x86_64/
+
+
+
+//添加环境变量
+[root@localhost ~]# ls /usr/local/mysql
+bin  COPYING  docs  include  lib  man  README  share  support-files
+[root@localhost ~]# echo &#39;export PATH=/usr/local/mysql/bin:$PATH&#39; &gt; /etc/profile.d/mysql.sh
+[root@localhost ~]# . /etc/profile.d/mysql.sh
+[root@localhost ~]# echo $PATH
+/usr/local/mysql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
+
+
+
+//建立数据存放目录
+[root@localhost mysql]# mkdir /opt/data
+[root@localhost mysql]# chown -R mysql.mysql /opt/data/
+[root@localhost mysql]# ll /opt/
+total 0
+drwxr-xr-x 2 mysql mysql 6 Aug 14 16:54 data
+
+
+
+//初始化数据库
+[root@localhost ~]# /usr/local/mysql/bin/mysqld --initialize --user=mysql --datadir=/opt/data/
+2018-08-15T07:57:46.168380Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2018-08-15T07:57:50.542516Z 0 [Warning] InnoDB: New log files created, LSN=45790
+2018-08-15T07:57:50.927286Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
+2018-08-15T07:57:51.071260Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: e8600890-a060-11e8-b1a2-000c294c50b4.
+2018-08-15T07:57:51.074566Z 0 [Warning] Gtid table is not ready to be used. Table &#39;mysql.gtid_executed&#39; cannot be opened.
+2018-08-15T07:57:51.078089Z 1 [Note] A temporary password is generatedfor root@localhost: jtBzkkb=r5ik
+//请注意，这个命令的最后会生成一个临时密码，此处密码是jtBzkkb=r5ik
+//再次注意，这个密码是随机的，你的不会跟我一样，一定要记住这个密码，因为一会登录时会用到
+
+
+//配置mysql
+[root@localhost ~]# ln -sv /usr/local/mysql/include/ /usr/local/include/mysql
+‘/usr/local/include/mysql’ -&gt; ‘/usr/local/mysql/include/’
+[root@localhost ~]# echo &#39;/usr/local/mysql/lib&#39; &gt; /etc/ld.so.conf.d/mysql.conf
+[root@localhost ~]# ldconfig      
+
+//生成配置文件
+[root@localhost ~]# cat &gt; /etc/my.cnf &lt;&lt;EOF
+[mysqld]
+basedir = /usr/local/mysql
+datadir = /opt/data
+socket = /tmp/mysql.sock
+port = 3306
+pid-file = /opt/data/mysql.pid
+user = mysql
+skip-name-resolve
+EOF
+
+
+//配置服务启动脚本
+[root@localhost ~]# cp -a /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
+[root@localhost ~]# sed -ri &#39;s#^(basedir=).*#\1/usr/local/mysql#g&#39; /etc/init.d/mysqld
+[root@localhost ~]# sed -ri &#39;s#^(datadir=).*#\1/opt/data#g&#39; /etc/init.d/mysqld
+
+
+
+//启动mysql
+[root@localhost ~]# service mysqld start
+Starting MySQL.. SUCCESS!  
+[root@localhost ~]# ps -ef|grep mysql
+root       1521      1  0 01:58 pts/0    00:00:00 /bin/sh /usr/local/mysql/binmysqld_safe --datadir=/opt/data --pid-file=/opt/data/mysql.pid
+mysql      1699   1521  0 01:58 pts/0    00:00:00 /usr/local/mysql/bin/mysqld --basedir=/usr/local/mysql --datadir=/opt/data --plugin-dir=/usr/local/mysql/lib/plugin --user=mysql --log-error=localhost.localdomain.err --pid-file=/opt/data/mysql.pid --socket=/tmp/mysql.sock --port=3306
+root       1734   1301  0 01:59 pts/0    00:00:00 grep --color=auto mysql
+[root@localhost ~]# ss -antl
+State       Recv-Q Send-Q Local Address:Port               Peer Address:Port
+LISTEN      0      128         *:22                      *:*
+LISTEN      0      100    127.0.0.1:25                      *:*
+LISTEN      0      128        :::22                     :::*
+LISTEN      0      100       ::1:25                     :::*
+LISTEN      0      80         :::3306                   :::* 
+ 
+ 
+
+//修改密码
+//使用临时密码登录
+[root@localhost ~]# mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.22
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+mysql&gt; 
+
+//设置新密码
+mysql&gt; set password = password(&#39;wangqing123!&#39;);
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+mysql&gt; quit
+Bye
+</code></pre>
+
+<h3 id="toc_8">3.3 安装php</h3>
+
+<pre><code class="language-text">//配置yum源
+[root@localhost ~]# wget http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+[root@localhost ~]# rpm -Uvh remi-release-7.rpm
+[root@localhost ~]# yum makecache --enablerepo=remi-php74
+
+//安装依赖包
+[root@localhost ~]# yum -y install libxml2 libxml2-devel openssl openssl-devel bzip2 bzip2-devel libcurl libcurl-devel libicu-devel libjpeg libjpeg-devel libpng libpng-devel openldap-devel  pcre-devel freetype freetype-devel gmp gmp-devel libmcrypt libmcrypt-devel readline readline-devel libxslt libxslt-devel mhash mhash-devel php72-php-mysqlnd
+安装过程略....
+
+
+
+//下载php
+[root@localhost ~]# cd /usr/src/
+[root@localhost src]# wget http://cn.php.net/distributions/php-7.2.8.tar.xz
+下载过程略....
+
+
+//编译安装php
+[root@localhost src]# tar xf php-7.2.8.tar.xz
+[root@localhost src]# cd php-7.2.8
+[root@localhost php-7.2.8]# ./configure --prefix=/usr/local/php7  \
+--with-config-file-path=/etc \
+--enable-fpm \
+--enable-inline-optimization \
+--disable-debug \
+--disable-rpath \
+--enable-shared \
+--enable-soap \
+--with-openssl \
+--enable-bcmath \
+--with-iconv \
+--with-bz2 \
+--enable-calendar \
+--with-curl \
+--enable-exif  \
+--enable-ftp \
+--with-gd \
+--with-jpeg-dir \
+--with-png-dir \
+--with-zlib-dir \
+--with-freetype-dir \
+--with-gettext \
+--enable-json \
+--enable-mbstring \
+--enable-pdo \
+--with-mysqli=mysqlnd \
+--with-pdo-mysql=mysqlnd \
+--with-readline \
+--enable-shmop \
+--enable-simplexml \
+--enable-sockets \
+--enable-zip \
+--enable-mysqlnd-compression-support \
+--with-pear \
+--enable-pcntl \
+--enable-posix
+[root@localhost php-7.2.8]# make -j $(cat /proc/cpuinfo |grep processor|wc -l)
+编译过程略
+[root@localhost php-7.2.8]# make install
+安装过程略
+
+
+//安装后配置
+[root@localhost ~]# echo &#39;export PATH=/usr/local/php7/bin:$PATH&#39; &gt; /etc/profile.d/php7.sh
+[root@localhost ~]# source /etc/profile.d/php7.sh
+[root@localhost php-7.2.8]# which php
+/usr/local/php7/bin/php
+[root@localhost php-7.2.8]# php -v
+PHP 7.2.8 (cli) (built: Aug 16 2018 13:27:30) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+
+
+//配置php-fpm
+[root@localhost php-7.2.8]# cp php.ini-production /etc/php.ini
+[root@localhost php-7.2.8]# cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+[root@localhost php-7.2.8]# chmod +x /etc/rc.d/init.d/php-fpm
+[root@localhost php-7.2.8]# cp /usr/local/php7/etc/php-fpm.conf.default /usr/local/php7/etc/php-fpm.conf
+[root@localhost php-7.2.8]# cp /usr/local/php7/etc/php-fpm.d/www.conf.default /usr/local/php7/etc/php-fpm.d/www.conf
+
+//编辑php-fpm的配置文件（/usr/local/php7/etc/php-fpm.conf）：
+//配置fpm的相关选项为你所需要的值：
+[root@localhost ~]# vim /usr/local/php7/etc/php-fpm.conf
+.....
+.....
+pm.max_children = 50    ;最多同时提供50个进程提供50个并发服务
+pm.start_servers = 5    ;启动时启动5个进程
+pm.min_spare_servers = 2    ;最小空闲进程数
+pm.max_spare_servers = 8    ;最大空闲进程数
+
+[root@localhost ~]# tail /usr/local/php7/etc/php-fpm.conf
+; file.
+; Relative path can also be used. They will be prefixed by:
+;  - the global prefix if it&#39;s been set (-p argument)
+;  - /usr/local/php7 otherwise
+include=/usr/local/php7/etc/php-fpm.d/*.conf
+pm.max_children = 50
+pm.start_servers = 5
+pm.min_spare_servers = 2
+pm.max_spare_servers = 8
+
+
+
+//启动php-fpm
+[root@localhost ~]# service php-fpm start
+Starting php-fpm  done
+
+//默认情况下，fpm监听在127.0.0.1的9000端口，也可以使用如下命令验证其是否已经监听在相应的套接字
+[root@localhost ~]# ss -antl
+State      Recv-Q Send-Q           Local Address:Port                          Peer Address:Port
+LISTEN     0      128                          *:22                                       *:*
+LISTEN     0      100                  127.0.0.1:25                                       *:*
+LISTEN     0      128                  127.0.0.1:9000                                     *:*
+LISTEN     0      128                         :::80                                      :::*
+LISTEN     0      128                         :::22                                      :::*
+LISTEN     0      100                        ::1:25                                      :::*
+LISTEN     0      80                          :::3306                                    :::*
+
+[root@localhost ~]# ps -ef|grep php
+root      81070      1  0 14:13 ?        00:00:00 php-fpm: master process (/usr/local/php7/etc/php-fpm.conf)
+nobody    81071  81070  0 14:13 ?        00:00:00 php-fpm: pool www
+nobody    81072  81070  0 14:13 ?        00:00:00 php-fpm: pool www
+nobody    81073  81070  0 14:13 ?        00:00:00 php-fpm: pool www
+nobody    81074  81070  0 14:13 ?        00:00:00 php-fpm: pool www
+nobody    81075  81070  0 14:13 ?        00:00:00 php-fpm: pool www
+root      81079  83354  0 14:15 pts/1    00:00:00 grep --color=auto php
+</code></pre>
+
+<h3 id="toc_9">3.4 配置apache</h3>
+
+<h4 id="toc_10">3.4.1 启用代理模块</h4>
+
+<p>在apache httpd 2.4以后已经专门有一个模块针对FastCGI的实现，此模块为mod_proxy_fcgi.so，它其实是作为mod_proxy.so模块的扩展，因此，这两个模块都要加载，编辑httpd.conf文件，取消以下两行内容的注释:</p>
+
+<ul>
+<li>LoadModule proxy_module modules/mod_proxy.so</li>
+<li>LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so</li>
+</ul>
+
+<pre><code class="language-text">//启用httpd的相关模块
+[root@localhost ~]# sed -i &#39;/proxy_module/s/#//g&#39; /etc/httpd24/httpd.conf
+[root@localhost ~]# sed -i &#39;/proxy_fcgi_module/s/#//g&#39; /etc/httpd24/httpd.conf
+</code></pre>
+
+<h4 id="toc_11">3.4.2 配置虚拟主机</h4>
+
+<p>在需要使用fcgi的虚拟主机中添加类似如下两行：</p>
+
+<pre><code class="language-text">ProxyRequests Off       //关闭正向代理
+ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/PATH/TO/DOCUMENT_ROOT/$1
+</code></pre>
+
+<p><strong>例如：</strong></p>
+
+<pre><code class="language-text">ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/var/www/html/idfsoft.com/$1
+</code></pre>
+
+<p>以上设置表示把以.php结尾的文件请求发送到php-fpm进程，php-fpm至少需要知道运行的目录和URI，所以这里直接在fcgi://127.0.0.1:9000后指明了这两个参数，其它参数的传递已经被mod_proxy_fcgi.so进行了封装，不需要手动指定。</p>
+
+<p><strong>注意：</strong></p>
+
+<blockquote>
+<p>这里写的/var/www/html/是yum源安装方式生成的网页存放目录，这里必须改成你编译安装指定的网页存放路径，禁止直接复制我这里的路径<br/>
+这里的idfsoft.com是域名，你必须改成你所使用的域名，禁止直接复制此处的域名<br/>
+这里的$1表示匹配所有以.php结尾的http请求</p>
+</blockquote>
+
+<pre><code class="language-text">//创建虚拟主机目录并生成php测试页面
+[root@localhost ~]# mkdir /usr/local/apache/htdocs/wangqing.com
+[root@localhost ~]# cat &gt; /usr/local/apache/htdocs/wangqing.com/index.php &lt;&lt;EOF
+&lt;?php
+   phpinfo();
+?&gt;
+EOF
+[root@localhost ~]# chown -R apache.apache /usr/local/apache/htdocs/
+[root@localhost ~]# ll /usr/local/apache/htdocs/ -d
+drwxr-xr-x 3 apache apache 44 Aug 16 14:50 /usr/local/apache/htdocs/
+
+
+
+[root@localhost ~]# vim /etc/httpd24/httpd.conf
+//在配置文件的最后加入以下内容
+&lt;VirtualHost *:80&gt;
+    DocumentRoot &quot;/usr/local/apache/htdocs/wangqing.com&quot;
+    ServerName www.wangqing.com
+    ProxyRequests Off
+    ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/usr/local/apache/htdocs/wangqing.com/$1
+    &lt;Directory &quot;/usr/local/apache/htdocs/wangqing.com&quot;&gt;
+        Options none
+        AllowOverride none
+        Require all granted
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;  
+
+[root@localhost ~]# vim /etc/httpd24/httpd.conf
+//搜索AddType，添加以下内容
+    # If the AddEncoding directives above are commented-out, then you
+    # probably should define those extensions to indicate media types:
+    #
+    AddType application/x-compress .Z
+    AddType application/x-gzip .gz .tgz
+    AddType application/x-httpd-php .php        #添加此行
+    AddType application/x-httpd-php-source .phps        #添加此行
+    
+[root@localhost ~]# sed -i &#39;/    DirectoryIndex/s/index.html/index.php index.html/g&#39; /etc/httpd24/httpd.conf
+
+
+//重启apache服务
+[root@localhost ~]# apachectl stop
+[root@localhost ~]# apachectl start
+[root@localhost ~]# ss -antl
+State      Recv-Q Send-Q           Local Address:Port                          Peer Address:Port
+LISTEN     0      128                          *:22                                       *:*
+LISTEN     0      100                  127.0.0.1:25                                       *:*
+LISTEN     0      128                  127.0.0.1:9000                                     *:*
+LISTEN     0      128                         :::80                                      :::*
+LISTEN     0      128                         :::22                                      :::*
+LISTEN     0      100                        ::1:25                                      :::*
+LISTEN     0      80                          :::3306                                    :::* 
+</code></pre>
+
+<h3 id="toc_12">3.5 验证</h3>
+
+<p>1.修改/etc/hosts文件，添加域名与IP的映射<br/>
+2.在浏览器上使用域名访问，若看到以下界面则表示lamp架构搭建成功，否则请检查你的操作</p>
+
+<p><img src="lamp-php.png" tppabs="http://itwangqing.net.cn/lamp-php.png" alt=""/></p>
+
+<h2 id="toc_13">作业</h2>
+
+<p>1.手动搭建lamp架构<br/>
+2.写博客<br/>
+3.写脚本搭建lamp架构</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html"  title="Previous Post: Python编程规范、运算符">&laquo; Python编程规范、运算符</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html" 
+	        title="Next Post: 流程控制与格式化输出">流程控制与格式化输出 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15343825969129.html'/*tpa=http://www.itwangqing.net.cn/15343825969129.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

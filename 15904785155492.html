@@ -1,0 +1,1293 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  06 实施任务控制 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>06 实施任务控制</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. 编写循环和条件任务</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 利用循环迭代任务</a>
+<ul>
+<li>
+<a href="#toc_2">1.1.1 简单循环</a>
+</li>
+<li>
+<a href="#toc_3">1.1.2 循环散列或字典列表</a>
+</li>
+<li>
+<a href="#toc_4">1.1.3 较早样式的循环关键字</a>
+</li>
+<li>
+<a href="#toc_5">1.1.4 将Register变量与Loop一起使用</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_6">1.2 有条件地运行任务</a>
+<ul>
+<li>
+<a href="#toc_7">1.2.1 条件任务语法</a>
+</li>
+<li>
+<a href="#toc_8">1.2.2 测试多个条件</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_9">1.3 组合循环和有条件任务</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_10">2. 实施处理程序</a>
+<ul>
+<li>
+<a href="#toc_11">2.1 ansible处理程序</a>
+</li>
+<li>
+<a href="#toc_12">2.2 使用处理程序的好处</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_13">3. 处理任务失败</a>
+<ul>
+<li>
+<a href="#toc_14">3.1 管理play中的任务错误</a>
+</li>
+<li>
+<a href="#toc_15">3.2 忽略任务失败</a>
+</li>
+<li>
+<a href="#toc_16">3.3 任务失败后强制执行处理程序</a>
+</li>
+<li>
+<a href="#toc_17">3.4 指定任务失败条件</a>
+</li>
+<li>
+<a href="#toc_18">3.5 指定何时任务报告 “Changed” 结果</a>
+</li>
+<li>
+<a href="#toc_19">3.6 Ansible块和错误处理</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. 编写循环和条件任务</h2>
+
+<h3 id="toc_1">1.1 利用循环迭代任务</h3>
+
+<p>通过利用循环，我们无需编写多个使用同一模块的任务。例如，他们不必编写五个任务来确保存在五个用户，而是只需编写一个任务来对含有五个用户的列表迭代，从而确保它们都存在。</p>
+
+<p>Ansible支持使用<strong>loop</strong>关键字对一组项目迭代任务。可以配置循环以利用列表中的各个项目、列表中各个文件的内容、生成的数字序列或更为复杂的结构来重复任务。</p>
+
+<h4 id="toc_2">1.1.1 简单循环</h4>
+
+<p>简单循环对一组项目迭代任务。<strong>loop</strong>关键字添加到任务中，将应对其迭代任务的项目列表取为值。循环变量<strong>item</strong>保存每个迭代过程中使用的值。</p>
+
+<p>请思考以下代码片段，它使用两次<strong>service</strong>模块来确保两个网络服务处于运行状态：</p>
+
+<pre><code class="language-text">- name: Postfix is running
+  service:
+    name: postfix
+    state: started
+    
+- name: Devecot is running
+  service:
+    name: dovecot
+    state: started
+</code></pre>
+
+<p>这两个任务可以重新编写为使用一个简单循环，从而只需一个任务来确保两个服务都在运行：</p>
+
+<pre><code class="language-text">- name: Postfix and Devecot are running
+  service:
+    name: &quot;{{ item }}&quot;
+    state: started
+  loop:
+    - postfix
+    - dovecot
+</code></pre>
+
+<p>可以通过一个变量提供<strong>loop</strong>所使用的列表。在以下示例中，变量<strong>mail_services</strong>含有需要处于运行状态的服务的列表。</p>
+
+<pre><code class="language-text">vars:
+  mail_services:
+    - postfix
+    - dovecot
+
+tasks:
+  - name: Postfix and Dovecot are running
+    service:
+      name: &quot;{{ item }}&quot;
+      state: started
+    loop: &quot;{{ mail_services }}&quot;
+</code></pre>
+
+<h4 id="toc_3">1.1.2 循环散列或字典列表</h4>
+
+<p><strong>loop</strong>列表不需要是简单值列表。在以下示例中，列表中的每个项实际上是散列或字典。示例中的每个散列或字典具有两个键，即<strong>name</strong>和<strong>groups</strong>，当前item循环变量中每个键的值可以分别通过<strong>item.name</strong>和<strong>item.groups</strong>变量来检索。</p>
+
+<pre><code class="language-text">- name: Users exist and are in the correct groups
+  user:
+    name: &quot;{{ item.name }}&quot;
+    state: present
+    groups: &quot;{{ item.groups }}&quot;
+  loop:
+    - name: jane
+      groups: wheel
+    - name: joe
+      groups: root
+</code></pre>
+
+<p>这一示例中结果是用户<strong>jane</strong>存在且为组<strong>wheel</strong>的成员，并且用户<strong>joe</strong>存在且为组<strong>root</strong>的成员。</p>
+
+<h4 id="toc_4">1.1.3 较早样式的循环关键字</h4>
+
+<p>在Ansible2.5之前，大多数playbook使用不同的循环语法。提供了多个循环关键字，前缀为whth_，后面跟Ansible查找插件的名称。这种循环语法在现有playbook中很常见，但在将来的某个时候可能会被弃用。</p>
+
+<p><strong>较早样式的Ansible循环</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>循环关键字 </th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>with_items</td>
+<td>行为与简单列表的loop关键字相同，例如字符串列表或散列/字典列表。<br>但与loop不同的是，如果为with_items提供了列表的列表，<br>它们将被扁平化为单级列表。循环变量item保存每次迭代过程中使用的列表项。</td>
+</tr>
+<tr>
+<td>with_file</td>
+<td>此关键字需要控制节点文件名列表。循环变量item在每次迭代过程中保存文件列表中相应文件的内容。</td>
+</tr>
+<tr>
+<td>with_sequence</td>
+<td>此关键字不需要列表，而是需要参数来根据数字序列生成值列表。<br>循环变量item在每次迭代过程中保存生成的序列中的一个生成项的值。</td>
+</tr>
+</tbody>
+</table>
+
+<p>playbook中的with_items的示例如下所示：</p>
+
+<pre><code class="language-text">vars:
+  data:
+    - user0
+    - user1
+    - user2
+tasks:
+  - name: &quot;with_items&quot;
+    debug:
+      msg: &quot;{{ item }}&quot;
+    with_items: &quot;{{ data }}&quot;
+</code></pre>
+
+<p>从Ansible2.5开始，建议使用loop关键字编写循环。</p>
+
+<h4 id="toc_5">1.1.4 将Register变量与Loop一起使用</h4>
+
+<p>register关键字也可以捕获循环任务的输出。以下代码片段显示了循环任务中register变量的结构：</p>
+
+<pre><code class="language-text">[root@localhost ~]# vim loop_register.yml
+---
+- name: Loop Register Test
+  gather_facts: no
+  hosts: 172.16.103.129
+  tasks:
+    - name: Looping Echo Task
+      shell: &quot;echo This is my item: {{ item }}&quot;
+      loop:
+        - one
+        - two
+      register: echo_results    # 注册echo_results变量
+      
+    - name: Show echo_results variable
+      debug:
+        var: echo_results       # echo_results变量的内容显示在屏幕上
+        
+[root@localhost ~]# ansible-playbook loop_register.yml
+</code></pre>
+
+<p>在上面的例子中，results键包含一个列表。在下面，修改了playbook，使第二个任务迭代此列表：</p>
+
+<pre><code class="language-text">[root@localhost ~]# vim new_loop_register.yml
+---
+- name: Loop Register Test
+  gather_facts: no
+  hosts: 172.16.103.129
+  tasks:
+    - name: Looping Echo Task
+      shell: &quot;echo This is my item: {{ item }}&quot;
+      loop:
+        - one
+        - two
+      register: echo_results
+      
+    - name: Show stdout from the previous task.
+      debug:
+        msg: &quot;STDOUT from previous task: {{ item.stdout }}&quot;
+      loop: &quot;{{ echo_results[&#39;results&#39;] }}&quot;
+</code></pre>
+
+<h3 id="toc_6">1.2 有条件地运行任务</h3>
+
+<p>Ansible可使用conditionals在符合特定条件时执行任务或play。例如，可以利用一个条件在Ansible安装或配置服务前确定受管主机上的可用内存。</p>
+
+<p>我们可以利用条件来区分不同的受管主机，并根据它们所符合的条件来分配功能角色。Playbook变量、注册的变量和Ansible事实都可通过条件来进行测试。可以使用比较字符串、数字数据和布尔值的运算符。</p>
+
+<p>以下场景说明了在Ansible中使用条件的情况：</p>
+
+<ul>
+<li>可以在变量中定义硬限制（如min_memory）并将它与受管主机上的可用内存进行比较。</li>
+<li>Ansible可以捕获并评估命令的输出，以确定某一任务在执行进一步操作前是否已经完成。例如，如果某一程序失败，则将路过批处理。</li>
+<li>可以利用Ansible事实来确定受管主机网络配置，并决定要发送的模板文件（如，网络绑定或中继）。</li>
+<li>可以评估CPU的数量，来确定如何正确调节某一Web服务器。</li>
+<li>将注册的变量与预定义的变量进行比较，以确定服务是否已更改。例如，测试服务配置文件的MD5检验以和查看服务是否已更改。</li>
+</ul>
+
+<h4 id="toc_7">1.2.1 条件任务语法</h4>
+
+<p><strong>when</strong>语句用于有条件地运行任务。它取要测试的条件为值。如果条件满足，则运行任务。如果条件不满足，则跳过任务。</p>
+
+<p>可以测试的一个最简单条件是某一布尔变量是<strong>True</strong>还是<strong>False</strong>。以下示例中的<strong>when</strong>语句导致任务仅在<strong>run_my_task</strong>为<strong>True</strong>时运行：</p>
+
+<pre><code class="language-text">---
+- name: Simple Boolean Task Demo
+  hosts: 172.16.103.129
+  vars:
+    run_my_task: True
+    
+  tasks:
+    - name: httpd package is installed
+      yum:
+        name: httpd
+      when: run_my_task
+</code></pre>
+
+<p>以下示例测试my_service变量是否具有值。若有值，则将my_service的值用作要安装的软件包的名称。如果未定义my_service变量，则跳过任务且不显示错误。</p>
+
+<pre><code class="language-text">---
+- name: Test Variable is Defined Demo
+  hosts: 172.16.103.129
+  vars:
+    my_service: httpd
+    
+  tasks:
+    - name: &quot;{{ my_service }} package is installed&quot;
+      yum:
+        name: &quot;{{ my_service }}&quot;
+      when: my_service is defined
+</code></pre>
+
+<p>下表显示了在处理条件时可使用的一些运算：<br/>
+<strong>示例条件</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>示例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>等于（值为字符串）</td>
+<td>ansible_machine == &quot;x86_64&quot;</td>
+</tr>
+<tr>
+<td>等于（值为数字）</td>
+<td>max_memory == 512</td>
+</tr>
+<tr>
+<td>小于</td>
+<td>min_memory &lt; 128</td>
+</tr>
+<tr>
+<td>大于</td>
+<td>min_memory &gt; 256</td>
+</tr>
+<tr>
+<td>小于等于</td>
+<td>min_memory &lt;= 256</td>
+</tr>
+<tr>
+<td>大于等于</td>
+<td>min_memory &gt;= 512</td>
+</tr>
+<tr>
+<td>不等于</td>
+<td>min_memory != 512</td>
+</tr>
+<tr>
+<td>变量存在</td>
+<td>min_memory is defined</td>
+</tr>
+<tr>
+<td>变量不存在</td>
+<td>min_memory is not defined</td>
+</tr>
+<tr>
+<td>布尔变量是True。1、True或yes的求值为True</td>
+<td>memory_available</td>
+</tr>
+<tr>
+<td>布尔变量是False。0、False或no的求值为False</td>
+<td>not memory_available</td>
+</tr>
+<tr>
+<td>第一个变量的值存在，作为第二个变量的列表中的值</td>
+<td>ansible_distribution in supported_distros</td>
+</tr>
+</tbody>
+</table>
+
+<p>上表中的最后一个条目初看起来有些令人困惑。下例演示了它的工作原理。</p>
+
+<p>在示例中，<strong>ansible_distribution</strong>变量是在<strong>Gathering Facts</strong>任务期间确定的事实，用于标识托管主机的操作系统分支。变量<strong>supported_distros</strong>由<strong>playbook</strong>创建，包含该<strong>playbook</strong>支持的操作系统分发列表。如果<strong>ansible_distribution</strong>的值在<strong>supported_distros</strong>列表中，则条件通过且任务运行。</p>
+
+<pre><code class="language-text">---
+- name: Demonstrale the &quot;in&quot; keyword
+  hosts: 172.16.103.129
+  gather_facts: yes
+  vars:
+    supported_distros:
+      - RedHat
+      - Fedora
+  tasks:
+    - name: Install httpd using yum, where supported
+      yum:
+        name: httpd
+        state: present
+      when: ansible_distribution in supported_distros
+</code></pre>
+
+<p>注意when语句的缩进。由于when语句不是模块变量，它必须通过缩进到任务的最高级别，放置在模块的外面。</p>
+
+<p>任务是YAML散列/字典，when语句只是任务中的又一个键，就如任务的名称以及它所使用的模块一样。通常的惯例是将可能存在的任何when关键字放在任务名称和模块（及模块参数）的后面。</p>
+
+<h4 id="toc_8">1.2.2 测试多个条件</h4>
+
+<p>一个<strong>when</strong>语句可用于评估多个条件。使用<strong>and</strong>和<strong>or</strong>关键字组合条件，并使用括号分组条件。</p>
+
+<p>如果任一条件为真时满足条件语句，则应当使用<strong>or</strong>语句。例如，如果计算机上运行的是红帽企业linux或Fedora，则下述条件得到满足：</p>
+
+<pre><code class="language-text">when: ansible_distribution == &quot;Redhat&quot; or ansible_distribution == &quot;Fedora&quot;
+</code></pre>
+
+<p>使用<strong>and</strong>运算时，两个条件都必须为真，才能满足整个条件语句。例如，如果远程主机是红帽企业Linux7.5主机，并且安装的内核是指定版本，则将满足以下条件：</p>
+
+<pre><code class="language-text">when: ansible_distribution_version == &quot;7.5&quot; and ansible_kernel == &quot;3.10.0-327.el7.x86_64&quot;
+</code></pre>
+
+<p><strong>when</strong>关键字还支持使用列表来描述条件列表。向<strong>when</strong>关键字提供列表时，将使用<strong>and</strong>运算组合所有条件。下面的示例演示了使用<strong>and</strong>运算符组合多个条件语句的另一方式：</p>
+
+<pre><code class="language-text">when:
+  - ansible_distribution_version == &quot;7.5&quot;
+  - ansible_kernel == &quot;3.10.0-327.el7.x86_64&quot;
+</code></pre>
+
+<p>这种格式提高了可读性，而可读性是良好编写Ansible Playbook的关键目标。</p>
+
+<p>通过使用括号分组条件，可以表达更复杂的条件语句。例如，如果计算机上运行的是红帽企业Linux7或Fedora28，则下述条件语句得到满足。此示例使用大于字符，这样长条件就可以在<strong>playbook</strong>中分成多行，以便于阅读。</p>
+
+<pre><code class="language-text">when: &gt;
+  ( ansible_distribution == &quot;Redhat&quot; and
+    ansible_distribution_major_version == &quot;7&quot; )
+  or
+  ( ansible_distribution == &quot;Fedora&quot; and
+    ansible_distribution_major_version == &quot;28&quot; )
+</code></pre>
+
+<h3 id="toc_9">1.3 组合循环和有条件任务</h3>
+
+<p>循环和条件可以组合使用。</p>
+
+<p>在下例中，<strong>yum</strong>模块将安装<strong>mariadb-server</strong>软件包，只要/上挂载的文件系统具有超过300MB的可用空间。<strong>ansible_mounts</strong>事实是一组字典，各自代表一个已挂载文件系统的相关事实。循环迭代列表中每一字典，只有找到了代表两个条件都为真的已挂载文件系统的字典时，条件语句才得到满足。</p>
+
+<pre><code class="language-text">- name: install mariadb-server if enough space on root
+  yum:
+    name: mariadb-server
+    state: latest
+  loop: &quot;{{ ansible_mounts }}&quot;
+  when: item.mount == &quot;/&quot; and item.size_available &gt; 300000000
+</code></pre>
+
+<p>对某个任务结合使用<strong>when</strong>和<strong>loop</strong>时，将对每个项检查<strong>when</strong>语句。</p>
+
+<p>下面是组合使用条件和注册变量的另一个示例。</p>
+
+<pre><code class="language-text">---
+- name: Restart HTTPD if Postfix is Running
+  hosts: 172.16.103.129
+  tasks:
+    - name: Get Postfix server status
+      command: /usr/bin/systemctl is-active postfix     # Postfix是否在运行？
+      ignore_errors: yes    # 如果它不在运行并且命令失败，则不停止处理。
+      register: result      # 将模块的结果信息保存在名为result的变量中
+      
+    - name: Restart Apache HTTPD based on Postfix status
+      service:
+        name: httpd
+        state: restarted
+      when: result.rc == 0      # 评估Postfix任务的输出。如果systemctl命令的退出代码为0，\
+                                # 则Postfix激活并且此任务重启httpd服务
+</code></pre>
+
+<h2 id="toc_10">2. 实施处理程序</h2>
+
+<h3 id="toc_11">2.1 ansible处理程序</h3>
+
+<p>Ansible模块设计为具有幂等性。这表示，在正确编写的<strong>playbook</strong>中，<strong>playbook</strong>及其任务可以运行多次而不会改变受管主机，除非需要进行更改使受管主机进入所需的状态。</p>
+
+<p>但在时候，在任务确实更改系统时，可能需要运行进一步的任务。例如，更改服务配置文件时可能要求重新加载该服务以便使其更改的配置生效。</p>
+
+<p>处理程序是响应由其他任务触发的通知的任务。仅当任务在受管主机上更改了某些内容时，任务才通知其处理程序。每个处理程序具有全局唯一的名称，在<strong>playbook</strong>中任务块的末尾触发。如果没有任务通过名称通知处理程序，处理程序就不会运行。如果一个或多个任务通知处理程序，处理程序就会在<strong>play</strong>中的所有其他任务完成后运行一次。因为处理程序就是任务，所以可以在处理程序中使用他们将用于任何其他任务的模块。通常而言，处理程序被用于重新引导主机和重启服务。</p>
+
+<p>处理程序可视为非活动任务，只有在使用<strong>notify</strong>语句显式调用时才会被触发。在下列代码片段中，只有配置文件更新并且通知了该任务，<strong>restart apache</strong>处理程序才会重启Apache服务器：</p>
+
+<pre><code class="language-text">tasks:
+  - name: copy demo.example.conf configuratioon template      # 通知处理程序的任务
+    template:
+      src: /var/lib/templates/demo.example.conf.template
+      dest: /etc/httpd/conf.d/demo.example.conf
+    notify:         # notify语句指出该任务需要触发一个处理程序
+      - restart apache     # 要运行的处理程序的名称
+
+handlers:       # handlers关键字表示处理程序任务列表的开头
+  - name: restart apache   # 被任务调用的处理程序的名称
+    service:    # 用于该处理程序的模块
+      name: httpd
+      state: restarted
+</code></pre>
+
+<p>在上面的例子中，restart apache处理程序只有在template任务通知已发生更改时才会触发。一个任务可以在其notify部分中调用多个处理程序。Ansible将notify语句视为数组，并且迭代处理程序名称：</p>
+
+<pre><code class="language-text">tasks:
+  - name: copy demo.example.conf configuration template
+    template:
+      src: /var/lib/templates/demo.exammple.conf.template
+      dest: /etc/httpd/conf.d/demo.example.conf
+    notify:
+      - restart mysql
+      - restart apache
+
+handlers:
+  - name: restart mysql
+    service:
+      name: mariadb
+      state: restarted
+      
+  - name: restart apache
+    service:
+      name: httpd
+      state: restarted
+</code></pre>
+
+<h3 id="toc_12">2.2 使用处理程序的好处</h3>
+
+<p>使用处理程序时需要牢记几个重要事项：</p>
+
+<ul>
+<li>处理程序始终按照<strong>play</strong>的<strong>handlers</strong>部分指定的顺序运行。它们不按在任务中由<strong>notify</strong>语句列出的顺序运行，或按任务通知它们的顺序运行。</li>
+<li>处理程序通常在相关<strong>play</strong>中的所有其他任务完成后运行。<strong>playbook</strong>的<strong>tasks</strong>部分中某一任务调用的处理程序，将等到<strong>tasks</strong>下的所有任务都已处理后才会运行。</li>
+<li>处理程序名称存在于各<strong>play</strong>命名空间中。如果两个处理程序被错误地给予相同的名称，则仅会运行一个。</li>
+<li>即使有多个任务通知处理程序，该处理程序依然仅运行一次。如果没有任务通知处理程序，它就不会运行。</li>
+<li>如果包含<strong>notify</strong>语句的任务没有报告<strong>changed</strong>结果（例如，软件包已安装并且任务报告<strong>ok</strong>），则处理程序不会获得通知。处理程序将被跳过，直到有其他任务通知它。只有相关任务报告了<strong>changed</strong>状态，Ansible才会通知处理程序。</li>
+</ul>
+
+<p>处理程序用于在任务对受管主机进行更改时执行额外操作。它们不应用作正常任务的替代。</p>
+
+<h2 id="toc_13">3. 处理任务失败</h2>
+
+<h3 id="toc_14">3.1 管理play中的任务错误</h3>
+
+<p>Ansible评估任务的返回代码，从而确定任务是成功还是失败。通常而言，当任务失败时，Ansible将立即在该主机上中止<strong>play</strong>的其余部分并且跳过所有后续任务。</p>
+
+<p>但有些时候，可能希望即使在任务失败时也继续执行<strong>play</strong>。例如，或许预期待定任务有可能会失败，并且希望通过有条件地运行某项其他任务来修复。</p>
+
+<p>Ansible有多种功能可用于管理任务错误。</p>
+
+<h3 id="toc_15">3.2 忽略任务失败</h3>
+
+<p>默认情况下，任务失败时<strong>play</strong>会中止。不过，可以通过忽略失败的任务来覆盖此行为。可以在任务中使用<strong>ignore_errors</strong>关键字来实现此目的。</p>
+
+<p>下列代码片段演示了如何在任务中使用<strong>ignore_errors</strong>，以便在任务失败时也继续在主机上执行<strong>playbook</strong>。例如，如果<strong>notapkg</strong>软件包不存在，则yum模块将失败，但若将<strong>ignore_errors</strong>设为<strong>yes</strong>，则执行将继续。</p>
+
+<pre><code class="language-text">- name: Latest version of notapkg is installed
+  yum:
+    name: notapkg
+    state: latest
+  ignore_errors: yes
+</code></pre>
+
+<h3 id="toc_16">3.3 任务失败后强制执行处理程序</h3>
+
+<p>通常而言，如果任务失败并且<strong>play</strong>在该主机上中止，则收到<strong>play</strong>中早前任务通知的处理程序将不会运行。如果在<strong>play</strong>中设置<strong>force_handlers: yes</strong>关键字，则即使<strong>play</strong>因为后续任务失败而中止也会调用被通知的处理程序。</p>
+
+<p>下列代码片段演示了如何在<strong>play</strong>中使用<strong>force_handlers</strong>关键字，以便在任务失败时也强制执行相应的处理程序：</p>
+
+<pre><code class="language-text">---
+- hosts: 172.16.103.129
+  force_handlers: yes
+  tasks:
+    - name: a task which always notifies its handler
+      command: /bin/true
+      notify: restart the database
+      
+    - name: a task which fails because the package doesn&#39;t exist
+      yum:
+        name: notapkg
+        state: latest
+        
+  handlers:
+    - name: restart the database
+      service:
+        name: mariadb
+        state: restarted
+</code></pre>
+
+<p>请记住，处理程序会在任务报告<strong>changed</strong>结果时获得通知，而在任务报告<strong>ok</strong>或<strong>failed</strong>结果时不会获得通知。</p>
+
+<h3 id="toc_17">3.4 指定任务失败条件</h3>
+
+<p>可以在任务中使用<strong>failed_when</strong>关键字来指定表示任务已失败的条件。这通常与命令模块搭配使用，这些模块可能成功执行了某一命令，但命令的输出可能指示了失败。</p>
+
+<p>例如，可以运行输出错误消息的脚本，并使用该消息定义任务的失败状态。下列代码片段演示了如何在任务中使用<strong>failed_when</strong>关键字：</p>
+
+<pre><code class="language-text">tasks:
+  - name: Run user creation script
+    shell: /usr/local/bin/create_users.sh
+    register: command_result
+    failed_when: &quot;&#39;Password missing&#39; in command_result.stdout&quot;
+</code></pre>
+
+<p><strong>fail</strong>模块也可用于强制任务失败。上面的场景也可以编写为两个任务：</p>
+
+<pre><code class="language-text">tasks:
+  - name: Run user creation script
+    shell: /usr/local/bin/create_users.sh
+    register: command_result
+    ignore_errors: yes
+    
+  - name: Report script failure
+    fail:
+      msg: &quot;The password is missing in the output&quot;
+    when: &quot;&#39;Password missing&#39; in command_result.stdout&quot;
+</code></pre>
+
+<p>我们可以使用<strong>fail</strong>模块为任务提供明确的失败消息。此方法还支持延迟失败，允许在运行中间任务以完成或回滚其他更改。</p>
+
+<h3 id="toc_18">3.5 指定何时任务报告 “Changed” 结果</h3>
+
+<p>当任务对托管主机进行了更改时，会报告 <strong>changed</strong> 状态并通知处理程序。如果任务不需要进行更改，则会报告<strong>ok</strong>并且不通知处理程序。</p>
+
+<p><strong>changed_when</strong>关键字可用于控制任务在何时报告它已进行了更改。例如，下一示例中的<strong>shell</strong>模块将用于获取供后续任务使用的<strong>Kerberos</strong>凭据。它通常会在运行时始终报告<strong>changed</strong>。为抵制这种更改，应设置<strong>changed_when: false</strong>，以便它仅报告<strong>ok</strong>或<strong>failed</strong>。</p>
+
+<pre><code class="language-text">- name: get Kerberos credentials as &quot;admin&quot;
+  shell: echo &quot;{{ krb_admin_pass }}&quot; | kinit -f admin
+  changed_when: false
+</code></pre>
+
+<p>以下示例使用<strong>shell</strong>模块，根据通过已注册变量收集的模块的输出来报告<strong>changed</strong>：</p>
+
+<pre><code class="language-text">tasks:
+  - shell:
+      cmd: /usr/local/bin/upgrade-database
+    register: command_result
+    changed_when: &quot;&#39;Success&#39; in command_result.stdout&quot;
+    notify:
+      - restart_database
+
+handlers:
+  - name: restart_database
+    service:
+      name: mariadb
+      state: restarted
+</code></pre>
+
+<h3 id="toc_19">3.6 Ansible块和错误处理</h3>
+
+<p>在<strong>playbook</strong>中，块是对任务进行逻辑分组的子句，可用于控制任务的执行方式。例如，任务块可以含有<strong>when</strong>关键字，以将某一条件应用到多个任务：</p>
+
+<pre><code class="language-text">- name: block example
+  hosts: 172.16.103.129
+  tasks:
+    - name: installing and configuring Yum versionlock plugin
+      block:
+      - name: package needed by yum
+        yum:
+          name: yum-plugin-versionlock
+          state: present
+      - name: lock version of tadata
+        lineinfile:
+          dest: /etc/yum/pluginconf.d/versionlock.list
+          line: tzdata-2020j-1
+          state: present
+      when: ansible_distribution == &quot;Redhat&quot;
+</code></pre>
+
+<p>通过块，也可结合<strong>rescue</strong>和<strong>always</strong>语句来处理错误。如果块中的任何任务失败，则执行其<strong>rescue</strong>块中的任务来进行恢复。在<strong>block</strong>子句中的任务以及<strong>rescue</strong>子句中的任务（如果出现故障）运行之后，<strong>always</strong>子句中的任务运行。总结：</p>
+
+<ul>
+<li><strong>block</strong>：定义要运行的主要任务</li>
+<li><strong>rescue</strong>：定义要在<strong>block</strong>子句中定义的任务失败时运行的任务</li>
+<li><strong>always</strong>：定义始终都独立运行的任务，不论<strong>block</strong>和<strong>rescue</strong>子句中定义的任务是成功还是失败</li>
+</ul>
+
+<p>以下示例演示了如何在playbook中实施块。即使block子句中定义的任务失败，rescue和always子句中定义的任务也会执行。</p>
+
+<pre><code class="language-text">tasks:
+  - name: Upgrade DB
+    block:
+      - name: upgrade the database
+        shell:
+          cmd: /usr/local/lib/upgrade-database
+    rescue:
+      - name: revert the database upgrade
+        shell:
+          cmd: /usr/local/lib/revert-database
+    always:
+      - name: always restart the database
+        service:
+          name: mariadb
+          state: restarted
+</code></pre>
+
+<p>block中的when条件也会应用到其rescue和always子句（若存在）。</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html"  title="Previous Post: docker存储卷">&laquo; docker存储卷</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html" 
+	        title="Next Post: shell脚本习题">shell脚本习题 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15904785155492.html'/*tpa=http://www.itwangqing.net.cn/15904785155492.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

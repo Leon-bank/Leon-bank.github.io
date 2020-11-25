@@ -1,0 +1,1585 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  keepalived高可用 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>keepalived高可用</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. keepalived简介</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 keepalived是什么？</a>
+</li>
+<li>
+<a href="#toc_2">1.2 keepalived的重要功能</a>
+</li>
+<li>
+<a href="#toc_3">1.3 keepalived高可用故障转移的原理</a>
+</li>
+<li>
+<a href="#toc_4">1.4 keepalived原理</a>
+<ul>
+<li>
+<a href="#toc_5">1.4.1 keepalived高可用架构图</a>
+</li>
+<li>
+<a href="#toc_6">1.4.2 keepalived工作原理描述</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">2. keepalived配置文件讲解</a>
+<ul>
+<li>
+<a href="#toc_8">2.1 keepalived默认配置文件</a>
+</li>
+<li>
+<a href="#toc_9">2.2 定制主配置文件</a>
+</li>
+<li>
+<a href="#toc_10">2.3 实例</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_11">3 脑裂</a>
+<ul>
+<li>
+<a href="#toc_12">3.1 脑裂产生的原因</a>
+</li>
+<li>
+<a href="#toc_13">3.2 脑裂的常见解决方案</a>
+</li>
+<li>
+<a href="#toc_14">3.3 对脑裂进行监控</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_15">4. keepalived实现nginx负载均衡机高可用</a>
+<ul>
+<li>
+<a href="#toc_16">4.1 keepalived安装</a>
+</li>
+<li>
+<a href="#toc_17">4.2 在主备机上分别安装nginx</a>
+</li>
+<li>
+<a href="#toc_18">4.3 keepalived配置</a>
+<ul>
+<li>
+<a href="#toc_19">4.3.1 配置主keepalived</a>
+</li>
+<li>
+<a href="#toc_20">4.3.2 配置备keepalived</a>
+</li>
+<li>
+<a href="#toc_21">4.3.3 查看VIP在哪里</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_22">4.4 修改内核参数，开启监听VIP功能</a>
+</li>
+<li>
+<a href="#toc_23">4.5 让keepalived监控nginx负载均衡机</a>
+</li>
+<li>
+<a href="#toc_24">4.6 配置keepalived加入监控脚本的配置</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_25">作业</a>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. keepalived简介</h2>
+
+<h3 id="toc_1">1.1 keepalived是什么？</h3>
+
+<p>Keepalived 软件起初是专为LVS负载均衡软件设计的，用来管理并监控LVS集群系统中各个服务节点的状态，后来又加入了可以实现高可用的VRRP功能。因此，Keepalived除了能够管理LVS软件外，还可以作为其他服务（例如：Nginx、Haproxy、MySQL等）的高可用解决方案软件。</p>
+
+<p>Keepalived软件主要是通过VRRP协议实现高可用功能的。VRRP是Virtual Router RedundancyProtocol(虚拟路由器冗余协议）的缩写，VRRP出现的目的就是为了解决静态路由单点故障问题的，它能够保证当个别节点宕机时，整个网络可以不间断地运行。</p>
+
+<p>所以，Keepalived 一方面具有配置管理LVS的功能，同时还具有对LVS下面节点进行健康检查的功能，另一方面也可实现系统网络服务的高可用功能。</p>
+
+<p>keepalived<a href="javascript:if(confirm('http://www.keepalived.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.keepalived.org/'" tppabs="http://www.keepalived.org/">官网</a></p>
+
+<h3 id="toc_2">1.2 keepalived的重要功能</h3>
+
+<p>keepalived 有三个重要的功能，分别是：</p>
+
+<ul>
+<li>管理LVS负载均衡软件</li>
+<li>实现LVS集群节点的健康检查</li>
+<li>作为系统网络服务的高可用性（failover）</li>
+</ul>
+
+<h3 id="toc_3">1.3 keepalived高可用故障转移的原理</h3>
+
+<p>Keepalived 高可用服务之间的故障切换转移，是通过 VRRP (Virtual Router Redundancy Protocol ,虚拟路由器冗余协议）来实现的。</p>
+
+<p>在 Keepalived 服务正常工作时，主 Master 节点会不断地向备节点发送（多播的方式）心跳消息，用以告诉备 Backup 节点自己还活看，当主 Master 节点发生故障时，就无法发送心跳消息，备节点也就因此无法继续检测到来自主 Master 节点的心跳了，于是调用自身的接管程序，接管主 Master 节点的 IP 资源及服务。而当主 Master 节点恢复时，备 Backup 节点又会释放主节点故障时自身接管的IP资源及服务，恢复到原来的备用角色。</p>
+
+<p>那么，什么是VRRP呢？<br/>
+VRRP ,全 称 Virtual Router Redundancy Protocol ,中文名为虚拟路由冗余协议 ，VRRP的出现就是为了解决静态踣甶的单点故障问题，VRRP是通过一种竞选机制来将路由的任务交给某台VRRP路由器的。</p>
+
+<h3 id="toc_4">1.4 keepalived原理</h3>
+
+<h4 id="toc_5">1.4.1 keepalived高可用架构图</h4>
+
+<p><img src="keepalived_yuanli.png" tppabs="http://itwangqing.net.cn/keepalived_yuanli.png" alt=""/></p>
+
+<h4 id="toc_6">1.4.2 keepalived工作原理描述</h4>
+
+<p>Keepalived高可用对之间是通过VRRP通信的，因此，我们从 VRRP开始了解起：<br/>
+1) VRRP,全称 Virtual Router Redundancy Protocol,中文名为虚拟路由冗余协议，VRRP的出现是为了解决静态路由的单点故障。<br/>
+2) VRRP是通过一种竟选协议机制来将路由任务交给某台 VRRP路由器的。<br/>
+3) VRRP用 IP多播的方式（默认多播地址（224.0_0.18))实现高可用对之间通信。<br/>
+4) 工作时主节点发包，备节点接包，当备节点接收不到主节点发的数据包的时候，就启动接管程序接管主节点的开源。备节点可以有多个，通过优先级竞选，但一般 Keepalived系统运维工作中都是一对。<br/>
+5) VRRP使用了加密协议加密数据，但Keepalived官方目前还是推荐用明文的方式配置认证类型和密码。</p>
+
+<p>介绍完 VRRP,接下来我再介绍一下 Keepalived服务的工作原理：</p>
+
+<blockquote>
+<p>Keepalived高可用是通过 VRRP 进行通信的， VRRP是通过竞选机制来确定主备的，主的优先级高于备，因此，工作时主会优先获得所有的资源，备节点处于等待状态，当主挂了的时候，备节点就会接管主节点的资源，然后顶替主节点对外提供服务。</p>
+
+<p>在 Keepalived 服务之间，只有作为主的服务器会一直发送 VRRP 广播包,告诉备它还活着，此时备不会枪占主，当主不可用时，即备监听不到主发送的广播包时，就会启动相关服务接管资源，保证业务的连续性.接管速度最快可以小于1秒。</p>
+</blockquote>
+
+<h2 id="toc_7">2. keepalived配置文件讲解</h2>
+
+<h3 id="toc_8">2.1 keepalived默认配置文件</h3>
+
+<p>keepalived 的主配置文件是 <code>/etc/keepalived/keepalived.conf</code>。其内容如下：</p>
+
+<pre><code class="language-text">[root@master ~]# cat /etc/keepalived/keepalived.conf
+! Configuration File for keepalived
+
+global_defs {       //全局配置
+   notification_email {     //定义报警收件人邮件地址
+     acassen@firewall.loc
+     failover@firewall.loc
+     sysadmin@firewall.loc
+   }
+   notification_email_from Alexandre.Cassen@firewall.loc    //定义报警发件人邮箱
+   smtp_server 192.168.200.1    //邮箱服务器地址
+   smtp_connect_timeout 30      //定义邮箱超时时间
+   router_id LVS_DEVEL          //定义路由标识信息，同局域网内唯一
+   vrrp_skip_check_adv_addr
+   vrrp_strict
+   vrrp_garp_interval 0
+   vrrp_gna_interval 0
+}
+
+vrrp_instance VI_1 {        //定义实例
+    state MASTER            //指定keepalived节点的初始状态，可选值为MASTER|BACKUP
+    interface eth0          //VRRP实例绑定的网卡接口，用户发送VRRP包
+    virtual_router_id 51    //虚拟路由的ID，同一集群要一致
+    priority 100            //定义优先级，按优先级来决定主备角色，优先级越大越优先
+    nopreempt               //设置不抢占
+    advert_int 1            //主备通讯时间间隔
+    authentication {        //配置认证
+        auth_type PASS      //认证方式，此处为密码
+        auth_pass 1111      //同一集群中的keepalived配置里的此处必须一致，推荐使用8位随机数
+    }
+    virtual_ipaddress {     //配置要使用的VIP地址
+        192.168.200.16
+    }
+}
+
+virtual_server 192.168.200.16 1358 {    //配置虚拟服务器
+    delay_loop 6        //健康检查的时间间隔
+    lb_algo rr          //lvs调度算法
+    lb_kind NAT         //lvs模式
+    persistence_timeout 50      //持久化超时时间，单位是秒
+    protocol TCP        //4层协议
+
+    sorry_server 192.168.200.200 1358   //定义备用服务器，当所有RS都故障时用sorry_server来响应客户端
+
+    real_server 192.168.200.2 1358 {    //定义真实处理请求的服务器
+        weight 1    //给服务器指定权重，默认为1
+        HTTP_GET {
+            url {
+              path /testurl/test.jsp    //指定要检查的URL路径
+              digest 640205b7b0fc66c1ea91c463fac6334d   //摘要信息
+            }
+            url {
+              path /testurl2/test.jsp
+              digest 640205b7b0fc66c1ea91c463fac6334d
+            }
+            url {
+              path /testurl3/test.jsp
+              digest 640205b7b0fc66c1ea91c463fac6334d
+            }
+            connect_timeout 3       //连接超时时间
+            nb_get_retry 3          //get尝试次数
+            delay_before_retry 3    //在尝试之前延迟多长时间
+        }
+    }
+
+    real_server 192.168.200.3 1358 {
+        weight 1
+        HTTP_GET {
+            url {
+              path /testurl/test.jsp
+              digest 640205b7b0fc66c1ea91c463fac6334c
+            }
+            url {
+              path /testurl2/test.jsp
+              digest 640205b7b0fc66c1ea91c463fac6334c
+            }
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+}
+</code></pre>
+
+<h3 id="toc_9">2.2 定制主配置文件</h3>
+
+<p><strong>vrrp_instance段配置</strong></p>
+
+<pre><code class="language-text">nopreempt   //设置为不抢占。默认是抢占的，当高优先级的机器恢复后，会抢占低优先 \
+级的机器成为MASTER，而不抢占，则允许低优先级的机器继续成为MASTER，即使高优先级 \
+的机器已经上线。如果要使用这个功能，则初始化状态必须为BACKUP。
+
+preempt_delay   //设置抢占延迟。单位是秒，范围是0---1000，默认是0.发现低优先 \
+级的MASTER后多少秒开始抢占。
+</code></pre>
+
+<p><strong>vrrp_script段配置</strong></p>
+
+<pre><code class="language-text">//作用：添加一个周期性执行的脚本。脚本的退出状态码会被调用它的所有的VRRP Instance记录。
+//注意：至少有一个VRRP实例调用它并且优先级不能为0.优先级范围是1-254.
+vrrp_script &lt;SCRIPT_NAME&gt; {
+          ...
+    }
+
+//选项说明：
+script &quot;/path/to/somewhere&quot;      //指定要执行的脚本的路径。
+interval &lt;INTEGER&gt;              //指定脚本执行的间隔。单位是秒。默认为1s。
+timeout &lt;INTEGER&gt;               //指定在多少秒后，脚本被认为执行失败。
+weight &lt;-254 --- 254&gt;           //调整优先级。默认为2.
+rise &lt;INTEGER&gt;                  //执行成功多少次才认为是成功。
+fall &lt;INTEGER&gt;                  //执行失败多少次才认为失败。
+user &lt;USERNAME&gt; [GROUPNAME]     //运行脚本的用户和组。
+init_fail                       //假设脚本初始状态是失败状态。
+
+//weight说明： 
+1. 如果脚本执行成功(退出状态码为0)，weight大于0，则priority增加。
+2. 如果脚本执行失败(退出状态码为非0)，weight小于0，则priority减少。
+3. 其他情况下，priority不变。
+</code></pre>
+
+<p><strong>real_server段配置</strong></p>
+
+<pre><code class="language-text">weight &lt;INT&gt;            //给服务器指定权重。默认是1
+inhibit_on_failure      //当服务器健康检查失败时，将其weight设置为0， \
+                        //而不是从Virtual Server中移除
+notify_up &lt;STRING&gt;      //当服务器健康检查成功时，执行的脚本
+notify_down &lt;STRING&gt;    //当服务器健康检查失败时，执行的脚本
+uthreshold &lt;INT&gt;        //到这台服务器的最大连接数
+lthreshold &lt;INT&gt;        //到这台服务器的最小连接数
+</code></pre>
+
+<p><strong>tcp_check段配置</strong></p>
+
+<pre><code class="language-text">connect_ip &lt;IP ADDRESS&gt;     //连接的IP地址。默认是real server的ip地址
+connect_port &lt;PORT&gt;         //连接的端口。默认是real server的端口
+bindto &lt;IP ADDRESS&gt;         //发起连接的接口的地址。
+bind_port &lt;PORT&gt;            //发起连接的源端口。
+connect_timeout &lt;INT&gt;       //连接超时时间。默认是5s。
+fwmark &lt;INTEGER&gt;            //使用fwmark对所有出去的检查数据包进行标记。
+warmup &lt;INT&gt;    //指定一个随机延迟，最大为N秒。可防止网络阻塞。如果为0，则关闭该功能。
+retry &lt;INIT&gt;                //重试次数。默认是1次。
+delay_before_retry &lt;INT&gt;    //默认是1秒。在重试之前延迟多少秒。
+</code></pre>
+
+<h3 id="toc_10">2.3 实例</h3>
+
+<pre><code class="language-text">global_defs {
+    router_id LVS_Server
+}
+vrrp_instance VI_1 {
+    state BACKUP
+    interface ens33
+    virtual_router_id 51
+    priority 150
+    nopreempt
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass wangqing
+    }
+    virtual_ipaddress {  
+        172.16.12.250 dev ens33
+    }
+}
+virtual_server 172.16.12.250 80 {
+    delay_loop 3
+    lvs_sched rr
+    lvs_method DR
+    protocol TCP
+    real_server 172.16.12.129 80 {
+        weight 1
+        TCP_CHECK {
+            connect_port 80
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+    real_server 172.16.12.130 8080 {
+        weight 1
+        TCP_CHECK {
+            connect_port 8080
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+}
+</code></pre>
+
+<h2 id="toc_11">3 脑裂</h2>
+
+<p>在高可用（HA）系统中，当联系2个节点的“心跳线”断开时，本来为一整体、动作协调的HA系统，就分裂成为2个独立的个体。由于相互失去了联系，都以为是对方出了故障。两个节点上的HA软件像“裂脑人”一样，争抢“共享资源”、争起“应用服务”，就会发生严重后果——或者共享资源被瓜分、2边“服务”都起不来了；或者2边“服务”都起来了，但同时读写“共享存储”，导致数据损坏（常见如数据库轮询着的联机日志出错）。<br/>
+ 　　<br/>
+对付HA系统“裂脑”的对策，目前达成共识的的大概有以下几条：</p>
+
+<ul>
+<li>添加冗余的心跳线，例如：双线条线（心跳线也HA），尽量减少“裂脑”发生几率；</li>
+<li>启用磁盘锁。正在服务一方锁住共享磁盘，“裂脑”发生时，让对方完全“抢不走”共享磁盘资源。但使用锁磁盘也会有一个不小的问题，如果占用共享盘的一方不主动“解锁”，另一方就永远得不到共享磁盘。现实中假如服务节点突然死机或崩溃，就不可能执行解锁命令。后备节点也就接管不了共享资源和应用服务。于是有人在HA中设计了“智能”锁。即：正在服务的一方只在发现心跳线全部断开（察觉不到对端）时才启用磁盘锁。平时就不上锁了。</li>
+<li>设置仲裁机制。例如设置参考IP（如网关IP），当心跳线完全断开时，2个节点都各自ping一下参考IP，不通则表明断点就出在本端。不仅“心跳”、还兼对外“服务”的本端网络链路断了，即使启动（或继续）应用服务也没有用了，那就主动放弃竞争，让能够ping通参考IP的一端去起服务。更保险一些，ping不通参考IP的一方干脆就自我重启，以彻底释放有可能还占用着的那些共享资源</li>
+</ul>
+
+<h3 id="toc_12">3.1 脑裂产生的原因</h3>
+
+<p>一般来说，脑裂的发生，有以下几种原因：</p>
+
+<ul>
+<li>高可用服务器对之间心跳线链路发生故障，导致无法正常通信
+<ul>
+<li>因心跳线坏了（包括断了，老化）</li>
+<li>因网卡及相关驱动坏了，ip配置及冲突问题（网卡直连）</li>
+<li>因心跳线间连接的设备故障（网卡及交换机）</li>
+<li>因仲裁的机器出问题（采用仲裁的方案）</li>
+</ul></li>
+<li>高可用服务器上开启了 iptables防火墙阻挡了心跳消息传输</li>
+<li>高可用服务器上心跳网卡地址等信息配置不正确，导致发送心跳失败</li>
+<li>其他服务配置不当等原因，如心跳方式不同，心跳广插冲突、软件Bug等</li>
+</ul>
+
+<p><strong>注意：</strong> </p>
+
+<blockquote>
+<p>Keepalived配置里同一 VRRP实例如果 virtual_router_id两端参数配置不一致也会导致裂脑问题发生。</p>
+</blockquote>
+
+<h3 id="toc_13">3.2 脑裂的常见解决方案</h3>
+
+<p>在实际生产环境中，我们可以从以下几个方面来防止裂脑问题的发生：</p>
+
+<ul>
+<li>同时使用串行电缆和以太网电缆连接，同时用两条心跳线路，这样一条线路坏了，另一个还是好的，依然能传送心跳消息</li>
+<li>当检测到裂脑时强行关闭一个心跳节点（这个功能需特殊设备支持，如Stonith、feyce）。相当于备节点接收不到心跳消患，通过单独的线路发送关机命令关闭主节点的电源</li>
+<li>做好对裂脑的监控报警（如邮件及手机短信等或值班）.在问题发生时人为第一时间介入仲裁，降低损失。例如，百度的监控报警短信就有上行和下行的区别。报警消息发送到管理员手机上，管理员可以通过手机回复对应数字或简单的字符串操作返回给服务器.让服务器根据指令自动处理相应故障，这样解决故障的时间更短.<br/>
+　　<br/>
+当然，在实施高可用方案时，要根据业务实际需求确定是否能容忍这样的损失。对于一般的网站常规业务.这个损失是可容忍的</li>
+</ul>
+
+<h3 id="toc_14">3.3 对脑裂进行监控</h3>
+
+<p>对脑裂的监控应在备用服务器上进行，通过添加zabbix自定义监控进行。<br/>
+监控什么信息呢？监控备上有无VIP地址</p>
+
+<p>备机上出现VIP有两种情况：</p>
+
+<ul>
+<li>发生了脑裂</li>
+<li>正常的主备切换</li>
+</ul>
+
+<p>监控只是监控发生脑裂的可能性，不能保证一定是发生了脑裂，因为正常的主备切换VIP也是会到备上的。</p>
+
+<p>监控脚本如下：</p>
+
+<pre><code class="language-text">[root@slave ~]# mkdir -p /scripts &amp;&amp; cd /scripts
+[root@slave scripts]# vim check_keepalived.sh
+#!/bin/bash
+
+if [ `ip a show ens33 |grep 172.16.12.250|wc -l` -ne 0 ]
+then
+    echo &quot;keepalived is error!&quot;
+else
+    echo &quot;keepalived is OK !&quot;
+fi
+</code></pre>
+
+<p>编写脚本时要注意，网卡要改成你自己的网卡名称，VIP也要改成你自己的VIP，最后不要忘了给脚本赋予执行权限，且要修改/scripts目录的属主属组为zabbix</p>
+
+<h2 id="toc_15">4. keepalived实现nginx负载均衡机高可用</h2>
+
+<p><strong>环境说明</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">系统信息</th>
+<th>主机名</th>
+<th>IP</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">rhel7.4</td>
+<td>master</td>
+<td>172.16.12.129</td>
+</tr>
+<tr>
+<td style="text-align: center">rhel7.4</td>
+<td>slave</td>
+<td>172.16.12.130</td>
+</tr>
+</tbody>
+</table>
+
+<p>本次高可用虚拟IP（VIP）地址暂定为 172.16.12.250</p>
+
+<h3 id="toc_16">4.1 keepalived安装</h3>
+
+<p><strong>配置主keepalived</strong></p>
+
+<pre><code class="language-text">//关闭防火墙与SELINUX
+[root@master ~]# systemctl stop firewalld
+[root@master ~]# systemctl disable firewalld
+Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
+Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+[root@master ~]# setenforce 0
+[root@master ~]# sed -ri &#39;s/^(SELINUX=).*/\1disabled/g&#39; /etc/selinux/config
+
+//配置网络源
+[root@master ~]# curl -o /etc/yum.repos.d/CentOS7-Base-163.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
+[root@master ~]# sed -i &#39;s/\$releasever/7/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+[root@master ~]# sed -i &#39;s/^enabled=.*/enabled=1/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+[root@master ~]# yum -y install epel-release vim wget gcc gcc-c++
+安装过程略.....
+
+//安装keepalived
+[root@master ~]# yum -y install keepalived
+
+//查看安装生成的文件
+[root@master ~]# rpm -ql keepalived
+/etc/keepalived     //配置目录
+/etc/keepalived/keepalived.conf     //此为主配置文件
+/etc/sysconfig/keepalived
+/usr/bin/genhash
+/usr/lib/systemd/system/keepalived.service      //此为服务控制文件
+/usr/libexec/keepalived
+/usr/sbin/keepalived
+.....此处省略N行
+</code></pre>
+
+<p><strong>用同样的方法在备服务器上安装keepalived</strong></p>
+
+<pre><code class="language-text">//关闭防火墙与SELINUX
+[root@slave ~]# systemctl stop firewalld
+[root@slave ~]# systemctl disable firewalld
+Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
+Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+[root@slave ~]# setenforce 0
+[root@slave ~]# sed -ri &#39;s/^(SELINUX=).*/\1disabled/g&#39; /etc/selinux/config
+
+//配置网络源
+[root@slave ~]# curl -o /etc/yum.repos.d/CentOS7-Base-163.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
+[root@slave ~]# sed -i &#39;s/\$releasever/7/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+[root@slave ~]# sed -i &#39;s/^enabled=.*/enabled=1/g&#39; /etc/yum.repos.d/CentOS7-Base-163.repo
+[root@slave ~]# yum -y install epel-release vim wget gcc gcc-c++
+安装过程略.....
+
+//安装keepalived
+[root@slave ~]# yum -y install keepalived
+</code></pre>
+
+<h3 id="toc_17">4.2 在主备机上分别安装nginx</h3>
+
+<p><strong>在master上安装nginx</strong></p>
+
+<pre><code class="language-text">[root@master ~]# yum -y install nginx
+[root@master ~]# cd /usr/share/nginx/html/
+[root@master html]# ls
+404.html  50x.html  index.html  nginx-logo.png  poweredby.png
+[root@master html]# mv index.html{,.bak}
+[root@master html]# echo &#39;master&#39; &gt; index.html
+[root@master html]# ls
+404.html  50x.html  index.html  index.html.bak  nginx-logo.png  poweredby.png
+[root@master html]# systemctl start nginx
+[root@master html]# systemctl enable nginx
+[root@master html]# ss -antl
+State       Recv-Q Send-Q Local Address:Port               Peer Address:Port
+LISTEN      0      128              *:80                           *:*
+LISTEN      0      128              *:22                           *:*
+LISTEN      0      100      127.0.0.1:25                           *:*
+LISTEN      0      128             :::80                          :::*
+LISTEN      0      128             :::22                          :::*
+LISTEN      0      100            ::1:25                          :::*
+</code></pre>
+
+<p><strong>在slave上安装nginx</strong></p>
+
+<pre><code class="language-text">[root@slave ~]# yum -y install nginx
+[root@slave ~]# cd /usr/share/nginx/html/
+[root@slave html]# ls
+404.html  50x.html  index.html  nginx-logo.png  poweredby.png
+[root@slave html]# mv index.html{,.bak}
+[root@slave html]# echo &#39;slave&#39; &gt; index.html
+[root@slave html]# ls
+404.html  50x.html  index.html  index.html.bak  nginx-logo.png  poweredby.png
+[root@slave html]# systemctl start nginx
+[root@slave html]# systemctl enable nginx
+</code></pre>
+
+<p><strong>在浏览器上访问试试，确保master上的nginx服务能够正常访问</strong></p>
+
+<h3 id="toc_18">4.3 keepalived配置</h3>
+
+<h4 id="toc_19">4.3.1 配置主keepalived</h4>
+
+<pre><code class="language-text">[root@master ~]# vim /etc/keepalived/keepalived.conf
+! Configuration File for keepalived
+
+global_defs {
+   router_id lb01
+}
+
+vrrp_instance VI_1 {
+    state MASTER
+    interface ens33
+    virtual_router_id 51
+    priority 100
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass wangqing
+    }
+    virtual_ipaddress {
+        172.16.12.250
+    }
+}
+
+virtual_server 172.16.12.250 80 {
+    delay_loop 6
+    lb_algo rr
+    lb_kind DR
+    persistence_timeout 50
+    protocol TCP
+
+    real_server 172.16.12.129 80 {
+        weight 1
+        TCP_CHECK {
+            connect_port 80
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+
+    real_server 172.16.12.130 80 {
+        weight 1
+        TCP_CHECK {
+            connect_port 80
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+}
+
+[root@master ~]# systemctl start keepalived
+[root@master ~]# systemctl enable keepalived
+</code></pre>
+
+<h4 id="toc_20">4.3.2 配置备keepalived</h4>
+
+<pre><code class="language-text">[root@slave ~]# vim /etc/keepalived/keepalived.conf
+! Configuration File for keepalived
+
+global_defs {
+   router_id lb02
+}
+
+vrrp_instance VI_1 {
+    state BACKUP
+    interface eth0
+    virtual_router_id 51
+    priority 90
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass wangqing
+    }
+    virtual_ipaddress {
+        172.16.12.250
+    }
+}
+
+virtual_server 172.16.12.250 80 {
+    delay_loop 6
+    lb_algo rr
+    lb_kind DR
+    persistence_timeout 50
+    protocol TCP
+
+    real_server 172.16.12.129 80 {
+        weight 1
+        TCP_CHECK {
+            connect_port 80
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+
+    real_server 172.16.12.130 80 {
+        weight 1
+        TCP_CHECK {
+            connect_port 80
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+}
+
+[root@slave ~]# systemctl start keepalived
+[root@slave ~]# systemctl enable keepalived
+</code></pre>
+
+<h4 id="toc_21">4.3.3 查看VIP在哪里</h4>
+
+<p><strong>在MASTER上查看</strong></p>
+
+<pre><code class="language-text">[root@master ~]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:0c:29:c0:ed:3b brd ff:ff:ff:ff:ff:ff
+    inet 172.16.12.129/24 brd 172.16.12.255 scope global ens33
+       valid_lft forever preferred_lft forever
+    inet 172.16.12.250/32 scope global ens33        //可以看到此处有VIP
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20c:29ff:fec0:ed3b/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre>
+
+<p><strong>在SLAVE上查看</strong></p>
+
+<pre><code class="language-text">[root@slave ~]# ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:0c:29:b5:38:80 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.12.130/24 brd 172.16.12.255 scope global dynamic eth0
+       valid_lft 1303sec preferred_lft 1303sec
+    inet6 fe80::20c:29ff:feb5:3880/64 scope link
+       valid_lft forever preferred_lft forever
+</code></pre>
+
+<h3 id="toc_22">4.4 修改内核参数，开启监听VIP功能</h3>
+
+<p><strong>此步可做可不做，该功能可用于仅监听VIP的时候</strong></p>
+
+<p><strong>在master上修改内核参数</strong></p>
+
+<pre><code class="language-text">[root@master ~]# echo &#39;net.ipv4.ip_nonlocal_bind = 1&#39; &gt;&gt;/etc/sysctl.conf
+[root@master ~]# sysctl -p
+net.ipv4.ip_nonlocal_bind = 1
+[root@master ~]# cat /proc/sys/net/ipv4/ip_nonlocal_bind
+1
+</code></pre>
+
+<p><strong>在slave上修改内核参数</strong></p>
+
+<pre><code class="language-text">[root@slave ~]# echo &#39;net.ipv4.ip_nonlocal_bind = 1&#39; &gt;&gt;/etc/sysctl.conf
+[root@slave ~]# sysctl -p
+net.ipv4.ip_nonlocal_bind = 1
+[root@slave ~]# cat /proc/sys/net/ipv4/ip_nonlocal_bind
+1
+</code></pre>
+
+<h3 id="toc_23">4.5 让keepalived监控nginx负载均衡机</h3>
+
+<p>keepalived通过脚本来监控nginx负载均衡机的状态</p>
+
+<p><strong>在master上编写脚本</strong></p>
+
+<pre><code class="language-text">[root@master ~]# mkdir /scripts
+[root@master ~]# cd /scripts/
+[root@master scripts]# vim check_n.sh
+#!/bin/bash
+nginx_status=$(ps -ef|grep -Ev &quot;grep|$0&quot;|grep &#39;\bnginx\b&#39;|wc -l)
+if [ $nginx_status -lt 1 ];then
+    systemctl stop keepalived
+fi
+
+[root@master scripts]# chmod +x check_n.sh
+[root@master scripts]# ll
+total 4
+-rwxr-xr-x 1 root root 168 Oct 19 23:38 check_n.sh
+
+[root@master scripts]# vim notify.sh
+#!/bin/bash
+VIP=$2
+sendmail (){
+        subject=&quot;${VIP}&#39;s server keepalived state is translate&quot;
+        content=&quot;`date +&#39;%F %T&#39;`: `hostname`&#39;s state change to master&quot;
+        echo $content | mail -s &quot;$subject&quot; 1470044516@qq.com
+}
+case &quot;$1&quot; in
+  master)
+        nginx_status=$(ps -ef|grep -Ev &quot;grep|$0&quot;|grep &#39;\bnginx\b&#39;|wc -l)
+        if [ $nginx_status -lt 1 ];then
+            systemctl start nginx
+        fi
+        sendmail
+  ;;
+  backup)
+        nginx_status=$(ps -ef|grep -Ev &quot;grep|$0&quot;|grep &#39;\bnginx\b&#39;|wc -l)
+        if [ $nginx_status -gt 0 ];then
+            systemctl stop nginx
+        fi
+  ;;
+  *)
+        echo &quot;Usage:$0 master|backup VIP&quot;
+  ;;
+esac
+
+[root@master scripts]# chmod +x notify.sh
+[root@master scripts]# ll
+total 8
+-rwxr-xr-x 1 root root 168 Oct 19 23:38 check_n.sh
+-rwxr-xr-x 1 root root 594 Oct 20 03:24 notify.sh
+</code></pre>
+
+<p><strong>在slave上编写脚本</strong></p>
+
+<pre><code class="language-text">[root@slave ~]# mkdir /scripts
+[root@slave ~]# cd /scripts/
+[root@slave scripts]# vim notify.sh
+#!/bin/bash
+VIP=$2
+sendmail (){
+        subject=&quot;${VIP}&#39;s server keepalived state is translate&quot;
+        content=&quot;`date +&#39;%F %T&#39;`: `hostname`&#39;s state change to master&quot;
+        echo $content | mail -s &quot;$subject&quot; 1470044516@qq.com
+}
+case &quot;$1&quot; in
+  master)
+        nginx_status=$(ps -ef|grep -Ev &quot;grep|$0&quot;|grep &#39;\bnginx\b&#39;|wc -l)
+        if [ $nginx_status -lt 1 ];then
+            systemctl start nginx
+        fi
+        sendmail
+  ;;
+  backup)
+        nginx_status=$(ps -ef|grep -Ev &quot;grep|$0&quot;|grep &#39;\bnginx\b&#39;|wc -l)
+        if [ $nginx_status -gt 0 ];then
+            systemctl stop nginx
+        fi
+  ;;
+  *)
+        echo &quot;Usage:$0 master|backup VIP&quot;
+  ;;
+esac
+
+[root@slave scripts]# chmod +x notify.sh
+[root@slave scripts]# ll
+total 8
+-rwxr-xr-x 1 root root 168 Oct 19 23:38 check_n.sh
+-rwxr-xr-x 1 root root 594 Oct 20 03:24 notify.sh
+</code></pre>
+
+<p><strong>此处的脚本名称应避免与服务名相同，推荐用服务名的首字母代替，如check_n，不要给脚本起名check_nginx</strong></p>
+
+<h3 id="toc_24">4.6 配置keepalived加入监控脚本的配置</h3>
+
+<p><strong>配置主keepalived</strong></p>
+
+<pre><code class="language-text">[root@master ~]# vim /etc/keepalived/keepalived.conf
+! Configuration File for keepalived
+
+global_defs {
+   router_id lb01
+}
+
+vrrp_script nginx_check {
+    script &quot;/scripts/check_n.sh&quot;
+    interval 1
+    weight -20
+}
+
+vrrp_instance VI_1 {
+    state MASTER
+    interface ens33
+    virtual_router_id 51
+    priority 100
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass wangqing
+    }
+    virtual_ipaddress {
+        172.16.12.250
+    }
+    track_script {
+        nginx_check
+    }
+    notify_master &quot;/scripts/notify.sh master 172.16.12.250&quot;
+    notify_backup &quot;/scripts/notify.sh backup 172.16.12.250&quot;
+}
+
+virtual_server 172.16.12.250 80 {
+    delay_loop 6
+    lb_algo rr
+    lb_kind DR
+    persistence_timeout 50
+    protocol TCP
+
+    real_server 172.16.12.129 80 {
+        weight 1
+        TCP_CHECK {
+            connect_port 80
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+
+    real_server 172.16.12.130 80 {
+        weight 1
+        TCP_CHECK {
+            connect_port 80
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+}
+
+[root@master ~]# systemctl restart keepalived
+</code></pre>
+
+<p><strong>配置备keepalived</strong></p>
+
+<blockquote>
+<p>backup无需检测nginx是否正常，当升级为MASTER时启动nginx，当降级为BACKUP时关闭</p>
+</blockquote>
+
+<pre><code class="language-text">[root@slave ~]# vim /etc/keepalived/keepalived.conf
+! Configuration File for keepalived
+
+global_defs {
+   router_id lb02
+}
+
+vrrp_instance VI_1 {
+    state BACKUP
+    interface eth0
+    virtual_router_id 51
+    priority 90
+    nopreempt
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass wangqing
+    }
+    virtual_ipaddress {
+        172.16.12.250
+    }
+    notify_master &quot;/scripts/notify.sh master 172.16.12.250&quot;
+    notify_backup &quot;/scripts/notify.sh backup 172.16.12.250&quot;
+}
+
+virtual_server 172.16.12.250 80 {
+    delay_loop 6
+    lb_algo rr
+    lb_kind DR
+    persistence_timeout 50
+    protocol TCP
+
+    real_server 172.16.12.129 80 {
+        weight 1
+        TCP_CHECK {
+            connect_port 80
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+
+    real_server 172.16.12.130 80 {
+        weight 1
+        TCP_CHECK {
+            connect_port 80
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+        }
+    }
+}
+
+[root@slave ~]# systemctl restart keepalived
+</code></pre>
+
+<h2 id="toc_25">作业</h2>
+
+<p>将以下要求的内容写成博客：</p>
+
+<ul>
+<li>keepalived知识点</li>
+<li>实现用keepalived将nginx高可用</li>
+<li>实现用keepalived将mysql高可用</li>
+</ul>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html"  title="Previous Post: 基础练习">&laquo; 基础练习</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html" 
+	        title="Next Post: 04 SaltStack常用的模块">04 SaltStack常用的模块 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15399319450072.html'/*tpa=http://www.itwangqing.net.cn/15399319450072.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

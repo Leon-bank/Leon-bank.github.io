@@ -1,0 +1,1326 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  03 SaltStack之数据系统 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>03 SaltStack之数据系统</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. SaltStack数据系统</a>
+</li>
+<li>
+<a href="#toc_1">2. SaltStack数据系统组件</a>
+<ul>
+<li>
+<a href="#toc_2">2.1 SaltStack组件之Grains</a>
+</li>
+<li>
+<a href="#toc_3">2.2 SaltStack组件之Pillar</a>
+</li>
+<li>
+<a href="#toc_4">2.3 Grains与Pillar的区别</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. SaltStack数据系统</h2>
+
+<p>SaltStack有两大数据系统，分别是：</p>
+
+<ul>
+<li>Grains</li>
+<li>Pillar</li>
+</ul>
+
+<h2 id="toc_1">2. SaltStack数据系统组件</h2>
+
+<h3 id="toc_2">2.1 SaltStack组件之Grains</h3>
+
+<p><code>Grains</code>是<code>SaltStack</code>的一个组件，其存放着minion启动时收集到的信息。</p>
+
+<p><code>Grains</code>是<code>SaltStack</code>组件中非常重要的组件之一，因为我们在做配置部署的过程中会经常使用它，<code>Grains</code>是<code>SaltStack</code>记录<code>minion</code>的一些静态信息的组件。可简单理解为<code>Grains</code>记录着每台<code>minion</code>的一些常用属性，比如CPU、内存、磁盘、网络信息等。我们可以通过<code>grains.items</code>查看某台<code>minion</code>的所有<code>Grains</code>信息。</p>
+
+<p>Grains的功能：</p>
+
+<ul>
+<li>收集资产信息</li>
+</ul>
+
+<p>Grains应用场景：</p>
+
+<ul>
+<li>信息查询</li>
+<li>在命令行下进行目标匹配</li>
+<li>在top file中进行目标匹配</li>
+<li>在模板中进行目标匹配</li>
+</ul>
+
+<p>模板中进行目标匹配请看：<a href="javascript:if(confirm('https://docs.saltstack.com/en/latest/topics/pillar/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://docs.saltstack.com/en/latest/topics/pillar/'" tppabs="https://docs.saltstack.com/en/latest/topics/pillar/">https://docs.saltstack.com/en/latest/topics/pillar/</a></p>
+
+<p><strong>信息查询实例：</strong></p>
+
+<pre><code class="language-text">//列出所有grains的key和value
+[root@master ~]# salt &#39;192.168.69.202&#39; grains.items
+192.168.69.202:
+    ----------
+    SSDs:
+    biosreleasedate:        //bios的时间
+        09/30/2014
+    biosversion:            //bios的版本
+        6.00
+    cpu_flags:              //cpu相关的属性
+        - fpu
+        - vme
+        - de
+        - pse
+        - tsc
+        - msr
+        - pae
+        - mce
+        - cx8
+        - apic
+        - sep
+        - mtrr
+        - pge
+        - mca
+        - cmov
+        - pat
+        - pse36
+        - clflush
+        - dts
+        - mmx
+        - fxsr
+        - sse
+        - sse2
+        - ss
+        - syscall
+        - nx
+        - rdtscp
+        - lm
+        - constant_tsc
+        - arch_perfmon
+        - pebs
+        - bts
+        - nopl
+        - xtopology
+        - tsc_reliable
+        - nonstop_tsc
+        - aperfmperf
+        - pni
+        - pclmulqdq
+        - ssse3
+        - cx16
+        - pcid
+        - sse4_1
+        - sse4_2
+        - x2apic
+        - popcnt
+        - tsc_deadline_timer
+        - aes
+        - xsave
+        - avx
+        - f16c
+        - rdrand
+        - hypervisor
+        - lahf_lm
+        - fsgsbase
+        - tsc_adjust
+        - smep
+        - dtherm
+        - ida
+        - arat
+        - pln
+        - pts
+    cpu_model:          //cpu的具体型号
+        Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+    cpuarch:            //cpu架构
+        x86_64
+    disks:
+        - sda
+        - sr0
+        - dm-0
+        - dm-1
+    dns:
+        ----------
+        domain:
+        ip4_nameservers:
+            - 223.5.5.5
+            - 223.6.6.6
+        ip6_nameservers:
+        nameservers:
+            - 223.5.5.5
+            - 223.6.6.6
+        options:
+        search:
+        sortlist:
+    domain:
+    fqdn:
+        minion
+    fqdn_ip4:       //ip地址
+        - 192.168.69.202
+    fqdn_ip6:
+        - fe80::6860:c429:1c06:1639
+    gid:
+        0
+    gpus:
+        |_
+          ----------
+          model:
+              SVGA II Adapter
+          vendor:
+              unknown
+    groupname:
+        root
+    host:       //主机名
+        minion
+    hwaddr_interfaces:
+        ----------
+        ens32:
+            00:0c:29:d8:05:54
+        lo:
+            00:00:00:00:00:00
+    id:         //minion的ID
+        192.168.69.202
+    init:
+        systemd
+    ip4_gw:
+        192.168.69.1
+    ip4_interfaces:
+        ----------
+        ens32:
+            - 192.168.69.202
+        lo:
+            - 127.0.0.1
+    ip6_gw:
+        False
+    ip6_interfaces:
+        ----------
+        ens32:
+            - fe80::6860:c429:1c06:1639
+        lo:
+            - ::1
+    ip_gw:
+        True
+    ip_interfaces:
+        ----------
+        ens32:
+            - 192.168.69.202
+            - fe80::6860:c429:1c06:1639
+        lo:
+            - 127.0.0.1
+            - ::1
+    ipv4:
+        - 127.0.0.1
+        - 192.168.69.202
+    ipv6:
+        - ::1
+        - fe80::6860:c429:1c06:1639
+    kernel:
+        Linux
+    kernelrelease:
+        3.10.0-693.el7.x86_64
+    kernelversion:
+        #1 SMP Tue Aug 22 21:09:27 UTC 2017
+    locale_info:
+        ----------
+        defaultencoding:
+            UTF-8
+        defaultlanguage:
+            en_US
+        detectedencoding:
+            UTF-8
+    localhost:
+        minion
+    lsb_distrib_codename:
+        CentOS Linux 7 (Core)
+    lsb_distrib_id:
+        CentOS Linux
+    machine_id:
+        59745bbcb85b42a1a8441ffed7b54cba
+    manufacturer:
+        VMware, Inc.
+    master:
+        192.168.69.201
+    mdadm:
+    mem_total:
+        1823
+    nodename:
+        localhost.localdomain
+    num_cpus:
+        8
+    num_gpus:
+        1
+    os:
+        CentOS
+    os_family:
+        RedHat
+    osarch:
+        x86_64
+    oscodename:
+        CentOS Linux 7 (Core)
+    osfinger:
+        CentOS Linux-7
+    osfullname:
+        CentOS Linux
+    osmajorrelease:
+        7
+    osrelease:
+        7.4.1708
+    osrelease_info:
+        - 7
+        - 4
+        - 1708
+    path:
+        /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+    pid:
+        9407
+    productname:
+        VMware Virtual Platform
+    ps:
+        ps -efHww
+    pythonexecutable:
+        /usr/bin/python
+    pythonpath:
+        - /usr/bin
+        - /usr/lib64/python27.zip
+        - /usr/lib64/python2.7
+        - /usr/lib64/python2.7/plat-linux2
+        - /usr/lib64/python2.7/lib-tk
+        - /usr/lib64/python2.7/lib-old
+        - /usr/lib64/python2.7/lib-dynload
+        - /usr/lib64/python2.7/site-packages
+        - /usr/lib/python2.7/site-packages
+    pythonversion:
+        - 2
+        - 7
+        - 5
+        - final
+        - 0
+    saltpath:
+        /usr/lib/python2.7/site-packages/salt
+    saltversion:
+        2018.3.3
+    saltversioninfo:
+        - 2018
+        - 3
+        - 3
+        - 0
+    selinux:
+        ----------
+        enabled:
+            True
+        enforced:
+            Permissive
+    serialnumber:
+        VMware-56 4d b9 cc 33 9d ad d5-08 1d 49 ac bd d8 05 54
+    server_id:
+        1679846262
+    shell:
+        /bin/sh
+    swap_total:
+        2047
+    systemd:
+        ----------
+        features:
+            +PAM +AUDIT +SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 -SECCOMP +BLKID +ELFUTILS +KMOD +IDN
+        version:
+            219
+    uid:
+        0
+    username:
+        root
+    uuid:
+        564db9cc-339d-add5-081d-49acbdd80554
+    virtual:
+        VMware
+    zfs_feature_flags:
+        False
+    zfs_support:
+        False
+    zmqversion:
+        4.1.4
+        
+//只查询所有的grains的key
+[root@master ~]# salt &#39;192.168.69.202&#39; grains.ls
+192.168.69.202:
+    - SSDs
+    - biosreleasedate
+    - biosversion
+    - cpu_flags
+    - cpu_model
+    - cpuarch
+    - disks
+    - dns
+    - domain
+    - fqdn
+    - fqdn_ip4
+    - fqdn_ip6
+    - gid
+    - gpus
+    - groupname
+    - host
+    - hwaddr_interfaces
+    - id
+    - init
+    - ip4_gw
+    - ip4_interfaces
+    - ip6_gw
+    - ip6_interfaces
+    - ip_gw
+    - ip_interfaces
+    - ipv4
+    - ipv6
+    - kernel
+    - kernelrelease
+    - kernelversion
+    - locale_info
+    - localhost
+    - lsb_distrib_codename
+    - lsb_distrib_id
+    - machine_id
+    - manufacturer
+    - master
+    - mdadm
+    - mem_total
+    - nodename
+    - num_cpus
+    - num_gpus
+    - os
+    - os_family
+    - osarch
+    - oscodename
+    - osfinger
+    - osfullname
+    - osmajorrelease
+    - osrelease
+    - osrelease_info
+    - path
+    - pid
+    - productname
+    - ps
+    - pythonexecutable
+    - pythonpath
+    - pythonversion
+    - saltpath
+    - saltversion
+    - saltversioninfo
+    - selinux
+    - serialnumber
+    - server_id
+    - shell
+    - swap_total
+    - systemd
+    - uid
+    - username
+    - uuid
+    - virtual
+    - zfs_feature_flags
+    - zfs_support
+    - zmqversion
+
+
+
+
+//查询某个key的值，比如想获取ip地址
+[root@master ~]# salt &#39;*&#39; grains.get fqdn_ip4
+192.168.69.201:
+    - 127.0.0.1
+192.168.69.202:
+    - 192.168.69.202
+
+[root@master ~]# salt &#39;*&#39; grains.get ip4_interfaces
+192.168.69.201:
+    ----------
+    ens32:
+        - 192.168.69.201
+    lo:
+        - 127.0.0.1
+192.168.69.202:
+    ----------
+    ens32:
+        - 192.168.69.202
+    lo:
+        - 127.0.0.1
+[root@master ~]# salt &#39;*&#39; grains.get ip4_interfaces:ens32
+192.168.69.201:
+    - 192.168.69.201
+192.168.69.202:
+    - 192.168.69.202
+</code></pre>
+
+<p><strong>目标匹配实例：</strong><br/>
+用<code>Grains</code>来匹配<code>minion</code>：</p>
+
+<pre><code class="language-text">//在所有centos系统中执行命令
+[root@master ~]# salt -G &#39;os:CentOS&#39; cmd.run &#39;uptime&#39;
+192.168.69.202:
+     16:16:42 up 2 days,  7:27,  1 user,  load average: 0.00, 0.01, 0.05
+192.168.69.201:
+     16:16:42 up 1 day,  2:17,  1 user,  load average: 0.00, 0.03, 0.05
+</code></pre>
+
+<p>在top file里面使用Grains：</p>
+
+<pre><code class="language-text">[root@master ~]# vim /srv/salt/base/top.sls
+base:
+  &#39;os:CentOS&#39;:
+    - match: grain
+    - web.apache.apache
+</code></pre>
+
+<p><strong>自定义Grains的两种方法：</strong></p>
+
+<ul>
+<li>minion配置文件，在配置文件中搜索grains</li>
+<li>在/etc/salt下生成一个grains文件，在此文件中定义(推荐方式)</li>
+</ul>
+
+<pre><code class="language-text">[root@master ~]# vim /etc/salt/grains
+test-grains: linux-node1
+[root@master ~]# systemctl restart salt-minion
+[root@master ~]# salt &#39;*&#39; grains.get test-grains
+192.168.69.201:
+    linux-node1
+192.168.69.202:
+</code></pre>
+
+<p>不重启的情况下自定义<code>Grains</code>：</p>
+
+<pre><code class="language-text">[root@master ~]# vim /etc/salt/grains
+test-grains: linux-node1
+wangqing: runtime
+
+[root@master ~]# salt &#39;*&#39; saltutil.sync_grains
+192.168.69.202:
+192.168.69.201:
+[root@master ~]# salt &#39;*&#39; grains.get wangqing
+192.168.69.201:
+    runtime
+192.168.69.202:
+</code></pre>
+
+<h3 id="toc_3">2.2 SaltStack组件之Pillar</h3>
+
+<p>Pillar也是SaltStack组件中非常重要的组件之一，是数据管理中心，经常配置states在大规模的配置管理工作中使用它。Pillar在SaltStack中主要的作用就是存储和定义配置管理中需要的一些数据，比如软件版本号、用户名密码等信息，它的定义存储格式与Grains类似，都是YAML格式。</p>
+
+<p>在Master配置文件中有一段Pillar settings选项专门定义Pillar相关的一些参数：</p>
+
+<pre><code class="language-text">#pillar_roots:
+#  base:
+#    - /srv/pillar
+</code></pre>
+
+<p>默认Base环境下Pillar的工作目录在/srv/pillar目录下。若你想定义多个环境不同的Pillar工作目录，只需要修改此处配置文件即可。</p>
+
+<p>Pillar的特点：</p>
+
+<ul>
+<li>可以给指定的minion定义它需要的数据</li>
+<li>只有指定的人才能看到定义的数据</li>
+<li>在master配置文件里设置</li>
+</ul>
+
+<pre><code class="language-text">//查看pillar的信息
+[root@master ~]# salt &#39;*&#39; pillar.items
+192.168.69.202:
+    ----------
+192.168.69.201:
+    ----------
+</code></pre>
+
+<p>默认<code>pillar</code>是没有任何信息的，如果想查看信息，需要在 master 配置文件上把 <code>pillar_opts</code>的注释取消，并将其值设为 True。</p>
+
+<pre><code class="language-text">[root@master ~]# vim /etc/salt/master
+# master config file that can then be used on minions.
+pillar_opts: True
+
+# The pillar_safe_render_error option prevents the master from passing pillar
+
+
+//重启master并查看pillar的信息
+[root@master ~]# systemctl restart salt-master
+[root@master ~]# salt &#39;*&#39; pillar.items
+....此处省略N行
+winrepo_passphrase:
+        winrepo_password:
+        winrepo_privkey:
+        winrepo_pubkey:
+        winrepo_refspecs:
+            - +refs/heads/*:refs/remotes/origin/*
+            - +refs/tags/*:refs/tags/*
+        winrepo_remotes:
+            - https://github.com/saltstack/salt-winrepo.git
+        winrepo_remotes_ng:
+            - https://github.com/saltstack/salt-winrepo-ng.git
+        winrepo_ssl_verify:
+            True
+        winrepo_user:
+        worker_floscript:
+            /usr/lib/python2.7/site-packages/salt/daemons/flo/worker.flo
+        worker_threads:
+            5
+        zmq_backlog:
+            1000
+        zmq_filtering:
+            False
+        zmq_monitor:
+            False
+</code></pre>
+
+<p><strong>pillar自定义数据：</strong><br/>
+在master的配置文件里找pillar_roots可以看到其存放pillar的位置</p>
+
+<pre><code class="language-text">[root@master ~]# vim /etc/salt/master
+...省略N行
+#####         Pillar settings        #####
+##########################################
+# Salt Pillars allow for the building of global data that can be made selectively
+# available to different minions based on minion grain filtering. The Salt
+# Pillar is laid out in the same fashion as the file server, with environments,
+# a top file and sls files. However, pillar data does not need to be in the
+# highstate format, and is generally just key/value pairs.
+pillar_roots:
+  base:
+    - /srv/pillar/base
+  prod:
+    - /srv/pillar/prod
+
+#ext_pillar:
+#  - hiera: /etc/hiera.yaml
+#  - cmd_yaml: cat /etc/salt/yaml
+
+
+[root@master ~]# mkdir -p /srv/pillar/{base,prod}
+[root@master ~]# tree /srv/pillar/
+/srv/pillar/
+├── base
+└── prod
+
+2 directories, 0 files
+
+
+[root@master ~]# systemctl restart salt-master
+[root@master ~]# vim /srv/pillar/base/apache.sls
+{% if grains[&#39;os&#39;] == &#39;CentOS&#39; %}
+apache: httpd
+{% elif grains[&#39;os&#39;] == &#39;Debian&#39; %}
+apache: apache2
+{% endif %}
+
+//定义top file入口文件
+[root@master ~]# vim /srv/pillar/base/top.sls
+base:       //指定环境
+  &#39;192.168.69.202&#39;:     //指定目标
+    - apache            //引用apache.sls或apache/init.sls
+//这个top.sls文件的意思表示的是192.168.69.202这台主机的base环境能够访问到apache这个pillar
+
+[root@master ~]# salt &#39;*&#39; pillar.items
+192.168.69.202:
+    ----------
+    apache:
+        httpd
+192.168.69.201:
+    ----------
+    
+//在salt下修改apache的状态文件，引用pillar的数据
+[root@master ~]# vim /srv/salt/base/web/apache/apache.sls
+apache-install:
+  pkg.installed:
+    - name: {{ pillar[&#39;apache&#39;] }}
+
+apache-service:
+  service.running:
+    - name: {{ pillar[&#39;apache&#39;] }}
+    - enable: True
+
+
+//执行高级状态文件
+[root@master ~]# salt &#39;192.168.69.202&#39; state.highstate
+192.168.69.202:
+----------
+          ID: apache-install
+    Function: pkg.installed
+        Name: httpd
+      Result: True
+     Comment: All specified packages are already installed
+     Started: 19:04:03.507998
+    Duration: 1437.852 ms
+     Changes:
+----------
+          ID: apache-service
+    Function: service.running
+        Name: httpd
+      Result: True
+     Comment: The service httpd is already running
+     Started: 19:04:04.949120
+    Duration: 88.905 ms
+     Changes:
+
+Summary for 192.168.69.202
+------------
+Succeeded: 2
+Failed:    0
+------------
+Total states run:     2
+Total run time:   1.527 s
+</code></pre>
+
+<h3 id="toc_4">2.3 Grains与Pillar的区别</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center"></th>
+<th style="text-align: center">存储位置</th>
+<th>类型</th>
+<th>采集方式</th>
+<th>应用场景</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">Grains</td>
+<td style="text-align: center">minion</td>
+<td>静态</td>
+<td>minion启动时采集<br>可通过刷新避免重启minion服务</td>
+<td>1.信息查询<br>2.在命令行下进行目标匹配<br>3.在top file中进行目标匹配<br>4.在模板中进行目标匹配</td>
+</tr>
+<tr>
+<td style="text-align: center">Pillar</td>
+<td style="text-align: center">master</td>
+<td>动态</td>
+<td>指定，实时生效</td>
+<td>1.目标匹配<br>2.敏感数据配置</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html"  title="Previous Post: kvm虚拟化">&laquo; kvm虚拟化</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html" 
+	        title="Next Post: 日志模块logging">日志模块logging &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15506476021123.html'/*tpa=http://www.itwangqing.net.cn/15506476021123.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

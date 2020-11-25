@@ -1,0 +1,1220 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Linux系统磁盘管理 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>Linux系统磁盘管理</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. 磁盘基本概述</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 磁盘分类</a>
+</li>
+<li>
+<a href="#toc_2">1.2 Linux中磁盘命名方式</a>
+</li>
+<li>
+<a href="#toc_3">1.3 MBR与GPT</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_4">2. 磁盘容量检查</a>
+</li>
+<li>
+<a href="#toc_5">3. 磁盘分区</a>
+<ul>
+<li>
+<a href="#toc_6">3.1 fdisk分区</a>
+</li>
+<li>
+<a href="#toc_7">3.2 gdisk分区</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_8">4. 磁盘格式化</a>
+</li>
+<li>
+<a href="#toc_9">5. 磁盘挂载</a>
+<ul>
+<li>
+<a href="#toc_10">5.1 临时挂载磁盘</a>
+</li>
+<li>
+<a href="#toc_11">5.2 永久挂载磁盘</a>
+</li>
+<li>
+<a href="#toc_12">5.3 卸载挂载磁盘</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_13">6. 交换分区SWAP</a>
+<ul>
+<li>
+<a href="#toc_14">6.1 创建swapfile</a>
+</li>
+<li>
+<a href="#toc_15">6.2 格式化swap分区</a>
+</li>
+<li>
+<a href="#toc_16">6.3 检测当前swap分区情况</a>
+</li>
+<li>
+<a href="#toc_17">6.4 开启新建的SWAP分区</a>
+</li>
+<li>
+<a href="#toc_18">6.5 关闭新建的swap分区</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_19">7. 生产磁盘故障案例</a>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. 磁盘基本概述</h2>
+
+<h3 id="toc_1">1.1 磁盘分类</h3>
+
+<ul>
+<li><p>固态硬盘<br/>
+<img src="ssd1.jpg" tppabs="http://itwangqing.net.cn/ssd1.jpg" alt=""/><br/>
+<img src="ssd2.jpg" tppabs="http://itwangqing.net.cn/ssd2.jpg" alt=""/></p></li>
+<li><p>机械硬盘<br/>
+<img src="jixie1.jpg" tppabs="http://itwangqing.net.cn/jixie1.jpg" alt=""/><br/>
+<img src="jixie2.jpg" tppabs="http://itwangqing.net.cn/jixie2.jpg" alt=""/></p></li>
+<li><p>服务器硬盘<br/>
+<img src="server_disk.jpg" tppabs="http://itwangqing.net.cn/server_disk.jpg" alt=""/></p></li>
+</ul>
+
+<!--### 1.2 固态硬盘的优缺点
+优点：
+
+* 读写速度快
+* 防震抗摔性强
+* 低功耗
+* 无躁音
+* 体积小，携带方便
+
+缺点：
+
+* 容量比机械硬盘小
+* 寿命比机械硬盘短
+* 制造成本高所以价格比机械硬盘高-->
+
+<h3 id="toc_2">1.2 Linux中磁盘命名方式</h3>
+
+<p>Linux中磁盘的命名方式与磁盘的接口有关，规则如下：</p>
+
+<ul>
+<li>传统IDE接口硬盘：<code>/dev/hd[a-z]</code></li>
+<li>SCISI接口硬盘：<code>/dev/sd[a-z]</code></li>
+<li>虚拟化硬盘：<code>/dev/vd[a-z]</code></li>
+</ul>
+
+<p>在设备名称的定义规则如下, 其他的分区可以以此类推<br/>
+系统的第一块SCSI接口的硬盘名称为<code>/dev/sda</code><br/>
+系统的第二块SCSI接口的硬盘名称为<code>/dev/sdb</code><br/>
+系统中分区由数字编号表示, 1-4留给主分区使用和扩展分区, 逻辑分区从5开始</p>
+
+<pre><code class="language-text">//第一块磁盘
+/dev/sda
+//第一块磁盘的第一个分区
+/dev/sda1
+//第二块磁盘的第一个分区
+/dev/sdb1
+</code></pre>
+
+<h3 id="toc_3">1.3 MBR与GPT</h3>
+
+<p>在使用新磁盘之前，你必须对其进行分区。MBR（Master Boot Record）和GPT（GUID Partition Table）是在磁盘上存储分区信息的两种不同方式。这些分区信息包含了分区从哪里开始的信息，这样操作系统才知道哪个扇区是属于哪个分区的，以及哪个分区是可以启动的。在磁盘上创建分区时，你必须在MBR和GPT之间做出选择</p>
+
+<p>MBR是Master Boot Record的简称，也就是主引导记录，是位于磁盘最前边的一段引导（Loader）代码，主要用来引导操作系统的加载与启动</p>
+
+<blockquote>
+<p>特点：</p>
+
+<ol>
+<li>MBR支持最大2TB磁盘，它无法处理大于2TB容量的磁盘</li>
+<li>只支持最多4个主分区。若想要更多分区，需要创建扩展分区，并在其中创建逻辑分区</li>
+</ol>
+</blockquote>
+
+<p>GPT磁盘是指使用GUID分区表的磁盘，GUID磁盘分区表（GUID Partition Table，缩写：GPT）其含义为“全局唯一标识磁盘分区表”，是一个实体硬盘的分区表的结构布局的标准</p>
+
+<blockquote>
+<p>特点：</p>
+
+<ol>
+<li>GPT对磁盘大小没有限制</li>
+<li>最多可以创建128个分区</li>
+</ol>
+</blockquote>
+
+<p><strong>注意：</strong></p>
+
+<blockquote>
+<p>MBR与GPT之间互相转换会导致数据丢失</p>
+</blockquote>
+
+<p><a href="javascript:if(confirm('https://baike.baidu.com/item/GPT%E7%A3%81%E7%9B%98/12761414  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://baike.baidu.com/item/GPT%E7%A3%81%E7%9B%98/12761414'" tppabs="https://baike.baidu.com/item/GPT%E7%A3%81%E7%9B%98/12761414">GPT磁盘概述</a><br/>
+<a href="javascript:if(confirm('http://www.udaxia.com/wtjd/6117.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.udaxia.com/wtjd/6117.html'" tppabs="http://www.udaxia.com/wtjd/6117.html">MBR与GPT的区别</a></p>
+
+<h2 id="toc_4">2. 磁盘容量检查</h2>
+
+<p>使用<code>df</code>命令查看磁盘容量，不加参数以k为单位：</p>
+
+<pre><code class="language-text">df -i   //查看inode使用情况
+df -h   //以G或者T或者M人性化方式显示
+df -T   //查看文件类型
+
+//使用df命令查看磁盘，下面分别介绍每列什么含义
+[root@localhost ~]# df -h
+//设备名称      //磁盘大小 已用大小  可用大小 使用百分比  挂载点
+Filesystem             Size  Used Avail Use% Mounted on
+/dev/mapper/rhel-root   17G   12G  5.6G  68% /
+devtmpfs               471M     0  471M   0% /dev
+tmpfs                  488M     0  488M   0% /dev/shm
+tmpfs                  488M  7.2M  481M   2% /run
+tmpfs                  488M     0  488M   0% /sys/fs/cgroup
+/dev/sda1             1014M  164M  851M  17% /boot
+tmpfs                   98M     0   98M   0% /run/user/0
+</code></pre>
+
+<p>使用<code>lsblk</code>查看分区情况：</p>
+
+<pre><code class="language-text">[root@localhost ~]# lsblk
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda             8:0    0   20G  0 disk
+├─sda1          8:1    0    1G  0 part /boot
+└─sda2          8:2    0   19G  0 part
+  ├─rhel-root 253:0    0   17G  0 lvm  /
+  └─rhel-swap 253:1    0    2G  0 lvm  [SWAP]
+sr0            11:0    1  3.8G  0 rom
+</code></pre>
+
+<p>使用<code>du</code>命令查看目录或者文件的容量，不加参数以k为单位：</p>
+
+<pre><code class="language-text">du -sh opt  //人性化输出显示大小
+-s：列出总和
+-h：人性化显示容量信息
+</code></pre>
+
+<h2 id="toc_5">3. 磁盘分区</h2>
+
+<p>分区之前, 需要先给虚拟机添加一块磁盘，以便于我们做后续的实验vmware虚拟机，请按如下进行操作:</p>
+
+<blockquote>
+<p>1.找到对应虚拟主机点击右键, 选择设置<br/>
+2.在硬件向导里面点击添加按钮, 在硬件类型中选中“硬盘”, 点击下一步<br/>
+3.磁盘类型选择默认, 然后创建新虚拟磁盘, 调整大小(不要勾选立即分配空间)<br/>
+4.最后点击下一步, 完成即可</p>
+</blockquote>
+
+<p><strong>分区工具有fdisk和gdisk，当硬盘小于2T的时候我们应该用fdisk来分区，而当硬盘大于2T的时候则应用gdisk来进行分区</strong></p>
+
+<h3 id="toc_6">3.1 fdisk分区</h3>
+
+<pre><code class="language-text">//生产分区建议: 如无特殊需求, 直接使用整个磁盘即可, 无需分区
+//学习分区建议:1P+1E(3L) 2P+1E(2L) 3P+1E(1L) (仅适用于练习)      
+
+[root@localhost ~]# fdisk -l
+[root@localhost ~]# fdisk  /dev/sdb
+Command (m for help): m //输入m列出常用的命令
+Command action
+   a   toggle a bootable flag   //切换分区启动标记
+   b   edit bsd disklabel     //编辑sdb磁盘标签
+   c   toggle the dos compatibility flag    //切换dos兼容模式
+   d   delete a partition     //删除分区
+   l   list known partition types   //显示分区类型
+   m   print this menu      //显示帮助菜单
+   n   add a new partition  //新建分区
+   o   create a new empty DOS partition table   //创建新的空白分区表
+   p   print the partition table       //显示分区表的信息
+   q   quit without saving changes  //不保存退出
+   s   create a new empty Sun disklabel //创建新的Sun磁盘标签
+   t   change a partition&#39;s system id   //修改分区ID,可以通过l查看id
+   u   change display/entry units       //修改容量单位,磁柱或扇区
+   v   verify the partition table       //检验分区表
+   w   write table to disk and exit     //保存退出
+   x   extra functionality (experts only)   //拓展功能
+
+
+//创建主分区
+Command (m for help): n //新建分区
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)  //主分区
+   e   extended //扩展分区
+Select (default p): p   //选择主分区
+Partition number (1-4, default 1):  //默认回车
+First sector (2048-2097151, default 2048): //默认扇区回车
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-2097151, default 2097151): +50M //分配50MB
+
+
+//创建扩展分区
+Command (m for help): n //新建分区
+Partition type:
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended
+Select (default p): e   //创建扩展分区
+Partition number (2-4, default 2):
+First sector (104448-2097151, default 104448):
+Using default value 104448
+Last sector, +sectors or +size{K,M,G} (104448-2097151, default 2097151):    //默认划分所有空间给扩展分区
+
+
+//创建逻辑分区
+Command (m for help): n //新建分区
+Partition type:
+   p   primary (1 primary, 1 extended, 2 free)
+   l   logical (numbered from 5)
+Select (default p): l   //创建逻辑分区
+Adding logical partition 5
+First sector (106496-2097151, default 106496):
+Using default value 106496
+Last sector, +sectors or +size{K,M,G} (106496-2097151, default 2097151): +100M  //分配100MB空间
+
+//查看分区创建
+Command (m for help): p
+Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048      104447       51200   83  Linux
+/dev/sdb2          104448     2097151      996352    5  Extended
+/dev/sdb5          106496      311295      102400   83  Linux
+
+//保存分区
+Command (m for help): w
+The partition table has been altered!
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+//检查磁盘是否是MBR分区方式
+[root@localhost ~]# fdisk -l /dev/sdb|grep type
+Disk label type: dos
+
+//安装parted, 刷新内核立即生效,无需重启
+[root@localhost ~]# yum -y install parted
+[root@localhost ~]# partprobe /dev/sdb
+</code></pre>
+
+<h3 id="toc_7">3.2 gdisk分区</h3>
+
+<pre><code class="language-text">//安装gdisk工具
+[root@localhost ~]# yum -y install gdisk
+
+[root@localhost ~]# gdisk /dev/sdb
+Command (? for help): n     //创建新分区
+Partition number (1-128, default 1):
+First sector (34-2097118, default = 2048) or {+-}size{KMGTP}:
+Last sector (2048-2097118, default = 2097118) or {+-}size{KMGTP}: +500M //分配500M大小
+
+Command (? for help): p //打印查看
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048         1026047   500.0 MiB   8300  Linux filesystem
+
+Command (? for help): w //保存分区
+Do you want to proceed? (Y/N): y    //确认
+OK; writing new GUID partition table (GPT) to /dev/sdb.
+The operation has completed successfully.
+
+//检查磁盘是否是gpt格式
+[root@localhost /]# fdisk /dev/sdb -l|grep type
+Disk label type: gpt
+
+//安装parted, 刷新内核立即生效,无需重启
+[root@localhost ~]# yum -y install parted
+[root@localhost ~]# partprobe /dev/sdb
+</code></pre>
+
+<h2 id="toc_8">4. 磁盘格式化</h2>
+
+<p>使用<code>mkfs</code>命令格式化磁盘，创建文件系统</p>
+
+<pre><code class="language-text">//mkfs常用的选项有
+-b  //设定数据区块占用空间大小，目前支持1024、2048、4096 bytes每个块。
+-t  //用来指定什么类型的文件系统，可以是ext3，ext4, xfs
+-i  //设定inode的大小
+-N  //设定inode数量，防止Inode数量不够导致磁盘不足
+-L  //预设该分区的标签label
+
+//格式化整个sdb磁盘为ext4文件系统
+[root@localhost ~]# mkfs.ext4  /dev/sdb1
+
+//也可以使用-t指定方式创建ext4文件系统
+[root@localhost ~]# mkfs -t ext4  /dev/sdb1
+
+//也可以格式化sdb1分区为xfs文件系统
+[root@localhost ~]# mkfs.xfs  /dev/sdb1
+</code></pre>
+
+<h2 id="toc_9">5. 磁盘挂载</h2>
+
+<p>在上面的内容中讲到了磁盘的分区和格式化, 那么格式化完了后, 如何使用, 这就涉及到了挂载这块磁盘</p>
+
+<blockquote>
+<p>挂载分区前需要创建挂载点, 挂载点以目录形式出现<br/>
+如果往挂载点目录写入数据, 实际上会写入到该分区<br/>
+挂载点建议是空目录, 不是也不影响挂载分区的使用，但是会隐藏原有的文件</p>
+</blockquote>
+
+<h3 id="toc_10">5.1 临时挂载磁盘</h3>
+
+<pre><code class="language-text">命令：mount挂载磁盘，实质为文件系统指定访问入口
+mount -t       //指定文件系统挂载分区，如ext3，ext4, xfs
+mount -a       //重新读取/etc/fstab配置文件的所有分区
+mount -o       //指定挂载参数
+
+//fstab被损坏情况下,让只读文件系统可写（正常情况下不使用）
+[root@localhost ~]#mount -o rw,remount /  
+
+//挂载/dev/sdb1至db1目录
+[root@localhost ~]# mkdir /db1
+[root@localhost ~]# mount -t xfs /dev/sdb1  /db1
+</code></pre>
+
+<h3 id="toc_11">5.2 永久挂载磁盘</h3>
+
+<pre><code class="language-text">//使用blkid命令获取各分区的UUID
+[root@localhost ~]# blkid |grep &quot;sdb1&quot;
+/dev/sdb1: UUID=&quot;e271b5b2-b1ba-4b18-bde5-66e394fb02d9&quot; TYPE=&quot;xfs&quot;
+
+//使用UUID挂载磁盘sdb1分区至于db1, 临时挂载
+[root@localhost ~]# mount UUID=&quot;e271b5b2-b1ba-4b18-bde5-66e394fb02d9&quot; /db1
+
+//也可以把下面这行写到/etc/fstab中，永久挂载, 开机自动挂载
+[root@localhost ~]# tail -1 /etc/fstab    
+UUID=e271b5b2-b1ba-4b18-bde5-66e394fb02d9 /db1 xfs  defaults 0  0
+
+//加载fstab配置文件, 同时检测语法是否有错误
+[root@localhost ~]# mount –a
+</code></pre>
+
+<p><code>fstab</code>配置文件介绍：</p>
+
+<pre><code class="language-text">[root@localhost ~]# vim /etc/fstab
+
+//分区标识(UUID或设备名)                    挂载点 文件类型    挂载参数    不检查 不备份
+UUID=e271b5b2-b1ba-4b18-bde5-66e394fb02d9 /db1     xfs     defaults    0     0
+
+//挂载参数, 可写fstab配置文件, 也可以mount时使用-o参数指定
+参数              参数意义                               系统默认值
+async           系统每隔一段时间把内存数据写入磁盘中，
+sync            时时同步内存和磁盘中数据；
+suid，nosuid     允许/不允许分区有suid属性                suid
+rw，ro           可以指定文件系统是只读(ro)或可写(rw)       rw
+exec，noexec     允许/不允许可执行文件执行，不要挂载根分区    exec
+user，nouser     允许/不允许root外的其他用户挂载分区        nouser
+auto，noauto     开机自动挂载/不自动挂载                    auto
+default         默认文件系统挂载设置 rw, suid, dev, exec, auto, nouser, async
+
+//加载所有配置
+[root@localhost ~]# mount -a
+</code></pre>
+
+<h3 id="toc_12">5.3 卸载挂载磁盘</h3>
+
+<pre><code class="language-text">umount -lf  //强制卸载挂载
+
+//使用站点目录卸载
+[root@localhost ~]# umount /db1
+//使用设备名卸载/dev/sdb1
+[root@localhost ~]# umount /dev/sdb1
+
+
+//umount不能卸载的情况
+[root@localhost db1]# umount /db1  
+umount: /db1: device is busy.
+        (In some cases useful info about processes that use
+         the device is found by lsof(8) or fuser(1)
+       
+//如上情况解决办法有两种, 切换至其他目录 或使用&#39;-l&#39;选项强制卸载    
+[root@localhost db1]# umount -l /db1
+</code></pre>
+
+<h2 id="toc_13">6. 交换分区SWAP</h2>
+
+<p>交换分区SWAP就是LINUX下的虚拟内存分区,它的作用是在物理内存使用完之后,将磁盘空间(也就是SWAP分区)虚拟成内存来使用。</p>
+
+<p>交换分区一般指定虚拟内存的大小为实际内存的1~1.5倍。如果实际内存超过8GB，可以直接划分16GB给虚拟内存即可，如果虚拟内存不够用的情况，须增加一个虚拟磁盘，由于不能给原有的磁盘重新分区，所以可以选择新建。</p>
+
+<h3 id="toc_14">6.1 创建swapfile</h3>
+
+<pre><code class="language-text">[root@localhost ~]# dd if=/dev/zero of=/opt/newdisk bs=1M count=1024
+//if：指定源  一般写/dev/zero
+//of：指定目标
+//bs：定义块大小
+//count：数量
+</code></pre>
+
+<h3 id="toc_15">6.2 格式化swap分区</h3>
+
+<pre><code class="language-text">[root@localhost opt]# mkswap -f /opt/newdisk 
+Setting up swapspace version 1, size = 1926952 KiB
+no label, UUID=69d11824-8d72-4ea5-b383-ddbfd970db3d
+</code></pre>
+
+<h3 id="toc_16">6.3 检测当前swap分区情况</h3>
+
+<pre><code class="language-text">[root@localhost ~]# free -m
+              total        used        free      shared  buff/cache   available
+Mem:            976         133         325           6         517         646
+Swap:          2047           0        2047     //原来分区是2G
+</code></pre>
+
+<h3 id="toc_17">6.4 开启新建的SWAP分区</h3>
+
+<pre><code class="language-text">[root@localhost ~]# swapon /opt/newdisk
+[root@localhost ~]# free -m
+              total        used        free      shared  buff/cache   available
+Mem:            976         133         325           6         517         646
+Swap:          3071           0        3071     //swap分区多出来1G
+</code></pre>
+
+<h3 id="toc_18">6.5 关闭新建的swap分区</h3>
+
+<pre><code class="language-text">[root@localhost ~]# swapoff /opt/newdisk
+[root@localhost ~]# free -m
+              total        used        free      shared  buff/cache   available
+Mem:            976         133         325           6         517         646
+Swap:          2047           0        2047     //还原到没有增加虚拟磁盘
+</code></pre>
+
+<pre><code class="language-text">//创建swap分区并且持久化使用
+
+例子： 给系统新增加一个交换分区(swap)
+
+考试题目：一般是要求新建一个分区，并且把分区作为swap分区使用
+
+查看内存和交换分区的使用情况
+# free -m
+             total       used       free     shared    buffers     cached
+Mem:          1841        613       1227         16          0        258
+-/+ buffers/cache:        354       1486
+Swap:            0          0          0  &lt;--- 没有交换分区
+
+# swapon -s  也能用该命令查看，只是默认也是没有交换分区所有没有输出
+
+# fdisk  -l /dev/sdb
+   设备 Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     2099199     1048576   83  Linux
+/dev/sdb2         2099200     6293503     2097152   83  Linux  &lt;---准备把该分区作为交换分区
+
+
+
+1、新建一个分区，并且把分区类型更改为82 
+    新分区我们在上面的练习已经完成了，所以本例子不用分区，而是需要修改该分区的类型
+
+# fdisk  /dev/sdb
+
+命令(输入 m 获取帮助)：l  列出所有支持的分区类型对应的id
+
+命令(输入 m 获取帮助)：t  修改分区id
+分区号 (1-5，默认 5)：2  修改第2个分区
+Hex 代码(输入 L 列出所有代码)：82  修改成id为82
+已将分区“Linux”的类型更改为“Linux swap / Solaris”
+
+命令(输入 m 获取帮助)：p
+
+   设备 Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     2099199     1048576   83  Linux
+/dev/sdb2         2099200     6293503     2097152   82  Linux swap / Solaris &lt;---修改成功
+
+
+命令(输入 m 获取帮助)：w
+
+强烈建议： 对分区做了修改后都刷新一下
+# partprobe  /dev/sdb
+
+
+2、把sdb2格式化为交换分区
+# mkswap  /dev/sdb2
+正在设置交换空间版本 1，大小 = 2097148 KiB
+无标签，UUID=ba08eb90-2003-44e6-9769-9a9351aebb05
+
+
+3、启动交换分区
+# swapon /dev/sdb2  或者  # swanon -a  启动所有交换分区
+
+
+查看
+# swapon -s
+文件名             类型      大小  已用  权限
+/dev/sdb2                               partition   2097148 0   -1
+
+
+4、持久化保存交换分区的使用
+# blkid /dev/sdb2
+/dev/sdb2: UUID=&quot;ba08eb90-2003-44e6-9769-9a9351aebb05&quot; TYPE=&quot;swap&quot; 
+
+# vim /etc/fstab 
+/dev/mapper/rhel-root   /                       xfs     defaults        0 0
+UUID=cb3299d6-16e0-4644-9686-27907eefb8f3 /boot                   xfs     defaults        0 0
+UUID=ba08eb90-2003-44e6-9769-9a9351aebb05  swap         swap    defaults  0 0
+</code></pre>
+
+<h2 id="toc_19">7. 生产磁盘故障案例</h2>
+
+<p>Inode被占满，导致磁盘有可用的剩余空间也无法继续使用</p>
+
+<pre><code class="language-text">[root@localhost ~]# dd if=/dev/zero of=/opt/newdisk bs=1k count=1024
+[root@localhost ~]# mkfs.ext4 -i 1024 /opt/newdisk
+[root@localhost ~]# mkdir /data
+[root@localhost ~]# mount -t ext4 -o loop /opt/newdisk /data/
+
+//inode被占满
+[root@localhost ~]# touch {1..20000}
+touch: cannot touch `19997&#39;: No space left on device
+touch: cannot touch `19998&#39;: No space left on device
+touch: cannot touch `19999&#39;: No space left on device
+touch: cannot touch `20000&#39;: No space left on device
+
+//inode被占满，剩余block也是无法继续使用
+[root@localhost ~]# df -i|grep data
+/opt/newdisk      1024  1024       0  100% /data
+[root@localhost ~]# df -h|grep data
+/opt/newdisk    891K   34K  806K   5% /data
+</code></pre>
+
+<p>Block空间即将被占满, 但删除大文件也没有释放空间</p>
+
+<blockquote>
+<p>假设现在线上正在运行Nginx服务, Nginx产生的日志已经达到了20个G, 磁盘眼看就看沾满了, 请问不重启Nginx的方式如何处理</p>
+</blockquote>
+
+<pre><code class="language-text">//是会删除文件, 但Nginx持续占用着文件, 所以空间并不会被释放
+rm -f access.log
+
+//正确做法如下, 清空该文件即可释放文件内容
+&gt; access.log
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html"  title="Previous Post: 源码安装包管理">&laquo; 源码安装包管理</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html" 
+	        title="Next Post: LVM管理">LVM管理 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15300107229451.html'/*tpa=http://www.itwangqing.net.cn/15300107229451.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

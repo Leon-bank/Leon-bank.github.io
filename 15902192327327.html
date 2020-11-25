@@ -1,0 +1,1500 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  05 管理变量、机密和事实 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>05 管理变量、机密和事实</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1. 管理变量</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 Ansible变量简介</a>
+<ul>
+<li>
+<a href="#toc_2">1.1.1 命名变量</a>
+</li>
+<li>
+<a href="#toc_3">1.1.2 定义变量</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_4">1.2 playbook中的变量</a>
+<ul>
+<li>
+<a href="#toc_5">1.2.1 在Playbook中定义变量</a>
+</li>
+<li>
+<a href="#toc_6">1.2.2 在Playbook中使用变量</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">1.3 主机变量和组变量</a>
+<ul>
+<li>
+<a href="#toc_8">1.3.1 使用目录填充主机和组变量</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_9">1.4 从命令行覆盖变量</a>
+</li>
+<li>
+<a href="#toc_10">1.5 使用数组作为变量</a>
+</li>
+<li>
+<a href="#toc_11">1.6 使用已注册变量捕获命令输出</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_12">2. 管理机密</a>
+<ul>
+<li>
+<a href="#toc_13">2.1 Ansible Vault</a>
+<ul>
+<li>
+<a href="#toc_14">2.1.1 创建加密的文件</a>
+</li>
+<li>
+<a href="#toc_15">2.1.2 查看加密的文件</a>
+</li>
+<li>
+<a href="#toc_16">2.1.3 编辑现有的加密文件</a>
+</li>
+<li>
+<a href="#toc_17">2.1.4 加密现有的文件</a>
+</li>
+<li>
+<a href="#toc_18">2.1.5 解密现有的文件</a>
+</li>
+<li>
+<a href="#toc_19">2.1.6 更改加密文件的密码</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_20">2.2 playbook和ansible vault</a>
+<ul>
+<li>
+<a href="#toc_21">2.2.1 变量文件管理的推荐做法</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_22">3. 管理事实</a>
+<ul>
+<li>
+<a href="#toc_23">3.1 描述Ansible事实</a>
+</li>
+<li>
+<a href="#toc_24">3.2 Ansible事实作为变量注入</a>
+</li>
+<li>
+<a href="#toc_25">3.3 关闭事实收集</a>
+</li>
+<li>
+<a href="#toc_26">3.4 创建自定义事实</a>
+</li>
+<li>
+<a href="#toc_27">3.5 使用魔法变量</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1. 管理变量</h2>
+
+<h3 id="toc_1">1.1 Ansible变量简介</h3>
+
+<p>Ansible支持利用变量来存储值，并在Ansible项目的所有文件中重复使用这些值。这可以简化项目的创建和维护，并减少错误的数量。</p>
+
+<p>通过变量，可以轻松地在Ansible项目中管理给定环境的动态值。例如，变量可能包含下面这些值：</p>
+
+<ul>
+<li>要创建的用户</li>
+<li>要安装的软件包</li>
+<li>要重新启动的服务</li>
+<li>要删除的文件</li>
+<li>要从互联网检索的存档</li>
+</ul>
+
+<h4 id="toc_2">1.1.1 命名变量</h4>
+
+<p>变量的名称必须以字母开头，并且只能包含字母、数字和下划线。</p>
+
+<p><strong>无效和有效的Ansible变量名称示例</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>无效的变量名称</th>
+<th>有效的变量名称</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>web server</td>
+<td>web_server</td>
+</tr>
+<tr>
+<td>remote.file</td>
+<td>remote_file</td>
+</tr>
+<tr>
+<td>1st file</td>
+<td>file_1<br>file1</td>
+</tr>
+<tr>
+<td>remoteserver$1</td>
+<td>remote_server_1<br>remote_server1</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_3">1.1.2 定义变量</h4>
+
+<p>可以在Ansible项目中的多个位置定义变量。不过，这些变量大致可简化为三个范围级别：</p>
+
+<ul>
+<li>全局范围：从命令行或Ansible配置设置的变量</li>
+<li>Play范围：在play和相关结构中设置的变量</li>
+<li>主机范围：由清单、事实收集或注册的任务，在主机组和个别主机上设置的变量</li>
+</ul>
+
+<p>如果在多个xeklh定义了相同名称的变量，则采用优先级别最高的变量。窄范围优先于更广泛的范围：由清单定义的变量将被playbook定义的变量覆盖，后者将被命令行中定义的变量覆盖。</p>
+
+<h3 id="toc_4">1.2 playbook中的变量</h3>
+
+<p>变量在Ansible Playbook中发挥着重要作用，因为它们可以简化playbook中变量数据的管理。</p>
+
+<h4 id="toc_5">1.2.1 在Playbook中定义变量</h4>
+
+<p>编写playbook时，可以定义自己的变量，然后在任务中调用这些值。例如，名为web_package的变量可以使用值httpd来定义。然后，任务可以使用yum模块调用该变量来安装httpd软件包。</p>
+
+<p>Playbook变量可以通过多种方式定义。一种常见的方式是将变量放在playbook开头的vars块中：</p>
+
+<pre><code class="language-text">- hosts: all
+  vars:
+    user: joe
+    home: /home/joe
+</code></pre>
+
+<p>也可以在外部文件中定义playbook变量。此时不使用playbook中的vars块，可以改为使用vars_files指令，后面跟上相对于playbook位置的外部变量文件名称列表：</p>
+
+<pre><code class="language-text">- hosts: all
+  vars_files:
+    - vars/users.yml
+</code></pre>
+
+<p>而后，可以使用YAML格式在这一/这些文件中定义playbook变量：</p>
+
+<pre><code class="language-text">user: joe
+home: /home/joe
+</code></pre>
+
+<h4 id="toc_6">1.2.2 在Playbook中使用变量</h4>
+
+<p>声明了变量后，可以在任务中使用这些变量。若要引用变量，可以将变量名放在双大括号内。在任务执行时，Ansible会将变量替换为其值。</p>
+
+<pre><code class="language-text">vars:
+  user: joe
+  
+tasks:
+  # This line will read: Creates the user joe
+  - name: Creates the user {{ user }}
+    user:
+      # This line will create the user named joe
+      name: &quot;{{ user }}&quot;
+</code></pre>
+
+<p>注意：当变量用作开始一个值的第一元素时，必须使用引号。这可以防止Ansible将变量引用视为YAML字典的开头。</p>
+
+<h3 id="toc_7">1.3 主机变量和组变量</h3>
+
+<p>直接应用于主机的清单变量分为两在类：</p>
+
+<ul>
+<li>主机变量，应用于特定主机</li>
+<li>组管理，应用于一个主机组或一组主机组中的所有主机</li>
+</ul>
+
+<p>主机变量优先于组变量，但playbook中定义的变量的优先级比这两者更高。</p>
+
+<p>若要定义主机变量和组变量，一种方法是直接在清单文件中定义。这是较旧的做法，不建议采用，但你可能会在未来的工作当中遇到。</p>
+
+<p><strong>定义172.16.103.129的ansible_user主机变量：</strong></p>
+
+<pre><code class="language-text">[servers]
+172.16.103.129 ansible_user=joe
+</code></pre>
+
+<p><strong>定义servers主机组的user组变量：</strong></p>
+
+<pre><code class="language-text">[servers]
+172.16.103.129
+172.16.103.130
+
+[servers:vars]
+user=joe
+</code></pre>
+
+<p><strong>定义servers组的user组变量，该组由两个主机组成，每个主机组有两个服务器：</strong></p>
+
+<pre><code class="language-text">[servers1]
+node1.example.com
+node2.example.com
+
+[servers2]
+node3.example.com
+node4.example.com
+
+[servers:children]
+servers1
+servers2
+
+[servers:vars]
+user=joe
+</code></pre>
+
+<p>此做法存在一些缺点，它使得清单文件更难以处理，在同一文件中混合提供了主机和变量信息，而且采用的也是过时的语法。</p>
+
+<h4 id="toc_8">1.3.1 使用目录填充主机和组变量</h4>
+
+<p>定义主机和主机组的变量的首选做法是在与清单文件或目录相同的工作目录中，创建group_vars和host_vars两个目录。这两个目录分别包含用于定义组变量和主机变量的文件。</p>
+
+<p>建议的做法是使用host_vars和group_vars目录定义清单变量，而不直接在清单文件中定义它们。</p>
+
+<p>为了定义用于servers组的组变量，需要创建名为group_vars/servers的YAML文件，然后该文件的内容将使用与playbook相同的语法将变量设置为值：</p>
+
+<pre><code class="language-text">user: joe
+</code></pre>
+
+<p>类似的，为了定义用于特定主机的主机变量，需要在host_vars目录中创建名称与主机匹配的文件来存放主机变量。</p>
+
+<p>下面的示例更加详细的说明了这一做法。例如在一个场景中，需要管理两个数据中心，并在~/project/inventory清单文件中定义数据中心主机：</p>
+
+<pre><code class="language-text">[root@localhost ~]# mkdir ~/project
+[root@localhost ~]# vim ~/project/inventory
+[datacenter1]
+node1.example.com
+node2.example.com
+
+[datacenter2]
+node3.example.com
+node4.example.com
+
+[datacenters:children]
+datacenter1
+datacenter2
+</code></pre>
+
+<p>如果需要为两个数据中心的所有服务器定义一个通用值，可以为datacenters主机组设置一个组变量：</p>
+
+<pre><code class="language-text">[root@localhost ~]# mkdir ~/project/groupo_vars
+[root@localhost ~]# vim ~/project/groupo_vars/datacenters
+package: httpd
+</code></pre>
+
+<p>如果要为每个数据中心定义不同的值，可以为每个数据中心主机组设置组变量：</p>
+
+<pre><code class="language-text">[root@localhost ~]# vim ~/project/groupo_vars/datacenter1
+package: httpd
+[root@localhost ~]# vim ~/project/groupo_vars/datacenter2
+package: apache2
+</code></pre>
+
+<p>如果要为每一数据中心的各个主机定义不同的值，则在单独的主机变量文件中定义变量：</p>
+
+<pre><code class="language-text">[root@localhost ~]# mkdir ~/project/host_vars
+[root@localhost ~]# vim ~/project/host_vars/node1.example.com
+package: httpd
+[root@localhost ~]# vim ~/project/host_vars/node2.example.com
+package: apache2
+[root@localhost ~]# vim ~/project/host_vars/node3.example.com
+package: mariadb-server
+[root@localhost ~]# vim ~/project/host_vars/node4.example.com
+package: mysql-server
+</code></pre>
+
+<p>以上示例项目project的目录结构如果包含上面所有示例文件，将如下所示：</p>
+
+<pre><code class="language-text">[root@localhost ~]# tree ~/project
+/root/project
+├── ansible.cfg
+├── group_vars
+│   ├── datacenters
+│   ├── datacenters1
+│   └── datecenters2
+├── host_vars
+│   ├── node1.example.com
+│   ├── node2.example.com
+│   ├── node3.example.com
+│   └── node4.example.com
+├── inventory
+└── playbook.yml
+
+2 directories, 10 files
+</code></pre>
+
+<h3 id="toc_9">1.4 从命令行覆盖变量</h3>
+
+<p>清单变量可被playbook中设置的变量覆盖，这两种变量又可通过在命令行中传递参数到ansible或ansible-playbook命令来覆盖。在命令行上设置的变量称为额外变量。</p>
+
+<p>当需要覆盖一次性运行的playbook的变量的已定义值时，额外变量非常有用。例如：</p>
+
+<pre><code class="language-text">ansible-playbook main.yml -e &quot;package=apache2&quot;
+</code></pre>
+
+<h3 id="toc_10">1.5 使用数组作为变量</h3>
+
+<p>除了将同一元素相关的配置数据（软件包列表、服务列表和用户列表等）分配到多个变量外，也可以使用数组。这种做法的一个好处在于，数组是可以浏览的。</p>
+
+<p>例如，假设下列代码片段：</p>
+
+<pre><code class="language-text">user1_first_name: Bob
+user1_last_name: Jones
+user1_home_dir: /users/bjones
+user2_first_name: Anne
+user2_last_name: Cook
+user2_home_dir: /users/acook
+</code></pre>
+
+<p>这将可以改写成名为users的数组：</p>
+
+<pre><code class="language-text">users:
+  bjones:
+    first_name: Bob
+    last_name: jones
+    home_dir: /users/bjones
+  acook:
+    first_name: Anne
+    last_name: Cook
+    home_dir: /users/acook
+</code></pre>
+
+<p>然后可以使用以下变量来访问用户数据：</p>
+
+<pre><code class="language-text"># Returns &#39;Bob&#39;
+users.bjones.first_name
+
+# Returns &#39;/users/acook&#39;
+users.acook.home_dir
+</code></pre>
+
+<p>由于变量被定义为Python字典，因此可以使用替代语法：</p>
+
+<pre><code class="language-text"># Returns &#39;Bob&#39;
+users[&#39;bjones&#39;][&#39;first-name&#39;]
+
+# Returns &#39;/users/acook&#39;
+users[&#39;acook&#39;][&#39;home_dir&#39;]
+</code></pre>
+
+<p>如果键名与python方法或属性的名称（如discard、copy和add）相同，点表示法可能会造成问题。使用中括号表示法有助于避免冲突和错误。</p>
+
+<p>但要声明的是，上面介绍的两种语法都有效，但为了方便故障排除，建议在任何给定Ansible项目的所有文件中一致地采用一种语法，不要混用。</p>
+
+<h3 id="toc_11">1.6 使用已注册变量捕获命令输出</h3>
+
+<p>可以使用register语句捕获命令输出。输出保存在一个临时变量中，然后在playbook中可用于调试用途或者达成其他目的，例如基于命令输出的特定配置。</p>
+
+<p>以下playbook演示了如何为调试用途捕获命令输出：</p>
+
+<pre><code class="language-text">---
+- name: Installs a package and prints the result
+  hosts: all
+  tasks:
+    - name: Install the package
+      yum:
+        name: httpd
+        state: installed
+      register: install_result
+                                                        
+    - debug: var=install_result
+</code></pre>
+
+<p>运行该playbook时，debug模块用于将install_result注册变量的值转储到终端。</p>
+
+<pre><code class="language-text">[root@localhost ~]# ansible-playbook playbook.yml 
+PLAY [Installs a package and prints the result] *************************************
+
+TASK [Gathering Facts] **************************************************************
+ok: [172.16.103.129]
+
+TASK [Install the package] **********************************************************
+ok: [172.16.103.129]
+
+TASK [debug] ************************************************************************
+ok: [172.16.103.129] =&gt; {
+    &quot;install_result&quot;: {
+        &quot;changed&quot;: false,
+        &quot;failed&quot;: false,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;rc&quot;: 0,
+        &quot;results&quot;: [
+            &quot;httpd-2.4.6-93.el7.centos.x86_64 providing httpd is already installed&quot;
+        ]
+    }
+}
+
+PLAY RECAP **************************************************************************
+t129                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+</code></pre>
+
+<h2 id="toc_12">2. 管理机密</h2>
+
+<h3 id="toc_13">2.1 Ansible Vault</h3>
+
+<p>Ansible可能需要访问密码或API密钥等敏感数据，以便能配置受管主机。通常，此信息可能以纯文本形式存储在清单变量或其他Ansible文件中。但若如此，任何有权访问Ansible文件的用户或存储这些Ansible文件的版本控制系统都能够访问此敏感数据。这显示存在安全风险。</p>
+
+<p>Ansible提供的Ansible Vault可以加密和解密任何由Ansible使用的结构化数据文件。若要使用Ansible Vault，可通过一个名为ansible-vault的命令行工具创建、编辑、加密、解密和查看文件。Ansible Vault可以加密任何由Ansible使用的结构化数据文件。这可能包括清单变量、playbook中含有的变量文件、在执行playbook时作为参数传递的变量文件，或者Ansible角色中定义的变量。</p>
+
+<h4 id="toc_14">2.1.1 创建加密的文件</h4>
+
+<p>要创建新的加密文件，可使用<strong>ansible-vault create filename</strong>命令。该命令将提示输入新的vault密码，然后利用默认编辑器<strong>vi</strong>打开文件。我们可以设置和导出<strong>EDITOR</strong>环境变量，通过设置和导出指定其他默认编辑器。例如，若要将默认编辑器设为<strong>nano</strong>，可设置为<strong>export EDITOR=nano</strong>。</p>
+
+<pre><code class="language-text">[root@localhost ~]# ansible-vault create secret.yml
+New Vault password: redhat
+Confirm New Vault password: redhat
+</code></pre>
+
+<p>我们还可以用vault密码文件来存储vault密码，而不是通过标准输入途径输入vault密码。这样做需要使用文件权限和其他方式来严密保护该文件。</p>
+
+<pre><code class="language-text">ansible-vault create --vault-password-file=vault-pass secret.yml
+</code></pre>
+
+<h4 id="toc_15">2.1.2 查看加密的文件</h4>
+
+<p>可以使用<strong>ansible-vault view filename</strong>命令查看Ansible Vault加密的文件，而不必打开它进行编辑。</p>
+
+<pre><code class="language-text">ansible-vault view secret.yml
+</code></pre>
+
+<p>查看时需要输入加密文件的加密密码。</p>
+
+<h4 id="toc_16">2.1.3 编辑现有的加密文件</h4>
+
+<p>要编辑现有的加密文件，Ansible Vault提供了<strong>ansible-vault edit filename</strong>命令。此命令将文件解密为一个临时文件，并允许编辑。保存时，它将复制其内容并删除临时文件。</p>
+
+<pre><code class="language-text">ansible-vault edit secret.yml
+</code></pre>
+
+<p>编辑时需要输入加密文件的加密密码。</p>
+
+<p><strong>edit</strong>子命令始终重写文件，因此只应在进行更改时使用它。要查看文件的内容而不进行更改时，应使用<strong>view</strong>子命令。</p>
+
+<h4 id="toc_17">2.1.4 加密现有的文件</h4>
+
+<p>要加密已存在的文件，请使用<strong>ansible-vault encrypt filename</strong>命令。此命令可取多个欲加密文件的名称作为参数。</p>
+
+<pre><code class="language-text">ansible-vault encrypt secret1.yml secret2.yml
+</code></pre>
+
+<p>使用<strong>--output=OUTPUT_FILE</strong>选项，可将加密文件保存为新的名称。只能通过<strong>--output</strong>选项使用一个输入文件。</p>
+
+<h4 id="toc_18">2.1.5 解密现有的文件</h4>
+
+<p>现有的加密文件可以通过<strong>ansible-vault decrypt filename</strong>命令永久解密。在解密单个文件时，可使用<strong>--output</strong>选项以其他名称保存解密的文件。</p>
+
+<pre><code class="language-text">ansible-vault decrypt secret1.yml --output=secret1-decrypted.yml
+</code></pre>
+
+<h4 id="toc_19">2.1.6 更改加密文件的密码</h4>
+
+<p>使用<strong>ansible-vault rekey filename</strong>命令更改加密文件的密码。此命令可一次性更新多个数据文件的密钥。它将提示提供原始密码和新密码。</p>
+
+<pre><code class="language-text">ansible-vault rekey secret.yml
+</code></pre>
+
+<p>在使用vault密码文件时，请使用--new-vault-password-file选项：</p>
+
+<pre><code class="language-text">ansible-vault rekey --new-vault-password-file=NEW_VAULT_PASSWORD_FILE secret.yml
+</code></pre>
+
+<h3 id="toc_20">2.2 playbook和ansible vault</h3>
+
+<p>要运行可访问通过Ansible Vault加密的文件的playbook，需要向ansible-playbook命令提供加密密码。如果不提供密码，playbook将返回错误：</p>
+
+<pre><code class="language-text">[root@localhost ~]# ansible-playbook site.yml
+ERROR: A Vault password must be specified to decrypt vars/api_key.yml
+</code></pre>
+
+<p>要为playbook提供vault密码，可使用--vault-id选项。例如，要以交互方式提供vault密码，请使用下例中所示的--vault-id @prompt：</p>
+
+<pre><code class="language-text">ansible-playbook --vault-id @prompt site.yml
+</code></pre>
+
+<p>此外，也可使用--vault-password-file选项指定以纯文本存储加密密码的文件。密码应当在该文件中存储为一行字符串。由于该文件包含敏感的纯文本密码，因此务必要通过文件权限和其他安全措施对其加以保护。</p>
+
+<pre><code class="language-text">ansible-playbook --vault-password-file=vault-pw-file site.yml
+</code></pre>
+
+<p>也可以使用<strong>ANSIBLE_VAULT_PASSWORD_FILE</strong>环境变量，指定密码文件的默认位置。</p>
+
+<p>从Ansible2.4开始，可以通过<strong>ansible-playbook</strong>使用多个Ansible Vault密码。要使用多个密码，需要将多个<strong>--vault-id</strong>或<strong>--vault-password-file</strong>选项传递给<strong>ansible-playbook</strong>命令。</p>
+
+<pre><code class="language-text">ansible-playbook --vault-id one@prompt --vault-id two@prompt site.yml
+</code></pre>
+
+<p>注意：<strong>@prompt</strong>前面的vaultID<strong>one</strong>和<strong>two</strong>可以是任何字符，甚至可以完全省略它们。不过，如果在使用<strong>ansible-vault</strong>命令加密文件时使用<strong>--vault-id id</strong>选项，则在运行<strong>ansible-playbook</strong>时，将最先尝试匹配ID的密码。如果不匹配，将会尝试用户提供的其他密码。没有ID的vaultID<strong>@prompt</strong>实际上是default@prompt的简写，这意味着提示输入vaultID<strong>default</strong>的密码。</p>
+
+<h4 id="toc_21">2.2.1 变量文件管理的推荐做法</h4>
+
+<p>若要简化管理，务必要设置Ansible项目，使敏感变量和其他变量保存在相互独立的文件中。然后，包含敏感变量的文件可通过<strong>ansible-vault</strong>命令进行保护。</p>
+
+<p>管理组变量和主机变量的首选方式是在playbook级别上创建目录。group_vars目录通常包含名称与它们所应用的主机组匹配的变量文件。host_vars目录通常包含名称与它们所应用的受管主机名称匹配的变量文件。</p>
+
+<p>不过，除了使用group_vars和host_vars中的文件外，也可对每一主机组或受管主机使用目录。这些目录可包含多个变量文件，它们都由该主机组或受管主机使用。例如，在playbook.yml的以下项目目录中，webservers的主机组的成员将使用group_vars/webservers/vars文件中的变量，而172.16.103.129将使用host_vars/172.16.103.129/vars和host_vars/172.16.103.129/vault中的变量：</p>
+
+<pre><code class="language-text">.
+├── ansible.cfg
+├── group_vars
+│   └── webservers
+│       └── vars
+├── host_vars
+│   └── 172.16.103.129
+│       ├── vars
+│       └── vault
+├── inventory
+└── playbook.yml
+</code></pre>
+
+<p>在这种情况中，其好处在于用于172.16.103.129的大部分变量可以放在vars文件中，敏感变量则可单独放在vault文件中保密。然后使用ansible-vault加密vault文件，而将vars文件保留为纯文本。</p>
+
+<p>在本例中，host_vars/172.16.103.129目录内使用的文件名没有什么特别之处。该目录可以包含更多文件，一些由Ansible Vault加密，另一些则不加密。</p>
+
+<p>Playbook变量（与清单变量相对）也可通过Ansible Vault保护。敏感的playbook变量可以放在单独的文件中，此文件通过Ansible Vault加密，并能vars_files指令包含在该playbook中。这也是推荐做法，因为playbook变量的优先级高于清单变量。</p>
+
+<p>如果需要在playbook中使用多个vault密码，请确保每个加密文件分配一个vaultID，并在运行playbook时输入具有该vaultID的匹配密码。这可确保在解密vault加密文件时先选择正确的密码，这比强制Ansible尝试用户提供的所有vault密码直至找到正确的密码要快。</p>
+
+<h2 id="toc_22">3. 管理事实</h2>
+
+<h3 id="toc_23">3.1 描述Ansible事实</h3>
+
+<p>Ansible事实是Ansible在受管主机上自动检测到的变量。事实中包含有与主机相关的信息，可以像play中的常规变量、条件、循环或依赖于从受管主机收集的值的任何其他语句那样使用。</p>
+
+<p>为受管主机收集的一些事实可能包括：</p>
+
+<ul>
+<li>主机名称</li>
+<li>内核版本</li>
+<li>网络接口</li>
+<li>IP地址</li>
+<li>操作系统版本</li>
+<li>各种环境变量</li>
+<li>CPU数量</li>
+<li>提供的或可用的内存</li>
+<li>可用磁盘空间</li>
+</ul>
+
+<p>借助事实，可以方便地检索受管主机的状态，并根据该状态确定要执行的操作。例如：</p>
+
+<ul>
+<li>可以根据含有受管主机当前内核版本的事实运行条件任务，以此来重启服务器</li>
+<li>可以根据通过事实报告的可用内存来自定义MySQL配置文件</li>
+<li>可以根据事实的值设置配置文件中使用的IPv4地址</li>
+</ul>
+
+<p>通常，每个play在执行第一个任务之前会先自动运行setup模块来收集事实。</p>
+
+<p>查看为受管主机收集的事实的一种方式是，运行一个收集事实并使用debug模块显示ansible_facts变量值的简短playbook。</p>
+
+<pre><code class="language-text">- name: Fact dump
+  hosts: all
+  tasks:
+    - name: Print all facts
+      debug:
+        var: ansible_facts
+</code></pre>
+
+<p>运行该playbook时，事实将显示在作业输出中：</p>
+
+<pre><code class="language-text">ansible-playbook facts.yml
+</code></pre>
+
+<p>Playbook以JSON格式显示ansible_facts变量的内容。</p>
+
+<p>下表显示了可能从受管节点收集的并可在playbook中使用的一些事实：<br/>
+<strong>Ansible事实的示例</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>事实</th>
+<th>变量</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>短主机名</td>
+<td>ansible_facts[&#39;hostname&#39;]</td>
+</tr>
+<tr>
+<td>完全限定域名</td>
+<td>ansible_facts[&#39;fqdn&#39;]</td>
+</tr>
+<tr>
+<td>IPv4地址</td>
+<td>ansible_facts[&#39;default_ipv4&#39;][&#39;address&#39;]</td>
+</tr>
+<tr>
+<td>所有网络接口的名称列表</td>
+<td>ansible_facts[&#39;interfaces&#39;]</td>
+</tr>
+<tr>
+<td>/dev/vda1磁盘分区的大小</td>
+<td>ansible_facts[&#39;devices&#39;][&#39;vda&#39;][&#39;partitions&#39;][&#39;vda1&#39;][&#39;size&#39;]</td>
+</tr>
+<tr>
+<td>DNS服务器列表</td>
+<td>ansible_facts[&#39;dns&#39;][&#39;nameservers&#39;]</td>
+</tr>
+<tr>
+<td>当前运行的内核版本</td>
+<td>ansible_facts[&#39;kernel&#39;]</td>
+</tr>
+</tbody>
+</table>
+
+<p>如果变量的值为散列/字典类型，则可使用两种语法来获取其值。比如：</p>
+
+<ul>
+<li>ansible_facts[&#39;default_ipv4&#39;][&#39;address&#39;]也可以写成ansible_facts.default_ipv4.address</li>
+<li>ansible_facts[&#39;dns&#39;][&#39;nameservers&#39;]也可以写成ansible_facts.dns.nameservers</li>
+</ul>
+
+<p>在playbook中使用事实时，Ansible将事实的变量名动态替换为对应的值：</p>
+
+<pre><code class="language-text">---
+- hosts: all
+  tasks:
+  - name: Prints various Ansible facts
+    debug:
+      msg: &gt;
+        The default IPv4 address of {{ ansible_facts.fqdn }}
+        is {{ ansible_facts.default_ipv4.address }}
+</code></pre>
+
+<h3 id="toc_24">3.2 Ansible事实作为变量注入</h3>
+
+<p>在Ansible2.5之前，事实是作为前缀为字符串ansible_的单个变量注入，而不是作为ansible_facts变量的一部分注入。例如，ansible_facts[&#39;distribution&#39;]事实会被称为ansible_distribution。</p>
+
+<p>许多较旧的playbook仍然使用作为变量注入的事实，而不是在ansible_facts变量下创建命名空间的新语法。我们可以使用临时命令来运行setup模块，以此形式显示所有事实的值。以下示例中使用一个临时命令在受管主机172.16.103.129上运行setup模块：</p>
+
+<pre><code class="language-text">ansible 172.16.103.129 -m setup
+</code></pre>
+
+<p><strong>选定的Ansible事实名称比较</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>ansible_facts形式</th>
+<th>旧事实变量形式</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ansible_facts[&#39;hostname&#39;]</td>
+<td>ansible_hostname</td>
+</tr>
+<tr>
+<td>ansible_facts[&#39;fqdn&#39;]</td>
+<td>ansible_fqdn</td>
+</tr>
+<tr>
+<td>ansible_facts[&#39;default_ipv4&#39;][&#39;address&#39;]</td>
+<td>ansible_default_ipv4[&#39;address&#39;]</td>
+</tr>
+<tr>
+<td>ansible_facts[&#39;interfaces&#39;]</td>
+<td>ansible_interfaces</td>
+</tr>
+<tr>
+<td>ansible_facts[&#39;devices&#39;][&#39;vda&#39;][&#39;partitions&#39;][&#39;vda1&#39;][&#39;size&#39;]</td>
+<td>ansible_devices[&#39;vda&#39;][&#39;partitions&#39;][&#39;vda1&#39;][&#39;size&#39;]</td>
+</tr>
+<tr>
+<td>ansible_facts[&#39;dns&#39;][&#39;nameservers&#39;]</td>
+<td>ansible_dns[&#39;nameservers&#39;]</td>
+</tr>
+<tr>
+<td>ansible_facts[&#39;kernel&#39;]</td>
+<td>ansible_kernel</td>
+</tr>
+</tbody>
+</table>
+
+<p>目前，Ansible同时识别新的事实命名系统（使用ansible_facts）和旧的2.5前“作为单独变量注入的事实”命名系统。</p>
+
+<p>将Ansible配置文件的<strong>[default]</strong>部分中<strong>inject_facts_as_vars</strong>参数设置为<strong>False</strong>，可关闭旧命名系统。默认设置目前为<strong>True</strong>。</p>
+
+<p><strong>inject_facts_as_vars</strong>的默认值在Ansible的未来版本中可能会更改为<strong>False</strong>。如果设置为<strong>False</strong>，则只能使用新的<strong>ansible_facts.</strong>*命名系统引用Ansible事实。所以建议大家一开始就要适应这种方式。</p>
+
+<h3 id="toc_25">3.3 关闭事实收集</h3>
+
+<p>有时我们不想为play收集事实。这样做的原因可能有：</p>
+
+<ul>
+<li>不准备使用任何事实</li>
+<li>希望加快play速度</li>
+<li>希望减小play在受管主机上造成的负载</li>
+<li>受管主机因为某种原因无法运行setup模块</li>
+<li>需要安装一些必备软件后再收集事实</li>
+</ul>
+
+<p>以上种种原因导致我们可能想要永久或暂时关闭事实收集的功能，要为play禁用事实收集功能，可将gather_facts关键字设置为no：</p>
+
+<pre><code class="language-text">---
+- name: This play gathers no facts automatically
+  hosts: large_farm
+  gather_facts: no
+</code></pre>
+
+<p>即使play设置了<strong>gather_facts: no</strong>，也可以随时通过运行使用setup模块的任务来手动收集事实：</p>
+
+<pre><code class="language-text">---
+- name: gather_facts
+  hosts: 172.16.103.129
+  gather_facts: no
+  tasks:
+    - name: get gather_facts
+      setup:
+    - name: debug
+      debug:
+        var: ansible_facts
+</code></pre>
+
+<h3 id="toc_26">3.4 创建自定义事实</h3>
+
+<p>除了使用系统捕获的事实外，我们还可以自定义事实，并将其本地存储在每个受管主机上。这些事实整合到setup模块在受管主机上运行时收集的标准事实列表中。它们让受管主机能够向Ansible提供任意变量，以用于调整play的行为。</p>
+
+<p>自定义事实可以在静态文件中定义，格式可为INI文件或采用JSON。它们也可以是生成JSON输出的可执行脚本，如同动态清单脚本一样。</p>
+
+<p>有了自定义事实，我们可以为受管主机定义特定的值，供play用于填充配置文件或有条件地运行任务。动态自定义事实允许在play运行时以编程方式确定这些事实的值，甚至还可以确定提供哪些事实。</p>
+
+<p>默认情况下，setup模块从各受管主机的<strong>/etc/ansible/facts.d</strong>目录下的文件和脚本中加载自定义事实。各个文件或脚本的名称必须以<strong>.fact</strong>结尾才能被使用。动态自定义事实脚本必须输出JSON格式的事实，而且必须是可执行文件。</p>
+
+<p>以下是采用INI格式编写的静态自定义事实文件。INI格式的自定义事实文件包含由一个部分定义的顶层值，后跟用于待定义的事实的键值对：</p>
+
+<pre><code class="language-text">[packages]
+web_package = httpd
+db_package = mariadb-server
+
+[users]
+user1 = joe
+user2 = jane
+</code></pre>
+
+<p>同样的事实可能以JSON格式提供。以下JSON事实等同于以上示例中INI格式指定的事实。JSON数据可以存储在静态文本文件中，或者通过可执行脚本输出到标准输出：</p>
+
+<pre><code class="language-text">{
+  &quot;packages&quot;: {
+    &quot;web_package&quot;: &quot;httpd&quot;,
+    &quot;db_package&quot;: &quot;mariadb-server&quot;
+  },
+  &quot;users&quot;: {
+    &quot;user1&quot;: &quot;joe&quot;,
+    &quot;user2&quot;: &quot;jane&quot;
+  }
+}
+</code></pre>
+
+<p>自定义事实文件不能采用playbook那样的YAML格式。JSON格式是最为接近的等效格式。</p>
+
+<p>自定义事实由setup模块存储在<strong>ansible_facts.ansible_local</strong>变量中。<br/>
+事实按照定义它们的文件的名称来整理。例如，假设前面的自定义事实由受管主机上保存为<strong>/etc/ansible/facts.d/custom.fact</strong>的文件生成。在这种情况下，<strong>ansible_facts.ansible_local[&#39;custom&#39;][&#39;users&#39;][&#39;user1&#39;]</strong>的值为<strong>joe</strong>。</p>
+
+<p>可以利用临时命令在受管主机上运行setup模块来检查自定义事实的结构。</p>
+
+<pre><code class="language-text">ansible 172.16.103.129 -m setup
+</code></pre>
+
+<p>自定义事实的使用方式与playbook中的默认事实相同：</p>
+
+<pre><code class="language-text">---
+- hosts: all
+  tasks:
+  - name: Prints various Ansible facts
+    debug:
+      msg: &gt;
+        The package to install on {{ ansible_facts[&#39;fqdn&#39;] }}
+        is {{ ansible_facts[&#39;ansible_local&#39;][&#39;cutstom&#39;][&#39;packages&#39;][&#39;web_package&#39;] }}
+</code></pre>
+
+<h3 id="toc_27">3.5 使用魔法变量</h3>
+
+<p>一些变量并非事实或通过setup模块配置，但也由Ansible自动设置。这些魔法变量也可用于获取与特定受管主机相关的信息。</p>
+
+<p>最常用的有四个：</p>
+
+<table>
+<thead>
+<tr>
+<th>魔法变量</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>hostvars</td>
+<td>包含受管主机的变量，可以用于获取另一台受管主机的变量的值。<br>如果还没有为受管主机收集事实，则它不会包含该主机的事实。</td>
+</tr>
+<tr>
+<td>group_names</td>
+<td>列出当前受管主机所属的所有组</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>列出清单中的所有组和主机</td>
+</tr>
+<tr>
+<td>inventory_hostname</td>
+<td>包含清单中配置的当前受管主机的主机名称。<br>因为各种原因有可能与事实报告的主机名称不同</td>
+</tr>
+</tbody>
+</table>
+
+<p>另外还有许多其他的“魔法变量”。有关更多信息，请参见以下链接：<br/>
+<a href="javascript:if(confirm('https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable'" tppabs="https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable">https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable</a>。<br/>
+若要深入了解它们的值，一个途径是使用debug模块报告特定主机的<strong>hostvars</strong>变量的内容：</p>
+
+<pre><code class="language-text">ansible 172.16.103.129 -m debug -a &#39;var=hostvars[&quot;localhost&quot;]&#39;
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html"  title="Previous Post: docker容器网络配置">&laquo; docker容器网络配置</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html" 
+	        title="Next Post: 系统管理基础综合练习">系统管理基础综合练习 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15902192327327.html'/*tpa=http://www.itwangqing.net.cn/15902192327327.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

@@ -1,0 +1,1187 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  文件管理 - Linux学习站
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="Linux学习站" type="application/atom+xml">
+    <link rel="stylesheet" href="foundation.min.css" tppabs="http://www.itwangqing.net.cn/asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="docs.css" tppabs="http://www.itwangqing.net.cn/asset/css/docs.css" />
+
+    <script src="modernizr.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/modernizr.js"></script>
+    <script src="jquery.js" tppabs="http://www.itwangqing.net.cn/asset/js/vendor/jquery.js"></script>
+    <script src="highlight.pack.js" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/highlight.pack.js"></script>
+    <link href="github.css" tppabs="http://www.itwangqing.net.cn/asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Linux学习站</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Linux学习站</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html" tppabs="http://www.itwangqing.net.cn/index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>系统基础</label></li>
+
+          
+            <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+          
+            <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+          
+            <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>用户管理</label></li>
+
+          
+            <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+          
+            <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>文本编辑</label></li>
+
+          
+            <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>进程管理</label></li>
+
+          
+            <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+          
+            <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>网络管理</label></li>
+
+          
+            <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+          
+            <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>软件管理</label></li>
+
+          
+            <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+          
+            <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+          
+            <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>磁盘管理</label></li>
+
+          
+            <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+          
+            <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计划任务</label></li>
+
+          
+            <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>shell脚本</label></li>
+
+          
+            <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+          
+            <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+          
+            <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>服务管理</label></li>
+
+          
+            <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+          
+            <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+          
+            <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+          
+            <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+          
+            <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+          
+            <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+          
+            <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+          
+            <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+          
+            <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+          
+            <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+          
+            <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+          
+            <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+          
+            <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+          
+            <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+          
+            <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+          
+            <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+          
+            <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+          
+            <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+          
+            <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+          
+            <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+          
+            <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具ansible</label></li>
+
+          
+            <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+          
+            <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+          
+            <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+          
+            <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+          
+            <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+          
+            <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+          
+            <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+          
+            <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>自动化运维工具saltstack</label></li>
+
+          
+            <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+          
+            <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+          
+            <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+          
+            <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+          
+            <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+          
+            <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+          
+            <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>docker</label></li>
+
+          
+            <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+          
+            <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+          
+            <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+          
+            <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+          
+            <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+          
+            <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+          
+            <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+          
+            <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+          
+            <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>作业题</label></li>
+
+          
+            <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+          
+            <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+          
+            <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+          
+            <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+          
+            <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>python</label></li>
+
+          
+            <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+          
+            <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+          
+            <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+          
+            <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+          
+            <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+          
+            <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+          
+            <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+          
+            <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+          
+            <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+          
+            <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+          
+            <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+          
+            <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+          
+            <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+          
+            <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+          
+            <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>系统基础</span></li>
+                        
+                          <li><a title="Linux基础一" href="15309530058499.html" tppabs="http://www.itwangqing.net.cn/15309530058499.html">Linux基础一</a></li>
+                        
+                          <li><a title="Linux基础二" href="15329593343626.html" tppabs="http://www.itwangqing.net.cn/15329593343626.html">Linux基础二</a></li>
+                        
+                          <li><a title="Linux基础三" href="15329666111943.html" tppabs="http://www.itwangqing.net.cn/15329666111943.html">Linux基础三</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>用户管理</span></li>
+                        
+                          <li><a title="用户和组管理" href="15309537287199.html" tppabs="http://www.itwangqing.net.cn/15309537287199.html">用户和组管理</a></li>
+                        
+                          <li><a title="权限管理" href="15334773924932.html" tppabs="http://www.itwangqing.net.cn/15334773924932.html">权限管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>文本编辑</span></li>
+                        
+                          <li><a title="文本编辑之VIM" href="15334773649600.html" tppabs="http://www.itwangqing.net.cn/15334773649600.html">文本编辑之VIM</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>进程管理</span></li>
+                        
+                          <li><a title="linux进程管理" href="15307008887372.html" tppabs="http://www.itwangqing.net.cn/15307008887372.html">linux进程管理</a></li>
+                        
+                          <li><a title="控制服务和守护进程" href="15308770808056.html" tppabs="http://www.itwangqing.net.cn/15308770808056.html">控制服务和守护进程</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>网络管理</span></li>
+                        
+                          <li><a title="网络基础管理" href="15301749310671.html" tppabs="http://www.itwangqing.net.cn/15301749310671.html">网络基础管理</a></li>
+                        
+                          <li><a title="网络进阶管理" href="15304407617481.html" tppabs="http://www.itwangqing.net.cn/15304407617481.html">网络进阶管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>软件管理</span></li>
+                        
+                          <li><a title="软件管理" href="15298462113678.html" tppabs="http://www.itwangqing.net.cn/15298462113678.html">软件管理</a></li>
+                        
+                          <li><a title="yum工具的使用" href="15297662988909.html" tppabs="http://www.itwangqing.net.cn/15297662988909.html">yum工具的使用</a></li>
+                        
+                          <li><a title="源码安装包管理" href="15299940709726.html" tppabs="http://www.itwangqing.net.cn/15299940709726.html">源码安装包管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>磁盘管理</span></li>
+                        
+                          <li><a title="Linux系统磁盘管理" href="15300107229451.html" tppabs="http://www.itwangqing.net.cn/15300107229451.html">Linux系统磁盘管理</a></li>
+                        
+                          <li><a title="LVM管理" href="15301020706680.html" tppabs="http://www.itwangqing.net.cn/15301020706680.html">LVM管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计划任务</span></li>
+                        
+                          <li><a title="linux计划任务管理" href="15306026605931.html" tppabs="http://www.itwangqing.net.cn/15306026605931.html">linux计划任务管理</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>shell脚本</span></li>
+                        
+                          <li><a title="shell脚本基础" href="15326519927588.html" tppabs="http://www.itwangqing.net.cn/15326519927588.html">shell脚本基础</a></li>
+                        
+                          <li><a title="shell脚本进阶" href="15326563612690.html" tppabs="http://www.itwangqing.net.cn/15326563612690.html">shell脚本进阶</a></li>
+                        
+                          <li><a title="正则表达式" href="15309531529503.html" tppabs="http://www.itwangqing.net.cn/15309531529503.html">正则表达式</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>服务管理</span></li>
+                        
+                          <li><a title="openssh" href="15309540565109.html" tppabs="http://www.itwangqing.net.cn/15309540565109.html">openssh</a></li>
+                        
+                          <li><a title="NFS" href="15331149680339.html" tppabs="http://www.itwangqing.net.cn/15331149680339.html">NFS</a></li>
+                        
+                          <li><a title="samba" href="15332084684114.html" tppabs="http://www.itwangqing.net.cn/15332084684114.html">samba</a></li>
+                        
+                          <li><a title="ftp" href="15331235945908.html" tppabs="http://www.itwangqing.net.cn/15331235945908.html">ftp</a></li>
+                        
+                          <li><a title="httpd" href="15333747858558.html" tppabs="http://www.itwangqing.net.cn/15333747858558.html">httpd</a></li>
+                        
+                          <li><a title="rsync" href="15336422692695.html" tppabs="http://www.itwangqing.net.cn/15336422692695.html">rsync</a></li>
+                        
+                          <li><a title="mysql基础" href="15340549469789.html" tppabs="http://www.itwangqing.net.cn/15340549469789.html">mysql基础</a></li>
+                        
+                          <li><a title="mysql进阶" href="15340747137714.html" tppabs="http://www.itwangqing.net.cn/15340747137714.html">mysql进阶</a></li>
+                        
+                          <li><a title="mysql多实例部署" href="15574501454471.html" tppabs="http://www.itwangqing.net.cn/15574501454471.html">mysql多实例部署</a></li>
+                        
+                          <li><a title="lamp" href="15343825969129.html" tppabs="http://www.itwangqing.net.cn/15343825969129.html">lamp</a></li>
+                        
+                          <li><a title="mysql主从" href="15340760215942.html" tppabs="http://www.itwangqing.net.cn/15340760215942.html">mysql主从</a></li>
+                        
+                          <li><a title="监控服务zabbix部署" href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html">监控服务zabbix部署</a></li>
+                        
+                          <li><a title="nginx" href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html">nginx</a></li>
+                        
+                          <li><a title="cobbler" href="15348344859945.html" tppabs="http://www.itwangqing.net.cn/15348344859945.html">cobbler</a></li>
+                        
+                          <li><a title="版本控制gitlab" href="15350227215553.html" tppabs="http://www.itwangqing.net.cn/15350227215553.html">版本控制gitlab</a></li>
+                        
+                          <li><a title="tomcat" href="15350951162147.html" tppabs="http://www.itwangqing.net.cn/15350951162147.html">tomcat</a></li>
+                        
+                          <li><a title="kvm虚拟化" href="15397735724181.html" tppabs="http://www.itwangqing.net.cn/15397735724181.html">kvm虚拟化</a></li>
+                        
+                          <li><a title="keepalived高可用" href="15399319450072.html" tppabs="http://www.itwangqing.net.cn/15399319450072.html">keepalived高可用</a></li>
+                        
+                          <li><a title="mysql中间件proxysql实现mysql读写分离" href="15421935147049.html" tppabs="http://www.itwangqing.net.cn/15421935147049.html">mysql中间件proxysql实现mysql读写分离</a></li>
+                        
+                          <li><a title="开源堡垒机Jumpserver" href="15671624164646.html" tppabs="http://www.itwangqing.net.cn/15671624164646.html">开源堡垒机Jumpserver</a></li>
+                        
+                          <li><a title="haproxy" href="15833949737143.html" tppabs="http://www.itwangqing.net.cn/15833949737143.html">haproxy</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具ansible</span></li>
+                        
+                          <li><a title="01 Ansible介绍与安装" href="15899421412937.html" tppabs="http://www.itwangqing.net.cn/15899421412937.html">01 Ansible介绍与安装</a></li>
+                        
+                          <li><a title="02 部署Ansible" href="15899422975885.html" tppabs="http://www.itwangqing.net.cn/15899422975885.html">02 部署Ansible</a></li>
+                        
+                          <li><a title="03 ansible常用模块" href="15360459655433.html" tppabs="http://www.itwangqing.net.cn/15360459655433.html">03 ansible常用模块</a></li>
+                        
+                          <li><a title="04 playbook" href="15900337310825.html" tppabs="http://www.itwangqing.net.cn/15900337310825.html">04 playbook</a></li>
+                        
+                          <li><a title="05 管理变量、机密和事实" href="15902192327327.html" tppabs="http://www.itwangqing.net.cn/15902192327327.html">05 管理变量、机密和事实</a></li>
+                        
+                          <li><a title="06 实施任务控制" href="15904785155492.html" tppabs="http://www.itwangqing.net.cn/15904785155492.html">06 实施任务控制</a></li>
+                        
+                          <li><a title="07 在被管理节点上创建文件或目录" href="15909932604247.html" tppabs="http://www.itwangqing.net.cn/15909932604247.html">07 在被管理节点上创建文件或目录</a></li>
+                        
+                          <li><a title="08 管理大项目" href="15916866139753.html" tppabs="http://www.itwangqing.net.cn/15916866139753.html">08 管理大项目</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>自动化运维工具saltstack</span></li>
+                        
+                          <li><a title="01 SaltStack入门" href="15505624542032.html" tppabs="http://www.itwangqing.net.cn/15505624542032.html">01 SaltStack入门</a></li>
+                        
+                          <li><a title="02 SaltStack之配置管理" href="15505739253069.html" tppabs="http://www.itwangqing.net.cn/15505739253069.html">02 SaltStack之配置管理</a></li>
+                        
+                          <li><a title="03 SaltStack之数据系统" href="15506476021123.html" tppabs="http://www.itwangqing.net.cn/15506476021123.html">03 SaltStack之数据系统</a></li>
+                        
+                          <li><a title="04 SaltStack常用的模块" href="15506647066554.html" tppabs="http://www.itwangqing.net.cn/15506647066554.html">04 SaltStack常用的模块</a></li>
+                        
+                          <li><a title="05 SaltStack之return与job管理" href="15518677780073.html" tppabs="http://www.itwangqing.net.cn/15518677780073.html">05 SaltStack之return与job管理</a></li>
+                        
+                          <li><a title="06 SaltStack之salt-ssh" href="15520269709477.html" tppabs="http://www.itwangqing.net.cn/15520269709477.html">06 SaltStack之salt-ssh</a></li>
+                        
+                          <li><a title="07 SaltStack进阶" href="15537606512093.html" tppabs="http://www.itwangqing.net.cn/15537606512093.html">07 SaltStack进阶</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>docker</span></li>
+                        
+                          <li><a title="docker容器技术基础入门" href="15756156871621.html" tppabs="http://www.itwangqing.net.cn/15756156871621.html">docker容器技术基础入门</a></li>
+                        
+                          <li><a title="docker基础用法" href="15808961165162.html" tppabs="http://www.itwangqing.net.cn/15808961165162.html">docker基础用法</a></li>
+                        
+                          <li><a title="docker镜像管理基础" href="15809107453374.html" tppabs="http://www.itwangqing.net.cn/15809107453374.html">docker镜像管理基础</a></li>
+                        
+                          <li><a title="docker容器虚拟化" href="15811500963775.html" tppabs="http://www.itwangqing.net.cn/15811500963775.html">docker容器虚拟化</a></li>
+                        
+                          <li><a title="docker容器网络" href="15812176196320.html" tppabs="http://www.itwangqing.net.cn/15812176196320.html">docker容器网络</a></li>
+                        
+                          <li><a title="docker容器网络配置" href="15812236429133.html" tppabs="http://www.itwangqing.net.cn/15812236429133.html">docker容器网络配置</a></li>
+                        
+                          <li><a title="docker存储卷" href="15812406178865.html" tppabs="http://www.itwangqing.net.cn/15812406178865.html">docker存储卷</a></li>
+                        
+                          <li><a title="Dockerfile" href="15820930531496.html" tppabs="http://www.itwangqing.net.cn/15820930531496.html">Dockerfile</a></li>
+                        
+                          <li><a title="Docker Private Registry" href="15823545783647.html" tppabs="http://www.itwangqing.net.cn/15823545783647.html">Docker Private Registry</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>作业题</span></li>
+                        
+                          <li><a title="vim练习" href="15312221747200.html" tppabs="http://www.itwangqing.net.cn/15312221747200.html">vim练习</a></li>
+                        
+                          <li><a title="基础练习" href="15308359538636.html" tppabs="http://www.itwangqing.net.cn/15308359538636.html">基础练习</a></li>
+                        
+                          <li><a title="系统管理基础综合练习" href="15312664196054.html" tppabs="http://www.itwangqing.net.cn/15312664196054.html">系统管理基础综合练习</a></li>
+                        
+                          <li><a title="shell脚本习题" href="15395707987789.html" tppabs="http://www.itwangqing.net.cn/15395707987789.html">shell脚本习题</a></li>
+                        
+                          <li><a title="Linux运维面试题" href="15396808887591.html" tppabs="http://www.itwangqing.net.cn/15396808887591.html">Linux运维面试题</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>python</span></li>
+                        
+                          <li><a title="python介绍" href="15538297742581.html" tppabs="http://www.itwangqing.net.cn/15538297742581.html">python介绍</a></li>
+                        
+                          <li><a title="Python入门" href="15540177360572.html" tppabs="http://www.itwangqing.net.cn/15540177360572.html">Python入门</a></li>
+                        
+                          <li><a title="变量与字符编码" href="15615383234174.html" tppabs="http://www.itwangqing.net.cn/15615383234174.html">变量与字符编码</a></li>
+                        
+                          <li><a title="Python编程规范、运算符" href="15616166878859.html" tppabs="http://www.itwangqing.net.cn/15616166878859.html">Python编程规范、运算符</a></li>
+                        
+                          <li><a title="流程控制与格式化输出" href="15616375345555.html" tppabs="http://www.itwangqing.net.cn/15616375345555.html">流程控制与格式化输出</a></li>
+                        
+                          <li><a title="数据类型" href="15617044071511.html" tppabs="http://www.itwangqing.net.cn/15617044071511.html">数据类型</a></li>
+                        
+                          <li><a title="文件管理" href="15646303312857.html" tppabs="http://www.itwangqing.net.cn/15646303312857.html">文件管理</a></li>
+                        
+                          <li><a title="函数从入门到超神" href="15621339486509.html" tppabs="http://www.itwangqing.net.cn/15621339486509.html">函数从入门到超神</a></li>
+                        
+                          <li><a title="列表生成式、迭代器与生成器" href="15652344516454.html" tppabs="http://www.itwangqing.net.cn/15652344516454.html">列表生成式、迭代器与生成器</a></li>
+                        
+                          <li><a title="模块与包" href="15621538343767.html" tppabs="http://www.itwangqing.net.cn/15621538343767.html">模块与包</a></li>
+                        
+                          <li><a title="常用内置模块" href="15622250202368.html" tppabs="http://www.itwangqing.net.cn/15622250202368.html">常用内置模块</a></li>
+                        
+                          <li><a title="日志模块logging" href="15658313775832.html" tppabs="http://www.itwangqing.net.cn/15658313775832.html">日志模块logging</a></li>
+                        
+                          <li><a title="正则表达式re模块" href="15623206542335.html" tppabs="http://www.itwangqing.net.cn/15623206542335.html">正则表达式re模块</a></li>
+                        
+                          <li><a title="Python爬虫实战：链家二手房" href="15635212817346.html" tppabs="http://www.itwangqing.net.cn/15635212817346.html">Python爬虫实战：链家二手房</a></li>
+                        
+                          <li><a title="数据可视化分析" href="15632679626574.html" tppabs="http://www.itwangqing.net.cn/15632679626574.html">数据可视化分析</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>文件管理</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1 文件操作流程</a>
+</li>
+<li>
+<a href="#toc_1">2 打开文件的模式</a>
+</li>
+<li>
+<a href="#toc_2">3 文件对象的具体操作</a>
+<ul>
+<li>
+<a href="#toc_3">3.1 read()</a>
+</li>
+<li>
+<a href="#toc_4">3.2 fileno()</a>
+</li>
+<li>
+<a href="#toc_5">3.3 write()</a>
+</li>
+<li>
+<a href="#toc_6">3.4 readline()</a>
+</li>
+<li>
+<a href="#toc_7">3.5 readlines()</a>
+</li>
+<li>
+<a href="#toc_8">3.6 遍历文件所有内容</a>
+</li>
+<li>
+<a href="#toc_9">3.7 tell()</a>
+</li>
+<li>
+<a href="#toc_10">3.8 seek()</a>
+</li>
+<li>
+<a href="#toc_11">3.9 flush()</a>
+</li>
+<li>
+<a href="#toc_12">3.10 truncate()</a>
+</li>
+<li>
+<a href="#toc_13">3.11 close()</a>
+</li>
+<li>
+<a href="#toc_14">3.12 file.name</a>
+</li>
+<li>
+<a href="#toc_15">3.13 file.closed</a>
+</li>
+<li>
+<a href="#toc_16">3.14 file.encoding</a>
+</li>
+<li>
+<a href="#toc_17">3.15 file.mode</a>
+</li>
+<li>
+<a href="#toc_18">3.16 文件内容的修改</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_19">4 with ... as ...</a>
+</li>
+<li>
+<a href="#toc_20">作业</a>
+<ul>
+<li>
+<a href="#toc_21">1. 实现shell的sed功能</a>
+</li>
+<li>
+<a href="#toc_22">2. 修改haproxy配置文件</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr/>
+
+<h2 id="toc_0">1 文件操作流程</h2>
+
+<p>对文件的操作流程：</p>
+
+<ul>
+<li>打开文件，得到文件句柄并赋值给一个变量</li>
+<li>通过句柄对文件进行操作</li>
+<li>关闭文件</li>
+</ul>
+
+<p>现有文件如下：<br/>
+<details><br/>
+<summary>view codes</summary></p>
+
+<pre><code class="language-bash">&quot;太上忘情&quot;：忘情而至公，得情忘情，不为情绪所动，不为情感所扰。天之至私，用之至公。命之制在气。死者生之根，生者死之根。恩生于害，害生于恩。愚人以天地文理圣，我以时物文理哲。
+《老子想尔注》：“一者，道也。散形为气，聚形太上老君。”
+
+言不语：众生听令，身不动：天地俯首。以无情化大爱。
+
+昔日盘古受命开天，宁死无悔。虽对自己是无情，但对苍生则是大爱。太上忘情，自是开辟造化之情。
+故而《道德经▪道篇▪第七章》有云：天长地久。天地所以能长且久者，以其不自生，故能长生。是以圣人后其身而身先；外其身而身存。非以其无私邪？故能成其私。
+</code></pre>
+</details>
+<pre><code class="language-python"># coding:utf8
+
+f = open(&#39;wangqing&#39;)  # 打开文件
+first_line = f.readline()
+print(&#39;first line:&#39;, first_line)  # 读一行
+print(&#39;我是分隔线&#39;.center(50, &#39;-&#39;))
+data = f.read()  # 读取剩下的所有内容,文件大时不要用
+print(data)  # 打印文件
+
+f.close()  # 关闭文件
+</code></pre>
+
+<p>注意 if in the win，wangqing文件是utf8保存的，打开文件时open函数是通过操作系统打开的文件，而win操作系统默认的是gbk编码，所以直接打开会乱码，需要</p>
+
+<p><code>f=open(&#39;wangqing&#39;,encoding=&#39;utf8&#39;)</code></p>
+
+<p>wangqing文件如果是gbk保存的，则直接打开即可。</p>
+
+<h2 id="toc_1">2 打开文件的模式</h2>
+
+<pre><code class="language-bash">========= ===============================================================
+    Character Meaning
+    --------- ---------------------------------------------------------------
+    &#39;r&#39;       open for reading (default)
+    &#39;w&#39;       open for writing, truncating the file first
+    &#39;x&#39;       create a new file and open it for writing
+    &#39;a&#39;       open for writing, appending to the end of the file if it exists
+    &#39;b&#39;       binary mode
+    &#39;t&#39;       text mode (default)
+    &#39;+&#39;       open a disk file for updating (reading and writing)
+    &#39;U&#39;       universal newline mode (deprecated)
+    ========= ===============================================================
+</code></pre>
+
+<p>打开文件的模式有：</p>
+
+<ul>
+<li>r，只读模式(默认)</li>
+<li>w，只写模式。【不可读；不存在则创建；存在则覆盖原内容；】</li>
+<li>a，追加模式。【不可读；不存在则创建；存在则只追加内容；】</li>
+</ul>
+
+<p>&quot;+&quot; 表示可以同时读写某个文件</p>
+
+<ul>
+<li>r+，可读写文件。【能读能写，追加写】</li>
+<li>w+，写读。【能读能写，覆盖写】</li>
+<li>a+，同a。【能写能读，追加写】</li>
+</ul>
+
+<p>&quot;U&quot;表示在读取时，可以将 \r \n \r\n自动转换成 \n （与 r 或 r+ 模式同使用）</p>
+
+<ul>
+<li>rU</li>
+<li>r+U</li>
+</ul>
+
+<p>&quot;b&quot;表示处理二进制文件（如：FTP发送上传ISO镜像文件，linux可忽略，windows处理二进制文件时需标注）</p>
+
+<ul>
+<li>rb</li>
+<li>wb</li>
+<li>ab</li>
+</ul>
+
+<pre><code class="language-python"># f = open(&#39;wangqing&#39;,&#39;w&#39;) #打开文件
+# f = open(&#39;wangqing&#39;,&#39;a&#39;) #打开文件
+# f.write(&#39;忘情公子1\n&#39;)
+# f.write(&#39;忘情2\n&#39;)
+# f.write(&#39;至圣!3&#39;)
+</code></pre>
+
+<p><strong>rb模式：</strong></p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;,&#39;rb&#39;)      # 以写读模式打开文件
+
+f.read(3)
+
+f.seek(3)
+print(f.read(3))    # b&#39;\xaa\xe4\xb8&#39;
+
+f.seek(3,1)
+print(f.read(3))    # b&#39;\x98\xe6\x83&#39;
+
+f.seek(-4,2)
+print(f.read(3))    # b&#39;\x81\xe3\x80&#39;
+
+# for line in f:
+#     print(line.decode())
+</code></pre>
+
+<p>总结: 在py3中,如果你想要字符数据,即用于观看的,则用r模式,这样我f.read到的数据是一个经过decode的unicode数据; 但是如果这个数据我并不需要看,而只是用于传输,比如文件上传,那么我并不需要decode，直接传送bytes就好了,所以这个时候用rb模式。</p>
+
+<p>在py3中,有一条严格的线区分着bytes和unicode,比如seek的用法,在py2和py3里都是一个个字节的seek,但在py3里你就必须声明好了f的类型是rb,不允许再模糊。</p>
+
+<p>建议: 以后再读写文件的时候直接用rb模式,需要decode的时候再显示地去解码。</p>
+
+<h2 id="toc_2">3 文件对象的具体操作</h2>
+
+<h3 id="toc_3">3.1 read()</h3>
+
+<p>file.read()方法明确指定从文件中指定要读取多少个字节结果返回成一个字符串，若不指定则返回所有内容<br/>
+<strong>例：读取10个字节</strong></p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)  # 打开文件
+data = f.read(10)
+print(data)
+</code></pre>
+
+<p><strong>例：读取所有内容</strong></p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)  # 打开文件
+data = f.read()
+print(data)
+</code></pre>
+
+<h3 id="toc_4">3.2 fileno()</h3>
+
+<p>file.fileno()方法返回文件对象的文件描述符</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)  # 打开文件
+data = f.fileno()
+print(data)
+</code></pre>
+
+<p><img src="15646409286648.jpg" tppabs="http://www.itwangqing.net.cn/media/15646303312857/15646409286648.jpg" alt=""/><br/>
+文件描述符是内核为了高效管理已经被打开的文件所创建的索引，它有以下特点：</p>
+
+<ul>
+<li>非负整数</li>
+<li>用于指代被打开的文件</li>
+<li>所有执行i/o操作的系统调用都是通过文件描述符完成的</li>
+</ul>
+
+<p>进程通过文件描述符来访问文件。 在程序刚启动的时候默认有3个文件描述符：0(标准输入)，1(标准输出)，2(标准错误)，系统默认提供了 0～2的文件描述符，之后当我们进行 open,create等操作的时候 自动添加进表</p>
+
+<p>当我们新建一个文件，打开open 之后，得到的fd 是从3开始的  因为前面的三个被系统占了在OS X系统下测试 文件描述符表 自增，当释放close之后，fd变成－1，如果再继续新建 则填补之前的空缺。</p>
+
+<h3 id="toc_5">3.3 write()</h3>
+
+<p>file.write(s)表示在file中写入字符串s</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;,&#39;a&#39;)  # 打开文件
+f.write(&#39;haha&#39;)
+f.close()
+</code></pre>
+
+<p>换行加入内容</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;,&#39;a&#39;)  # 打开文件
+f.write(&#39;\nhaha&#39;)
+f.close()
+</code></pre>
+<details>
+<p><summary>进度条应用</summary></p>
+
+<pre><code class="language-python">import time,sys
+for i in range(30):
+    sys.stdout.write(&quot;#&quot;)
+    # sys.stdout.flush()
+    time.sleep(0.3)
+</code></pre>
+</details>
+<h3 id="toc_6">3.4 readline()</h3>
+
+<p>file.readline()方法执行一次返回一行</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)
+data = f.readline()
+print(data)
+# print(f.readline())
+# print(f.readline())
+# print(f.readline())
+f.close()
+</code></pre>
+
+<h3 id="toc_7">3.5 readlines()</h3>
+
+<p>file.readlines()方法以列表模式返回文件所有行</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)
+data = f.readlines()
+print(data)
+f.close()
+</code></pre>
+
+<h3 id="toc_8">3.6 遍历文件所有内容</h3>
+
+<p>打印文件的前3行</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)
+for i in range(3):
+    print(f.readline())
+f.close()
+</code></pre>
+
+<p>打印文件所有行</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)
+for line in f.readlines():
+    print(line)
+f.close()
+</code></pre>
+
+<p>由于 readlines 是一次性获取所有行，若文件数据特别多将会极其占用内存资源，所以一般不用readlines，如果需要读取文件所有行推荐以下方式遍历文件，因为其返回的是一个生成器</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)
+
+for line in f:
+    print(line)
+</code></pre>
+
+<p><strong>需求：打印所有行,在第4行后面加上:&#39;end 3&#39;</strong></p>
+
+<!--<details>
+<summary>view codes</summary>
+```
+f = open('wangqing')
+
+count = 0
+for line in f:
+    if count == 3:
+        line = ''.join([line.strip(),'end 3'])
+    print(line.strip())
+    count += 1
+```
+</details>-->
+
+<h3 id="toc_9">3.7 tell()</h3>
+
+<p>file.tell()方法用于打印当前指针所在位置，以字节为单位</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)
+print(f.tell())     # 处理前打印当前指针位置
+data = f.readlines()
+print(f.tell())     # 处理后打印当前指针位置
+f.close()
+</code></pre>
+
+<h3 id="toc_10">3.8 seek()</h3>
+
+<p>file.seek(offset[, <font color="red">whence</font>])方法用于将文件指针移动到指定位置，你可以理解为就是用鼠标将光标定位到指定的位置</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)
+print(f.tell())
+data = f.readlines()
+print(f.tell())
+f.seek(0)
+print(f.tell())
+f.close()
+</code></pre>
+
+<p>offset指定偏移量<br/>
+<font color="red">whence</font>指定从哪里开始偏移</p>
+
+<ul>
+<li>0表示从文件头开始偏移</li>
+<li>1表示从当前位置开始偏移</li>
+<li>2表示从文件尾部开始偏移</li>
+</ul>
+
+<p><font color="red"><strong>若不给whence的话默认的从文件头开始偏移</strong></font></p>
+
+<h3 id="toc_11">3.9 flush()</h3>
+
+<p>file.flush()刷新缓冲区手动同步数据到磁盘中,立即将更改写入硬盘</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;,&#39;a+&#39;)
+f.write(&#39;\n天之道，损有余而补不足&#39;)
+f.flush()
+f.seek(0)
+print(f.read())
+f.close()
+</code></pre>
+
+<h3 id="toc_12">3.10 truncate()</h3>
+
+<p>file.truncate([size])将文件截断为最多size字节也就是说文件被截取后只剩下size字节，常用于清空文件内容</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;,&#39;w+&#39;)
+f.truncate()
+print(f.read())
+f.close()
+</code></pre>
+
+<h3 id="toc_13">3.11 close()</h3>
+
+<p>file.close()方法关闭文件被关闭的文件无法再从中读取数据</p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;)
+print(f.readline())
+f.close()
+print(f.read())
+</code></pre>
+
+<h3 id="toc_14">3.12 file.name</h3>
+
+<p>file.name属性直接调用当前文件的全路径名称</p>
+
+<pre><code class="language-text">f = open(&#39;/Users/seancheng/Downloads/test/mycode/wangqing&#39;)
+print(f.name)
+f.close()
+</code></pre>
+
+<h3 id="toc_15">3.13 file.closed</h3>
+
+<p>file.closed返回当前文件是否为关闭状态</p>
+
+<pre><code class="language-text">f = open(&#39;/Users/seancheng/Downloads/test/mycode/wangqing&#39;)
+print(f.closed)
+f.close()
+print(f.closed)
+</code></pre>
+
+<h3 id="toc_16">3.14 file.encoding</h3>
+
+<p>file.encoding返回当前文件使用的编码</p>
+
+<pre><code class="language-text">f = open(&#39;/Users/seancheng/Downloads/test/mycode/wangqing&#39;)
+print(f.encoding)
+f.close()
+</code></pre>
+
+<h3 id="toc_17">3.15 file.mode</h3>
+
+<p>file.mode返回当前文件的打开模式</p>
+
+<pre><code class="language-text">f = open(&#39;/Users/seancheng/Downloads/test/mycode/wangqing&#39;)
+print(f.mode)
+f.close()
+</code></pre>
+
+<h3 id="toc_18">3.16 文件内容的修改</h3>
+
+<p><font color="red"><strong>需求：将文本第四行修改为：&#39;hello 忘情!&#39;</strong></font></p>
+
+<pre><code class="language-text">f = open(&#39;wangqing&#39;,&#39;r+&#39;)   #以写读模式打开文件
+
+f.readline()
+f.readline()
+f.readline()
+f.readline()
+print(f.tell())
+f.write(&#39;hello 忘情&#39;)
+
+f.close()
+</code></pre>
+
+<p>和想的不一样,不管事!那涉及到文件修改怎么办呢?</p>
+
+<!--<details>
+<summary>view codes</summary>
+```
+f_read = open('wangqing','r')     # 以写读模式打开文件
+f_write = open('wangqing_back','w')   # 以写读模式打开文件
+
+count = 0
+for line in f_read:
+    if count == 3:
+        f_write.write('hello,忘情\n')
+    else:
+        f_write.write(line)
+    count += 1
+
+f_read.close()
+f_write.close()
+```
+</details>-->
+
+<p>在 Python 中文件是不能被修改的，若想修改其内容，只能新建一个新文件，将修改后的内容写入其中</p>
+
+<h2 id="toc_19">4 with ... as ...</h2>
+
+<p>为了避免打开文件后忘记关闭，可以通过管理上下文，即：</p>
+
+<pre><code class="language-text">with open(&#39;log&#39;, &#39;r&#39;) as f:
+    pass
+</code></pre>
+
+<p>如此方式，当with代码块执行完毕时，内部会自动关闭并释放文件资源。</p>
+
+<p>在Python 2.7 后，with又支持同时对多个文件的上下文进行管理，即：</p>
+
+<pre><code class="language-text">with open(&#39;log1&#39;) as obj1, open(&#39;log2&#39;) as obj2:
+    pass
+</code></pre>
+
+<h2 id="toc_20">作业</h2>
+
+<h3 id="toc_21">1. 实现shell的sed功能</h3>
+
+<h3 id="toc_22">2. 修改haproxy配置文件</h3>
+<details>
+<p><summary>需求：</summary></p>
+
+<pre><code class="language-bash">1、查
+    输入：www.wangqing.com
+    获取当前backend下的所有记录
+
+2、新建
+    输入：
+        arg = {
+            &#39;bakend&#39;: &#39;www.wangqing.com&#39;,
+            &#39;record&#39;:{
+                &#39;server&#39;: &#39;100.1.7.9&#39;,
+                &#39;weight&#39;: 20,
+                &#39;maxconn&#39;: 30
+            }
+        }
+
+3、删除
+    输入：
+        arg = {
+            &#39;bakend&#39;: &#39;www.wangqing.com&#39;,
+            &#39;record&#39;:{
+                &#39;server&#39;: &#39;100.1.7.9&#39;,
+                &#39;weight&#39;: 20,
+                &#39;maxconn&#39;: 30
+            }
+        }
+</code></pre>
+</details><details>
+<p><summary>原配置文件</summary></p>
+
+<pre><code class="language-bash">global       
+        log 127.0.0.1 local2
+        daemon
+        maxconn 256
+        log 127.0.0.1 local2 info
+defaults
+        log global
+        mode http
+        timeout connect 5000ms
+        timeout client 50000ms
+        timeout server 50000ms
+        option  dontlognull
+
+listen stats :8888
+        stats enable
+        stats uri       /admin
+        stats auth      admin:1234
+
+frontend wangqing.com
+        bind 0.0.0.0:80
+        option httplog
+        option httpclose
+        option  forwardfor
+        log global
+        acl www hdr_reg(host) -i www.wangqing.com
+        use_backend www.wangqing.com if www
+
+backend www.wangqing.com
+        server 100.1.7.9 100.1.7.9 weight 20 maxconn 3000
+</code></pre>
+</details>
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15344093145314.html" tppabs="http://www.itwangqing.net.cn/15344093145314.html"  title="Previous Post: 监控服务zabbix部署">&laquo; 监控服务zabbix部署</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15347293082090.html" tppabs="http://www.itwangqing.net.cn/15347293082090.html" 
+	        title="Next Post: nginx">nginx &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15646303312857.html'/*tpa=http://www.itwangqing.net.cn/15646303312857.html*/;
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="javascript:if(confirm('http://www.mweb.im/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.mweb.im/'" tppabs="http://www.mweb.im/">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="javascript:if(confirm('http://github.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://github.com/'" tppabs="http://github.com/">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="foundation.min.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation.min.js"></script>
+    <script src="foundation.offcanvas.js" tppabs="http://www.itwangqing.net.cn/asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>
